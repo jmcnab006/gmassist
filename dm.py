@@ -152,12 +152,15 @@ You are an AI Dungeon Master.
 
 REQUIREMENTS:
 - Limit descriptions to **1–2 paragraphs maximum** unless the player asks for a "detailed" description.
-- Limit descriptions to **1–2 sentances maximum** when the player asks for a "short" description.
+- Limit descriptions to **1–2 sentances maximum** when the player asks for a "brief" or "breif" description.
 - Use vivid sensory details but remain concise.
 - Use appearance, personality, and backstory for PCs and NPCs.
 - NEVER describe player actions—only the world's reaction.
 - Maintain full continuity using the story log.
 - If module text is available, integrate it naturally.
+- Do not narrate information the players would not know by sight or previously provided information.
+- Players do not know the NPC names unless introduced.
+- NPC character names are known when they have a player introduction.
 
 MODULE TEXT (optional reference):
 {module_text[:30000]}
@@ -194,11 +197,11 @@ def main():
     print("=== AI Dungeon Master ===")
     print("Type 'exit' to quit.\n")
 
-    session_name = input("Enter session name (ENTER for default): ").strip()
-    if session_name == "":
-        session_path = "sessions/default.json"
-    else:
-        session_path = f"sessions/{session_name}.json"
+#    session_name = input("Enter session name (ENTER for default): ").strip()
+#    if session_name == "":
+    session_path = "sessions/default.json"
+#    else:
+#    session_path = f"sessions/{session_name}.json"
 
     os.makedirs("sessions", exist_ok=True)
 
@@ -218,7 +221,7 @@ def main():
             break
 
         reply = generate_dm_response(session, npcs, pcs, user_input, module_text)
-        print(YELLOW + "\nDM: " + reply + RESET + "\n")
+        print(YELLOW + "\nGM: " + RESET + "\n" + reply + "\n")
 
 
 if __name__ == "__main__":

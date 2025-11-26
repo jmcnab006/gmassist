@@ -2,15 +2,15 @@
   "messages": [
     {
       "role": "user",
-      "content": "Outline the adventure background"
+      "content": "Lyra quietly walks in the rain"
     },
     {
       "role": "assistant",
-      "content": "Certainly! Here\u2019s a concise summary of the adventure background for **Drums in the Marsh**:\n\nFor the past ten days, residents along the Trank River and near the Twilight Marsh have been terrorized by mysterious nighttime kidnappings and livestock thefts. Rumbling drums echo from deep within the marsh, and clawed footprints suggest lizardfolk involvement. In truth, a black dragon named Throstulgrael\u2014called \"Velvet\"\u2014has recently seized control of the lizardfolk clans, ordering them to capture the most valuable prisoners as a contest to choose his new chief. The missing people and animals are being kept alive as tribute to the dragon, while fear and confusion grip the surrounding communities."
+      "content": "The rain falls in steady sheets, cool and persistent, drumming against your cloak and the muddy trail beneath your boots. The earthy scent of wet grass mixes with the distant, brackish smell of the marsh, and each sodden step squelches softly as you approach the Crossing Inn, its lanterns a warm glow in the gloom."
     }
   ],
   "story_log": [
-    "Certainly! Here\u2019s a concise summary of the adventure background for **Drums in the Marsh**:\n\nFor the past ten days, residents along the Trank River and near the Twilight Marsh have been terrorized by mysterious nighttime kidnappings and livestock thefts. Rumbling drums echo from deep within the marsh, and clawed footprints suggest lizardfolk involvement. In truth, a black dragon named Throstulgrael\u2014called \"Velvet\"\u2014has recently seized control of the lizardfolk clans, ordering them to capture the most valuable prisoners as a contest to choose his new chief. The missing people and animals are being kept alive as tribute to the dragon, while fear and confusion grip the surrounding communities."
+    "The rain falls in steady sheets, cool and persistent, drumming against your cloak and the muddy trail beneath your boots. The earthy scent of wet grass mixes with the distant, brackish smell of the marsh, and each sodden step squelches softly as you approach the Crossing Inn, its lanterns a warm glow in the gloom."
   ],
   "active_npcs": []
 }
