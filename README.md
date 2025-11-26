@@ -1,4 +1,4 @@
-# AI Dungeon Master Assistant
+# AI Game Master Assistant
 
 A modular Python-based AI Dungeon Master that runs tabletop RPG adventures, tracks characters, loads module content, and maintains persistent campaign sessions.
 
