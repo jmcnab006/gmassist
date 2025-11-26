@@ -2,15 +2,15 @@
   "messages": [
     {
       "role": "user",
-      "content": "list the adventurers"
+      "content": "Outline the adventure background"
     },
     {
       "role": "assistant",
-      "content": "Currently, only one adventurer is recorded:\n\n**Lyra Dawnwhisper**\n- Race: Half-Elf\n- Class: Bard\n- Appearance: Tall, thin blonde half-elf with a lute strung over her back.\n- Personality: Warm, curious, overly trusting.\n- Backstory: A traveling storyteller whose songs once brought her village hope during hard times.\n- Notes: Prefers peaceful solutions; often tries to soothe NPCs with charm.\n\nIf there are other player characters in your party, please let me know their details!"
+      "content": "Certainly! Here\u2019s a concise summary of the adventure background for **Drums in the Marsh**:\n\nFor the past ten days, residents along the Trank River and near the Twilight Marsh have been terrorized by mysterious nighttime kidnappings and livestock thefts. Rumbling drums echo from deep within the marsh, and clawed footprints suggest lizardfolk involvement. In truth, a black dragon named Throstulgrael\u2014called \"Velvet\"\u2014has recently seized control of the lizardfolk clans, ordering them to capture the most valuable prisoners as a contest to choose his new chief. The missing people and animals are being kept alive as tribute to the dragon, while fear and confusion grip the surrounding communities."
     }
   ],
   "story_log": [
-    "Currently, only one adventurer is recorded:\n\n**Lyra Dawnwhisper**\n- Race: Half-Elf\n- Class: Bard\n- Appearance: Tall, thin blonde half-elf with a lute strung over her back.\n- Personality: Warm, curious, overly trusting.\n- Backstory: A traveling storyteller whose songs once brought her village hope during hard times.\n- Notes: Prefers peaceful solutions; often tries to soothe NPCs with charm.\n\nIf there are other player characters in your party, please let me know their details!"
+    "Certainly! Here\u2019s a concise summary of the adventure background for **Drums in the Marsh**:\n\nFor the past ten days, residents along the Trank River and near the Twilight Marsh have been terrorized by mysterious nighttime kidnappings and livestock thefts. Rumbling drums echo from deep within the marsh, and clawed footprints suggest lizardfolk involvement. In truth, a black dragon named Throstulgrael\u2014called \"Velvet\"\u2014has recently seized control of the lizardfolk clans, ordering them to capture the most valuable prisoners as a contest to choose his new chief. The missing people and animals are being kept alive as tribute to the dragon, while fear and confusion grip the surrounding communities."
   ],
   "active_npcs": []
 }
