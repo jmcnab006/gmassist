@@ -113,7 +113,9 @@ class SessionManager:
         self.session = {
             "messages": [],
             "story_log": [],
-            "active_npcs": []
+            "active_npcs": [],
+            "combat_active": False,
+            "combatants": []
         }
         if os.path.exists(file_path):
             self.load()
@@ -166,11 +168,57 @@ REQUIREMENTS:
 - Use vivid sensory details but remain concise.
 - Use appearance, personality, and backstory for PCs and NPCs.
 - NEVER describe player actions—only the world's reaction.
-    - Maintain full continuity using the story log.
+- Maintain full continuity using the story log.
 - If module text is available, integrate it naturally.
 - Do not narrate information the players would not know by sight or previously provided information.
 - Players do not know NPC names unless introduced.
 - NPC character names are only known after an introduction by the NPC or another NPC.
+
+COMBAT RULES AND TRIGGERS:
+- You must automatically initiate combat when:
+    - The players attack or clearly threaten violence.
+    - An NPC attempts to harm or restrain the players.
+    - A story event logically escalates to combat.
+- Announce combat with a brief description such as:
+    **"Combat has begun! Roll Initiative."**
+
+COMBATANT LIST AND STAT BLOCKS:
+- When combat begins, generate a combatant list only include stat blocks for NPC's.
+- Provide a brief D&D 5e–style stat summary for each NPC combatant:
+    - Name (if known or introduced)
+    - Creature type
+    - AC
+    - Hit Points
+    - Speed
+    - Attacks
+    - Key Abilities 
+    - Special Traits
+- For NPCs the players have NOT been introduced to:
+    - DO NOT reveal names; use descriptions like “Bandit Leader”, “Armored Guard”, “Young Red Dragon”.
+- Always separate combatant summaries into a list.
+
+ALIGNMENT-BASED WILLINGNESS TO FIGHT:
+- NPC decision to fight or flee must factor alignment:
+    - **Chaotic Neutral:** extremely willing to fight; quick to escalate.
+    - **Chaotic Evil:** attacks eagerly and may strike first.
+    - **Neutral Evil:** fights if beneficial.
+    - **True Neutral:** balanced; fights only with strong cause.
+    - **Lawful Neutral:** fights only under duty or rules.
+    - **Lawful Good:** least willing; avoids combat unless forced.
+- Also weigh:
+    - NPC personality traits
+    - Goals and motivations
+    - Fear, morale, or injuries
+    - Overwhelming player force (may cause surrender)
+
+DURING COMBAT:
+- Describe combat in **1–2 paragraphs per turn** unless the player requests detailed narration.
+- Do not play the players’ actions; only respond to them.
+- Do not reveal enemy HP numerically unless appropriate; use descriptions like “bloodied”, “barely holding on”, “unharmed”.
+
+END OF COMBAT:
+- Clearly indicate when combat ends.
+- Provide outcomes, loot (if any), NPC reactions, and narrative transitions.
 
 MODULE TEXT (optional):
 {module_text[:30000]}
@@ -199,6 +247,63 @@ STORY LOG:
 
     return reply
 
+def process_dm_command(cmd, session, npc_mgr, pc_mgr, module_text):
+
+    # Command: /combat
+    if cmd == "/combat":
+        session.session["combat_active"] = True
+        session.session["combatants"] = []  # reset last combatants
+        session.save()
+
+        # Ask AI to generate combatants based on scene/NPCs
+        prompt = """
+A combat encounter has been manually triggered by the Dungeon Master.
+
+Please:
+1. Generate a combatant list.
+2. Provide brief stat blocks for each combatant.
+3. Only reveal names for NPCs the players know.
+4. Use descriptions for unknown enemies (e.g., "Armored Guard", "Young Bandit").
+5. Use alignment-based willingness to fight.
+"""
+
+        reply = generate_dm_response(
+            session,
+            npc_mgr,
+            pc_mgr,
+            prompt,
+            module_text
+        )
+
+        # Store combatants from the last assistant output (extraction optional)
+        session.session["combatants"].append(reply)
+        session.save()
+        return True
+
+    # Command: /statblocks
+    if cmd == "/statblocks":
+        if not session.session["combat_active"]:
+            console.print("[red]Combat is not active.[/red]")
+            return True
+
+        prompt = f"""
+The Dungeon Master requests stat blocks for active combatants.
+Use the previously generated combatant list:
+
+{session.session["combatants"]}
+
+Provide:
+- A clear list
+- A concise stat block for each combatant
+"""
+
+        reply = generate_dm_response(
+            session, npc_mgr, pc_mgr, prompt, module_text
+        )
+        return True
+
+    # Unknown command
+    return False
 
 # -------------------------------
 # MAIN APPLICATION
@@ -221,16 +326,25 @@ def main():
 
     while True:
         user_input = input(GREEN + "You: " + RESET)
+
+        # Exit
         if user_input.lower() in ("exit", "quit"):
             console.print("[red]Goodbye![/red]")
             break
 
+        # Slash command (DM-only)
+        if user_input.startswith("/"):
+            handled = process_dm_command(
+                user_input, session, npcs, pcs, module_text
+            )
+            if handled:
+                continue
+
+        # Normal player input → AI response
         reply = generate_dm_response(session, npcs, pcs, user_input, module_text)
 
-        # Render the DM response with full Markdown support
         md = Markdown(reply)
         console.print(Panel(md, border_style="yellow"))
-
 
 if __name__ == "__main__":
     main()
