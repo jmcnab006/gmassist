@@ -2,13 +2,22 @@
 import json
 import os
 from openai import OpenAI
+from rich.console import Console
+from rich.markdown import Markdown
+from rich.panel import Panel
+
+try:
+    import readline
+except ImportError:
+    pass
 
 client = OpenAI()
+console = Console()
 
-# ANSI Colors
+# ANSI colors for user input label only
 GREEN = "\033[92m"
-YELLOW = "\033[93m"
 RESET = "\033[0m"
+
 
 # -------------------------------
 # NPC Manager
@@ -127,16 +136,16 @@ class SessionManager:
 
 
 # -------------------------------
-# Module Loader (No extraction)
+# Module Loader
 # -------------------------------
 def load_module_text():
     path = "data/module_text.txt"
     if os.path.exists(path):
         with open(path, "r", encoding="utf-8") as f:
-            print("Module loaded successfully.")
+            console.print("[bold green]Module loaded successfully.[/bold green]")
             return f.read()
 
-    print("No module found. Running without module_text.")
+    console.print("[yellow]No module found. Running without module_text.[/yellow]")
     return ""
 
 
@@ -147,22 +156,23 @@ def generate_dm_response(session, npc_mgr, pc_mgr, user_input, module_text):
 
     session.add_message("user", user_input)
 
+    # UPDATED REQUIREMENTS BLOCK
     system_prompt = f"""
 You are an AI Dungeon Master.
 
 REQUIREMENTS:
 - Limit descriptions to **1–2 paragraphs maximum** unless the player asks for a "detailed" description.
-- Limit descriptions to **1–2 sentances maximum** when the player asks for a "brief" or "breif" description.
+- Limit descriptions to **1–2 sentences maximum** when the player asks for a "brief" or "breif" description.
 - Use vivid sensory details but remain concise.
 - Use appearance, personality, and backstory for PCs and NPCs.
 - NEVER describe player actions—only the world's reaction.
-- Maintain full continuity using the story log.
+    - Maintain full continuity using the story log.
 - If module text is available, integrate it naturally.
 - Do not narrate information the players would not know by sight or previously provided information.
-- Players do not know the NPC names unless introduced.
-- NPC character names are known when they have a player introduction.
+- Players do not know NPC names unless introduced.
+- NPC character names are only known after an introduction by the NPC or another NPC.
 
-MODULE TEXT (optional reference):
+MODULE TEXT (optional):
 {module_text[:30000]}
 
 NPC RECORDS:
@@ -194,14 +204,10 @@ STORY LOG:
 # MAIN APPLICATION
 # -------------------------------
 def main():
-    print("=== AI Dungeon Master ===")
-    print("Type 'exit' to quit.\n")
+    console.print("[bold cyan]=== AI Dungeon Master ===[/bold cyan]")
+    console.print("Type 'exit' to quit.\n")
 
-#    session_name = input("Enter session name (ENTER for default): ").strip()
-#    if session_name == "":
     session_path = "sessions/default.json"
-#    else:
-#    session_path = f"sessions/{session_name}.json"
 
     os.makedirs("sessions", exist_ok=True)
 
@@ -209,19 +215,21 @@ def main():
     npcs = NPCManager()
     pcs = PlayerCharacterManager()
 
-    # Load module if available
     module_text = load_module_text()
 
-    print("\nDM is ready. Begin your adventure.\n")
+    console.print("\n[bold green]DM is ready. Begin your adventure.[/bold green]\n")
 
     while True:
         user_input = input(GREEN + "You: " + RESET)
         if user_input.lower() in ("exit", "quit"):
-            print("Goodbye!")
+            console.print("[red]Goodbye![/red]")
             break
 
         reply = generate_dm_response(session, npcs, pcs, user_input, module_text)
-        print(YELLOW + "\nGM: " + RESET + "\n" + reply + "\n")
+
+        # Render the DM response with full Markdown support
+        md = Markdown(reply)
+        console.print(Panel(md, border_style="yellow"))
 
 
 if __name__ == "__main__":
