@@ -1,226 +1,221 @@
-# AI Game Master Assistant
+Here is a clean, professional **README.md** tailored for your updated `dm.py` DM Assistant system.
 
-A modular Python-based AI Dungeon Master that runs tabletop RPG adventures, tracks characters, loads module content, and maintains persistent campaign sessions.
-
-This tool uses the OpenAI ChatGPT API to generate dynamic, narrative-driven DM responses while preserving world continuity across sessions.
+You can drop this directly into your project root.
 
 ---
 
-## Features
+# 📘 **AI Dungeon Master — README**
 
-### AI Dungeon Master
-
-* Generates immersive, concise (1–2 paragraph) fantasy scene descriptions
-* Roleplays NPCs using stored appearance, personality, goals, and knowledge
-* Integrates player character backstories and traits into the narrative
-* Maintains a full story log for continuity
-
-### Module Loader
-
-* Extracts text from a PDF module via command line (`--extract-module`)
-* Automatically loads `data/module_text.txt` if available
-* Supports custom module file paths via command line options
-
-### Session Management
-
-* Persistent session files stored as JSON
-* Persists messages, story logs, and active NPCs
-* Command-line option to clear a session (`--clear-session`)
-* Default session auto-selected if none is specified
-
-### Modular Codebase
-
-Managers are split into separate files for clean maintenance:
-
-* `managers/session_manager.py`
-* `managers/npc_manager.py`
-* `managers/pc_manager.py`
-* `managers/module_loader.py`
-
-### Colored Terminal Output
-
-* Green for player input prompt
-* Yellow for assistant (AI DM) responses
+This project provides an **AI-powered Dungeon Master** for running tabletop RPG adventures with dynamic storytelling, NPC interaction, combat triggers, and stat block generation.
+It uses the **new OpenAI Python SDK** (2024+), Markdown rendering via **Rich**, and supports **DM-only slash commands** like `/combat` and `/statblocks`.
 
 ---
 
-## Requirements
+## 🚀 Features
 
-* Python 3.10+
+* **AI Dungeon Master narration**
+* **Rich Markdown** output for immersive scenes
+* **NPC Manager** (appearance, personality, goals, etc.)
+* **Player Character Manager** (appearance, personality, backstory)
+* **Session persistence** using `sessions/default.json`
+* **Automatic module loading** from `data/module_text.txt`
+* **DM-only commands**
 
-* Python packages:
+  * `/combat` — forcibly trigger combat and generate stat blocks
+  * `/statblocks` — show stat blocks based on the current encounter
+* **Combat logic**
 
-  ```bash
-  pip install openai pypdf
-  ```
-
-* Environment variable:
-
-  ```bash
-  export OPENAI_API_KEY="your_api_key_here"
-  ```
+  * Automatic combat narration when violence escalates
+  * Alignment-based willingness to fight
+  * Stat blocks for all combatants
+* **Arrow-key navigation** in input via `readline`
 
 ---
 
-## Command Line Usage
+## 📦 Requirements
 
-### Start the AI DM (default session and default module)
+Install dependencies:
+
+```bash
+pip install openai rich pypdf
+```
+
+(Optional) For arrow-key input editing on Windows:
+
+```bash
+pip install pyreadline3
+```
+
+---
+
+## 🔑 Environment Variable
+
+Make sure the **OpenAI API key** is set before running:
+
+### Linux / macOS
+
+```bash
+export OPENAI_API_KEY="your_api_key_here"
+```
+
+### Windows (PowerShell)
+
+```powershell
+setx OPENAI_API_KEY "your_api_key_here"
+```
+
+### Windows (cmd)
+
+```cmd
+set OPENAI_API_KEY=your_api_key_here
+```
+
+---
+
+## 📁 Directory Structure
+
+```
+project/
+  dm.py
+  extract_module.py
+  npc_store.json
+  pc_store.json
+  sessions/
+      default.json
+  data/
+      module_text.txt  (optional — autoloaded)
+  README.md
+```
+
+---
+
+## 📄 Loading a Module
+
+If you want the DM to reference a campaign or adventure module:
+
+1. Place your module PDF anywhere
+2. Run:
+
+```bash
+python extract_module.py module.pdf
+```
+
+This creates:
+
+```
+data/module_text.txt
+```
+
+`dm.py` will automatically detect and load it on startup.
+
+If no module exists, the DM still works normally.
+
+---
+
+## ▶️ Running the Dungeon Master
+
+Start the AI DM:
 
 ```bash
 python dm.py
 ```
 
-Defaults:
+You will see:
 
-* Session: `sessions/default.json`
-* Module: `data/module_text.txt`
+```
+=== AI Dungeon Master ===
+DM is ready. Begin your adventure.
+```
+
+Enter your actions or dialogue as if speaking to the DM.
 
 ---
 
-## Command Line Options
+## 🎮 Gameplay Controls
 
-### Use a custom session or module text file
+### 🧙 Player Input
 
-```bash
-python dm.py --session mycampaign --module data/stormwreck.txt
+Just type:
+
+```
+We travel north toward the ruined monastery.
 ```
 
-* `--session` can be a name (stored under `sessions/`) or a direct JSON file path
-* `--module` is a path to a text file containing module content
-
-### Clear a session
-
-Clear the default session:
-
-```bash
-python dm.py --clear-session
-```
-
-Clear a named session:
-
-```bash
-python dm.py --session mycampaign --clear-session
-```
-
-### Extract module text from a PDF
-
-Extract from a PDF into the default module text file:
-
-```bash
-python dm.py --extract-module /path/to/module.pdf
-```
-
-By default this writes to:
-
-* `data/module_text.txt`
-
-You can override the output path by specifying `--module`:
-
-```bash
-python dm.py --extract-module /path/to/module.pdf --module data/custom_module.txt
-```
+The AI DM responds with vivid, concise narration.
 
 ---
 
-## Session Structure
+## ⚔️ DM-Only Slash Commands
 
-Each session JSON file contains:
+These commands **begin with `/`** and **do not enter the story log**.
 
-```json
-{
-  "messages": [],
-  "story_log": [],
-  "active_npcs": []
-}
+### Start Combat
+
+```
+/combat
 ```
 
-The assistant uses this data to maintain story continuity across turns.
+Triggers combat immediately and generates stat blocks.
 
----
+### Show Stat Blocks
 
-## NPC Manager
-
-NPCs include:
-
-* Appearance
-* Personality
-* Goals
-* Knowledge
-* Relationship to the party
-
-NPC data is stored in:
-
-* `npc_store.json`
-
----
-
-## Player Character Manager
-
-PCs include:
-
-* Race
-* Class
-* Appearance
-* Personality
-* Backstory
-* Notes
-
-PC data is stored in:
-
-* `pc_store.json`
-
-These fields are used for narrative integration only; no stats, hit points, or mechanics are tracked.
-
----
-
-## Example Interaction
-
-```text
-You: We enter the ruined lighthouse.
-Assistant: The wooden door groans open as a salty wind cuts through the interior, carrying the scent of old rope and damp stone. Faint light filters through broken slats above, painting the circular chamber in pale, uneven bands as the sea crashes somewhere below.
+```
+/statblocks
 ```
 
-Assistant responses are automatically labeled and colorized in the terminal.
+Reprints stat blocks from the current encounter.
 
 ---
 
-## Folder Structure
+## 🧠 Notes About NPC Names & Player Knowledge
 
-A typical project layout:
+* NPC names are **not revealed** until introduced.
+* Unknown enemies use descriptions like "Armored Guard" or "Young Bandit".
+* Combat stats never break character knowledge.
 
-```text
-dm_assistant/
-├── dm.py
-├── managers/
-│   ├── __init__.py
-│   ├── session_manager.py
-│   ├── npc_manager.py
-│   ├── pc_manager.py
-│   └── module_loader.py
-├── data/
-│   └── module_text.txt
-└── sessions/
-    └── default.json
+---
+
+## 🧱 Session Storage
+
+All story logs, NPC interactions, and DM/AI conversation history are saved to:
+
+```
+sessions/default.json
 ```
 
----
-
-## Optional Future Enhancements
-
-You may extend this tool with:
-
-* In-chat commands (`/addpc`, `/addnpc`, `/listpcs`, `/listnpcs`)
-* Quest tracking
-* Dice rolling mechanics
-* Turn-based combat helpers
-* Character or NPC portraits (via image generation tools)
-* Procedural map or scene creation
-* Web-based interface (Flask or FastAPI)
-* Embedding-based memory for large or multiple modules
+The session loads automatically each time `dm.py` runs.
 
 ---
 
-## License
+## 🛠 Troubleshooting
 
-MIT (or your preferred license).
+### API Key Not Found
+
+If you see:
+
+```
+openai.AuthenticationError: No API key provided
+```
+
+Make sure `OPENAI_API_KEY` is exported in your shell environment.
+
+### Arrow keys don’t work
+
+Install:
+
+```
+pip install pyreadline3
+```
+
+Or make sure you're running Python in a standard terminal (not VSCode debug console).
+
+---
+
+## 📝 License
+
+You may freely modify or extend this project for personal or gaming use.
+
+---
+
+If you want a *fancier* README with images, badges, examples, or command reference tables, I can enhance it anytime.
 
