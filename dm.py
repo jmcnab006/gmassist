@@ -85,6 +85,7 @@ class PlayerCharacterManager:
                 "name": name,
                 "race": "",
                 "class": "",
+                "background": "",
                 "appearance": "",
                 "personality": "",
                 "backstory": "",
@@ -190,7 +191,7 @@ COMBATANT LIST AND STAT BLOCKS:
     - AC
     - Hit Points
     - Speed
-    - Attacks
+    - Attacks. Include +tohit and damage.
     - Key Abilities 
     - Special Traits
 - For NPCs the players have NOT been introduced to:
@@ -199,12 +200,73 @@ COMBATANT LIST AND STAT BLOCKS:
 
 ALIGNMENT-BASED WILLINGNESS TO FIGHT:
 - NPC decision to fight or flee must factor alignment:
-    - **Chaotic Neutral:** extremely willing to fight; quick to escalate.
-    - **Chaotic Evil:** attacks eagerly and may strike first.
-    - **Neutral Evil:** fights if beneficial.
-    - **True Neutral:** balanced; fights only with strong cause.
-    - **Lawful Neutral:** fights only under duty or rules.
-    - **Lawful Good:** least willing; avoids combat unless forced.
+  - alignment: "Lawful Good"
+    willingness_to_fight: "Moderate"
+    compelled_to_attack:
+      - "Protect innocents"
+      - "Stop villains causing harm"
+      - "Enforce just laws"
+      - "Prevent immediate danger or injustice"
+
+  - alignment: "Neutral Good"
+    willingness_to_fight: "Moderate-Low"
+    compelled_to_attack:
+      - "Save or protect others"
+      - "Prevent suffering"
+      - "Stop unavoidable harm"
+
+  - alignment: "Chaotic Good"
+    willingness_to_fight: "High"
+    compelled_to_attack:
+      - "Fight tyranny or oppression"
+      - "Defend personal freedom"
+      - "Protect the weak"
+      - "Stop abusers of power"
+
+  - alignment: "Lawful Neutral"
+    willingness_to_fight: "Moderate"
+    compelled_to_attack:
+      - "Someone breaks a law or contract"
+      - "Authority commands it"
+      - "Order or structure is threatened"
+
+  - alignment: "True Neutral"
+    willingness_to_fight: "Low-Moderate"
+    compelled_to_attack:
+      - "Personal survival is at risk"
+      - "Balance is disrupted"
+      - "Direct provocation with no alternative"
+
+  - alignment: "Chaotic Neutral"
+    willingness_to_fight: "Unpredictable"
+    compelled_to_attack:
+      - "They feel restrained or controlled"
+      - "They feel disrespected"
+      - "Impulsive or spontaneous urge"
+      - "Combat offers immediate personal benefit"
+
+  - alignment: "Lawful Evil"
+    willingness_to_fight: "High"
+    compelled_to_attack:
+      - "Someone opposes their authority"
+      - "Their rules or control are challenged"
+      - "Violence efficiently furthers their goals"
+
+  - alignment: "Neutral Evil"
+    willingness_to_fight: "High (only if beneficial)"
+    compelled_to_attack:
+      - "They stand to gain something"
+      - "Eliminating obstacles benefits them"
+      - "Threat is weak or consequences are minimal"
+
+  - alignment: "Chaotic Evil"
+    willingness_to_fight: "Extremely High"
+    compelled_to_attack:
+      - "For amusement or cruelty"
+      - "Create chaos or fear"
+      - "Any provocation, even petty"
+      - "To exert dominance or destruction"
+
 - Also weigh:
     - NPC personality traits
     - Goals and motivations
