@@ -3,7 +3,7 @@ import os
 import sys
 from pypdf import PdfReader
 
-def extract_pdf_to_text(pdf_path, output_path="data/module_text.txt"):
+def extract_pdf_to_text(pdf_path, output_path="data/module.txt"):
     reader = PdfReader(pdf_path)
     text = ""
 

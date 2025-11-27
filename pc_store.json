@@ -1,52 +1,42 @@
 {
-	"Thorin Battlehammer": {
-		  "name": "Thorin Battlehammer",
-		  "race": "Dwarf",
-		  "class": "Cleric",
-		  "background": "Soldier",
-		  "appearance": "Short, square framed blonde long bearded dwarf with chainmail big feet and blue eyes.",
-		  "personality": "Absentminded, aloof, down to do his own thing.",
-		  "backstory": "A traveling cleric whose finds adventure finds him regardless of if he is looking.",
-		  "notes": "Prefers naps in the sun; often ignores NPCs in favor of relaxation."
+	"Galrick": {
+		  "name": "Galrick Almsford",
+		  "race": "Human",
+		  "class": "Paladin",
+		  "background": "Acolyte",
+		  "appearance": "Tall, square framed blonde long bearded human with chainmail, longsword and shield with striking blue eyes.",
+		  "personality": "Faith is the axis around which his life turns. Hhe doesn’t waver easily, even under pressure.",
+		  "backstory": "Born to humble clergy and raised to defend the helpless.",
+		  "notes": "Lies make him physically uncomfortable; He speaks truths plainly, sometimes too bluntly."
 	},
-	"Nova Haldark": {
-		  "name": "Nova Haldark",
-		  "race": "Aasimar",
-		  "class": "Fighter",
-		  "background": "Soldier",
-		  "appearance": "Tall, thin red and blonde haired Aasimar with tanned skin, freckles and clear crystal silver eyes. Wearing studded leather, rapier and shield.",
-		  "personality": "Warm, curious, overly trusting and adventerous.",
-		  "backstory": "A traveling soldier whose adventurous streak is bar none.",
-		  "notes": "Prefers peaceful solutions; often tries to soothe NPCs with charm."
-	},
-	"Nine Ells": {
-		  "name": "Nine Ells",
-		  "race": "High-Elf",
-		  "class": "Wizard",
-		  "background": "Hermit",
-		  "appearance": "Tall, thin blonde high-elf with a partial skeleton strung over the back.",
-		  "personality": "Dark, brooding, cynical trusting.",
-		  "backstory": "A traveling wizard whose aspirations lend towards necromancy and darkness.",
-		  "notes": "Prefers final solutions; often tries to instigate NPCs with words."
-	},
-	"Fenwick": {
-		  "name": "Fenwick",
-		  "race": "Dragonborn",
+	"Puss": {
+		  "name": "Puss N. Boots",
+		  "race": "Tabaxi",
 		  "class": "Rogue",
-		  "background": "Criminal",
-		  "appearance": "Towering, gold and black scales, long black horns, purple claws, blue eyes with a small scar on the cheek.",
-		  "personality": "Quick witted, quick to anger, gaslighting, mistrusting thief.",
-		  "backstory": "A traveling rogue whose aspirations lend towards thievery and greed.",
-		  "notes": "Prefers lurking in the back and not putting themselves into immediate danger; often tries to steal from NPCs."
+		  "background": "Urchin",
+		  "appearance": "Small stature orange tabi with large ears, green eyes a soft white under belly. Wearing studded leather armor, boots a fancy belt and a fancy turqoius pirate hat with a peacock feather.",
+		  "personality": "Self described charming. Arrogant and overconfident.",
+		  "backstory": "As a kitten he was thrown into a river in a sock. He managed to escape and spent most of his life on the streets. Where he was taken in by a swordmaster. He learned mastery afrom the swordmaster and started adventuring when the swordmaster died.",
+		  "notes": "Prefers one sided solutions; often tries to pursuade NPCs with deciet or persuasion."
 	},
-	"Rilven Anatar": {
-		  "name": "Rivlen Anatar",
-		  "race": "High-Elf",
-		  "class": "Ranger",
-		  "background": "Guide",
-		  "appearance": "Tall, thin blonde half-elf with a bow strung over his back and matching scimitars at his side.",
-		  "personality": "Calm, reserved and patient.",
-		  "backstory": "A traveling woodsman whose aspirations lend towards adventure and level headedness.",
-		  "notes": "Prefers observing before acting and engaging when needed."
-	}
+	"Tiktik": {
+		  "name": "Tiktik Spellfeather",
+		  "race": "Kenku",
+		  "class": "Wizard",
+		  "background": "Artisan",
+		  "appearance": "Medium sized raven with robes and side pack.",
+		  "personality": "Dark, brooding, cynical distrusting.",
+		  "backstory": "A traveling wizard whose aspirations lend towards necromancy and darkness.",
+		  "notes": "Prefers fatal solutions; often tries to instigate NPCs with words."
+	},
+	"Juna": {
+		  "name": "Juna",
+		  "race": "Wood-Elf",
+		  "class": "Barbarian",
+		  "background": "Outlander",
+		  "appearance": "Tall tan skinned, purple eyes with breeches, wearing a great axe and two hand axes.", 
+		  "personality": "Young naive and quick to anger.",
+		  "backstory": "Lived in a forest for most of her life, isolated from society gaining favor with a local barbarian tribe. ",
+		  "notes": "Prefers being up front and in the fray; often tries to intimidate NPCs with a show of strength."
+	},
 }
