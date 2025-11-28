@@ -298,8 +298,8 @@ STORY LOG:
     messages = [{"role": "system", "content": system_prompt}] + session.session["messages"]
 
     response = client.chat.completions.create(
-        #model="gpt-4.1",
-        model="gpt-4.1-mini",
+        model="gpt-4.1",
+        #model="gpt-4.1-mini",
         messages=messages,
         max_tokens=600
     )
