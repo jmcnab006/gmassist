@@ -1,0 +1,233 @@
+[ITEM:Longsword (Windmill Hilt)]
+type: Weapon (nonmagical)
+properties: Standard longsword; windmill cameo on hilt
+plot_relevance: Symbol of Durst family; decorative, not plot-critical
+location: 2A (above fireplace)
+
+[ITEM:Cask of Wine]
+type: Beverage
+properties: Full cask, can be consumed
+plot_relevance: Minor, flavor only
+location: 3 (oak table)
+
+[ITEM:Carved Wooden Goblets]
+type: Drinkware
+properties: Ornate, wooden, set of two
+plot_relevance: Minor, flavor only
+location: 3 (oak table)
+
+[ITEM:Pipe]
+type: Smoking implement
+properties: Carved wood
+plot_relevance: Minor, flavor only
+location: 3 (oak table)
+
+[ITEM:Iron Key]
+type: Key
+properties: Unlocks door to 20
+plot_relevance: Needed for further progress
+location: 8 (desk drawer)
+
+[ITEM:Strahd’s Letter]
+type: Letter
+properties: Letter from Strahd von Zarovich, reveals disdain for the cult and family’s fate
+plot_relevance: Major lore, hints at the family’s curse and Strahd’s relationship
+location: 9 (skeleton’s hand)
+
+[ITEM:Jewelry Box]
+type: Treasure
+properties: Silver with gold filigree (75 gp), contains 3 gold rings (25 gp each), platinum necklace with topaz (750 gp)
+plot_relevance: Valuable loot, ages if removed from house
+location: 12A (vanity)
+
+[ITEM:Spell Scrolls]
+type: Magic item
+properties: Bless, Protection from Poison, Spiritual Weapon
+plot_relevance: Useful magic, ages if removed from house
+location: 9 (chest)
+
+[ITEM:Deeds and Will]
+type: Documents
+properties: Deed to house, deed to windmill, signed will; age if removed from house
+plot_relevance: Establishes ownership, ties to further adventure locations
+location: 9 (chest)
+
+[ITEM:Blank Black Books]
+type: Book
+properties: 3 blank books, black leather covers (25 gp each), age if removed from house
+plot_relevance: Minor loot
+location: 9 (chest)
+
+[ITEM:Pouch of Coins]
+type: Treasure
+properties: 11 gp, 60 sp, human skin pouch
+plot_relevance: Minor loot
+location: 25A
+
+[ITEM:Moss Agates]
+type: Gemstones
+properties: Three moss agates (10 gp each), black cloth
+plot_relevance: Minor loot
+location: 25B
+
+[ITEM:Eyepatch with Carnelian]
+type: Jewelry
+properties: Black leather eyepatch, carnelian (50 gp)
+plot_relevance: Minor loot
+location: 25C
+
+[ITEM:Ivory Hairbrush]
+type: Personal item
+properties: Ivory handle, silver bristles (25 gp)
+plot_relevance: Minor loot
+location: 25D
+
+[ITEM:Silvered Shortsword]
+type: Weapon
+properties: Silvered blade (110 gp), usable as shortsword
+plot_relevance: Useful against certain monsters
+location: 25E
+
+[ITEM:Crystal Orb]
+type: Arcane focus, treasure
+properties: Smoky-gray, nonmagical, worth 25 gp
+plot_relevance: Triggers shadow attack if taken from statue in 31
+location: 31 (Strahd statue)
+
+[ITEM:Gold Ring]
+type: Jewelry, treasure
+properties: Simple gold band, worth 25 gp
+plot_relevance: Minor loot
+location: 36 (skeleton in cell)
+
+[ITEM:Cloak of Protection]
+type: Wondrous item, magic
+properties: +1 to AC and saving throws
+plot_relevance: Looted from footlocker, useful defense
+location: 34 (footlocker)
+
+[ITEM:Potions of Healing]
+type: Potion, consumable
+properties: Heals 2d4+2 HP; 4 available
+plot_relevance: Useful for survival
+location: 34 (footlocker, coffer)
+
+[ITEM:Spellbook of the Lost Adventurer]
+type: Spellbook, magic
+properties: Contains: disguise self, identify, mage armor, magic missile, protection from evil and good, darkvision, hold person, invisibility, magic weapon
+plot_relevance: Valuable to spellcasters; evidence of past victims
+location: 34 (footlocker)
+
+[ITEM:Alchemist’s Fire]
+type: Alchemical, consumable
+properties: Flask, can be thrown to deal fire damage
+plot_relevance: Useful in combat
+location: 34 (footlocker)
+
+[ITEM:Bullseye Lantern]
+type: Equipment
+properties: Focused beam of light, adjustable
+plot_relevance: Useful for exploring dark areas
+location: 34 (footlocker)
+
+[ITEM:Thieves’ Tools]
+type: Tools
+properties: Used for lockpicking and disabling traps
+plot_relevance: Useful for bypassing obstacles
+location: 34 (footlocker)
+
+[ITEM:Chain Shirt]
+type: Armor
+properties: Medium armor, AC 13 + Dex
+plot_relevance: Useful for lightly armored characters
+location: 34 (footlocker)
+
+[ITEM:Mess Kit]
+type: Equipment
+properties: Eating utensils and small pot
+plot_relevance: Minor, flavor
+location: 34 (footlocker)
+
+[ITEM:30 Torches, 15 Candles]
+type: Equipment
+properties: Standard lighting sources
+plot_relevance: Useful for light, minor
+location: 34 (crate, sack)
+
+[ITEM:Goblin’s Hand on Rope]
+type: Ritual relic
+properties: Mummified, yellow, sharp claws
+plot_relevance: Cult flavor
+location: 35 (niche)
+
+[ITEM:Bone Knife]
+type: Ritual relic
+properties: Carved from human bone
+plot_relevance: Cult flavor
+location: 35 (niche)
+
+[ITEM:Rat Skull Dagger]
+type: Ritual relic
+properties: Dagger with rat’s skull pommel
+plot_relevance: Cult flavor
+location: 35 (niche)
+
+[ITEM:Nothic’s Eye Orb]
+type: Ritual relic
+properties: 8-inch varnished orb from a nothic’s eye
+plot_relevance: Cult flavor
+location: 35 (niche)
+
+[ITEM:Bone Aspergillum]
+type: Ritual relic
+properties: Sprinkler for holy water, carved from bone
+plot_relevance: Cult flavor
+location: 35 (niche)
+
+[ITEM:Ghoul Skin Cloak]
+type: Ritual relic
+properties: Folded cloak stitched from ghoul skin
+plot_relevance: Cult flavor
+location: 35 (niche)
+
+[ITEM:Desiccated Frog Wand]
+type: Ritual relic
+properties: Frog lashed to stick, could be mistaken for wand
+plot_relevance: Cult flavor
+location: 35 (niche)
+
+[ITEM:Bag of Bat Guano]
+type: Ritual relic
+properties: Sack of bat droppings
+plot_relevance: Cult flavor
+location: 35 (niche)
+
+[ITEM:Hag’s Severed Finger]
+type: Ritual relic
+properties: Withered, grotesque
+plot_relevance: Cult flavor
+location: 35 (niche)
+
+[ITEM:Mummy Figurine]
+type: Ritual relic
+properties: 6-inch wooden figurine, arms crossed
+plot_relevance: Cult flavor
+location: 35 (niche)
+
+[ITEM:Devil-Face Pendant]
+type: Ritual relic
+properties: Iron pendant with devil’s face
+plot_relevance: Cult flavor
+location: 35 (niche)
+
+[ITEM:Shrunken Halfling Head]
+type: Ritual relic
+properties: Shriveled, grotesque
+plot_relevance: Cult flavor
+location: 35 (niche)
+
+[ITEM:Dire Wolf’s Tongue]
+type: Ritual relic
+properties: Withered tongue in a small coffer
+plot_relevance: Cult flavor
+location: 35 (niche)

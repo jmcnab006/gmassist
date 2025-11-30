@@ -1,0 +1,53 @@
+[ADVENTURE_META]
+title: Death House
+setting: Village of Barovia, Barovia (Ravenloft/Domains of Dread)
+themes: Gothic horror, haunted house, tragic family, cults, supernatural entrapment, illusion vs. reality
+tone: Ominous, claustrophobic, mournful, suspenseful, macabre
+background.summary: Death House is a sentient, haunted townhouse in Barovia, built by a wealthy family who formed a cult that preyed on visitors and performed dark rituals. After being spurned and then slaughtered by Strahd von Zarovich, the cultists' spirits haunt the dungeons beneath, and the house itself lures new victims to their doom.
+story.overview: The adventurers are drawn into Barovia by the mists, encounter the illusory children Rose and Thorn, and are led to Death House under the pretense of rescuing a baby and defeating a monster. The house traps them inside, revealing its haunted nature and cultic horrors as they explore, culminating in a confrontation with the lingering evil below. Escape is only possible after facing the house’s secrets.
+recommended_level: 1-3
+hooks: The mists of Ravenloft force the characters into Barovia; Rose and Thorn plead for help with a monster in their house; the village is eerily abandoned; the house itself is the only refuge from the encroaching fog.
+
+[STATE]
+house_awake: bool
+secret_stairs_revealed: bool
+escaped: bool
+rose_and_thorn_appeared: bool
+rose_and_thorn_vanished: bool
+cultists_appeased: bool
+strahd_intervened: bool
+trapdoor_hidden: bool  # True if trapdoor in area 3 is hidden (until accessed from below)
+animated_armor_active: bool  # True if animated armor in area 11 is active
+animated_broom_active: bool  # True if animated broom in area 14 or 18 is active
+secret_door_8_9_open: bool  # True if secret door from library to secret room is open
+nursemaid_specter_defeated: bool
+rose_ghost_at_rest: bool
+thorn_ghost_at_rest: bool
+secret_door_revealed: bool
+elizabeth_crypt_disturbed: bool
+rose_possession: <PC name or null>
+thorn_possession: <PC name or null>
+children_inspiration_awarded: bool
+cult_appeased: bool  # True if a sacrifice is made on the altar in area 38
+lorghoth_awakened: bool  # True if the shambling mound is awakened
+ritual_completed: bool  # True if the cult’s ritual is completed (by sacrifice or refusal)
+death_house_wrath: bool  # True if the cult is denied and Death House attacks the party
+portcullis_open: bool  # True if portcullis (area 37) is raised
+trapdoor_open: bool  # True if trapdoor (area 32) is found and opened
+ghasts_defeated: bool  # True if Gustav and Elisabeth are destroyed
+shadows_defeated: bool  # True if all 5 shadows are destroyed
+ghouls_defeated: bool  # True if all 4 ghouls at the intersection are destroyed
+swarm_active: bool
+house_hostility: int
+party_trapped: bool
+party_level: int
+
+
+[NOTES]
+- location should be tracked as the party navigates the house.
+- The house's threats escalate if the party lingers.
+- Once the party escapes, the supernatural effects stop, and the house becomes dormant.
+
+[MILESTONES]
+- characters advance to level 2 when area 21 is opened.
+- characters advance to level 3 when the party explores the dungeon then escapes the house.

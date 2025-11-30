@@ -1,0 +1,111 @@
+[CREATURE:Animated Armor]
+ac: 18
+hp: 33
+speed: 25 ft
+attack: Slam (bludgeoning)
+special: Immune to poison, psychic; resists nonmagical attacks
+trigger: Activates if approached within 5 ft or attacked in area 11
+
+[CREATURE:Animated Broom]
+ac: 15
+hp: 17
+speed: 40 ft (flying)
+attack: Slam (bludgeoning)
+special: Immune to poison, psychic; resists nonmagical attacks
+trigger: Activates if approached within 5 ft in area 14 or 18
+
+[CREATURE:Nursemaid's Specter]
+ac: 12
+hp: 45
+speed: 0 ft., fly 50 ft. (hover)
+attack: Life Drain (Melee, +4 to hit, 10 necrotic damage)
+special: Incorporeal Movement, Resistances to nonmagical attacks, Immune to many conditions
+trigger: Manifests and attacks when nursery door is opened unless previously defeated.
+
+[CREATURE:Rose and Thorn (Illusions)]
+ac: N/A
+hp: N/A
+speed: N/A
+attack: None
+special: Vanish if attacked or forced into the house; cannot be harmed; act as real children until then
+trigger: Encountered outside Death House, or in portico if convinced to wait
+
+[CREATURE:Rose's Ghost]
+ac: 11
+hp: 35
+speed: 0 ft., fly 40 ft. (hover)
+attack: Withering Touch (Melee, +5 to hit, 17 necrotic)
+special: Incorporeal, Possession (see notes), lacks Horrifying Visage, Small, lawful good, speaks Common
+trigger: Appears if toys or dollhouse are disturbed; attempts possession if abandoned
+
+[CREATURE:Thorn's Ghost]
+ac: 11
+hp: 35
+speed: 0 ft., fly 40 ft. (hover)
+attack: Withering Touch (Melee, +5 to hit, 17 necrotic)
+special: Incorporeal, Possession (see notes), lacks Horrifying Visage, Small, lawful good, speaks Common
+trigger: Appears if toys or dollhouse are disturbed; attempts possession if abandoned
+
+[CREATURE:Swarm of Centipedes]
+ac: 12
+hp: 22
+speed: 30 ft., climb 30 ft.
+attack: Bites (swarm, +4 to hit, 10 (4d4) piercing)
+special: Swarm traits, resistance to bludgeoning, piercing, slashing from nonmagical attacks
+trigger: Attacks if Elisabeth's coffin (23D) is disturbed
+
+[CREATURE:Grick]
+ac: 14
+hp: 27
+speed: 30 ft.
+attack: Tentacle (Melee, +4 to hit, 9 (2d6+2) slashing), Beak (Melee, +4 to hit, 7 (2d4+2) piercing)
+special: Camouflage, surprise if passive Perception <12
+trigger: Attacks first character within 5 feet of alcove
+
+[CREATURE:Ghoul]
+ac: 12
+hp: 22
+speed: 30 ft.
+attack: Claws (+4, 2d6+2 slashing, paralyzes on failed DC 10 Con save)
+special: Immune to poison, paralysis
+trigger: Four ghouls rise and attack at the four-way intersection when characters reach the midpoint.
+
+[CREATURE:Shadow]
+ac: 12
+hp: 16
+speed: 40 ft.
+attack: Strength-draining touch (+4, 2d6 necrotic, -1d4 Strength)
+special: Incorporeal, resistant to nonmagical attacks
+trigger: Five shadows appear and attack if the statue or orb in area 31 is touched or taken.
+
+[CREATURE:Mimic]
+ac: 12
+hp: 58
+speed: 15 ft.
+attack: Pseudopod (+5, 1d8+3 bludgeoning, adhesive grapple)
+special: Adhesive—adheres to anything that touches it; shapechanger
+trigger: Attacks when the disguised door in area 33 is touched or damaged.
+
+[CREATURE:Ghast (Gustav/Elisabeth Durst)]
+ac: 13
+hp: 36
+speed: 30 ft.
+attack: Claws (+5, 2d8+3 slashing, paralyzes on failed DC 10 Con save), Bite (+5, 2d6+3 piercing)
+special: Stench (poison, DC 10 Con or poisoned), undead fortitude
+trigger: Attack if items are removed from the footlocker in area 34.
+
+[CREATURE:Shambling Mound (Lorghoth the Decayer)]
+ac: 15
+hp: 136
+speed: 20 ft., swim 20 ft.
+attack: Slam (+7, 2d8+4 bludgeoning), Engulf (restrains, damages)
+special: Regenerates, immune to lightning, can move through tunnels without squeezing, fills its space
+trigger: Awakened if the cult’s demand is refused in area 38 or if attacked while sleeping in the refuse alcove.
+
+[CREATURE:Swarm of Insects]
+ac: 12
+hp: 22
+speed: 20 ft., climb 20 ft.
+attack: Swarm Bite (2d6 piercing, targets all in area)
+special: Resistant to bludgeoning, immune to charm/frightened
+trigger: Attacks as soon as the party enters the house interior; pursues relentlessly until party escapes

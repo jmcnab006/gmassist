@@ -1,0 +1,41 @@
+[NPC:Rosavalda "Rose" Durst]
+role: Illusory child, lure
+motivation: Wants the "monster" in the house gone so she and her brother can return (believes this is true)
+secrets: Actually an illusion created by the house; died of starvation in the attic centuries ago; unaware of her own death
+relationships: "Sister" to Thorn, "daughter" to Gustav and Elisabeth Durst (deceased cultists)
+desc: A ten-year-old girl with a calm, protective demeanor, trying to hush her younger brother and appeal to the adventurers for help.
+
+[NPC:Thornboldt "Thorn" Durst]
+role: Illusory child, lure
+motivation: Wants to be safe from the "monster" and reunited with his family
+secrets: Actually an illusion created by the house; died of starvation in the attic centuries ago; unaware of his own death
+relationships: "Brother" to Rose, "son" to Gustav and Elisabeth Durst (deceased cultists)
+desc: A seven-year-old boy, weeping and clutching a stuffed doll, frightened and dependent on his sister.
+
+[NPC:Rose]
+role: Ghost of Durst daughter
+motivation: Fears abandonment, wants companionship and control
+secrets: Doesn't know how to rest; will possess a character to avoid being left behind
+relationships: Thorn (brother), Durst family (parents)
+desc: The ghost of a small girl, pale and sorrowful, with a commanding presence. She clings to the memory of being in charge, and her spirit lingers out of fear and longing.
+
+[NPC:Thorn]
+role: Ghost of Durst son
+motivation: Fears everything, seeks comfort and safety
+secrets: Doesn't know how to rest; will possess a character to avoid being left alone
+relationships: Rose (sister), Durst family (parents)
+desc: The ghost of a timid boy, clutching a stuffed doll, his eyes wide with perpetual fear. His spirit is fragile, desperate for reassurance.
+
+[NPC:Gustav Durst]
+role: Cult leader (now a ghast)
+motivation: Defend the cult’s secrets and punish intruders
+secrets: Was once the head of the cult; murdered many in Strahd’s name
+relationships: Spouse of Elisabeth Durst; loyal to the cult’s ideals
+desc: A rotting, spectral figure in tattered black robes, eyes burning with unholy hunger.
+
+[NPC:Elisabeth Durst]
+role: Cult leader (now a ghast)
+motivation: Protect the cult’s legacy and ensure sacrifices continue
+secrets: Helped orchestrate many rituals; resents Strahd’s indifference
+relationships: Spouse of Gustav Durst; bound by undeath to the cult
+desc: Emaciated and ghastly, her face twisted by bitterness and decay, dressed in the remnants of ceremonial robes.

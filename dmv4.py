@@ -164,7 +164,7 @@ class SessionManager:
 # Module Loader
 # -------------------------------
 def load_module_text():
-    path = "data/module.txt"
+    path = "data/module/module.txt"
     if os.path.exists(path):
         with open(path, "r", encoding="utf-8") as f:
             console.print("[bold green]Module loaded successfully.[/bold green]")
