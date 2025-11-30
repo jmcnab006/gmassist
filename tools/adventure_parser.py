@@ -1,25 +1,34 @@
 import os
 import time
-import pdfplumber
 from typing import List
 
+from pdfminer.high_level import extract_text as pdfminer_extract_text
 from openai import OpenAI
 
 # ----------------------------------------
 # CONFIGURATION
 # ----------------------------------------
 
-OPENAI_MODEL = "gpt-4.1-mini"   # or any other chat model
-CHUNK_SIZE = 12000              # max characters per chunk for safety
-SLEEP_BETWEEN_CALLS = 1.0       # seconds between API calls
+# Model to use
+#OPENAI_MODEL = "gpt-4.1-mini"
+OPENAI_MODEL = "gpt-4.1"
+
+# Rough character limit per chunk (safe for most models)
+CHUNK_SIZE = 12000
+
+# Seconds between calls to avoid rate limits
+SLEEP_BETWEEN_CALLS = 1.0
+
+# Output file name
 OUTPUT_FILE = "module_output.txt"
+DEBUG_OUTPUT_FILE = "module_output.debug"
 
 # ----------------------------------------
 # OPENAI CLIENT
 # ----------------------------------------
 
-# Make sure OPENAI_API_KEY is set in your environment:
-#   export OPENAI_API_KEY="your-key-here"
+# Make sure OPENAI_API_KEY is set in your environment
+# export OPENAI_API_KEY="your-key-here"
 client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
 
 
@@ -28,20 +37,16 @@ client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
 # ----------------------------------------
 
 def extract_pdf_text(pdf_path: str) -> str:
-    """
-    Extracts text from all pages of a PDF using pdfplumber.
-    """
-    print(f"[+] Extracting text from PDF: {pdf_path}")
-    pages_text: List[str] = []
-    with pdfplumber.open(pdf_path) as pdf:
-        for i, page in enumerate(pdf.pages):
-            text = page.extract_text() or ""
-            pages_text.append(text)
-            print(f"    - Page {i+1}/{len(pdf.pages)}: {len(text)} chars")
-    combined = "\n".join(pages_text)
-    print(f"[+] Total extracted characters: {len(combined)}")
-    return combined
+    print(f"[+] Extracting PDF text via pdfminer.six: {pdf_path}")
 
+    try:
+        text = pdfminer_extract_text(pdf_path)
+    except Exception as e:
+        print(f"[ERROR] pdfminer failed: {e}")
+        text = ""
+
+    print(f"[+] Extracted {len(text)} characters")
+    return text
 
 # ----------------------------------------
 # CHUNKING FUNCTION
@@ -58,7 +63,7 @@ def chunk_text(text: str, max_chars: int) -> List[str]:
     current_len = 0
 
     for line in text.split("\n"):
-        line_len = len(line) + 1  # account for newline
+        line_len = len(line) + 1  # +1 for newline
         if current_len + line_len > max_chars and current_lines:
             chunks.append("\n".join(current_lines))
             current_lines = [line]
@@ -95,7 +100,7 @@ You MUST extract:
 - important items and relics
 - all areas/rooms/locations
 - all creatures, traps, hazards
-- environmental and travel sequences
+- environmental effects
 - mechanical triggers
 - world-state elements
 - any internal logic or special rules
@@ -112,13 +117,6 @@ background.summary: ...
 story.overview: ...
 recommended_level: ...
 hooks: ...
-
-[STORY_BEAT:<ID>]
-title: ...
-desc: ...
-when_used: <e.g., "opening scene", "between area X and Y", "after boss fight">
-leads_to: <AREA ID or next STORY_BEAT ID>
-tags: <comma-separated tags like travel, mood, transition, boxed_text, npc_hook>
 
 [AREA:<ID>]
 name: ...
@@ -164,16 +162,6 @@ location: <AREA or NPC that holds it>
 # villain_alive: bool
 # ritual_completed: bool
 
-[NARRATION_GUIDE]
-style: immersive, atmospheric, descriptive, sensory
-improv_rules:
-  - expand on mood while staying faithful to facts
-  - never contradict established lore or key plot points
-  - add minor sensory details (sound, light, smell, tension) when narrating
-  - use STORY_BEATs to handle transitions between areas and scenes
-  - allow short improvisational filler consistent with the module's tone
-  - let the DM engine narrate travel and downtime, not just combat and rooms
-
 # --- DESCRIPTION RULES ---
 Descriptions MUST:
 - capture the atmosphere, tone, and mood of the adventure
@@ -184,36 +172,7 @@ Descriptions MUST:
 - stay concise but evocative
 
 desc.short = 1–2 line ultra-condensed summary of the location
-desc.long  = 4–10 lines, atmospheric, story-aware, with key actionable details
-
-# --- STORY CONTINUITY & IMPROVISATION RULES ---
-
-You MUST extract all story sequences, narrative beats, and implied scenes
-that happen BEFORE the first numbered/location area or between areas.
-
-This includes:
-- introduction scenes
-- boxed text
-- opening situations (e.g., "the gravel road leads to a village")
-- environmental storytelling
-- implied transitions
-- journey or travel scenes between major areas
-- NPC encounters that occur before or between areas
-
-These MUST be converted into [STORY_BEAT:<ID>] blocks so the AI DM
-can run the opening of the adventure BEFORE the party reaches any map location.
-
-When transitions are only implied in the text, you MUST create a STORY_BEAT
-explaining the transition so the AI DM can narrate fluidly.
-
-You MAY improvise connective narrative as long as:
-- it matches the module’s tone
-- it is consistent with established facts
-- it does NOT contradict canon
-- it supports smooth storytelling flow
-
-STORY_BEATs MUST allow an AI DM to narrate the adventure naturally
-instead of teleporting the party from one room to the next.
+desc.long  = 4–10 lines, atmospheric, story-aware, with key details
 
 # --- IMPORTANCE RULES ---
 NEVER discard:
@@ -231,10 +190,10 @@ You MAY condense:
 - statblocks (into compact mechanical summaries)
 
 If a section describes the story, themes, or history, it MUST be preserved
-in some form (ADVENTURE_META, STORY_BEAT, AREA notes, NPC, etc.).
+in some form.
 
 # --- OUTPUT RULES ---
-- Output ONLY the structured module content, no explanation or commentary
+- Output ONLY the structured module content, no commentary
 - Keep the block format rigidly consistent and parseable
 - Never output plain unstructured paragraphs; everything must be in blocks
 - Never invent plot-critical facts; stay faithful to the text
@@ -259,8 +218,7 @@ def parse_chunk(chunk_text: str, chunk_index: int, total_chunks: int) -> str:
             {"role": "system", "content": UNIVERSAL_SYSTEM_PROMPT},
             {"role": "user", "content": chunk_text},
         ],
-        # Slight temperature for creative but controlled descriptions
-        temperature=0.4,
+        temperature=0.4,  # low-temp for structure, but not 0 to allow some creativity
     )
 
     content = response.choices[0].message.content
@@ -281,6 +239,9 @@ def generate_module(pdf_path: str, output_path: str = OUTPUT_FILE):
     4. Combine into a single structured module file
     """
     raw_text = extract_pdf_text(pdf_path)
+    with open(DEBUG_OUTPUT_FILE, "w", encoding="utf-8") as f:
+        f.write(raw_text)
+
     chunks = chunk_text(raw_text, CHUNK_SIZE)
 
     all_outputs: List[str] = []
