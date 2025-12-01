@@ -236,7 +236,7 @@ END OF COMBAT:
 - Provide outcomes, loot (if any), NPC reactions, and narrative transitions.
 
 MODULE TEXT (optional, truncated):
-{module_text[:30000]}
+{module_text[:50000]}
 
 NPC RECORDS:
 {npc_mgr.get_all_npc_descriptions()}
@@ -797,7 +797,7 @@ def main():
         # we treat the next input as the DM/players' outcome description.
         if session.session.get("pending_npc_resolution"):
             prompt_label = (
-                "Resolve NPC action (e.g. 'that hits', 'John saved and Dirk failed'): "
+                "Resolve NPC action result (i.e 'that hits' or 'misses'): "
             )
             user_input = input(GREEN + prompt_label + RESET)
 

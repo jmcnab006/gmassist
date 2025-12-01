@@ -40,7 +40,6 @@ name: Den of Wolves
 description: >
   An oak-paneled hunter’s den with a stag’s head mounted above the fireplace and three stuffed wolves positioned around the room. Two padded chairs draped in animal furs face the hearth, with an oak table between them supporting a cask of wine, two carved wooden goblets, a pipe rack, and a candelabrum.
   A chandelier hangs above a cloth-covered table surrounded by four chairs. Two cabinets stand against the walls, including one east cabinet locked with a DC 15 Dexterity (Thieves’ Tools) check.
-connects: 2
 contents:
   locked_cabinet:
     lock: Dexterity (Thieves’ Tools) DC 15
