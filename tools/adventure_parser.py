@@ -114,13 +114,14 @@ GLOBAL OUTPUT RULES (CRITICAL)
 STRICT ID & INDEXING RULES
 ---------------------------------------------------------------------
 AREAS:
-- AREA IDs MUST follow: AREA:<LEVEL><LETTER> or AREA:<LEVEL> or AREA:<UNIQUE_STRING>
+- AREA IDs MUST follow: AREA:<LEVEL> or AREA:<LEVEL><LETTER> or AREA:<UNIQUE_STRING>
   - LEVEL is a positive integer: 1, 2, 3, ...
   - LETTER is a single uppercase letter: A, B, C, ...
   - UNIQUE_STRING is an word describing the area in upper case letters. (e.g. [AREA:OUTSIDE], [AREA:BASEMENT])
-  Examples: [AREA:1A], [AREA:1B], [AREA:2A], [AREA:2B], [AREA:13], [AREA:OUTSIDE].
+  - AREAs with the same LEVEL but different LETTERs are sub-areas.
+  Examples: [AREA:1A], [AREA:1B], [AREA:1], [AREA:2B], [AREA:13], [AREA:OUTSIDE]. [AREA:1B] and [AREA:1A] are both part of [AREA:1]	
 - Within a single level, letters should increment alphabetically based
-  on natural reading order of the module.
+  on natural reading order of the module. 
 - If the original text does not give a clear ID, invent one following
   this pattern and be consistent.
 

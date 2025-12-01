@@ -142,7 +142,7 @@ class SessionManager:
 # Module Loader
 # -------------------------------
 def load_module_text():
-    path = "data/module/module.txt"
+    path = "data/module.ini"
     if os.path.exists(path):
         with open(path, "r", encoding="utf-8") as f:
             console.print("[bold green]Module loaded successfully.[/bold green]")
@@ -174,6 +174,7 @@ REQUIREMENTS:
 - Do not narrate information the players would not know by sight or previously provided information.
 - Players do not know NPC names unless introduced.
 - NPC character names are only known after an introduction by the NPC or another NPC.
+- Players do not know names of locations unless they are told by NPCs.
 
 COMBAT RULES AND TRIGGERS:
 - You must automatically initiate combat when:
@@ -302,9 +303,9 @@ def main():
     console.print("[bold cyan]=== AI Dungeon Master ===[/bold cyan]")
     console.print("Type 'exit' to quit.\n")
 
-    session_path = "sessions/default.json"
+    session_path = "session.json"
 
-    os.makedirs("sessions", exist_ok=True)
+    #os.makedirs("sessions", exist_ok=True)
 
     session = SessionManager(session_path)
     npcs = NPCManager()
