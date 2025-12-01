@@ -27,9 +27,18 @@ from typing import Dict, List, Tuple
 AREA_ID_RE = re.compile(r"^AREA:([1-9][0-9]*)([A-Z])$")
 
 
-SECTION_PREFIXES = ("AREA:", "NPC:", "MONSTER:", "EVENT:", "ITEM:", "TRIGGER:")
+SECTION_PREFIXES = ("ADVENTURE", "AREA:", "NPC:", "MONSTER:", "EVENT:", "ITEM:", "TRIGGER:")
 
 REQUIRED_KEYS: Dict[str, List[str]] = {
+    "ADVENTURE": [
+        "title",
+        "setting",
+        "themes",
+        "tone",
+        "background",
+        "overview",
+        "hooks"
+    ],
     "AREA": [
         "name",
         "desc.short",

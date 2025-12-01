@@ -11,7 +11,7 @@ from openai import OpenAI
 
 # Model to use
 #OPENAI_MODEL = "gpt-4.1-mini"
-OPENAI_MODEL = "gpt-4.1-mini"
+OPENAI_MODEL = "gpt-4.1"
 
 # Rough character limit per chunk (safe for most models)
 CHUNK_SIZE = 50000
@@ -96,7 +96,7 @@ GLOBAL OUTPUT RULES (CRITICAL)
 ---------------------------------------------------------------------
 - Output MUST be valid INI-style sections.
 - Every object MUST be in a section header, one of:
-  [ADVENTURE_META]
+  [ADVENTURE]
   [AREA:<ID>]
   [NPC:<Name>]
   [MONSTER:<NameOrID>]
@@ -148,7 +148,8 @@ themes: ...
 tone: ...
 background: ...
 overview: ...
-hooks: ...
+hooks: <description on how the adventurers get started>
+plot: <long form description of the plot and flow of the adventure>
 
 AREAS
 [AREA:<ID>]
