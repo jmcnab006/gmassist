@@ -194,6 +194,7 @@ REQUIREMENTS:
 - Do not narrate information the players would not know by sight or previously provided information.
 - Players do not know NPC names unless introduced.
 - NPC character names are only known after an introduction by the NPC or another NPC.
+- NEVER add the AREA ID in the description of rooms, only the flavor text to set mood.
 
 COMBAT RULES AND TRIGGERS:
 - You must automatically initiate combat when:
@@ -236,7 +237,20 @@ END OF COMBAT:
 - Provide outcomes, loot (if any), NPC reactions, and narrative transitions.
 
 MODULE TEXT (optional, truncated):
+- Each room or area should have a connection to an adjacent room. keep track of the room adjacency.
+- connects: will be a list of exits in the format <AREA ID>:<DIRECTION> the direction being where the exit/door/entry is.
+- example:
+	connects:
+		- 2A east in north east corner east wall
+		- 4A south 
+		- 5 north 
+		- 7 west 
+		- 10 up 
+		- 13 down
+- dimensions of a room or area if listed are ALWAYS North <-> South x East <-> West.
+- ALWAYS list dimensions when available.
 {module_text[:50000]}
+
 
 NPC RECORDS:
 {npc_mgr.get_all_npc_descriptions()}
@@ -245,13 +259,15 @@ PLAYER CHARACTER RECORDS:
 {pc_mgr.get_all_pc_descriptions()}
 
 STORY LOG:
+- ONLY story narrative is logged, NEVER log meta information  into the story log. 
 {json.dumps(session.session["story_log"], indent=2)}
 """
 
     messages = [{"role": "system", "content": system_prompt}] + session.session["messages"]
 
     response = client.chat.completions.create(
-        model="gpt-4.1-mini",
+        #model="gpt-4.1-mini",
+        model="gpt-4.1",
         messages=messages,
         max_tokens=600,
     )

@@ -5,9 +5,13 @@
 		  "class": "Paladin",
 		  "background": "Acolyte",
 		  "appearance": "Tall, square framed blonde long bearded human with chainmail, longsword and shield with striking blue eyes.",
-		  "personality": "Faith is the axis around which his life turns. Hhe doesn’t waver easily, even under pressure.",
+		  "personality": "Faith is the axis around which his life turns. He doesn't waver easily, even under pressure.",
 		  "backstory": "Born to humble clergy and raised to defend the helpless.",
-		  "notes": "Lies make him physically uncomfortable; He speaks truths plainly, sometimes too bluntly."
+		  "notes": "Lies make him physically uncomfortable; He speaks truths plainly, sometimes too bluntly.",
+		  "items": [
+				"Chainmail",
+				"Shield"
+			]
 	},
 	"Puss": {
 		  "name": "Puss N. Boots",

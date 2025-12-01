@@ -1,718 +1,647 @@
-[AREA:1]
-name: Entrance
-description: >
-  A wrought-iron gate with rusty hinges stands slightly ajar in the archway of a stone portico. Oil lamps hang from the portico ceiling by chains, flanking a set of oaken double doors opening into a grand foyer.
-  Inside the foyer, a shield emblazoned with a stylized golden windmill on a red field hangs on the south wall, flanked by framed portraits of long-dead Durst family members. Mahogany-framed double doors set with stained glass panes lead from the foyer to the main hall.
-connects: 2
-encounters:
-  - illusion_children:
-      description: >
-        Rosavalda ("Rose") and Thornboldt ("Thorn") stand in the street, appearing as flesh-and-blood children but are illusions created by the house to lure visitors inside.
-      details:
-        - Rose is 10 years old, tries to hush Thorn.
-        - Thorn is 7 years old, clutching a stuffed doll and weeping.
-        - The children mention a monster trapped in the basement and a baby on the third floor nursery (false information).
-      triggers:
-        - vanish_if_attacked:
-            event: attacking either child causes the illusions to vanish instantly.
-        - enter_house:
-            event: children can be convinced to wait in the portico area 1A while characters explore the house.
+[AREA:A]
+name: Lonely Road to Barovia
+description: A lonely road that leads the characters to the village of Barovia, enveloped by the mists of Ravenloft, which pull characters into Strahd's domain. The mists prevent exploration of other locations in Strahd’s domain during this introductory adventure.
+connects: E
+items: none
+encounters: none
+triggers: Characters are forced to follow this road into Barovia by the mists.
+notes: Sets the scene for arrival at the village and Death House.
 
-[AREA:2]
+[AREA:E]
+name: Village of Barovia
+description: A small, somber village with tall, dark houses resembling tombstones. Shops and taverns are closed up. The children Rose and Thorn stand whimpering in the street, luring characters.
+connects: 1A
+items: none
+encounters: Illusory children Rose and Thorn
+triggers: Approaching or calling out to the children triggers their interaction.
+notes: The children lure the characters to Death House.
+
+[CREATURE:Rosavalda "Rose" Durst Illusion]
+ac: N/A (Illusion)
+hp: N/A
+speed: N/A
+attack: None; illusions vanish if attacked or forced inside the house
+special: Illusions created by Death House to lure visitors; do not know they are illusions.
+trigger: Approaching the children or calling out to them.
+
+[CREATURE:Thornboldt "Thorn" Durst Illusion]
+ac: N/A (Illusion)
+hp: N/A
+speed: N/A
+attack: None; illusions vanish if attacked or forced inside the house
+special: Illusions created by Death House to lure visitors; do not know they are illusions.
+trigger: Approaching the children or calling out to them.
+
+[AREA:1A]
+name: Portico Entrance
+description: A stone portico with an unlocked rusty wrought-iron gate that shrieks when opened. Oil lamps hang by chains from the ceiling. A set of mahogany double doors with stained glass open into the grand foyer.
+connects: 1B
+items: None
+encounters: Illusory children Rose and Thorn may wait here.
+notes: The children can wait here while characters search the house.
+
+[AREA:1B]
+name: Grand Foyer
+description: Tall room with a shield emblem (golden windmill on red field) hanging on the south wall flanked by Durst family portraits. Mahogany double doors with stained glass lead to the Main Hall.
+connects: 1A, 2A
+items: None
+
+[AREA:2A]
 name: Main Hall
-description: >
-  A wide hall runs the width of the house featuring a black marble fireplace at one end and a sweeping red marble staircase at the other. Above the fireplace hangs a nonmagical longsword with a windmill cameo worked into the hilt.
-  The wood-paneled walls are ornately sculpted with images of vines, flowers, nymphs, and satyrs. Searching carefully (DC 12 Wisdom (Perception)) reveals serpents and skulls woven inconspicuously into the paneling.
-  The staircase curves upward to the second floor.
-connects: 1, 2B, 3
-contents:
-  cloakroom:
-    location: 2B
-    description: >
-      Small room adjacent to the main hall with black cloaks hanging on hooks and a top hat positioned on a high shelf.
-  paneling_secret:
-    trigger: Search walls of the hall
-    check: DC 12 Wisdom (Perception)
-    effect: Reveal serpents and skulls subtly woven into the wall carvings.
+description: A wide hall spanning the width of the house featuring a black marble fireplace with a mounted nonmagical longsword with a windmill cameo, and a red marble sweeping staircase leading to second floor. Wood-paneled walls carved with vines, flowers, nymphs, satyrs, and hidden serpents and skulls.
+connects: 1B, 2B, 3, 4
+items: Longsword (nonmagical) mounted above fireplace
+traps: Possibly secret doors hidden in carving (DC 12 Perception)
+notes: Cloakroom in area 2B accessible from here.
+
+[AREA:2B]
+name: Cloakroom
+description: Small room with several black cloaks on hooks and a top hat on a shelf.
+connects: 2A
+items: None
 
 [AREA:3]
 name: Den of Wolves
-description: >
-  An oak-paneled hunter’s den with a stag’s head mounted above the fireplace and three stuffed wolves positioned around the room. Two padded chairs draped in animal furs face the hearth, with an oak table between them supporting a cask of wine, two carved wooden goblets, a pipe rack, and a candelabrum.
-  A chandelier hangs above a cloth-covered table surrounded by four chairs. Two cabinets stand against the walls, including one east cabinet locked with a DC 15 Dexterity (Thieves’ Tools) check.
-contents:
-  locked_cabinet:
-    lock: Dexterity (Thieves’ Tools) DC 15
-    contents: Heavy (unknown contents described later)
-
-[AREA:21]
-name: Secret Attic Stairs
-description: >
-  A hidden stairway in the attic that appears only under certain circumstances, granting access to the secret dungeon level beneath the house.
-trigger: Characters gaining access advances them to 2nd level.
-
-[CREATURE:Rosavalda ("Rose")]
-type: Illusion (non-corporeal)
-description: >
-  Illusory 10-year-old girl who tries to lure characters into the house by warning of a monster inside.
-trigger: Vanishes if attacked or forced inside the house.
-
-[CREATURE:Thornboldt ("Thorn")]
-type: Illusion (non-corporeal)
-description: >
-  Illusory 7-year-old boy clutching a stuffed doll and weeping, accompanies Rose.
-trigger: Vanishes if attacked or forced inside the house.
-
-[ENVIRONMENT:Mists]
-description: >
-  Thick, swallowing mists envelop the village, making travel outside the house dangerous or impossible.
-effect: 
-  - Outside the house, the mists block all travel or exploration toward other locations in Strahd’s domain.
-  - Mists stop at the threshold of Death House.
-trigger: Characters lingering outside the house observe mists closing in, forcing them to seek refuge inside.
-
-[STRUCTURE:Death House]
-description: >
-  A four-story brick row house (including attic), standing in the village of Barovia. The house has wooden floors, swings-out windows, and ceilings ranging from 8 to 13 feet high depending on the floor.
-  The first and second floors appear well-maintained and new, with clean, oiled floors and fresh furniture.
-  The third floor and attic are dusty, drafty, and covered in cobwebs.
-special_features:
-  - House is sentient, aware of creatures within it, and aims to lure adventurers to doom.
-  - Destroying the house is temporary; it repairs itself within 2d6 hours after 1d10 days.
-  - Replacement of furnishings and structural repairs occur, but items removed and destroyed undead are not replaced.
-  - The dungeon (basement) level is separate and cannot repair itself.
-history:
-  - Original owners practiced dark arts and formed a cult, attempting extraplanar summoning and ritual murders.
-  - Cultists lured prey and worshipped Strahd von Zarovich but were rejected and slaughtered by him.
-  - Their spirits haunt the dungeon level.
-  - The house itself repeatedly rises from ruins at its own or Strahd's will.
-notable_residents:
-  - Rose and Thorn: Illusionary children formed from the spirits of those locked and starved in the attic centuries ago.
-  - Parents (Gustav and Elisabeth Durst): Insane cult leaders responsible for the children’s death.
-
-[MILESTONE_LEVEL_ADVANCEMENT]
-description: >
-  Characters level up by completing key narrative milestones rather than by killing monsters:
-  - Accessing the secret attic stairs (area 21) grants advancement to 2nd level.
-  - Escaping the house grants advancement to 3rd level.
-
-[STATE]
-house_destroyed: false
-illusion_children_present: true
-mists_outside: true
-characters_level: 1
-
-[TRAP:Rusty Gate]
-trigger: Opening the wrought-iron gate at the portico triggers loud rusty hinges.
-effect: Audible noise may alert house's defenses or trigger encounters.
-
-[ITEM:Longsword (nonmagical)]
-location: Main Hall above fireplace
-description: Longsword with a windmill cameo on the hilt.
-
-[CREATURE:Spirits of the Cultists]
-location: Dungeon beneath the house
-description: Restless spirits of the cultists who once dwelled here, hostile to intruders.
-
-[NOTE]
-- The baby Walter mentioned by the children is a falsehood; no such child exists.
-- Rose and Thorn originally died of starvation locked in the attic.
-- The screams heard by the children attributed to the "monster" are actually victims’ screams from the cult’s rituals.
-
-[AREA_CONNECTIONS_SUMMARY]
-1: Entrance connects to 2 (Main Hall)
-2: Main Hall connects to 1 (Entrance), 2B (Cloakroom), 3 (Den of Wolves)
-3: Den of Wolves connects to area 2 (Main Hall)
-21: Secret Attic Stairs accessible from attic under special conditions
-
-[MODULE_END]
-
-[AREA:3]
-name: Trapdoor
-description: A trapdoor is hidden in the southwest corner of the floor. It is supernaturally hidden and cannot be detected or opened until approached from the underside (see area 32). Until then, it is concealed by a magical effect.
-connects: 32
+description: Oak paneled room looking like a hunter’s den with a stag head mounted over the fireplace and three stuffed wolves displayed. Two padded chairs with fur drapes face the hearth, an oak table holds wine cask, wooden goblets, pipe rack, and candelabrum. A chandelier hangs above a cloth-covered table with four chairs. Two cabinets: east (locked, holds crossbows and bolts), north (unlocked, holds playing cards and wine glasses). Trapdoor in southwest corner hidden until approached from below.
+connects: 2A, 32 (trapdoor)
+items: Heavy crossbow, light crossbow, hand crossbow, 20 bolts each (east cabinet)
+deck of playing cards, wine glasses (north cabinet)
+traps: Trapdoor hidden by house until approached from below
+notes: Trapdoor leads down to dungeon level (area 32)
 
 [AREA:4A]
 name: Kitchen
-description: A tidy kitchen with dishware, cookware, and utensils neatly placed on shelves. A worktable has a cutting board and rolling pin. A stone dome-shaped oven with a bent iron stovepipe leads to a hole in the ceiling. A thin door behind the stove leads to the pantry (area 4B). All food is fresh but tasteless. A dumbwaiter—a 2-foot-wide stone shaft with a wooden elevator box connected by rope and pulley—links the kitchen to the servants’ quarters (7A) and the master bedroom (12A). A small brass bell near the dumbwaiter rings when buttons in those areas are pressed.
-connects: 4B, 7A, 12A
-triggers:
- - Dumbwaiter button pressed: rings brass bell in kitchen.
+description: Tidy kitchen with neatly placed dishware and cookware, a worktable with cutting board and rolling pin. Stone dome-shaped oven with bent iron stovepipe connecting to ceiling. Door to pantry left of stove.
+connects: 4B
+items: None
+features: Dumbwaiter shaft in southwest corner with wooden elevator box operated manually. Connects to areas 7A and 12A. Bell on wall to ring in those areas.
+notes: Small character can squeeze into dumbwaiter box (DC 10 Acrobatics), mechanism supports 200 lb.
 
 [AREA:4B]
 name: Pantry
-description: A well-stocked pantry accessed through a thin door from the kitchen. Food stored appears fresh but tastes bland.
+description: Well-stocked pantry with fresh but bland food.
 connects: 4A
+items: Food supplies
 
 [AREA:5]
 name: Dining Room
-description: A wood-paneled dining room containing a carved mahogany table with eight high-backed chairs having sculpted armrests and cushioned seats. A crystal chandelier hangs above a table set with polished silverware and crystalware. A mahogany-framed alpine vale painting is mounted above the marble fireplace. The paneling is carved with elegant deer images, but perceptive characters (DC 12 Wisdom Perception) see twisted faces among tree trunks and wolves hiding in the foliage. Red silk drapes cover the windows. A tapestry depicting aristocrats hunting a wolf hangs on the south wall. Removing silverware, crystal, paintings, or tapestry causes them to tarnish, crack, fade, or rot.
-connects:
-triggers:
- - DC 12 Wisdom (Perception) check on walls/paneling: reveals hidden wolf and twisted face carvings.
- - Removing house items triggers decay effect.
+description: Wood-paneled room with carved mahogany table seating eight, crystal chandelier overhead, marble fireplace with a fading painting of alpine vale, red silk drapes, and a tapestry depicting hunting dogs and aristocrats chasing a wolf. Walls carved with deer and hidden sinister faces and wolves.
+connects: none specified (likely connected within main house floor plan)
+items: Silverware, crystalware (both tarnish/damage if removed)
+notes: Portrait and tapestry fade or rot if removed.
 
 [AREA:6]
 name: Upper Hall
-description: An elegant hall with unlit oil lamps on the walls. Above the mantelpiece hangs a wood-framed portrait of Gustav and Elisabeth Durst with children Rose and Thorn. Suits of armor flank wooden doors shaped like dancing youths; a DC 12 Wisdom (Perception) check reveals the youths are fighting bats. A red marble staircase spirals upward to area 11. A cold draft flows down the stairs.
-connects: 11
-triggers:
- - DC 12 Wisdom (Perception) check on doors: reveals youths fighting off bats.
+description: Elegant hall with unlit oil lamps mounted on wood-paneled walls. Mantelpiece holds portrait of the Durst family (Gustav, Elisabeth, Rose, Thorn, and baby Walter). Standing suits of armor with wolf-head visored helms clutching spears flank east and west doorways. Walls carved with dancing youths fighting swarms of bats (can be perceived with DC 12 Perception). Marble staircase continues upward to area 11. Cold draft descends the stairs.
+connects: 7A, 8, 11
+items: Family portrait
 
 [AREA:7A]
-name: Servants’ Quarters - Bedroom
-description: An undecorated bedroom with paired beds containing straw-stuffed mattresses. Empty footlockers at each bed's foot. Servants’ uniforms hang in the adjoining closet (7B). A dumbwaiter in the west wall corner has a button that rings the kitchen’s dumbwaiter bell.
-connects: 4A, 7B
-triggers:
- - Dumbwaiter button pressed: rings brass bell in kitchen (4A).
+name: Servants’ Room
+description: Simple bedroom with two beds with straw-stuffed mattresses and empty footlockers. Adjoining closet (7B) holds servants’ uniforms. Dumbwaiter in west wall with button rings bell in kitchen (4A).
+connects: 6, 7B, 4A (via dumbwaiter)
+items: None
 
 [AREA:7B]
-name: Servants’ Quarters - Closet
-description: Closet adjoining the servants’ bedroom containing tidy servants’ uniforms hanging on hooks.
+name: Servants’ Closet
+description: Closet adjoining servants’ room, containing several black servant uniforms on hooks.
 connects: 7A
+items: Servants’ uniforms
 
 [AREA:8]
 name: Library
-description: A room once frequented by the master of the house before madness. Features red velvet drapes, a mahogany desk and a matching high-back chair facing the entrance and fireplace. Above the fireplace hangs a framed picture of a windmill atop a rocky crag. Two stuffed chairs are in corners. The south wall holds floor-to-ceiling bookshelves with hundreds of tomes on history, warfare, alchemy, poetry, and fiction. Books rot and fall apart if removed from the house. A rolling ladder assists reaching high shelves. The desk has an oil lamp, ink jar, quill pen, tinderbox, and letter kit (red wax candle, four blank parchments, Durst family wooden seal). An iron key in the desk drawer unlocks door to area 20. A secret door is hidden behind one bookshelf, opened by pulling a switch disguised as a red-covered blank book (DC 13 Wisdom Perception check).
-connects: 9, 20
-triggers:
- - DC 13 Wisdom (Perception) check: discovers secret door switch disguised as red book.
- - Secret door automatically closes if not propped open.
+description: Large room with red velvet drapes, mahogany desk with ink, quill, oil lamp, tinderbox, red wax candle, blank parchment sheets, and a wooden seal bearing Durst family windmill insignia. Floor-to-ceiling bookshelves on south wall with hundreds of tomes on history, warfare, alchemy, and fiction. Rolling ladder for reaching high shelves. Desk drawer contains iron key for area 20. A secret door can be found behind a red-covered fake book (DC 13 Perception), leading to area 9.
+connects: 6, 9, 20 (locked)
+items: Iron key to area 20, letter kit, ink, quill, oil lamp, tinderbox
+notes: Books rot/fall apart if removed from house.
 
 [AREA:9]
-name: Secret Room
-description: Contains shelves packed with tomes about fiend-summoning and necromantic rituals of the Priests of Osybus cult. The rituals are bogus and revealed by studying the books for 1 hour with a DC 12 Intelligence (Arcana) check. A heavy wooden chest with clawed iron feet stands along the south wall, half-open with a skeleton in leather armor trapped inside bearing three poisoned darts; the dart trap is disabled. The skeleton holds a letter sealed by Strahd von Zarovich, containing disdainful words from Strahd to the cult. Treasure includes three blank black leather books (25 gp each), three spell scrolls (bless, protection from poison, spiritual weapon), deed to the house, deed to a windmill east of Vallaki, and a signed will bequeathing property to Rosavalda and Thornboldt Durst. These items age when taken from the house but remain readable.
+name: Secret Room (Behind Library)
+description: A secret cramped room containing tomes of fiend-summoning rituals and necromantic cult rituals (studied with DC 12 Arcana). Contains a heavy wooden chest with a skeleton slumped inside wearing leather armor, bearing three poisoned darts stuck in ribcage. The dart trap no longer functions, but the chest remains half open. The skeleton clutches a letter signed by Strahd von Zarovich.
 connects: 8
-triggers:
- - DC 12 Intelligence (Arcana) check after 1 hour study: reveals rituals are bogus.
+items: Three blank black leather-bound books (value 25 gp each), three spell scrolls (bless, protection from poison, spiritual weapon), deed to the house, deed to a windmill, signed will of Gustav and Elisabeth Durst bequeathing property to children.
+notes: Letter reveals Strahd’s dismissal of cultists.
 
 [AREA:10]
 name: Conservatory
-description: An elegant hall with gossamer drapes, brass-plated chandelier, upholstered chairs lining the walls, and stained-glass wall hangings showing men, women, and children singing and playing instruments. A harpsichord with bench sits in the northwest corner; a large standing harp rests near fireplace. Alabaster figurines of dancers on the mantelpiece include carvings of skeletons.
-connects:
-triggers:
- - Close inspection reveals some figurines are skeleton carvings.
+description: Elegantly appointed hall with gossamer drapes and brass-plated chandelier. Upholstered chairs line walls. Stained glass wall hangings depict musicians. Harpsichord and bench in northwest corner. Large standing harp near fireplace. Alabaster figurines of well-dressed dancers on mantelpiece; some are skeletons.
+connects: none given explicitly
+items: Harpsichord, harp, alabaster figurines
 
 [AREA:11]
 name: Balcony
-description: A dusty balcony reached by climbing the red marble staircase to full height. A cobweb-drapped suit of black plate armor stands against a wall and animates to attack when damaged or approached within 5 feet. Oak-paneled walls carved with woodland scenes hide tiny corpses hanging from the trees and worms bursting through the earth—detectable with a DC 12 Wisdom (Perception) check. A secret door (DC 15 Wisdom Perception check) in the west wall opens to a cobweb-filled wooden staircase leading to the attic.
-connects: Attic (unnumbered)
-triggers:
- - Animated suit of black plate armor attacks when damaged or a creature approaches within 5 feet.
- - DC 12 Wisdom (Perception) check: notices corpses and worms in paneling.
- - DC 15 Wisdom (Perception) check: reveals secret door to attic.
+description: Dusty balcony with suit of black plate armor draped in cobwebs. The armor is animated and attacks when damaged or approached within 5 feet. Walls carved with woodland scenes, tiny hanging corpses, and bursting worms (perceivable with DC 12 Perception). A secret door (DC 15 Perception) opens to a cobweb-filled wooden staircase leading to the attic (area 16).
+connects: 6, 16
+encounters: Animated black plate armor (attacks on approach or damage)
+items: None
 
 [AREA:12A]
 name: Master Bedroom
-description: Dusty and cobweb-filled master bedroom with burgundy drapes and stained glass double doors featuring windmill designs. Contains a four-poster bed with embroidered curtains and tattered veils, matching empty wardrobes, vanity with wood-framed mirror and jewelry box, padded chair, and a rotting tiger-skin rug before the fireplace with a dust-covered portrait of Gustav & Elisabeth Durst. A web-filled parlor occupies the southwest corner with a table and two chairs, bearing an empty porcelain bowl and matching jug. A door with a full-length mirror opens to a dust-choked closet (12B). Another door leads to an outside balcony (12C). A dumbwaiter with a button is located in the west wall corner.
-connects: 12B, 12C, 4A
-triggers:
- - Dumbwaiter button pressed: rings bell in kitchen (4A).
+description: Dusty cobweb-filled room with burgundy drapes, four-poster bed with embroidered curtains and tattered veils, two empty wardrobes, vanity with wood-framed mirror and jewelry box, padded chair, rotting tiger-skin rug before fireplace, portrait of Gustav and Elisabeth Durst above fireplace. Southwest corner has web-filled parlor with table and chairs, porcelain bowl and jug resting on dusty tablecloth. Dumbwaiter with button to ring kitchen bell.
+connects: 4A (via dumbwaiter), 12B, 12C
+items: Jewelry box (silver with gold filigree, worth 75 gp) containing three gold rings (25 gp each) and a platinum necklace with topaz pendant (750 gp)
+notes: Mirror door leads to 12B; parlor door leads to balcony 12C.
 
 [AREA:12B]
-name: Closet
-description: An empty, dust-choked closet revealed by opening a door with a mounted full-length mirror.
+name: Closet (Master Suite)
+description: Dust-choked empty closet with dust and cobwebs.
 connects: 12A
+items: None
 
 [AREA:12C]
-name: Master Balcony
-description: Outside balcony accessible from the master bedroom’s parlor.
+name: Balcony (Master Suite)
+description: Balcony accessible from master suite parlor.
 connects: 12A
+items: None
 
 [AREA:13]
 name: Bathroom
-description: A dark room containing a wooden claw-foot tub, a small iron stove with kettle atop, and a barrel under an east wall spigot. The cistern plumbing no longer works.
-connects:
-triggers:
+description: Dark room with wooden claw-foot tub, small iron stove with kettle, and barrel under a spigot in east wall. Plumbing no longer functional.
+connects: Not specified
+items: None
 
 [AREA:14]
 name: Storage Room
-description: Dusty shelves containing folded sheets, blankets, and old soap bars. An animated cobweb-covered broom (see appendix D) leans against a far wall and attacks any creature that approaches within 5 feet.
-connects:
-triggers:
- - Animated broom attacks on approach (within 5 feet).
+description: Dusty shelves with folded sheets, blankets, and old bars of soap. Animated cobweb-covered broom of attack leans against a wall; it attacks any creature approaching within 5 feet.
+connects: Not specified
+encounters: Animated broom (see appendix D)
+items: Broom (trap/animated)
 
 [AREA:15A]
 name: Nursemaid’s Bedroom
-description: An elegantly appointed but dust- and cobweb-shrouded bedroom once belonging to the family nursemaid. Contains a large bed, two end tables, and an empty wardrobe. A full-length mirror with an ornate wooden ivy-and-berries frame hangs next to the wardrobe. Characters who search thoroughly (DC 12 Wisdom Perception) can see eyeballs hidden among the carved berries in the mirror frame. The wall behind the mirror has a secret door. The nursemaid’s spirit haunts this room as a specter unless it was defeated already in area 18. The specter manifests and attacks when a character opens the nursery door (15B). It appears as a terrified, skeletal woman unable to speak or be reasoned with.
-connects: 15B, 15C
-triggers:
- - DC 12 Wisdom (Perception): notice eyeballs in mirror frame.
- - Opening nursery door triggers specter manifestation and attack.
- - Secret door behind mirror.
+description: Dust- and cobweb-covered elegant bedroom with a large bed, two end tables, empty wardrobe, and full-length mirror carved with ivy and berries. The mirror hides a secret door (DC 12 Perception to notice eyeballs among berries). The nursemaid’s specter haunts this room unless defeated.
+connects: 15B, 15C, 16 (secret door via mirror)
+encounters: Nursemaid specter (manifest and attacks when nursery door is opened unless defeated)
+items: None
+traps: Secret door behind mirror (DC 15 Perception)
 
 [AREA:15B]
 name: Nursery
-description: An adjoining nursery with a crib covered by a hanging cloth.
-connects: 15A
+description: Contains crib covered with black shroud. Unwrapping reveals an empty bundle.
+connects: 15A, 15C
+items: None
 
 [AREA:15C]
-name: Nursemaid’s Balcony
-description: Balcony overlooking the front of the house, accessible via double stained glass doors from the nursemaid’s bedroom.
-connects: 15A
-
-[CREATURE:Animated Broom]
-ac: 13
-hp: 4 (1d6+1)
-attacks:
- - Slam melee weapon attack: +4 to hit, reach 5 ft., one target. Hit: 4 (1d6+1) bludgeoning damage.
-trigger: Attacks any creature that comes within 5 feet.
-
-[CREATURE:Animated Black Plate Armor]
-ac: 18
-hp: 33 (6d8+6)
-attacks:
- - Slam melee weapon attack: +5 to hit, reach 5 ft., one target. Hit: 7 (1d8+3) bludgeoning damage.
-trigger: Attacks immediately when damaged or when a creature approaches within 5 feet.
-
-[CREATURE:Specter of Nursemaid]
-ac: 12
-hp: 45 (6d8+18)
-attacks:
- - Life Drain melee attack: +4 to hit, reach 5 ft., one target. Hit: 10 (3d6) necrotic damage and target must succeed on DC 13 Constitution saving throw or its hit point maximum is reduced until restored by Greater Restoration or similar magic.
-trigger: Manifest and attack when a character opens nursery door (15B) unless previously defeated; cannot speak or be reasoned with.
-
-[ITEM:Crossbow Set]
-description: Includes a heavy crossbow, light crossbow, hand crossbow, and 20 bolts each.
-
-[ITEM:Small Box]
-location: North cabinet in an unspecified room
-contents: Deck of playing cards and assorted wine glasses.
-
-[ITEM:Iron Key]
-location: Desk drawer in the library (8)
-function: Unlocks door to area 20.
-
-[ITEM:Letter Kit]
-description: Contains a red wax candle, four blank sheets of parchment, and a wooden seal bearing the Durst family windmill insignia.
-location: On the desk in the library (8).
-
-[ITEM:Jewelry Box]
-description: Silver box with gold filigree worth 75 gp.
-contents: Three gold rings (25 gp each), one thin platinum necklace with topaz pendant (750 gp).
-location: Vanity in master bedroom (12A).
-
-[ITEM:Blank Books]
-description: Three blank black leather-covered books, valued at 25 gp each. They age markedly but remain intact if removed.
-location: Chest in secret room (9).
-
-[ITEM:Spell Scrolls]
-description: Scrolls of bless, protection from poison, and spiritual weapon.
-location: Chest in secret room (9).
-
-[ITEM:Deed to House]
-location: Chest in secret room (9).
-
-[ITEM:Deed to Windmill]
-location: Chest in secret room (9).
-notes: Windmill is located in the mountains east of Vallaki (refer chapter 6, "Old Bonegrinder").
-
-[ITEM:Signed Will]
-location: Chest in secret room (9).
-notes: Signed by Gustav and Elisabeth Durst, bequeaths possessions to Rosavalda and Thornboldt Durst after parents’ deaths.
-
-[TRAP:Poisoned Dart Trap]
-trigger: Opening the heavy wooden chest in the secret room (9).
-effect: Three darts fire, causing poisoned dart damage; trap is disabled and darts remain stuck in a skeleton found in the chest.
-
-[TRAP:Trapdoor Concealment]
-trigger: Approach from above on the southwest corner floor.
-effect: Supernatural concealment prevents detection or opening until approached from below.
-
-[TRAP:Dart Mechanism in Secret Room Chest]
-trigger: Opening chest lid.
-effect: Fires three poisoned darts; currently disabled.
-
-[RITUAL:Fiend-summoning and Necromantic Rituals]
-description: Found in books in the secret room (9). They are forged and bogus.
-identification: Recognized as false after 1 hour study and a successful DC 12 Intelligence (Arcana) check.
-
-[STATE]
-trapdoor_discovered: false
-nursemaid_specter_defeated: false
-secret_door_opened_library: false
-secret_door_opened_upper_floor: false
-dumbwaiter_rope_broken: false
-animated_broom_activated: false
-animated_armor_alive: true
-specter_manifested: false
-
-[AREA:15]
-name: Child’s Bedroom
-description: When characters part the black shroud, they see a tightly wrapped, baby-sized bundle lying in the crib. Unwrapping the blanket reveals an empty bundle.
-connects: 16
-triggers: Secret Door - DC 15 Wisdom (Perception) check behind the mirror reveals a cobweb-filled wooden staircase leading up to the attic.
+name: Nursery Balcony
+description: Balcony overlooking the front of the house.
+connects: 15A, 15B
+items: None
 
 [AREA:16]
 name: Attic Hall
-description: This bare hall is choked with dust and cobwebs.
-connects: 17, 19, 20
-triggers: Locked Door - door to area 20 is padlocked; key in library (area 8) or DC 15 Dexterity check with thieves’ tools to pick lock.
+description: Dust- and cobweb-choked bare hall. Door to area 20 is locked with padlock; key in library (area 8) or can be picked (DC 15 Dexterity).
+connects: 15A (secret door), 17, 20 (locked door)
+items: None
 
 [AREA:17]
 name: Spare Bedroom
-description: Dust-choked room with a slender bed, nightstand, small iron stove, writing desk, empty wardrobe, and a rocking chair. A smiling doll in a lacy yellow dress sits in the northern window box, draped with cobwebs like a wedding veil.
+description: Dust-choked room with slender bed, nightstand, small iron stove, writing desk with stool, empty wardrobe, and rocking chair. A smiling doll in lacy yellow dress sits in northern window box draped in cobwebs.
 connects: 16
+items: Smiling doll in yellow dress
 
 [AREA:18]
-name: Storage Room
-description: Dusty chamber packed with old furniture draped in sheets. Near an iron stove, an unlocked wooden trunk under a sheet contains skeletal remains of the family’s nursemaid wrapped in a blood-stained bedsheet.
-connects: 
-triggers: Inspection - DC 14 Wisdom (Medicine) reveals nursemaid died from multiple knife wounds. Disturbing the remains summons nursemaid’s specter unless previously defeated in area 15. Secret Door in east wall appears only when certain conditions are met (see area 21).
+name: Storage Room (Upper Floor)
+description: Dusty chamber packed with old furniture draped in white sheets. Near an iron stove is an unlocked wooden trunk containing the skeletal remains of the nursemaid wrapped in bloody sheets. Disturbing remains causes nursemaid specter attack (unless defeated).
+connects: Not specified
+encounters: Nursemaid specter (same as area 15)
+items: Nursemaid’s skeletal remains
 
 [AREA:19]
 name: Spare Bedroom
-description: Web-filled room containing a slender bed, nightstand, rocking chair, empty wardrobe, and small iron stove.
-connects: 16
+description: Web-filled room with slender bed, nightstand, rocking chair, empty wardrobe, and small iron stove.
+connects: Not specified
+items: None
 
 [AREA:20]
 name: Children’s Room
-description: Locked room with bricked-up window and two dusty children’s beds. A toy chest and a dollhouse replica of the house lie inside. Two small skeletons wearing familiar tattered clothing lie on the floor—Rose and Thorn, neglected children who starved to death here. Thorn cradles a stuffed doll.
-connects: 16
-triggers: Searching dollhouse - DC 15 Wisdom (Perception) reveals all house secret doors including attic's secret door leading to spiral staircase (area 21). Disturbing dollhouse or chest summons ghost children Rose and Thorn (see CREATURE:Rose and Thorn).
-
-[CREATURE:Rose and Thorn]
-size: Small
-alignment: Lawful Good
-hp: 35 each (10d6)
-ac: As per Monster Manual Ghost
-attacks: As per Ghost in Monster Manual; lacks Horrifying Visage
-languages: Common
-cr: 3 (700 XP)
-traits: 
-- Fight only in self-defense.
-- Know they are dead and can explain their deaths.
-- Attempt possession if characters try to leave the house.
-Possession Effects:
--Rose’s flaw: “I like being in charge and get angry when other people tell me what to do.”
--Thorn’s flaw: “I’m scared of everything, including my own shadow, and weep with despair when things don’t go my way.”
--Players retain control while possessed.
--Exorcism: DC 11 Charisma (Intimidation) check to force ghost to leave host.
--If reduced to 0 hp, ghosts reform at dawn. Only laying skeletal remains in tombs (areas 23E and 23F) can put spirits to rest.
-motivation: Protect their toys, fear abandonment.
+description: Locked from outside. Contains bricked-up window, two dusty children’s beds, toy chest painted with windmills, dollhouse replica of Death House, cobwebs, and two small skeletons wearing tattered clothing recognized as Rose and Thorn. Toy chest holds stuffed animals and toys. Dollhouse reveals all secret doors (DC 15 Perception) including secret attic door (area 21).
+connects: 16 (locked door)
+items: Stuffed animals, dollhouse, children’s skeletons, stuffed doll cradled by Thorn
+notes: Skeletal remains key to putting ghosts to rest.
 
 [AREA:21]
 name: Secret Stairs
-description: Narrow spiral wooden staircase in a 5-foot-wide mortared stone shaft filled with cobwebs reducing visibility to 5 feet. Descends 50 feet from attic to dungeon level.
-connects: 16, 22
-triggers: Staircase and door only exist after:
- - Finding Strahd’s letter in secret room behind library (area 9), or
- - Discovering secret door replica in dollhouse attic (area 20).
-Once willed into existence, secret door is obvious when searching wall.
+description: Creaky spiral wooden staircase in mortared stone shaft from attic down 50 feet to dungeon level. Filled with thick cobwebs reducing visibility to 5 feet. Exists only after house wills it or characters discover Strahd’s letter or attic dollhouse door. Automatically found upon searching.
+connects: 16, 22 (dungeon level)
+items: None
 
 [AREA:22]
 name: Dungeon Level Access
-description: Wooden spiral staircase ends here. Narrow tunnels stretch south, then branch east and west. Ghostly chanting heard, source undetermined until further exploration.
-connects: 21, 26, 29, 35
+description: Staircase from attic leads here; a narrow tunnel stretches south and branches east and west. Ghostly chanting is heard echoing through tunnels.
+connects: 21, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38
+items: None
+notes: Underground tunnels carved out of earth and rock, 4 ft wide, 7 ft high; unlit.
+
+[CREATURE:Rose Durst Ghost]
+ac: As per Ghost stat block (Monster Manual)
+hp: 35 (10d6)
+speed: Ghost 30 ft.
+attack: Standard ghost attacks (no Horrifying Visage)
+special: Small size; lawful good alignment; speaks Common; can attempt possession (see trigger); lacks Horrifying Visage.
+trigger: Disturbing dollhouse or toy chest in children’s room (20)
+
+[CREATURE:Thorn Durst Ghost]
+ac: As per Ghost stat block (Monster Manual)
+hp: 35 (10d6)
+speed: Ghost 30 ft.
+attack: Standard ghost attacks (no Horrifying Visage)
+special: Small size; lawful good alignment; speaks Common; can attempt possession (see trigger); lacks Horrifying Visage.
+trigger: Disturbing dollhouse or toy chest in children’s room (20)
+
+[TRAP:Possession by Children’s Ghosts]
+trigger: Characters disturbed children’s toys or attempt to flee.
+effect: Ghost attempts to possess one or more characters. Possessed characters keep control but gain personality flaws:
+- Rose: "I like being in charge and get angry when told what to do."
+- Thorn: "I'm scared of everything and weep with despair."
+Possessed characters won’t willingly leave house or dungeon.
+Disarm: Successful DC 11 Charisma (Intimidation) check as an action to intimidate ghost to leave host.
+location: Area 20 (Children’s Room) and throughout Death House until ghosts laid to rest.
 
 [AREA:23A]
-name: Empty Crypt
-description: Crypt sealed with a stone slab leaning against nearby wall; crypt is empty.
-connects:
+name: Empty Family Crypt
+description: Crypt sealed with blank stone slab leaning against wall. Empty.
+connects: Dungeon tunnels
+items: None
 
 [AREA:23B]
 name: Walter’s Crypt
-description: Stone slab marked "Walter Durst" leans against wall; crypt is empty.
-connects:
+description: Stone slab leaning against wall etched with “Walter Durst.” Empty.
+connects: Dungeon tunnels
+items: None
 
 [AREA:23C]
 name: Gustav’s Crypt
-description: Stone slab etched with "Gustav Durst." Chamber contains empty coffin on stone bier.
-connects:
+description: Sealed with slab etched “Gustav Durst.” Contains empty coffin on stone bier.
+connects: Dungeon tunnels
+items: None
 
 [AREA:23D]
 name: Elisabeth’s Crypt
-description: Stone slab etched "Elisabeth Durst." Chamber contains empty coffin on stone bier. Disturbing coffin releases swarm of centipedes attacking intruders.
-connects:
-
-[TRAP:Swarm of Centipedes]
-trigger: Disturbance of Elisabeth's coffin in area 23D.
-effect: Swarm of centipedes attacks intruders.
+description: Sealed with slab etched “Elisabeth Durst.” Contains stone bier with empty coffin; disturbing coffin releases swarm of centipedes that attack.
+connects: Dungeon tunnels
+encounters: Swarm of centipedes (attacks if coffin disturbed)
 
 [AREA:23E]
 name: Rose’s Crypt
-description: Stone slab etched "Rosavalda Durst." Contains empty coffin on stone bier.
-connects:
-triggers: Placing Rose's skeletal remains (from area 20) in coffin lays her spirit to rest, ending possession and causing ghost to disappear permanently.
+description: Contains stone bier with empty coffin.
+connects: Dungeon tunnels
+special: Placing Rose’s skeletal remains into coffin lays her spirit to rest; possession ends.
+items: None
 
 [AREA:23F]
 name: Thorn’s Crypt
-description: Stone slab etched "Thornboldt Durst." Contains empty coffin on stone bier.
-connects:
-triggers: Placing Thorn's skeletal remains (from area 20) in coffin lays his spirit to rest, ending possession and causing ghost to disappear permanently.
+description: Contains stone bier with empty coffin.
+connects: Dungeon tunnels
+special: Placing Thorn’s skeletal remains into coffin lays spirit to rest; possession ends.
+items: None
 
 [AREA:24]
-name: Cult Initiates’ Quarters
-description: Room with wooden table and four chairs at east end; four alcoves contain moldy straw pallets.
-connects:
+name: Cult Initiates' Quarters
+description: Room with wooden table and four chairs; four alcoves with moldy straw pallets.
+connects: Dungeon tunnels
+items: None
 
-[AREA:25]
-name: Well and Cultist Quarters
-description: 4-foot diameter well shaft descending 30 feet to water-filled cistern. Five side rooms served as senior cultists’ quarters, each with a bed and locked wooden chest secured by rusty iron padlocks.
-connects:
-triggers: Chests can be lockpicked with thieves’ tools and DC 15 Dexterity check. Chests hold treasures.
+[AREA:25A]
+name: Cultist Quarters 1
+description: Senior cultist’s chamber with bed and chest.
+connects: Dungeon tunnels
+items: Personal effects, chest with 11 gp and 60 sp in human skin pouch
 
-[ITEM:Treasure in Chest 25A]
-description: 11 gp and 60 sp in a pouch made of human skin.
+[AREA:25B]
+name: Cultist Quarters 2
+description: Senior cultist’s chamber with bed and chest.
+connects: Dungeon tunnels
+items: Chest with three moss agates (10 gp each) wrapped in black cloth
 
-[ITEM:Treasure in Chest 25B]
-description: Three moss agates worth 10 gp each, wrapped in black cloth.
+[AREA:25C]
+name: Cultist Quarters 3
+description: Senior cultist’s chamber with bed and chest.
+connects: Dungeon tunnels
+items: Chest with black leather eye patch with carnelian (50 gp)
 
-[ITEM:Treasure in Chest 25C]
-description: Black leather eye patch with a carnelian worth 50 gp sewn into it.
+[AREA:25D]
+name: Cultist Quarters 4
+description: Senior cultist’s chamber with bed and chest.
+connects: Dungeon tunnels
+items: Chest with ivory hairbrush with silver bristles (25 gp)
 
-[ITEM:Treasure in Chest 25D]
-description: Ivory hairbrush with silver bristles, worth 25 gp.
-
-[ITEM:Treasure in Chest 25E]
-description: Silvered shortsword worth 110 gp.
+[AREA:25E]
+name: Cultist Quarters 5
+description: Senior cultist’s chamber with bed and chest.
+connects: Dungeon tunnels
+items: Chest with silvered shortsword (110 gp)
 
 [AREA:26]
 name: Hidden Spiked Pit
-description: Pit trap hidden under rotted wooden planks covered by dirt. Pit is 5 feet long, 10 feet deep, containing sharpened wooden spikes.
-connects:
-triggers: DC 15 Wisdom (Perception) check reveals absence of footprints near trap.
-trap: First character stepping on planks falls prone, taking 3 (1d6) bludgeoning damage plus 11 (2d10) piercing damage from spikes.
-
-[TRAP:Hidden Spiked Pit]
-trigger: Stepping on the disguised planks.
-effect: Character falls 10 feet prone, takes 3 (1d6) bludgeoning + 11 (2d10) piercing damage.
+description: 5-foot-long, 10-foot-deep pit concealed under rotted wooden planks and dirt cover. Spikes at bottom cause fall damage and piercing damage.
+connects: Dungeon tunnels
+traps:
+  trigger: Stepping on hidden floor covering pit
+  effect: 3 (1d6) bludgeoning damage + 11 (2d10) piercing damage
+  disarm: Searching floor DC 15 Perception to detect absence of footprints; careful probing removes trap.
 
 [AREA:27]
 name: Dining Hall
-description: Room with plain wooden table and long benches. Moldy humanoid bones scattered on dirt floor from cult banquets. South wall has darkened alcove (area 28).
-connects: 28
+description: Large room with plain wooden table and benches; moldy humanoid bones strewn on dirt floor.
+connects: Dungeon tunnels, 28 (alcove)
+items: None
 
 [AREA:28]
-name: Larder
-description: Alcove containing a grick. Grick attacks first character entering within 5 feet. Characters with passive Wisdom (Perception) under 12 are surprised.
+name: Larder Alcove
+description: Dark alcove holding a grick creature that attacks when a character approaches within 5 feet.
 connects: 27
-creatures: Grick
+encounters: Grick attacks first character within 5 feet; creatures with passive Perception <12 are surprised.
+items: None
 
 [CREATURE:Grick]
-ac: As per Monster Manual
-hp: Standard for Grick
-attacks: Natural attacks as per Grick in Monster Manual
-trigger: Provoked by characters approaching within 5 feet of alcove.
-surprise: Characters with passive Wisdom (Perception) < 12 are surprised.
+ac: See Monster Manual
+hp: See Monster Manual
+speed: Standard
+attack: Tentacles and beak
+special: Ambush predator in larder alcove
+trigger: Approaching within 5 feet of alcove (28)
 
 [AREA:29]
 name: Ghoulish Encounter
-description: Four ghouls rise from the ground at tunnel intersection marked X, attacking characters on sight.
-connects: 22
-creatures: 4 Ghouls
+description: Four ghouls (former cultists) rise from ground at intersection of tunnels marked X, attacking characters.
+connects: Dungeon tunnels
+encounters: 4 Ghouls
+notes: Ghouls fight until destroyed.
 
-[CREATURE:Ghoul]
-ac: As per Monster Manual
-hp: Standard per ghoul
-attacks: Claws and bites as per Monster Manual
-behavior: Attack characters on sight until destroyed.
+[CREATURE:Ghouls (4)]
+ac: See Monster Manual
+hp: See Monster Manual
+speed: Standard
+attack: Claws and bites, paralyzing claws
+special: Former cultists; hostile.
+trigger: Encounter at tunnel intersection.
 
 [AREA:30]
 name: Stairs Down
-description: 20-foot-long staircase descending further into dungeon. Ghostly chanting grows louder below. Leads to area 35.
-connects: 35
+description: 20-foot-long staircase descending to area 35 where ghostly chanting is louder.
+connects: Dungeon tunnels, 35
 
 [AREA:31]
 name: Darklord’s Shrine
-description: Room festooned with moldy skeletons hanging from rusty shackles on walls. Wide alcove in south wall contains painted wooden statue of gaunt, pale man wearing voluminous black cloak, pale left hand resting on something unseen.
-connects:
+description: Room festooned with moldy skeletons hanging by shackles; wide alcove holds wooden painted statue of gaunt pale man in black cloak with wolf head at side and smoky gray crystal orb in his hand (Strahd). Exits west and north walls with chanting from west. Touching statue or orb summons five shadow creatures (former cultists) that attack and pursue characters beyond room.
+connects: Dungeon tunnels, concealed door to 32
+items: Wooden statue, smoky gray crystal orb (arcane focus, 25 gp, not magical)
+encounters: Five Shadows attack on interaction with statue or orb
+traps: Concealed door (DC 10 Perception)
+notes: Skeletons are harmless décor.
 
-[STATE]
-possessed_characters:
-  - character_id: <id>
-    possessing_ghost: Rose or Thorn
-    flaw: See CREATURE:Rose and Thorn possession effects
-ghosts_at_rest:
-  Rose: false
-  Thorn: false
-nursemaid_specter_defeated: false
-secret_stairs_revealed: false
-
-[AREA:31]
-name: Statue Chamber
-description: A room featuring a statue of Strahd holding a smoky-gray crystal orb in his right hand and with a wolf head standing beside him. Chanting emanates from the west exit. The walls have skeletons as harmless décor. There are exits to the west and north. A concealed door in the middle of the east wall, hidden under clay, leads to a stone staircase ascending 10 feet to area 32.
-connects: west, north, east (secret to 32)
-encounters: 
-- Touching the statue or taking the crystal orb triggers five shadows (spirits of former cultists) to form and attack. These shadows pursue fleeing characters beyond the room.
-triggers: 
-- Statue interaction triggers shadow attack.
-features:
-- The crystal orb is worth 25 gp, functions as an arcane focus but is not magical.
-- Concealed door in east wall: DC 10 Wisdom (Perception) to discover, opens to stone staircase (area 32).
+[CREATURE:Shadows (5)]
+ac: See Monster Manual
+hp: See Monster Manual
+speed: Standard
+attack: Strength drain, shadowy attacks
+special: Spirits of former cultists
+trigger: Touching statue or taking crystal orb
 
 [AREA:32]
-name: Hidden Staircase Landing
-description: A landing at the top of a stone staircase with a 6-foot-high ceiling made of close-fitting planks. A bolted wooden trapdoor is set into the ceiling and can be pushed open to reveal the den (area 3).
-connects: south (stairs from 31), up (trapdoor to 3)
-features: 
-- Trapdoor bolted shut from this side; can be pushed open to allow access.
-development: 
-- Trapdoor, once opened, remains usable to enter or exit the dungeon level.
+name: Hidden Trapdoor Landing
+description: Staircase ends at planked landing with bolted wooden trapdoor leading up to den (area 3). Trapdoor can be pushed open from below and remains usable.
+connects: 31, 3
+items: None
 
 [AREA:33]
-name: Cult Leaders' Meeting Room
-description: A room with a chandelier suspended above a table surrounded by two high-backed chairs. The table holds an empty clay jug and two clay flagons. Iron candlesticks stand in two corners, their candles melted away. The door in the southwest corner is a mimic disguised as a door.
-connects: unknown
-encounters:
-- Mimic disguised as a door in southwest corner. Anyone who touches the door becomes adhered, triggering an attack. The mimic attacks if damaged.
-traps:
-- Mimic door trap.
-features:
-- Empty table with clay jug and flagons.
-- Two iron candlesticks.
+name: Cult Leaders’ Den
+description: Room with table and two high-backed chairs beneath suspended chandelier. Contains empty clay jug and two clay flagons. Iron candlesticks with melted-down candles. Door in southwest corner is mimic disguised as a door that attacks on touch or damage.
+connects: Dungeon tunnels
+encounters: Mimic disguised as door
+items: None
+
+[CREATURE:Mimic (Door Disguise)]
+ac: See Monster Manual
+hp: See Monster Manual
+speed: Standard
+attack: Adhesive and bite
+special: Attacks when touched or damaged
+trigger: Any creature touching door
 
 [AREA:34]
-name: Cult Leaders' Quarters
-description: This room contains a large wood-framed bed with a rotted feather mattress, a wardrobe with old robes, a pair of iron candlesticks, and an open crate with thirty torches and leather sack holding fifteen candles. At the foot of the bed is an unlocked wooden footlocker containing gear and magical items.
-connects: unknown
-encounters:
-- Two ghasts (Gustav and Elisabeth Durst) hidden behind earthen wall cavities will burst forth and attack if any item is removed from the footlocker. They wear tattered black robes.
-treasure:
-- Footlocker contains:
-  - Cloak of Protection (folded)
-  - Small unlocked wooden coffer with four Potions of Healing
-  - Chain shirt
-  - Mess kit
-  - Flask of alchemist’s fire
-  - Bullseye lantern
-  - Set of thieves’ tools
-  - Wizard spellbook with yellow leather cover containing spells:
-    - 1st level: Disguise Self, Identify, Mage Armor, Magic Missile, Protection from Evil and Good
-    - 2nd level: Darkvision, Hold Person, Invisibility, Magic Weapon
+name: Cult Leaders’ Quarters
+description: Contains large wood-framed bed with rotted mattress, wardrobe with old robes, pair of iron candlesticks, open crate with torches and candles, unlocked footlocker with gear and magic items. Hidden behind walls are 2 ghasts (Gustav and Elisabeth Durst) who attack if footlocker items are removed.
+connects: Dungeon tunnels
+encounters: 2 Ghasts (hidden; trigger on removing items)
+items: Footlocker contents (see treasure)
+traps: Hidden ghasts ambush
+
+[CREATURE:Ghast Gustav Durst]
+ac: See Monster Manual (Ghast)
+hp: See Monster Manual
+speed: Standard
+attack: Claw attacks, paralyzing poison
+special: Undead ghast, wears tattered black robes
+trigger: Removing an item from footlocker
+
+[CREATURE:Ghast Elisabeth Durst]
+ac: See Monster Manual (Ghast)
+hp: See Monster Manual
+speed: Standard
+attack: Claw attacks, paralyzing poison
+special: Undead ghast, wears tattered black robes
+trigger: Removing an item from footlocker
+
+[ITEM:Cloak of Protection]
+type: Wondrous Item (Cloak)
+properties: Grants +1 to AC and saving throws while worn
+plot_relevance: Taken from cult leaders’ footlocker; aids players
+location: 34 footlocker
+
+[ITEM:Potions of Healing (x4)]
+type: Consumable (Potion)
+properties: Heals 2d4+2 HP upon use
+plot_relevance: Supplies recovered from cult leaders’ footlocker
+location: 34 footlocker
+
+[ITEM:Chain Shirt]
+type: Armor (Medium)
+properties: AC 13 + Dex modifier (max 2)
+plot_relevance: Takes from cult footlocker; useful armor
+location: 34 footlocker
+
+[ITEM:Spellbook]
+type: Wondrous Item (Tome)
+properties: Contains wizard spells—
+- 1st level: disguise self, identify, mage armor, magic missile, protection from evil and good
+- 2nd level: darkvision, hold person, invisibility, magic weapon
+plot_relevance: Important magical resource in footlocker
+location: 34 footlocker
+
+[ITEM:Alchemist’s Fire Flask]
+type: Consumable (Alchemist’s Fire)
+properties: Flammable liquid, thrown to ignite
+plot_relevance: From footlocker
+location: 34 footlocker
+
+[ITEM:Bullseye Lantern]
+type: Light source
+properties: Bright light in 60-foot cone, dim light 60 feet beyond
+plot_relevance: From footlocker
+location: 34 footlocker
+
+[ITEM:Thieves’ Tools]
+type: Adventuring Gear
+properties: Necessary for picking locks and traps
+plot_relevance: From footlocker, aids players in lockpicking
+location: 34 footlocker
 
 [AREA:35]
 name: Reliquary
-description: A room filled with chanting voices saying “He is the Ancient. He is the Land.” The walls contain thirteen niches holding cult ritual relics, mostly worthless items used for rituals.
-connects: unknown, south tunnel slopes down to area 37
-features:
-- Thirteen niches holding the following relics:
-  - Small mummified yellow goblin hand on rope
-  - Knife carved from human bone
-  - Dagger with rat skull pommel
-  - 8-inch varnished orb made from a nothic’s eye
-  - Aspergillum carved from bone
-  - Folded cloak of stitched ghoul skin
-  - Desiccated frog lashed to a stick (resembles wand of polymorph)
-  - Bag full of bat guano
-  - Hag’s severed finger
-  - 6-inch wooden mummy figurine
-  - Iron pendant with devil’s face
-  - Shrunken halfling’s head
-  - Small wooden coffer containing dire wolf’s withered tongue
-- Southernmost tunnel slopes down at a 20-degree angle into murky water leading to rusty portcullis (area 37).
+description: Room filled with dozens of voices chanting “He is the Ancient. He is the Land.” Walls have thirteen niches holding various cult “relics” including a goblin’s mummified hand, bone knife, rat skull pommel dagger, varnished nothic eye orb, bone aspergillum, stitched ghoul skin cloak, frog on stick (wand-like), bag of bat guano, hag’s severed finger, wooden mummy figurine, iron pendant with devil face, shrunken halfling head, and dire wolf’s withered tongue in a small wooden coffer. Southern tunnel slopes down into murky water ending in a rusty portcullis.
+connects: 30, 37, 38
+items: Cult relics (non-magical)
+notes: Chanting emanates from ritual chamber below.
 
 [AREA:36]
-name: Prison
-description: Alcoves with rusty shackles where prisoners were once shackled; now only bones remain (bones are in area 27). A secret door in the south wall leads to area 38.
-connects: secret south door to area 38
-features:
-- Rusty shackles on walls.
-- Secret door in south wall: DC 15 Wisdom (Perception) check to find.
-treasure:
-- Tattered black-robed human skeleton hung on back wall in alcove. Contains a gold ring worth 25 gp.
+name: Prison Cells
+description: Alcoves with rusty shackles on back walls used to restrain prisoners; bones litter floor nearby. Secret door (DC 15 Perception) in south wall leads to ritual chamber.
+connects: Dungeon tunnels, 38 (secret door)
+items: Human skeleton wearing tattered black robe with gold ring (25 gp)
+traps: Secret door to area 38
 
 [AREA:37]
-name: Portcullis Tunnel
-description: A tunnel blocked by a rusty iron portcullis submerged in 2 feet of murky water. The portcullis can be raised by a DC 20 Strength (Athletics) check or by a wooden wheel embedded in the east wall of area 38. The wheel is out of reach east of the portcullis.
-connects: north (from area 35), west (area 38)
-features:
-- Floor submerged under 2 feet of murky water.
-- Portcullis accessible by wheel in area 38 or brute strength.
+name: Portcullis
+description: Tunnel blocked by rusty iron portcullis with 3 ft high stone lip. Portcullis can be forced open (DC 20 Strength (Athletics)), raised or lowered by turning wooden wheel half-embedded in east wall of area 38. Floor flooded with 2 feet of murky water.
+connects: 35, 38
+items: None
 
 [AREA:38]
 name: Ritual Chamber
-description: A forty-foot-square, sunken chamber with smooth masonry walls, stone pillars supporting the ceiling, and stairs leading to dry stone ledges around the walls. Murky water covers most of the floor at 2 feet deep. In the center is an octagonal dais 5 feet above water with an altar carved with grasping ghouls stained with dried blood. Rusty chains with shackles hang 8 feet above the altar. A breach in the west wall leads to a dark cave filled with refuse. The chanting heard in the dungeon originates here but abruptly stops when characters enter.
-connects: west (dark cave with shambling mound), north (portcullis/wheel)
-features:
-- Wooden wheel half embedded in east wall can be turned (action) to raise or lower portcullis in area 37.
-- Chains and shackles used by cultists to shackle and sacrifice prisoners.
-- Chamber ceiling 16 feet high, ledges and dais 5 feet high.
-encounters:
-- Shambling Mound (cult-named Lorghoth the Decayer) sleeping in west cave alcove. Awakens if attacked or if cult ritual is interrupted.
-- Thirteen black-robed apparitions appear on ledges chanting “One must die!” when any character climbs the dais.
-triggers:
-- Characters climbing dais summon chanting apparitions that demand a sacrifice.
-- If sacrifice is made on altar, apparitions fade, cult is appeased.
-- Failure to sacrifice triggers chanting that awakens shambling mound, which attacks and pursues characters within dungeon but cannot leave.
-- If shambling mound dies, chanting and apparitions cease forever.
-ritual:
-- Sacrifice: a creature must die on the altar to appease cult.
-- Successful DC 11 Intelligence (Religion) or Wisdom (Insight) check to ascertain sacrifice requirements.
-special:
-- Apparitions are harmless and cannot be damaged, turned, or dispelled.
+description: Forty-foot-square belowground room with smooth masonry walls and stone pillars. Contains octagonal dais rising above 2-foot-deep murky water with stairs leading to dry ledges. Chains with shackles hang above a stone altar carved with ghouls and blood stains. The wooden wheel embedded in the east wall controls portcullis (area 37). Waste pile on west side conceals a sleeping shambling mound known as Lorghoth the Decayer.
+connects: 36, 37
+encounters: Dormant shambling mound that awakens if cult ritual refused.
+items: Stone altar, chains, chains with shackles, wooden wheel, stone pillars
 
-[CREATURE:SHADOW]
-ac: 12
-hp: 16 (3d8 +3)
-attacks:
-- Strength Drain (Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 9 (2d6 + 2) necrotic damage and target's Strength score is reduced by 1d4. Reduction lasts until restored by magic.)
-trigger: 
-- Summoned when players touch Strahd statue or take crystal orb in area 31.
+[CREATURE:Shambling Mound "Lorghoth the Decayer"]
+ac: See Monster Manual
+hp: See Monster Manual
+speed: Standard
+attack: Slam and engulf attacks
+special: Dormant until summoned by cult chant. Pursues prey beyond chamber but won’t leave dungeon. Can move without squeezing through tunnels.
+trigger: Chant "Lorghoth the Decayer, we awaken thee!" if sacrifice not made.
 
-[CREATURE:MIMIC (Door)]
-ac: 12
-hp: 58 (9d8 +18)
-attacks:
-- Adhesive: Any creature that touches the mimic is adhered.
-- Pseudopod (Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 7 (1d8 + 3) bludgeoning damage.)
-trigger: 
-- Attacks when door is touched or damaged in area 33.
+[TRAP:Cult Chanting Apparitions]
+trigger: Characters climb dais in ritual chamber (38)
+effect: Thirteen incorporeal black-robed apparitions appear chanting “One must die!” They cannot be harmed, turned, or dispelled. Characters must sacrifice a creature on the altar or face cult’s wrath.
+disarm: Making a sacrifice on altar silences apparitions and stops cult wrath.
+location: 38 Ritual Chamber
 
-[CREATURE:GHAST (Gustav and Elisabeth Durst)]
-ac: 13
-hp: 36 (8d8)
-attacks:
-- Claws: Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 9 (2d6 + 2) slashing damage plus 7 (2d6) poison damage.
-trigger:
-- Hidden in earthen cavities; attack if footlocker items taken in area 34.
+[TRAP:Poisonous Black Smoke]
+trigger: Active only if cult is denied sacrifice; fills rooms with fireplace, oven, stove.
+effect: Heavily obscures room. Creatures starting turn in smoke must make DC 10 Constitution saving throw or take 1d10 poison damage.
+disarm: Not specified, ceases if cult is satisfied.
+location: Throughout Death House rooms with fireplaces, ovens, stoves (post-sacrifice denial)
 
-[CREATURE:SHAMBLING MOUND (Lorghoth the Decayer)]
-ac: 15 (Natural Armor)
-hp: 136 (16d10 + 48)
-attacks:
-- Slam (Melee Weapon Attack: +8 to hit, reach 5 ft., one target. Hit: 21 (3d10 + 5) bludgeoning damage.)
-- Engulf (Recharge 5-6): The mound attempts to engulf a target.
-trigger:
-- Awakens if cult ritual is interrupted or no sacrifice is made in area 38.
+[TRAP:Scythe Blade Doors]
+trigger: Doors replaced by repeatedly moving slashing scythe blades after defying cult.
+effect: Crossing door requires DC 15 Dexterity (Acrobatics) or DC 15 Intelligence check (after 1-minute study) to avoid 2d10 slashing damage. Any creature pushed through must save DC 15 Dex or take damage. Blades cannot be disarmed.
+disarm: None
+location: All doorways in Death House after cult wrath triggered
 
-[TRAP:MIMIC DOOR]
-trigger: Creature touches the door in area 33.
-effect: Creature becomes adhered to the mimic, which then attacks.
+[TRAP:Brittle Walls]
+trigger: After cult wrath triggered, interior walls become rotted and brittle.
+effect: AC 5, 5 HP each 5-foot section; destruction causes swarm of rats attack. Swarm remains inside house.
+disarm: Walls can be destroyed with DC 10 Strength (Athletics) check.
+location: Throughout Death House walls post-defiance
 
-[TRAP:SCYTHE-BLADE DOORS (Post-Ritual Denial State)]
-trigger: Attempt to pass through doorways in the house after cult sacrifice is denied.
-effect:
-- Dexterity (Acrobatics) DC 15 or Intelligence DC 15 if 1 minute used to study blades.
-- Failure inflicts 2d10 slashing damage.
-- Blades cannot be disarmed.
-- Creatures pushed through must succeed DC 15 Dexterity saving throw or take damage.
+[CREATURE:Swarm of Rats]
+ac: See Monster Manual for swarm stats
+hp: As per swarm rules
+speed: Standard
+attack: Bites to swarm
+special: Emerges when brittle 5-foot wall section destroyed
+trigger: Destruction of wall section
 
-[TRAP:POISONOUS BLACK SMOKE]
-trigger: Creature starting turn in rooms with fireplace, oven, or stove post cult denial.
-effect:
-- DC 10 Constitution saving throw or suffer 1d10 poison damage.
-- Area heavily obscured.
+[ITEM:Longsword (nonmagical)]
+type: Weapon
+properties: None special; mounted above fireplace in main hall
+plot_relevance: Decorative but can be removed
+location: 2A Main Hall
 
-[HAZARD:ROTTED INTERIOR WALLS]
-description: Interior walls become brittle and rotted after cult denial.
-stats:
-- AC 5, 5 HP per 5-foot section.
-- Can be destroyed with DC 10 Strength (Athletics) check.
-effect:
-- Destroyed wall sections release swarms of rats that attack but do not leave the house.
+[ITEM:Heavy Crossbow, Light Crossbow, Hand Crossbow with Bolts]
+type: Weapon
+properties: Standard crossbows with 20 bolts each
+plot_relevance: Armory in den of wolves
+location: 3 East Cabinet
 
-[STATE]
-RitualChantingActive: false
-CultSacrificeMade: false
-ShamblingMoundAwakened: false
-HouseTransformed: false
+[ITEM:Deck of Playing Cards, Wine Glasses]
+type: Miscellaneous
+properties: No known special properties
+plot_relevance: Found in den of wolves north cabinet.
+location: 3 North Cabinet
 
-[WORLD_EVENTS]
-- Touching Strahd statue or orb summons shadows in area 31.
-- Unlocking and opening trapdoor in area 32 allows access to den (area 3).
-- Removing items from footlocker in area 34 triggers ghasts attack.
-- Turning dais steps in area 38 without sacrifice awakens shambling mound and initiates combat.
-- Making sacrifice on altar pacifies cult chanting, allowing safe departure.
-- Denying sacrifice triggers house transformation: bricked windows, scythe-blade doors, poisonous smoke in fireplace rooms, brittle walls releasing attacking rat swarms.
-- Shadows, mimic, ghasts, shambling mound, and spectral cult apparitions contribute to encounters accordingly.
+[ITEM:Jewelry Box]
+type: Wondrous Item (Container)
+properties: Silver with gold filigree containing three gold rings and platinum necklace with topaz pendant
+plot_relevance: Valuable treasure of Durst family
+location: 12A Master Suite vanity
+
+[ITEM:Letter from Strahd von Zarovich]
+type: Letter (Document)
+properties: Letter dismissing cultists, revealing background
+plot_relevance: Key plot clue to unlocking secret stairs and understanding cult
+location: 9 Secret Room (Behind Library)
+
+[ITEM:Deeds and Will]
+type: Documents
+properties: Deeds to house and windmill; Will bequeathing property to children
+plot_relevance: Relevant for story background
+location: 9 Secret Room
+
+[ITEM:Iron Key]
+type: Key
+properties: Unlocks door to children’s room (area 20)
+plot_relevance: Allows access to children’s room
+location: 8 Library desk drawer
+
+[ITEM:Dollhouse Replica of Death House]
+type: Wondrous Item (Toy)
+properties: Perfect replica including secret doors; reveals secret attic door
+plot_relevance: Key to revealing secret stairs
+location: 20 Children’s Room
+
+[ITEM:Gold Ring (from skeleton in dungeon)]
+type: Jewelry
+properties: Worth 25 gp
+plot_relevance: Found on cult dissenting member skeleton
+location: 36 Prison cell
+
+[ITEM:Various Cult Relics]
+type: Miscellaneous
+properties: Non-magical ritual items used by cult
+plot_relevance: Describe cult strange rituals and lore
+location: 35 Reliquary niches
+
+[ENVIRONMENTAL HAZARD:Mists of Ravenloft]
+effect: Swallow up other village buildings, blocking passage until characters enter Death House; mists surround area awaiting characters.
+notes: Mists do not enter house but block outside exploration.
+
+[ENVIRONMENTAL HAZARD:Smoke from Poisonous Black Smoke Trap]
+effect: Heavily obscuring area; poison damage as per trap above.
+location: Areas with fireplaces, ovens, stoves after cult is denied sacrifice.
+
+[ENVIRONMENTAL HAZARD:Murk Water]
+description: 2-foot deep water flooded floor areas in dungeon (ritual chamber, near portcullis)
+effect: Difficult terrain; may hamper movement.
+
+[STRUCTURAL RULES]
+- Characters level up by accomplishing goals, not by killing monsters:
+    • Accessing secret stairs in attic (area 21) gains level 2.
+    • Escaping the house gains level 3.
+- House repairs itself after destruction within 2d6 hours, restoring structure but not replacing removed items or destroyed undead.
+- Illusory children Rose and Thorn appear outside to lure characters inside; vanish if attacked or forced inside.
+- Ghosts of children appear if toys or dollhouse disturbed, can possess characters, can only be laid to rest if their skeletons are placed in family crypts (areas 23E, 23F).
+- Secret stairs (area 21) only exist after house wills them or after finding Strahd’s letter or dollhouse secret door.
+- Denying cult their sacrifice triggers worsening house defenses, animated dangers, and environmental hazards.
+
+[NOTES]
+- Players should be steered to this house via the "Creeping Fog" hook leading to the village of Barovia.
+- The house is sentient and actively tries to trap visitors.
+- The children and some other family members are dead, spirits and ghosts are active within.
+- The cult’s actions centuries ago and Strahd’s arrival heavily influence the haunting and dangers.
+- Characters can burn the house down but it reforms.
+- Players may obtain many clues and treasures by exploration.
+- The final encounter in the ritual chamber lets characters choose to appease or defy the cult, leading to greatly different consequences.
+
