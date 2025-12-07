@@ -135,6 +135,30 @@
     {
       "role": "assistant",
       "content": "Madame Freona\u2019s eyes brighten with a mix of relief and intrigue. \u201cGood,\u201d she says quietly. \u201cA contact of mine from the Harpers wants brave souls to pose as buyers and plant a tracking device on the sellers. It\u2019s risky, but could deal a blow to the Cult of the Dragon\u2019s plans. The meeting is at an old barn north of town at dusk. If you\u2019re ready, I can bring you to meet the agent who will brief you.\u201d"
+    },
+    {
+      "role": "user",
+      "content": "sure where is the agent"
+    },
+    {
+      "role": "assistant",
+      "content": "Madame Freona nods approvingly. \u201cThen stay close\u2014I\u2019ll lead you to the Harper agent now. Better to hear the full details before heading into the night.\u201d She gestures toward a shadowed corner where a figure waits quietly, their half-elf features partially concealed beneath a hood."
+    },
+    {
+      "role": "user",
+      "content": "harper agent? garrick says"
+    },
+    {
+      "role": "assistant",
+      "content": "The half-elf figure in the shadowed corner steps forward slightly, their voice low but steady. \u201cI am the contact you seek,\u201d they say quietly. \u201cThe Cult of the Dragon\u2019s reach grows, and we must act swiftly. Your task is to pose as buyers and plant a tracking device on the sellers at the barn on the northern outskirts. Success could turn the tide against them.\u201d Their eyes briefly flash with determination beneath their hood. \u201cAre you prepared for what lies ahead?\u201d"
+    },
+    {
+      "role": "user",
+      "content": "where is the party "
+    },
+    {
+      "role": "assistant",
+      "content": "You remain gathered within the bustling interior of Madame Freona\u2019s Tea Kettle, the lively tavern alive with murmurs and the scent of spiced tea. The half-elf Harper agent stands nearby in a shadowed corner, their presence quiet but purposeful as the rest of the tavern\u2019s patrons go about their business around you."
     }
   ],
   "story_log": [
@@ -154,7 +178,10 @@
     "Madame Freona escorted you from her bustling tavern through the city's winding streets to reach this secluded, weathered barn, where a covert meeting involving a dragon egg is set to unfold under the fading evening light.",
     "You find yourselves within the warm, bustling interior of a well-loved tavern nestled in the city. The air hums with quiet chatter, the clink of mugs, and the scent of spiced tea and fresh bread. Behind the counter stands a cheerful stout halfling woman with curly chestnut hair and lively hazel eyes, who moves with practiced grace as she serves her patrons. Around her, five lively daughters weave through the crowd, offering smiles and friendly greetings to adventurers seeking respite and opportunity in this city fraught with tension. The tavern feels like a safe harbor amidst the uncertain streets outside.",
     "Madame Freona approaches with a warm smile and a welcoming gesture. \"If you\u2019re looking for work or information, I might have just the thing,\" she says softly, leaning in. \"Word is, there\u2019s a strange transaction happening soon on the northern outskirts\u2014something about a dragon egg. Interested?\"",
-    "Madame Freona\u2019s eyes brighten with a mix of relief and intrigue. \u201cGood,\u201d she says quietly. \u201cA contact of mine from the Harpers wants brave souls to pose as buyers and plant a tracking device on the sellers. It\u2019s risky, but could deal a blow to the Cult of the Dragon\u2019s plans. The meeting is at an old barn north of town at dusk. If you\u2019re ready, I can bring you to meet the agent who will brief you.\u201d"
+    "Madame Freona\u2019s eyes brighten with a mix of relief and intrigue. \u201cGood,\u201d she says quietly. \u201cA contact of mine from the Harpers wants brave souls to pose as buyers and plant a tracking device on the sellers. It\u2019s risky, but could deal a blow to the Cult of the Dragon\u2019s plans. The meeting is at an old barn north of town at dusk. If you\u2019re ready, I can bring you to meet the agent who will brief you.\u201d",
+    "Madame Freona nods approvingly. \u201cThen stay close\u2014I\u2019ll lead you to the Harper agent now. Better to hear the full details before heading into the night.\u201d She gestures toward a shadowed corner where a figure waits quietly, their half-elf features partially concealed beneath a hood.",
+    "The half-elf figure in the shadowed corner steps forward slightly, their voice low but steady. \u201cI am the contact you seek,\u201d they say quietly. \u201cThe Cult of the Dragon\u2019s reach grows, and we must act swiftly. Your task is to pose as buyers and plant a tracking device on the sellers at the barn on the northern outskirts. Success could turn the tide against them.\u201d Their eyes briefly flash with determination beneath their hood. \u201cAre you prepared for what lies ahead?\u201d",
+    "You remain gathered within the bustling interior of Madame Freona\u2019s Tea Kettle, the lively tavern alive with murmurs and the scent of spiced tea. The half-elf Harper agent stands nearby in a shadowed corner, their presence quiet but purposeful as the rest of the tavern\u2019s patrons go about their business around you."
   ],
   "active_npcs": [],
   "combat_active": false,
