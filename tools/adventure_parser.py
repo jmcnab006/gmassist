@@ -143,13 +143,15 @@ SECTION DEFINITIONS
 ADVENTURE
 [ADVENTURE]
 title: <string>
-setting: <short description>
+setting: <description of the adventure area>
 themes: ...
 tone: ...
-background: ...
-overview: ...
+background: <detailed adventure background>
+overview: <detailed summary of the adventure>
+flow: <detailed long form description of the flow of events>
 hooks: <description on how the adventurers get started>
 plot: <long form description of the plot and flow of the adventure>
+
 
 AREAS
 [AREA:<ID>]
@@ -219,7 +221,17 @@ When you receive raw module text:
 - Extract EVENTS for major beats, quest hooks, or scripted scenes.
 - Extract ITEMs for notable treasure, quest items, magic items, special props.
 - Extract TRIGGERs for mechanical cause-effect (e.g., "opening the door
-  alerts guards", "stepping on the rune triggers trap").
+- Extract TRIGGERs for NPC interactions that move the story along.
+- Extract ADVENTURE adventure background / opening history.
+- Extract ADVENTURE setting information.
+- Extract ADVENTURE themes, tone, and atmosphere.
+- Extract ADVENTURE world lore and legends.
+- Extract ADVENTURE factions, key NPCs, motivations.
+- Extract ADVENTURE story arcs and quest structure.
+- Extract ADVENTURE important items and relics.
+- Extract ADVENTURE environmental effects.
+- Extract any internal logic or special rules.
+- Create any additional ADVENTURE keys to provide information about the adventure.
 
 ---------------------------------------------------------------------
 INFERENCE RULES
@@ -285,7 +297,9 @@ def generate_module(pdf_path: str, output_path: str = OUTPUT_FILE):
     3. Parse each chunk via OpenAI
     4. Combine into a single structured module file
     """
-    raw_text = extract_pdf_text(pdf_path)
+    with open(pdf_path, "r") as file:
+        raw_text = file.read()
+    #raw_text = extract_pdf_text(pdf_path)
 #    with open(DEBUG_OUTPUT_FILE, "w", encoding="utf-8") as f:
 #        f.write(raw_text)
 
@@ -318,11 +332,12 @@ if __name__ == "__main__":
         print("Usage: python adventure_parser.py <adventure.pdf> [output.txt]")
         raise SystemExit(1)
 
-    pdf_file = sys.argv[1]
+    raw_file = sys.argv[1]
+    #pdf_file = sys.argv[1]
     if len(sys.argv) >= 3:
         out_file = sys.argv[2]
     else:
         out_file = OUTPUT_FILE
 
-    generate_module(pdf_file, out_file)
+    generate_module(raw_file, out_file)
 
