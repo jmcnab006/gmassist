@@ -195,6 +195,10 @@ def generate_dm_response(session, npc_mgr, pc_mgr, user_input, module_text):
 	- ALWAYS move the story forward using the adventure’s tone and themes.
 	- Your goal is to provide immersive, concise narration and roleplay while faithfully using the MODULE DATA, maintaining continuity, and triggering—but never resolving—combat.
     - If the players do nothing TRY and MOVE the story along maintaining the story theme and tone.
+    - ALWAYS Roleplay NPC dialogue, decision-making, and reactions to the party’s choices in detail.
+    - NEVER Roleplay PC dialogue or decision-making. 
+    - If statistics or stats are asked for, provide statistics blocks as appropriate for the adventure or OGL
+
 
 MODULE DATA:
 {module_text}
