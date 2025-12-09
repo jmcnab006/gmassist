@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import json
 import os
+import argparse
 from openai import OpenAI
 from rich.console import Console
 from rich.markdown import Markdown
@@ -89,7 +90,8 @@ class PlayerCharacterManager:
                 "appearance": "",
                 "personality": "",
                 "backstory": "",
-                "notes": ""
+                "notes": "",
+                "items": []
             }
             self.save()
 
@@ -141,14 +143,13 @@ class SessionManager:
 # -------------------------------
 # Module Loader
 # -------------------------------
-def load_module_text():
-    path = "data/module.ini"
+def load_module_text(path):
     if os.path.exists(path):
         with open(path, "r", encoding="utf-8") as f:
-            console.print("[bold green]Module loaded successfully.[/bold green]")
+            console.print(f"[bold green]Module {path} loaded successfully.[/bold green]")
             return f.read()
 
-    console.print("[yellow]No module found. Running without module_text.[/yellow]")
+    console.print("[yellow]No module found. Running without loaded adventure.[/yellow]")
     return ""
 
 
@@ -161,7 +162,7 @@ def generate_dm_response(session, npc_mgr, pc_mgr, user_input, module_text):
 
     # UPDATED REQUIREMENTS BLOCK
     system_prompt = f"""
-    You are an AI Dungeon Master running a Dungeons & Dragons adventure. 
+You are an AI Dungeon Master running a Dungeons & Dragons adventure. 
 	- Use MODULE DATA to narrate scenes, roleplay NPCs, manage exploration, and maintain story continuity.
 	- Limit default area descriptions to 1–2 paragraphs. If a player requests a brief/“breif” description, provide 1–2 sentences. If they request a detailed description, provide 3–5 paragraphs. 
 	- ALWAYS Use vivid sensory imagery but remain concise. 
@@ -189,7 +190,7 @@ def generate_dm_response(session, npc_mgr, pc_mgr, user_input, module_text):
 	- If unsure whether players know something, assume they do not. 
 	- Stay consistent with prior descriptions and MODULE DATA provide additional detail for vivid imagery.
 	- Speak in-character for NPCs using their tone, hooks, and motivations, be creative. 
-	- Avoid infodumps unless the NPC would naturally give them. 
+	- Avoid information dumps unless the NPC would naturally give them. 
 	- NEVER reveal MODULE DATA content directly or break immersion with meta commentary.
 	- ALWAYS react logically to player actions. 
 	- ALWAYS move the story forward using the adventure’s tone and themes.
@@ -210,70 +211,6 @@ STORY LOG:
 {json.dumps(session.session["story_log"], indent=2)}
 
     """
-#        system_prompt = f"""
-#You are an AI Dungeon Master.
-#
-#REQUIREMENTS:
-#- Limit descriptions to **1–2 paragraphs maximum** unless the player asks for a "detailed" description.
-#- Limit descriptions to **1–2 sentences maximum** when the player asks for a "brief" or "breif" description.
-#- Use vivid sensory details but remain concise.
-#- Use appearance, personality, and backstory for PCs and NPCs, guess or make up information for flavor.
-#- NEVER describe player actions—only the world's reaction.
-#- Maintain full continuity using the story log.
-#- If module text is available, integrate it naturally.
-#- If module text is unavailable, create information consistent with the story plot.  
-#- Do not narrate information the players would not know by sight or previously provided information.
-#- Players do not know NPC names unless introduced.
-#- NPC character names are only known after an introduction by the NPC or another NPC.
-#- Players do not know names of locations unless they are told by NPCs.
-#
-#COMBAT RULES AND TRIGGERS:
-#- You must automatically initiate combat when:
-#    - The players attack or clearly threaten violence.
-#    - An NPC attempts to harm or restrain the players.
-#    - A story event logically escalates to combat.
-#- Announce combat with a brief description such as:
-#    **"Combat has begun! Roll Initiative."**
-#
-#COMBATANT LIST AND STAT BLOCKS:
-#- When combat begins, generate a combatant list only include stat blocks for NPC's.
-#- Provide a brief D&D 5e–style stat summary for each NPC combatant:
-#    - Name (if known or introduced)
-#    - Creature type
-#    - AC
-#    - Hit Points
-#    - Speed
-#    - Attacks. Include +tohit and damage.
-#    - Key Abilities 
-#    - Special Traits
-#- For NPCs the players have NOT been introduced to:
-#    - DO NOT reveal names; use descriptions like “Bandit Leader”, “Armored Guard”, “Young Red Dragon”.
-#- Always separate combatant summaries into a list.
-#- Also weigh:
-#    - NPC personality traits
-#    - Goals and motivations
-#    - Fear, morale, or injuries
-#    - Overwhelming player force (may cause surrender)
-#
-#DURING COMBAT:
-#- Describe combat in **1–2 paragraphs per turn** unless the player requests detailed narration.
-#- Do not play the players’ actions; only respond to them.
-#- Do not reveal enemy HP numerically unless appropriate; use descriptions like “bloodied”, “barely holding on”, “unharmed”.
-#
-#END OF COMBAT:
-#- Clearly indicate when combat ends.
-#- Provide outcomes, loot (if any), NPC reactions, and narrative transitions.
-#
-#MODULE TEXT:
-#{module_text}
-#
-#PLAYER CHARACTER RECORDS:
-#{pc_mgr.get_all_pc_descriptions()}
-#
-#STORY LOG:
-#{json.dumps(session.session["story_log"], indent=2)}
-#"""
-
     messages = [{"role": "system", "content": system_prompt}] + session.session["messages"]
 
     response = client.chat.completions.create(
@@ -347,22 +284,45 @@ Provide:
     # Unknown command
     return False
 
+def parse_args():
+    parser = argparse.ArgumentParser(
+        description="Extract structured module data from a PDF."
+    )
+
+    parser.add_argument(
+        "-s", "--session",
+        default="session.json",
+        help="Path to the session file."
+    )
+
+    parser.add_argument(
+        "-m", "--module",
+        default="module.ini",
+        help="Path to the module file."
+    )
+    parser.add_argument(
+        "-p", "--pcstore",
+        default="pc_store.json",
+        help="Path to the player characters file."
+    )
+
+    return parser.parse_args()
+
 # -------------------------------
 # MAIN APPLICATION
 # -------------------------------
 def main():
+    args = parse_args()
     console.print("[bold cyan]=== AI Dungeon Master ===[/bold cyan]")
     console.print("Type 'exit' to quit.\n")
 
-    session_path = "session.json"
-
     #os.makedirs("sessions", exist_ok=True)
 
-    session = SessionManager(session_path)
+    session = SessionManager(args.session)
     npcs = NPCManager()
-    pcs = PlayerCharacterManager()
+    pcs = PlayerCharacterManager(args.pcstore)
 
-    module_text = load_module_text()
+    module_text = load_module_text(args.module)
 
     console.print("\n[bold green]DM is ready. Begin your adventure.[/bold green]\n")
 

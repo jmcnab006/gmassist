@@ -1,8 +1,7 @@
+#!/usr/bin/python3
 import os
 import time
 from typing import List
-
-from pdfminer.high_level import extract_text as pdfminer_extract_text
 from openai import OpenAI
 
 # ----------------------------------------
@@ -169,4 +168,3 @@ if __name__ == "__main__":
         out_file = OUTPUT_FILE
 
     generate_module(raw_file, out_file)
-
