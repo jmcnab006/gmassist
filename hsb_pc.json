@@ -1,0 +1,80 @@
+{
+	"Thorin Battlehammer": {
+		  "name": "Thorin Battlehammer",
+		  "race": "Dwarf",
+		  "class": "Cleric",
+		  "background": "Soldier",
+		  "appearance": "Short, square framed blonde long bearded dwarf with chainmail big feet and blue eyes.",
+		  "personality": "Absentminded, aloof, down to do his own thing. Doesn't care about danger, sunbathes instead. Doesn't trust easily, dislikes work.",
+		  "backstory": "A traveling cleric whose finds adventure when adventure finds him regardless of if he is looking.",
+		  "notes": "Prefers naps in the sun; often ignores NPCs in favor of relaxation.",
+		  "items": [
+			"Backpack",
+		  	"Chainmail",
+			"Shield",
+			"Mace"
+		  	]
+	},
+	"Nova Haldark": {
+		  "name": "Nova Haldark",
+		  "race": "Aasimar",
+		  "class": "Fighter",
+		  "background": "Soldier",
+		  "appearance": "Short, thin black haired Aasimar with tanned skin, freckles and eyes that look like a flickering campfire.",
+		  "personality": "Warm, curious, overly trusting and adventerous.",
+		  "backstory": "She had a mundane childhood and her parents are the extremely supportive of her adventerous career.",
+		  "notes": "Pefers peaceful solutions, and overly trusting.",
+		  "items": [
+			"Backpack",
+		  	"Studded Leather",
+			"Shield",
+			"Rapier"
+		 	]
+	},
+	"Nine Ells": {
+		  "name": "Nine Ells",
+		  "race": "High-Elf",
+		  "class": "Wizard",
+		  "background": "Hermit",
+		  "appearance": "Short, slim, shoulder length blonde hair. Knee length black dress and tights.",
+		  "personality": "A little crazy and tries to charm OR threaten people into doing what she wants.",
+		  "backstory": "A traveling wizard whose aspirations lend towards death, necromancy and darkness. Enjoys sightseeing graveyards wherever she goes.",
+		  "notes": "Prefers to instigate NPCs with words and spells.",
+		  "items": [
+			"Backpack",
+		  	"Dress",
+			"Staff",
+			"Dagger",
+			"Bookbag"
+		 	]
+	},
+	"Fenwick": {
+		  "name": "Fenwick",
+		  "race": "Dragonborn",
+		  "class": "Rogue",
+		  "background": "Criminal",
+		  "appearance": "Towering, gold and black scales, long black horns, purple claws, blue eyes with a small scar on the cheek.",
+		  "personality": "Quick witted, quick to anger, gaslighting, mistrusting thief.",
+		  "backstory": "A traveling rogue whose aspirations lend towards thievery and greed.",
+		  "notes": "Prefers lurking in the back and not putting themselves into immediate danger; often tries to steal from NPCs.",
+		  "items": []
+	},
+	"Rilven Anatar": {
+		  "name": "Rivlen Anatar",
+		  "race": "High-Elf",
+		  "class": "Ranger",
+		  "background": "Guide",
+		  "appearance": "Tall, short black hair, grey eyes. Grey clothing and matt black boots.",
+		  "personality": "Slow to trust, but desires trust from others. Dislikes magic and those who use it too freely. Takes things too literally, and over analizes.",
+		  "backstory": "Grew up in a small northern village. He haas had little contact with other elves. He has estranged himself from many of the rangers though he still maintains strong connections.",
+		  "notes": "Distrusting, apprehensive, overthinker.",
+		  "items": [
+			"Explorers Backpack",
+			"Studded Leather",
+			"Longbow",
+			"Scimitar",
+			"Scimitar",
+			"Shortsword"
+			]
+	}
+}
