@@ -71,6 +71,7 @@ class PlayerCharacterManager:
         self.pcs = {}
         if os.path.exists(pc_file):
             self.load()
+            console.print(f"[bold green]PCs: {self.pc_file} [/bold green]\n")
 
     def load(self):
         with open(self.pc_file, "r", encoding="utf-8") as f:
@@ -122,10 +123,12 @@ class SessionManager:
         }
         if os.path.exists(file_path):
             self.load()
+            console.print(f"[bold green]Session: {self.file_path} [/bold green]\n")
 
     def load(self):
         with open(self.file_path, "r", encoding="utf-8") as f:
             self.session = json.load(f)
+
 
     def save(self):
         with open(self.file_path, "w", encoding="utf-8") as f:
