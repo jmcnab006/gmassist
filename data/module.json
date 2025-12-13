@@ -1,0 +1,1044 @@
+{
+  "metadata": {
+    "title": "Dungeons & Dragons Starter Set: Dragons of Stormwreck Isle",
+    "source": "Wizards of the Coast",
+    "edition": "5e",
+    "recommended_level": "1-3",
+    "setting": "Forgotten Realms - Stormwreck Isle",
+    "themes": [
+      "Fantasy",
+      "Dragons",
+      "Exploration",
+      "Adventure",
+      "Magic",
+      "Conflict",
+      "Peace vs Violence"
+    ]
+  },
+  "adventure": {
+    "summary": "Dragons of Stormwreck Isle draws characters into an ancient war among dragons on a small island marked by magical scars of dead dragons. Players explore Dragon's Rest cloister, investigate sea caves, a cursed shipwreck, and a clifftop observatory while facing living dragons, undead, and magical threats.",
+    "background": "Two dragon families, chromatic and metallic, have a longstanding animosity originating from the gods Bahamut and Tiamat. Stormwreck Isle was formed from the volcanic activity caused by the imprisoned red dragon Sharruth. Magic on the island draws dragons and leaves magical scars, making it a battlefield for these families. Runara, an adult bronze dragon disguised as a human, founded Dragon's Rest as a haven for peace. Recently, aggressive forces threaten the island's fragile tranquility."
+  },
+  "hooks": [
+    {
+      "id": "HOOK:1",
+      "description": "The adventurers are brought together at the cloister of Dragon's Rest seeking peace, knowledge, or personal quests."
+    },
+    {
+      "id": "HOOK:2",
+      "description": "Runara requests help to investigate the unusual zombie activity from nearby shipwrecks."
+    },
+    {
+      "id": "HOOK:3",
+      "description": "Tarak asks the characters to visit the sea caves to aid the myconids and find rare mushrooms."
+    },
+    {
+      "id": "HOOK:4",
+      "description": "The characters learn about Sparkrender's evil plans and the ancient observatory on the island."
+    }
+  ],
+  "quests": [
+    {
+      "id": "QUEST:Zombie Resurgence",
+      "name": "Zombie Resurgence",
+      "description": "Investigate and resolve the threat of zombies attacking Dragon's Rest, linked to cursed shipwrecks.",
+      "type": "main",
+      "objectives": [
+        "Fight the zombies attacking Dragon's Rest.",
+        "Investigate the source of the zombie curse on the island.",
+        "Recover Aleitha's talisman from the shipwreck of Compass Rose.",
+        "Bring the talisman to Brastos's grave to end the curse."
+      ],
+      "rewards": [
+        "Gain experience and level up",
+        "Remove zombie threat from Dragon's Rest"
+      ]
+    },
+    {
+      "id": "QUEST:Seagrow Caves",
+      "name": "Seagrow Caves",
+      "description": "Assist the myconids suffering from a blight due to blocked volcanic vents and confront their fungal and elemental guardians.",
+      "type": "main",
+      "objectives": [
+        "Gain trust of the myconids.",
+        "Destroy the orange crystal blocking the vent to stop the blight.",
+        "Defeat fungal violet fungus and fume drakes.",
+        "Return to Dragon's Rest with the myconids' glowing red fungus."
+      ],
+      "rewards": [
+        "Potion of Healing from Tarak",
+        "Gain experience and level up"
+      ]
+    },
+    {
+      "id": "QUEST:Cursed Shipwreck",
+      "name": "Cursed Shipwreck",
+      "description": "Explore the shipwreck of Compass Rose to discover and stop the curse animating zombies and confront the harpy.",
+      "type": "main",
+      "objectives": [
+        "Explore the shipwreck and fight zombies and ghoul.",
+        "Defeat or reason with the harpy.",
+        "Retrieve Aleitha's talisman from the captain's chest.",
+        "Bring the talisman to the graveyard to break the curse."
+      ],
+      "rewards": [
+        "Level up",
+        "Treasure from the shipwreck including boots of elvenkind and gems"
+      ]
+    },
+    {
+      "id": "QUEST:Clifftop Observatory",
+      "name": "Clifftop Observatory",
+      "description": "Confront Sparkrender the blue dragon wyrmling and foil his ritual to claim power over the island's dead dragons, and rescue Aidron the bronze wyrmling.",
+      "type": "main",
+      "objectives": [
+        "Travel to the observatory ruins.",
+        "Deal with Sparkrender and his kobold allies.",
+        "Free Aidron from captivity.",
+        "Disrupt Sparkrender's ritual using the dragon effigies or destroy the effigies.",
+        "Defeat Sparkrender."
+      ],
+      "rewards": [
+        "Potion of Healing and an exquisite pearl from Runara",
+        "Gain experience and level up"
+      ]
+    }
+  ],
+  "areas": {
+    "AREA:DRAGONS_REST": {
+      "name": "Dragon's Rest",
+      "description": "A quiet cloister on a cliffside overlooking the sea, home to Elder Runara and her followers, including kobolds, humans, and hermits seeking peace.",
+      "rooms": [
+        "ROOM:A1",
+        "ROOM:A2",
+        "ROOM:A3",
+        "ROOM:A4",
+        "ROOM:A5"
+      ],
+      "notes": "Center of operations for adventurers with home base facilities, kitchen, library, and temple of Bahamut."
+    },
+    "AREA:SEAGROW_CAVES": {
+      "name": "Seagrow Caves",
+      "description": "Dark sea caves inhabited by myconids, twisted by volcanic poisonous fumes and guarded by fungal and elemental creatures.",
+      "rooms": [
+        "ROOM:B1",
+        "ROOM:B2",
+        "ROOM:B3",
+        "ROOM:B4",
+        "ROOM:B5",
+        "ROOM:B6"
+      ],
+      "notes": "Affected by toxic fumes due to blocked vent, contains the entrance to the tomb of red dragon Sharruth."
+    },
+    "AREA:COMPASS_ROSE_SHIPWRECK": {
+      "name": "Compass Rose Shipwreck",
+      "description": "The wreck of a ship cursed by undead sailors and haunted by a harpy; site of treasure and dark magic.",
+      "rooms": [
+        "ROOM:C1",
+        "ROOM:C2",
+        "ROOM:C3",
+        "ROOM:C4",
+        "ROOM:C5",
+        "ROOM:C6",
+        "ROOM:C7",
+        "ROOM:C8",
+        "ROOM:C9"
+      ],
+      "notes": "Held up by dragon bones, mostly above water, contains cursed talisman."
+    },
+    "AREA:CLIFFTOP_OBSERVATORY": {
+      "name": "Clifftop Observatory",
+      "description": "Ruined magical observatory built on basalt spires with magical bridges, home to Sparkrender and the imprisoned bronze wyrmling Aidron.",
+      "rooms": [
+        "ROOM:D1",
+        "ROOM:D2",
+        "ROOM:D3",
+        "ROOM:D4",
+        "ROOM:D5",
+        "ROOM:D6"
+      ],
+      "notes": "Site of the final confrontation with Sparkrender, contains magic sculpture and dragon effigies."
+    }
+  },
+  "rooms": {
+    "ROOM:A1": {
+      "area": "AREA:DRAGONS_REST",
+      "name": "Path and Monastic Cells",
+      "description": "The path leading from the shore up the cliff with six monastic cells carved into the rock, garden plots, and a dragon statue.",
+      "features": [
+        "Stone dragon statue of Astalagan",
+        "Six simple monastic cells (including cells for Tarak, Varnoth, Myla, and others)",
+        "Garden plots with herbs and vegetables"
+      ],
+      "exits": [
+        "ROOM:A2",
+        "area to shore"
+      ],
+      "encounters": [],
+      "items": [],
+      "triggers": []
+    },
+    "ROOM:A2": {
+      "area": "AREA:DRAGONS_REST",
+      "name": "Winch House",
+      "description": "A small building equipped with a winch that lowers and raises pallets to the water below.",
+      "features": [
+        "Sturdy wooden pallet on an iron chain",
+        "Lever to lock and release winch"
+      ],
+      "exits": [
+        "ROOM:A1"
+      ],
+      "encounters": [],
+      "items": [],
+      "triggers": [
+        {
+          "id": "TRIGGER:Winch_Lever",
+          "condition": "Character pulls lever",
+          "effect": "Pallet falls to the water",
+          "location": "ROOM:A2"
+        }
+      ]
+    },
+    "ROOM:A3": {
+      "area": "AREA:DRAGONS_REST",
+      "name": "Kitchen and Dining Room",
+      "description": "Shared dining and kitchen space with a long table, chairs, and kitchen facilities.",
+      "features": [
+        "Long table and benches",
+        "Tidy kitchen",
+        "Regular shared meals and cooking schedule"
+      ],
+      "exits": [
+        "ROOM:A4",
+        "ROOM:A1"
+      ],
+      "encounters": [],
+      "items": [],
+      "triggers": []
+    },
+    "ROOM:A4": {
+      "area": "AREA:DRAGONS_REST",
+      "name": "Library",
+      "description": "A large library with books focused on theology and history, including magical and historical texts.",
+      "features": [
+        "Oak door with iron bands",
+        "Shelves filled with books and scrolls",
+        "Table with writing implements and lamps"
+      ],
+      "exits": [
+        "ROOM:A3",
+        "ROOM:A5"
+      ],
+      "encounters": [],
+      "items": [],
+      "triggers": []
+    },
+    "ROOM:A5": {
+      "area": "AREA:DRAGONS_REST",
+      "name": "Temple of Bahamut",
+      "description": "Open-air temple perched on cliff edge with a large stone statue of Bahamut surrounded by incense offerings.",
+      "features": [
+        "Stone statue of Bahamut with seven canaries",
+        "Protective magic granting saving throw bonuses",
+        "Runara often present for quiet contemplation"
+      ],
+      "exits": [
+        "ROOM:A4"
+      ],
+      "encounters": [],
+      "items": [],
+      "triggers": []
+    },
+    "ROOM:B1": {
+      "area": "AREA:SEAGROW_CAVES",
+      "name": "Entrance Tunnel",
+      "description": "A flooded sea cave tunnel with multicolored bioluminescent fungi covering the walls and spore patterns in the water.",
+      "features": [
+        "Water level varies with tides",
+        "Spore servant octopus lurking underwater as guardian"
+      ],
+      "exits": [
+        "ROOM:B2"
+      ],
+      "encounters": [
+        {
+          "id": "MON:SPORE_SERVANT_OCTOPUS",
+          "type": "combat",
+          "description": "The spore servant attacks any non-myconid creature entering the area."
+        }
+      ],
+      "items": [],
+      "triggers": []
+    },
+    "ROOM:B2": {
+      "area": "AREA:SEAGROW_CAVES",
+      "name": "Fungus Farm",
+      "description": "Large cavern with mushroom growth and myconid sprouts and adults working among them.",
+      "features": [
+        "Giant mushrooms, natural stone stairway",
+        "Heart cap mushrooms ready for harvest"
+      ],
+      "exits": [
+        "ROOM:B3",
+        "ROOM:B4"
+      ],
+      "encounters": [
+        {
+          "id": "MON:VIOLET_FUNGUS",
+          "description": "Violet fungi attack with rotting touch when approached."
+        }
+      ],
+      "items": [
+        "Heart cap mushrooms"
+      ],
+      "triggers": []
+    },
+    "ROOM:B3": {
+      "area": "AREA:SEAGROW_CAVES",
+      "name": "Larder",
+      "description": "A foul-smelling cave with myconid sprouts and a stirge nest concealed on walls and ceiling.",
+      "features": [
+        "Six stirges nest here",
+        "Myconid sprouts collecting fertilizer"
+      ],
+      "exits": [
+        "ROOM:B2",
+        "ROOM:B4"
+      ],
+      "encounters": [
+        {
+          "id": "MON:STIRGES",
+          "description": "Six stirges emerge from nest and attack characters."
+        }
+      ],
+      "items": [],
+      "triggers": []
+    },
+    "ROOM:B4": {
+      "area": "AREA:SEAGROW_CAVES",
+      "name": "Circle Chamber",
+      "description": "Large cavern with clusters of giant mushrooms and six adult myconids.",
+      "features": [
+        "Myconids in trance state (meld)",
+        "Adults tend to others and defend intruders"
+      ],
+      "exits": [
+        "ROOM:B3",
+        "ROOM:B5"
+      ],
+      "encounters": [],
+      "items": [],
+      "triggers": []
+    },
+    "ROOM:B5": {
+      "area": "AREA:SEAGROW_CAVES",
+      "name": "Sinensa's Sanctum",
+      "description": "Sanctuary chamber for the myconid leader Sinensa, who is unconscious and guarded.",
+      "features": [
+        "Large glowing red fungus (ruby morel)",
+        "Myconid adults Auranta and Enok tending to Sinensa"
+      ],
+      "exits": [
+        "ROOM:B4"
+      ],
+      "encounters": [],
+      "items": [
+        "Ruby morel fungus"
+      ],
+      "triggers": []
+    },
+    "ROOM:B6": {
+      "area": "AREA:SEAGROW_CAVES",
+      "name": "Crystal Cave",
+      "description": "Cave choked with sulfurous smoke, orange crystal blocking a fissure, and two fume drakes.",
+      "features": [
+        "Orange crystal egg case blocking volcanic vent",
+        "Two greenish smoke fume drakes",
+        "Breaking the crystal releases a fire snake"
+      ],
+      "exits": [
+        "ROOM:B4"
+      ],
+      "encounters": [
+        {
+          "id": "MON:FUME_DRAKE",
+          "count": 2,
+          "description": "Fume drakes attack any intruder in the cave."
+        },
+        {
+          "id": "MON:FIRE_SNAKE",
+          "description": "Hatches from the broken orange crystal egg and attacks immediately."
+        }
+      ],
+      "items": [],
+      "triggers": []
+    },
+    "ROOM:C1": {
+      "area": "AREA:COMPASS_ROSE_SHIPWRECK",
+      "name": "Main Deck",
+      "description": "The upper deck of the shipwreck with algae-covered wood, rigging, masts, and doors leading below decks.",
+      "features": [
+        "Crow's nest occupied by harpy",
+        "Access to captain's quarters and lower decks"
+      ],
+      "exits": [
+        "ROOM:C2",
+        "ROOM:C3",
+        "ROOM:C4",
+        "ROOM:C8"
+      ],
+      "encounters": [],
+      "items": [],
+      "triggers": []
+    },
+    "ROOM:C2": {
+      "area": "AREA:COMPASS_ROSE_SHIPWRECK",
+      "name": "Forecastle",
+      "description": "Broken foremast and disabled ballista.",
+      "features": [
+        "Useless ballista"
+      ],
+      "exits": [
+        "ROOM:C1"
+      ],
+      "encounters": [],
+      "items": [],
+      "triggers": []
+    },
+    "ROOM:C3": {
+      "area": "AREA:COMPASS_ROSE_SHIPWRECK",
+      "name": "Quarterdeck",
+      "description": "Rear deck with broken mast and dislodged ship wheel.",
+      "features": [
+        "Ship's wheel with compass inlaid with mother-of-pearl"
+      ],
+      "exits": [
+        "ROOM:C1"
+      ],
+      "encounters": [],
+      "items": [],
+      "triggers": [
+        {
+          "id": "TRIGGER:Wheel_Fall",
+          "condition": "Character attempts to catch falling ship wheel",
+          "effect": "On failed Dexterity saving throw, loud noise attracting zombies",
+          "location": "ROOM:C3"
+        }
+      ]
+    },
+    "ROOM:C4": {
+      "area": "AREA:COMPASS_ROSE_SHIPWRECK",
+      "name": "Captain's Quarters",
+      "description": "Barricaded room with captain's belongings and a hole in the floor.",
+      "features": [
+        "Two zombies inside",
+        "Hidden trap dart in floorboard",
+        "Access hole to lower deck hold"
+      ],
+      "exits": [
+        "ROOM:C1",
+        "ROOM:C8"
+      ],
+      "encounters": [
+        {
+          "id": "MON:ZOMBIES",
+          "count": 2,
+          "description": "Two zombies attack as soon as door is forced open."
+        }
+      ],
+      "items": [
+        "50 gp pouch",
+        "Cartographer's tools",
+        "Dagger",
+        "Compass",
+        "Trap dart",
+        "Captain's journal and talisman in hold"
+      ],
+      "triggers": [
+        {
+          "id": "TRAP:Dart_Trap",
+          "trigger": "Character lifts floorboard",
+          "effect": "Shoots dart dealing piercing and poison damage; Constitution save or take poison damage",
+          "disarm": "Lift floorboard from safe distance or disable trap",
+          "location": "ROOM:C4"
+        }
+      ]
+    },
+    "ROOM:C5": {
+      "area": "AREA:COMPASS_ROSE_SHIPWRECK",
+      "name": "Galley",
+      "description": "Empty kitchen area with remains of a headless skeleton and harmless crabs.",
+      "features": [],
+      "exits": [
+        "ROOM:C6"
+      ],
+      "encounters": [],
+      "items": [],
+      "triggers": []
+    },
+    "ROOM:C6": {
+      "area": "AREA:COMPASS_ROSE_SHIPWRECK",
+      "name": "Crew Quarters",
+      "description": "Lodging area with six double bunks, personal items, and a portrait.",
+      "features": [
+        "Hidden floorboard with trap and 200 gp stash"
+      ],
+      "exits": [
+        "ROOM:C5"
+      ],
+      "encounters": [
+        {
+          "id": "TRAP:Floorspace Dart",
+          "trigger": "Floorboard lifted without disarming",
+          "effect": "Dart attack with poison damage",
+          "disarm": "Detect and disarm trap",
+          "location": "ROOM:C6"
+        }
+      ],
+      "items": [
+        "200 gp pouch",
+        "Thieves' tools",
+        "Trap disarm kit"
+      ],
+      "triggers": []
+    },
+    "ROOM:C7": {
+      "area": "AREA:COMPASS_ROSE_SHIPWRECK",
+      "name": "Mess Hall",
+      "description": "Large dining area filled with broken chairs and plates.",
+      "features": [],
+      "exits": [
+        "ROOM:C6"
+      ],
+      "encounters": [],
+      "items": [],
+      "triggers": []
+    },
+    "ROOM:C8": {
+      "area": "AREA:COMPASS_ROSE_SHIPWRECK",
+      "name": "Lower Deck",
+      "description": "Flooded lower deck with scattered crates and water, home to a zombie and a ghoul.",
+      "features": [
+        "Water depth varies across area causing difficult terrain",
+        "Holes to upper deck",
+        "Creeping ghoul ambush"
+      ],
+      "exits": [
+        "ROOM:C4",
+        "ROOM:C9"
+      ],
+      "encounters": [
+        {
+          "id": "MON:ZOMBIE",
+          "description": "Zombie attacks anyone entering the area."
+        },
+        {
+          "id": "MON:GH0UL",
+          "description": "Ghoul waits to ambush party while distracted by zombie."
+        }
+      ],
+      "items": [
+        "Loot crates",
+        "Potential treasure crates"
+      ],
+      "triggers": []
+    },
+    "ROOM:C9": {
+      "area": "AREA:COMPASS_ROSE_SHIPWRECK",
+      "name": "Hold",
+      "description": "Submerged ship hold with seaweed, debris, air bubbles, captain's chest, and journal.",
+      "features": [
+        "Access to lower deck",
+        "Captain's chest contains talisman and boots of elvenkind",
+        "Captain's journal with cursed talisman description"
+      ],
+      "exits": [
+        "ROOM:C8"
+      ],
+      "encounters": [],
+      "items": [
+        "Captain's chest with 55 gp, three turquoise stones and boots of elvenkind",
+        "Captain's journal",
+        "Aleitha's talisman (necromancy magic)"
+      ],
+      "triggers": []
+    },
+    "ROOM:D1": {
+      "area": "AREA:CLIFFTOP_OBSERVATORY",
+      "name": "Overlook",
+      "description": "A cliff edge with two marble dragon statues with hexagonal indentations for moonstone key.",
+      "features": [
+        "Inserting moonstone key activates magical bridge to observatory ruins."
+      ],
+      "exits": [
+        "ROOM:D2"
+      ],
+      "encounters": [],
+      "items": [],
+      "triggers": [
+        {
+          "id": "TRIGGER:Moonstone_Activates_Bridge",
+          "condition": "Moonstone key inserted into statue base",
+          "effect": "Bridge of magical energy extends to observatory",
+          "location": "ROOM:D1"
+        }
+      ]
+    },
+    "ROOM:D2": {
+      "area": "AREA:CLIFFTOP_OBSERVATORY",
+      "name": "Rotunda Ruins",
+      "description": "Large plaza with broken statues, a celestial sculpture,and a fight between kobolds and stirges.",
+      "features": [
+        "Golden astronomical sculpture",
+        "Dragon effigies representing five dragons",
+        "Kobolds (Mek and Minn) fighting stirges"
+      ],
+      "exits": [
+        "ROOM:D1",
+        "ROOM:D3",
+        "ROOM:D4"
+      ],
+      "encounters": [
+        {
+          "id": "MON:STIRGE",
+          "count": 8,
+          "description": "Swarming the area and attacking kobolds and adventurers."
+        },
+        {
+          "id": "NPC:KOBOLDS",
+          "description": "Mek and Minn, hostile or friendly based on player actions."
+        }
+      ],
+      "items": [
+        "Dragon effigies of Astalagan (Bronze), Clyssavar (Gold), Eldenemir (Blue), Sharruth (Red), Turadaer (Brass)",
+        "Coins and minor treasure in ruins"
+      ],
+      "triggers": []
+    },
+    "ROOM:D3": {
+      "area": "AREA:CLIFFTOP_OBSERVATORY",
+      "name": "Kobold Camp",
+      "description": "A rickety driftwood and rope bridge to a ruined tower inhabited by hostile kobolds.",
+      "features": [
+        "Hostile kobolds (Ekrash, Erp, Hev) and winged kobolds (Nuhro, Snirke)"
+      ],
+      "exits": [
+        "ROOM:D2"
+      ],
+      "encounters": [
+        {
+          "id": "NPC:Kobolds",
+          "description": "Initially hostile; can be intimidated or reasoned with."
+        }
+      ],
+      "items": [],
+      "triggers": []
+    },
+    "ROOM:D4": {
+      "area": "AREA:CLIFFTOP_OBSERVATORY",
+      "name": "Isolated Study",
+      "description": "Small tower with collapsed floor, old tomes, and a locked journal with a magical trap.",
+      "features": [
+        "Arcane rune trap on the journal",
+        "Secret compartment with potion of resistance and 10 gp",
+        "Clues to unlock hidden observatory library entrance"
+      ],
+      "exits": [],
+      "encounters": [],
+      "items": [
+        "Potion of Resistance",
+        "10 gp pouch",
+        "Locked magical journal"
+      ],
+      "triggers": [
+        {
+          "id": "TRAP:Journal_Rune",
+          "trigger": "Opening journal without disarming",
+          "effect": "Releases green poison gas, deals poison damage",
+          "disarm": "DC 11 Intelligence (Arcana) check and physical scratching of rune",
+          "location": "ROOM:D4"
+        }
+      ]
+    },
+    "ROOM:D5": {
+      "area": "AREA:CLIFFTOP_OBSERVATORY",
+      "name": "Observatory Tower",
+      "description": "Tall stained glass tower housing Sparkrender the blue dragon wyrmling and a celestial star map.",
+      "features": [
+        "Stained glass dome with star map",
+        "Four alabaster scholar statues that rotate",
+        "Moonstone key pulley lift access"
+      ],
+      "exits": [
+        "ROOM:D2",
+        "ROOM:D6"
+      ],
+      "encounters": [
+        {
+          "id": "MON:SPARKRENDER",
+          "description": "Blue dragon wyrmling, hostile or negotiable initially, uses breath weapon."
+        }
+      ],
+      "items": [
+        "Treasure hoard including coins, gems, enchanted items"
+      ],
+      "triggers": []
+    },
+    "ROOM:D6": {
+      "area": "AREA:CLIFFTOP_OBSERVATORY",
+      "name": "Secret Library",
+      "description": "Hidden library accessed by spiral stairs, filled with old tomes and rubble, home to imprisoned bronze wyrmling Aidron.",
+      "features": [
+        "Bookshelves and arcane tomes",
+        "Rubble blocking exits, requiring time and stealth to clear quietly",
+        "Aidron the bronze dragon wyrmling, imprisoned and distressed"
+      ],
+      "exits": [
+        "ROOM:D5"
+      ],
+      "encounters": [
+        {
+          "id": "NPC:AIDRON",
+          "description": "Bronze dragon wyrmling eager to escape and defeat Sparkrender."
+        }
+      ],
+      "items": [
+        "+1 Battleaxe",
+        "Spell scroll of hold person"
+      ],
+      "triggers": []
+    }
+  },
+  "npcs": {
+    "NPC:Runara": {
+      "role": "Leader of Dragon's Rest, adult bronze dragon in human guise",
+      "description": "Wise, peace-loving dragon who seeks to end conflicts between chromatic and metallic dragons. Appears as an elderly human woman.",
+      "personality": "Indifferent initially, becomes friendly with trust, hostile if harmed.",
+      "goals": "Promote peace, protect Dragon's Rest, stop island conflicts, guide adventurers.",
+      "location": "Dragon's Rest, secret lair in undersea cave"
+    },
+    "NPC:Tarak": {
+      "role": "Gardener, herbalist, former poisoner",
+      "description": "Human male tending cloister's garden; knowledgeable about herbs and myconids.",
+      "personality": "Soft spoken, helpful but defensive about past, initially friendly but hostile if pressed.",
+      "goals": "Protect myconids, produce potions, seek peace on island.",
+      "location": "Dragon's Rest, cell in monastic cells"
+    },
+    "NPC:Varnoth": {
+      "role": "Retired mercenary captain",
+      "description": "Gruff but empathetic woman with scars and a prosthetic leg.",
+      "personality": "Indifferent to visitors but respects second chances, friendly if engaged in history or ethics discussion.",
+      "goals": "Seek redemption and peace, maintain cloister.",
+      "location": "Dragon's Rest, cell in monastic cells"
+    },
+    "NPC:Myla": {
+      "role": "Winged kobold tinkerer and alchemist",
+      "description": "Injured kobold experimenting with alchemy and engineering.",
+      "personality": "Curious, energetic, inventive.",
+      "goals": "Recovery of her wings, support Runara, build devices.",
+      "location": "Dragon's Rest, cell in monastic cells"
+    },
+    "NPC:Mek and NPC:Minn": {
+      "role": "Winged kobold brothers allied with Sparkrender",
+      "description": "Loyal but cruel kobolds who abandoned Myla.",
+      "personality": "Proud, haughty, loyal to Sparkrender.",
+      "goals": "Serve Sparkrender, thwart adventurers.",
+      "location": "Clifftop Observatory"
+    },
+    "NPC:Ekrash, NPC:Erp, NPC:Hev": {
+      "role": "Kobold camp members",
+      "description": "Hostile kobolds at Clifftop Observatory camp.",
+      "personality": "Hostile, easily intimidated.",
+      "goals": "Protect Sparkrender's domain.",
+      "location": "Clifftop Observatory"
+    },
+    "NPC:Nuhro and NPC:Snirke": {
+      "role": "Winged kobolds at Clifftop Observatory",
+      "description": "Members of kobold camp, loyal to Sparkrender.",
+      "personality": "Hostile, proud.",
+      "goals": "Serve Sparkrender, defend territory.",
+      "location": "Clifftop Observatory"
+    },
+    "NPC:Aidron": {
+      "role": "Bronze dragon wyrmling imprisoned by Sparkrender",
+      "description": "Young bronze dragon, former student of Runara, seeks freedom and peace.",
+      "personality": "Determined, regretful over conflict with Sparkrender.",
+      "goals": "Escape captivity, help defeat Sparkrender.",
+      "location": "Clifftop Observatory secret library"
+    }
+  },
+  "monsters": {
+    "MON:Zombie": {
+      "type": "Medium Undead",
+      "description": "Mindless reanimated corpses of drowned sailors animating on shipwrecks.",
+      "location": [
+        "Dragon's Rest Beach",
+        "Compass Rose Shipwreck"
+      ],
+      "tactics": "Advance slowly to engage in melee; use Dash to close distances if needed; utilize Undead Fortitude special trait."
+    },
+    "MON:Stirge": {
+      "type": "Tiny Beast",
+      "description": "Small winged pests that feed on blood by attaching to prey.",
+      "location": [
+        "Seagrow Caves",
+        "Clifftop Observatory"
+      ],
+      "tactics": "Attack with blood drain; attach to target and drain health over time; can be detached."
+    },
+    "MON:Fume Drake": {
+      "type": "Small Elemental",
+      "description": "Legless smoke dragons that exhale scalding steam and cause confusion.",
+      "location": [
+        "Seagrow Caves, Crystal Cave"
+      ],
+      "tactics": "Use Scalding Breath cone attack, bite in melee; death causes poison burst."
+    },
+    "MON:Violet Fungus": {
+      "type": "Medium Plant",
+      "description": "Giant purple fungi that move slowly and attack with rotting necrotic touch.",
+      "location": [
+        "Seagrow Caves Fungus Farm"
+      ],
+      "tactics": "Attack slowly with rotting touch; use false appearance to ambush."
+    },
+    "MON:Spore Servant Octopus": {
+      "type": "Large Plant",
+      "description": "Reanimated giant octopus controlled by myconid spores, bludgeoning attackers.",
+      "location": [
+        "Seagrow Caves Entrance Tunnel"
+      ],
+      "tactics": "Attack with tentacles, can breathe only underwater."
+    },
+    "MON:Ghoul": {
+      "type": "Medium Undead",
+      "description": "Undead hides in dark places, attacks in packs, paralyzes victims.",
+      "location": [
+        "Compass Rose Lower Deck"
+      ],
+      "tactics": "Paralyze with claws then attack; attacks strongly in packs."
+    },
+    "MON:Harpy": {
+      "type": "Medium Monstrosity",
+      "description": "Humanoid winged creature using Luring Song to charm victims before attacking.",
+      "location": [
+        "Compass Rose Crow's Nest"
+      ],
+      "tactics": "Use Luring Song to charm; attacks with claws and club; can be reasoned with."
+    },
+    "MON:Kobold": {
+      "type": "Small Humanoid",
+      "description": "Small reptilian humanoids with pack tactics and sunlight sensitivity.",
+      "location": [
+        "Dragon's Rest",
+        "Clifftop Observatory",
+        "Kobold Camp"
+      ],
+      "tactics": "Attack with daggers and slings, use pack tactics."
+    },
+    "MON:Kobold Tinkerer": {
+      "type": "Small Humanoid",
+      "description": "Kobold with alchemical flame attack and detect magic ability.",
+      "location": [
+        "Dragon's Rest",
+        "Clifftop Observatory"
+      ],
+      "tactics": "Uses Alchemical Flame cone and melee dagger attacks."
+    },
+    "MON:Winged Kobold": {
+      "type": "Small Humanoid",
+      "description": "Kobold with leathery wings enabling flight, uses daggers and rock attacks.",
+      "location": [
+        "Clifftop Observatory"
+      ],
+      "tactics": "Flies to gain advantage, attacks with dagger or dropped rocks."
+    },
+    "MON:Fire Snake": {
+      "type": "Medium Elemental",
+      "description": "Larval salamanders from the Elemental Plane of Fire with fiery attacks and heated body.",
+      "location": [
+        "Seagrow Caves Crystal Cave"
+      ],
+      "tactics": "Bite and tail attack with fire damage; damages melee attackers on contact."
+    },
+    "MON:Blue Dragon Wyrmling": {
+      "type": "Medium Dragon (Chromatic)",
+      "description": "Vain, territorial blue dragon with lightning breath and repulsion breath.",
+      "location": [
+        "Clifftop Observatory"
+      ],
+      "tactics": "Uses lightning breath in a line and repulsion breath in cone; bites in melee."
+    },
+    "MON:Bronze Dragon Wyrmling": {
+      "type": "Medium Dragon (Metallic)",
+      "description": "Noble bronze dragon with lightning and repulsion breaths, amphibious.",
+      "location": [
+        "Clifftop Observatory, Secret Library"
+      ],
+      "tactics": "Bite and breath attacks; can assist characters against Sparkrender."
+    },
+    "MON:Adult Bronze Dragon Runara": {
+      "type": "Huge Dragon (Metallic)",
+      "description": "Leader of Dragon's Rest, powerful bronze dragon in human form with electrical and repulsion breath weapons.",
+      "location": [
+        "Dragon's Rest"
+      ],
+      "tactics": "Multiattack with bite and claws, uses breath weapons, legendary resistance, change shape ability."
+    },
+    "MON:Owlbear": {
+      "type": "Large Monstrosity",
+      "description": "Large predatory beast with owl head and bear body, ferocious and stubborn.",
+      "location": [
+        "Additional Encounter on Stormwreck Isle"
+      ],
+      "tactics": "Multiattack with beak and claws; has keen sight and smell."
+    },
+    "MON:Myconid Sprout": {
+      "type": "Small Plant",
+      "description": "Small fungus creatures with distress and rapport spores; vulnerable to sunlight.",
+      "location": [
+        "Seagrow Caves Fungus Farm",
+        "Larder",
+        "Circle Chamber"
+      ],
+      "tactics": "Fist attack with poison damage; can communicate telepathically with spores."
+    },
+    "MON:Myconid Adult": {
+      "type": "Medium Plant",
+      "description": "Larger fungus creatures practicing melds, with pacifying spores and telepathic communication.",
+      "location": [
+        "Seagrow Caves Circle Chamber",
+        "Sinensa's Sanctum"
+      ],
+      "tactics": "Multiattack with fist and hallucinatory spores; protect colony."
+    },
+    "MON:Sinensa": {
+      "type": "Large Plant (Myconid)",
+      "description": "Leader of the myconids, currently unconscious and protected by others.",
+      "location": [
+        "Seagrow Caves Sinensa's Sanctum"
+      ],
+      "tactics": "Multiattack with fist and hallucinatory spores; commands rapport spores."
+    }
+  },
+  "items": {
+    "ITEM:Boots of Elvenkind": {
+      "type": "Wondrous Item, Uncommon",
+      "description": "While wearing these boots, steps make no sound and wearer has advantage on Dexterity (Stealth) checks related to moving silently.",
+      "location": [
+        "Compass Rose Shipwreck, Captain's Chest"
+      ]
+    },
+    "ITEM:Elixir of Health": {
+      "type": "Potion, Rare",
+      "description": "Cures disease and removes blinded, deafened, paralyzed, and poisoned conditions.",
+      "location": [
+        "Reward from Tarak at Dragon's Rest"
+      ]
+    },
+    "ITEM:Potion of Healing": {
+      "type": "Potion, Common",
+      "description": "Regain 2d4+2 hit points when consumed.",
+      "location": [
+        "Reward from Runara at Dragon's Rest"
+      ]
+    },
+    "ITEM:Potion of Resistance": {
+      "type": "Potion, Uncommon",
+      "description": "Grants resistance to one damage type for 1 hour.",
+      "location": [
+        "Found in isolated study at Clifftop Observatory"
+      ]
+    },
+    "ITEM:Spell Scroll of Command": {
+      "type": "Scroll, 1st level, Common",
+      "description": "Contains the spell Command.",
+      "location": [
+        "Compass Rose Shipwreck Crate"
+      ]
+    },
+    "ITEM:Spell Scroll of Hold Person": {
+      "type": "Scroll, 2nd level, Uncommon",
+      "description": "Contains the spell Hold Person.",
+      "location": [
+        "Clifftop Observatory Secret Library"
+      ]
+    },
+    "ITEM:Weapon +1": {
+      "type": "Magic Weapon, Uncommon",
+      "description": "Grants +1 bonus to attack and damage rolls.",
+      "location": [
+        "Clifftop Observatory Secret Library"
+      ]
+    }
+  },
+  "events": [
+    {
+      "id": "EVENT:Runara_Rescue",
+      "description": "If a character party is defeated by zombies, Runara rescues them, reviving them in the temple at Dragon's Rest.",
+      "location": "Dragon's Rest",
+      "outcome": "Characters revived and healed; Runara remains mysterious about her intervention."
+    },
+    {
+      "id": "EVENT:Fire_Crystal_Break",
+      "description": "Breaking the orange crystal in Seagrow Caves releases a fire snake and allows toxic fumes to vent, stopping the blight.",
+      "location": "Seagrow Caves Crystal Cave",
+      "outcome": "Fire snake attacks; myconid blight begins to heal."
+    },
+    {
+      "id": "EVENT:Harpy_Return",
+      "description": "Harpy returns to shipwreck after characters rest or disturb the captain's chest.",
+      "location": "Compass Rose Shipwreck Main Deck",
+      "outcome": "Harpy attempts to lure characters and new ships to their doom."
+    },
+    {
+      "id": "EVENT:Sparkrender_Ritual",
+      "description": "Sparkrender initiates a ritual using dragon effigies to bind spirits of dead dragons to himself.",
+      "location": "Clifftop Observatory Rotunda",
+      "outcome": "Adventurers must disrupt ritual through combat or magic to prevent Sparkrender's ascension."
+    }
+  ],
+  "triggers": [
+    {
+      "id": "TRIGGER:Zombies_Attack_Beach",
+      "condition": "Characters start to ascend path at Dragon's Rest",
+      "effect": "Three zombies emerge from the water and approach characters",
+      "location": "Dragon's Rest Beach"
+    },
+    {
+      "id": "TRIGGER:Ropes_Ladder_Fall",
+      "condition": "Character attempts to catch falling ship wheel",
+      "effect": "Loud crash noise alerts zombies",
+      "location": "Compass Rose Shipwreck Quarterdeck"
+    },
+    {
+      "id": "TRIGGER:Myconid_Distress_Spores",
+      "condition": "Myconid takes damage",
+      "effect": "All myconids within 240 feet sense distress and respond accordingly",
+      "location": "Seagrow Caves"
+    },
+    {
+      "id": "TRIGGER:Harpy_Charm_Song",
+      "condition": "Harpy uses Luring Song",
+      "effect": "All humanoids and giants within 300 feet must make Wisdom save or be charmed",
+      "location": "Compass Rose Shipwreck Main Deck"
+    }
+  ],
+  "traps": [
+    {
+      "id": "TRAP:Floorboard_Dart",
+      "trigger": "Floorboard lifted without disarming",
+      "effect": "Shoots a dart dealing 2d4 piercing and 3d6 poison damage",
+      "disarm": "Disarm by lifting from safe distance or DC 11 Dexterity check with thieves' tools",
+      "location": "Compass Rose Shipwreck Crew Quarters"
+    },
+    {
+      "id": "TRAP:Journal_Rune",
+      "trigger": "Magical journal opened without disarming rune trap",
+      "effect": "Emits poisonous green gas causing 3d6 poison damage",
+      "disarm": "Disarm trap by scratching rune with sharp tool and DC 11 Intelligence (Arcana) check",
+      "location": "Clifftop Observatory Isolated Study"
+    }
+  ]
+}
