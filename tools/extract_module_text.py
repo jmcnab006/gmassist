@@ -91,7 +91,16 @@ if __name__ == "__main__":
     raw_text = ""
     try:
         raw_text = convert_pdf_text(args.infile)
-        raw_text = raw_text.replace("\n","")
+        #raw_text = raw_text.replace("\n","")
+        lines = raw_text.splitlines()
+
+        # Filter out the blank lines
+        # `line.strip()` removes leading/trailing whitespace (including '\n', ' ', '\t')
+        # If the stripped line is not empty, it's included in the filtered list
+        non_blank_lines = [line for line in lines if line.strip()]
+
+        # Join the remaining lines back into a single string
+        raw_text = "\n".join(non_blank_lines)
 
     except Exception as e:
         print(f"[ERROR] pdfminer failed: {e}")

@@ -1,124 +1,113 @@
-#!/usr/bin/python3
-import os
+#!/usr/bin/env python3
+
+"""
+pdf_to_dm_module.py
+
+Uploads a D&D 5e adventure PDF to OpenAI,
+parses and analyzes its contents,
+and converts it into a structured JSON data model
+suitable for a Dungeon Master Assistant.
+
+This script ONLY performs conversion.
+No gameplay, narration, or combat logic.
+"""
+
+import json
 import sys
-import argparse
-import pathlib
-import time
 from openai import OpenAI
 
-# ----------------------------------------
-# CONFIGURATION
-# ----------------------------------------
+# -----------------------------
+# CONFIG
+# -----------------------------
 
-# Model to use
-OPENAI_MODEL = "gpt-4.1-mini"
-#OPENAI_MODEL = "gpt-4.1"
+MODEL = "gpt-4.1-mini"
+OUTPUT_FILE = "module.json"
+SYSTEM_PROMPT="prompts/parse_module/parse_module_ds.prompt"
 
-# Rough character limit per chunk (safe for most models)
-CHUNK_SIZE = 50000
+# -----------------------------
+# VALIDATION
+# -----------------------------
 
-# Seconds between calls to avoid rate limits
-SLEEP_BETWEEN_CALLS = 1.0
+if len(sys.argv) < 2:
+    print("Usage: python pdf_to_dm_module.py <adventure.pdf> [output.json]")
+    sys.exit(1)
 
-# Output file name
-#OUTPUT_FILE = "module.ini"
-#DEBUG_OUTPUT_FILE = "module_output.debug"
+PDF_PATH = sys.argv[1]
+if len(sys.argv) > 2:
+    OUTPUT_FILE = sys.argv[2]
 
-PROMPT_PATH = "prompts/deepseek.prompt"
-
-# ----------------------------------------
+# -----------------------------
 # OPENAI CLIENT
-# ----------------------------------------
+# -----------------------------
 
-# Make sure OPENAI_API_KEY is set in your environment
-# export OPENAI_API_KEY="your-key-here"
-client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
+client = OpenAI()
 
+# -----------------------------
+# UPLOAD PDF
+# -----------------------------
 
-def extract_pdf_to_text(pdf_path, output_path="module.raw"):
-    reader = PdfReader(pdf_path)
-    text = ""
+print("[*] Uploading PDF...")
 
-    for page in reader.pages:
-        try:
-            text += page.extract_text() + "\n"
-        except:
-            pass
-
-    os.makedirs("data", exist_ok=True)
-
-    with open(output_path, "w", encoding="utf-8") as f:
-        f.write(text)
-
-    print(f"Module saved to: {output_path}")
-
-def parse_module(file_path: str ) -> str:
-    # Upload a PDF we will reference in the variables
-    file = client.files.create(
-        file=open(file_path, "rb"),
-        purpose="user_data",
+with open(PDF_PATH, "rb") as f:
+    uploaded_file = client.files.create(
+        file=f,
+        purpose="assistants"
     )
 
-    print(f"[+] uploading file {file_path} ...")
-    response = client.responses.create(
-        model="gpt-5",
-        reasoning={"effort": "low"},
-        input=[
-            {
-                "role": "system",
-                "content": "You are a Roleplaying Dungeon Master PDF Extractor. Read the ."
-            },
-            {
-                "role": "user",
-                "content": "Read the adventure module and convert it into a data structure that is easily read by gpt4.1-mini so that the model can assist a live DM running the adventure"
-            }
-           "id": "pmpt_abc123",
-            "variables": {
-                "topic": "Adventure Module",
-                "reference_pdf": {
-                    "type": "input_file",
-                    "file_id": file.id,
-                },
-            },
+print(f"[+] Uploaded file id: {uploaded_file.id}")
 
-        ],
-        prompt={
-            "id": "pmpt_abc123",
-            "variables": {
-                "topic": "Adventure Module",
-                "reference_pdf": {
-                    "type": "input_file",
-                    "file_id": file.id,
-                },
-            },
+# -----------------------------
+# SYSTEM INSTRUCTIONS
+# -----------------------------
+
+with open(SYSTEM_PROMPT, 'r') as file:
+    SYSTEM_INSTRUCTIONS = file.read()
+
+# -----------------------------
+# PARSE REQUEST
+# -----------------------------
+
+print("[*] Parsing PDF into structured DM module...")
+
+response = client.responses.create(
+    model=MODEL,
+    input=[
+        {
+            "role": "system",
+            "content": SYSTEM_INSTRUCTIONS
         },
-    )
-    print(response.output_text)
+        {
+            "role": "user",
+            "content": [
+                {
+                    "type": "input_file",
+                    "file_id": uploaded_file.id
+                }
+            ]
+        }
+    ]
+)
 
-def parse_args():
-    parser = argparse.ArgumentParser(
-        description="Extract structured module data from a PDF."
-    )
-    
-    parser.add_argument(
-        "infile",
-        help="Path to the input adventure PDF file."
-    )
+# -----------------------------
+# EXTRACT OUTPUT
+# -----------------------------
 
-    parser.add_argument(
-        "outfile",
-        nargs="?",
-        default="module.raw",
-        help="Path to write the extracted module.ini file."
-    )
+output_text = response.output_text.strip()
 
-    return parser.parse_args()
+# Validate JSON
+try:
+    module_data = json.loads(output_text)
+except json.JSONDecodeError as e:
+    print("[!] Failed to parse JSON output")
+    print(e)
+    print(output_text)
+    sys.exit(1)
 
-if __name__ == "__main__":
+# -----------------------------
+# WRITE OUTPUT
+# -----------------------------
 
-    args = parse_args()
-    try:
-        parse_module(args.infile)
+with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+    json.dump(module_data, f, indent=2, ensure_ascii=False)
 
-    except Exception as e:
-        print(f"[ERROR] something didnt work: {e}")
+print(f"[+] Conversion complete: {OUTPUT_FILE}")
