@@ -13,6 +13,7 @@ No gameplay, narration, or combat logic.
 """
 
 import json
+import yaml
 import sys
 from openai import OpenAI
 
@@ -22,7 +23,8 @@ from openai import OpenAI
 
 MODEL = "gpt-4.1-mini"
 OUTPUT_FILE = "module.json"
-SYSTEM_PROMPT="prompts/parse_module/parse_module_ds.prompt"
+#SYSTEM_PROMPT="prompts/parse_module/parse_module_ds.prompt"
+SYSTEM_PROMPT="prompts/parse_module/parse_module_yaml.prompt"
 
 # -----------------------------
 # VALIDATION
@@ -94,20 +96,33 @@ response = client.responses.create(
 
 output_text = response.output_text.strip()
 
-# Validate JSON
+
+# Validate YAML
 try:
-    module_data = json.loads(output_text)
-except json.JSONDecodeError as e:
-    print("[!] Failed to parse JSON output")
+    module_data = yaml.safe_load(output_text)
+except yaml.YAMLError as e:
+    print("[!] Failed to parse YAML output")
     print(e)
     print(output_text)
     sys.exit(1)
+
+# Validate JSON
+#try:
+#    module_data = json.loads(output_text)
+#except json.JSONDecodeError as e:
+#    print("[!] Failed to parse JSON output")
+#    print(e)
+#    print(output_text)
+#    sys.exit(1)
 
 # -----------------------------
 # WRITE OUTPUT
 # -----------------------------
 
+#with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+#    json.dump(module_data, f, indent=2, ensure_ascii=False)
+
 with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-    json.dump(module_data, f, indent=2, ensure_ascii=False)
+    yaml.dump(module_data, f, sort_keys=False, allow_unicode=True)
 
 print(f"[+] Conversion complete: {OUTPUT_FILE}")
