@@ -21,7 +21,7 @@ from openai import OpenAI
 # CONFIG
 # -----------------------------
 
-MODEL = "gpt-4.1-mini"
+MODEL = "gpt-4.1"
 OUTPUT_FILE = "module.json"
 #SYSTEM_PROMPT="prompts/parse_module/parse_module_ds.prompt"
 SYSTEM_PROMPT="prompts/parse_module/parse_module_yaml.prompt"

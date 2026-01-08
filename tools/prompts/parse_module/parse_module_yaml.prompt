@@ -41,6 +41,16 @@ AdventureSystem:
       - "Maps/images (if available)"
       - "Stat blocks"
     outputFormat: "System prompt for AI Dungeon Master"
+	adventureSummary: "Summary of the adventure"
+	plotOutline: 
+		- opening scenes
+		- adventure hooks
+		- adventure flow
+		- side quests
+		- main quests or objectives
+		- conclusion
+		- rewards
+		- completion
 
   worldState:
     entities:
@@ -366,7 +376,7 @@ AdventureSystem:
       missingInformation: "Make reasonable inferences consistent with established lore"
 
   outputSpecification:
-    format: "JSON suitable for AI system prompt"
+    format: "YAML suitable for AI system prompt"
     requiredSections:
       - "worldState"
       - "narrativeEngine"
