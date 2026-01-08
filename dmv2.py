@@ -29,6 +29,7 @@ class NPCManager:
         self.npcs = {}
         if os.path.exists(npc_file):
             self.load()
+            console.print(f"[bold green]NPCs: {self.npc_file} [/bold green]\n")
 
     def load(self):
         with open(self.npc_file, "r", encoding="utf-8") as f:
@@ -149,10 +150,10 @@ class SessionManager:
 def load_module_text(path):
     if os.path.exists(path):
         with open(path, "r", encoding="utf-8") as f:
-            console.print(f"[bold green]Module {path} loaded successfully.[/bold green]")
+            console.print(f"[bold green]Module: {path} loaded successfully.[/bold green]")
             return f.read()
 
-    console.print("[yellow]No module found. Running without loaded adventure.[/yellow]")
+    console.print("[yellow]Module: {path} No module found.[/yellow]")
     return ""
 
 
@@ -165,6 +166,7 @@ def generate_dm_response(session, npc_mgr, pc_mgr, user_input, module_text):
 
     # UPDATED REQUIREMENTS BLOCK
     module_prompt = """
+    
 MODULE DATA:
 {module_text}
 
@@ -343,6 +345,11 @@ def parse_args():
         default="pc_store.json",
         help="Path to the player characters file."
     )
+    parser.add_argument(
+        "-n", "--npcstore",
+        default="npc_store.json",
+        help="Path to the non-player characters file."
+    )
 
     return parser.parse_args()
 
@@ -357,7 +364,7 @@ def main():
     #os.makedirs("sessions", exist_ok=True)
 
     session = SessionManager(args.session)
-    npcs = NPCManager()
+    npcs = NPCManager(args.npcstore)
     pcs = PlayerCharacterManager(args.pcstore)
 
     module_text = load_module_text(args.module)

@@ -105,6 +105,7 @@ You MUST use this top-level structure:
             "name": "string",
             "type": ["town", "dungeon", "wilderness", "building", "room"],
             "description": "string (detailed sensory description)",
+            "narration": "string (text read aloud to player from location text)",
             "mapData": {
               "coordinates": {"x": "number", "y": "number", "z": "number"},
               "connections": ["array of location_ids"],
@@ -406,17 +407,64 @@ You MUST use this top-level structure:
 	"combatConditions": [
 		"player attacks",
 		"npc attacks",
-		"encounter requires it",
-		"location requires it"
+		"encounter required",
+		"location required"
 	],
-        "combatFrequency": "Combat occurs whenever the story demands",
+        "combatFrequency": "Combat occurs whenever the adventure states it",
         "dramaCurve": "Build tension towards climax, provide breathers after intense scenes"
       },
       "improvisationGuidelines": {
         "whenPlayersGoOffTrack": "Extrapolate from existing world state, create plausible NPCs/locations that fit theme",
         "unexpectedActions": "Determine logical consequences based on rules and narrative",
         "missingInformation": "Make reasonable inferences consistent with established lore"
-      }
+      },      
+      "executionPrompt": [
+        "Use MODULE DATA to:",
+        "- narrate scenes",
+        "- roleplay NPCs",
+        "- navigate through the adventure",
+        "- maintain story continuity",
+        "",
+        "LIMIT descriptions to 1 paragraph.",
+        "Use narrations from the adventure module",
+        "",
+        "NEVER describe player actions.",
+        "NEVER reveal information the players cannot observe or do not already know.",
+        "Describe reaction to player actions.",
+        "Describe ONLY items, encounters, features the players can observe.",
+        "- example: A player does not know that a box contains a cat, until they open the box.",
+        "- example: A player does not know a room contains a winch unless the characters enter the room.",
+        "- example: A player does not know the purpose of an item until they study it.",
+        "- example: A player does not know the contents of a book until they read it.",
+        "",
+        "NPCs ONLY reveal information they actually know.",
+        "Items are described ONLY when visible or revealed.",
+        "",
+        "EVENTs should trigger when player actions match their conditions, be creative.",
+        "Traps, combat encounters, events and other effects activate immediately when their requirements are met.",
+        "- example: Troll attacks when the party enters the room",
+        "- example: Glyph of warding activates when the party crosses the doorway requiring a save",
+        "",
+        "ALWAYS add the IDs as a BOLD HEADER when characters move into an area.",
+        "Be creative when AREAs lack cohesive interconnectivity.",
+        "Maintain continuity using the story log.",
+        "Assume players know nothing.",
+        "",
+        "Speak in-character for NPCs.",
+        "React logically to player actions.",
+        "NEVER Roleplay PC dialogue or decision-making.",
+        "",
+        "If statistics or stats are asked for, provide statistics blocks as appropriate for the adventure using MODULE DATA.",
+        "When skill checks are required provide the Difficulty Class (DC).",
+        "If a player or character rolls a Skill check determine its success by the Difficulty Class (DC).",
+        "",
+        "Formatting Guidelines:",
+        "- Use **bold** for area IDs (e.g., **LOC_012: Throne Room**)",
+        "- Use *italics* for emphasized text",
+        "- Use plain text for regular descriptions",
+        "- Separate NPC dialogue with appropriate tags (e.g., 'The guard says: \"...\"')",
+        "- Clearly separate mechanical outcomes from narrative"
+      	]
     },
     
     "outputSpecification": {

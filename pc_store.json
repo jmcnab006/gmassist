@@ -2,6 +2,7 @@
 	"Garrick": {
 		  "name": "Garrick Almsford",
 		  "race": "Human",
+		  "sex": "Male",
 		  "class": "Paladin",
 		  "background": "Acolyte",
 		  "appearance": "Tall, square framed blonde long bearded human with chainmail, longsword and shield with striking blue eyes.",
@@ -16,6 +17,7 @@
 	"Puss": {
 		  "name": "Puss N. Boots",
 		  "race": "Tabaxi",
+		  "sex": "Male",
 		  "class": "Rogue",
 		  "background": "Urchin",
 		  "appearance": "Small stature orange tabi with large ears, green eyes a soft white under belly. Wearing studded leather armor, boots a fancy belt and a fancy turqoius pirate hat with a peacock feather.",
@@ -26,6 +28,7 @@
 	"Tiktik": {
 		  "name": "Tiktik Spellfeather",
 		  "race": "Kenku",
+		  "sex": "Female",
 		  "class": "Wizard",
 		  "background": "Artisan",
 		  "appearance": "Medium sized raven with robes and side pack.",
@@ -36,6 +39,7 @@
 	"Juna": {
 		  "name": "Juna",
 		  "race": "Wood-Elf",
+		  "sex": "Female",
 		  "class": "Barbarian",
 		  "background": "Outlander",
 		  "appearance": "Tall tan skinned, purple eyes with breeches, wearing a great axe and two hand axes.", 
