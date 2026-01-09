@@ -14,6 +14,7 @@ No gameplay, narration, or combat logic.
 
 import json
 import yaml
+import configparser
 import sys
 from openai import OpenAI
 
@@ -24,7 +25,7 @@ from openai import OpenAI
 MODEL = "gpt-4.1"
 OUTPUT_FILE = "module.json"
 #SYSTEM_PROMPT="prompts/parse_module/parse_module_ds.prompt"
-SYSTEM_PROMPT="prompts/parse_module/parse_module_yaml.prompt"
+SYSTEM_PROMPT="prompts/parse_module/parse_module_ini.prompt"
 
 # -----------------------------
 # VALIDATION
@@ -98,14 +99,27 @@ output_text = response.output_text.strip()
 
 
 # Validate YAML
-try:
-    module_data = yaml.safe_load(output_text)
-except yaml.YAMLError as e:
-    print("[!] Failed to parse YAML output")
-    print(e)
-    print(output_text)
-    sys.exit(1)
+#try:
+#    module_data = yaml.safe_load(output_text)
+#except yaml.YAMLError as e:
+#    print("[!] Failed to parse YAML output")
+#    print(e)
+#    print(output_text)
+#    sys.exit(1)
+parser = configparser.ConfigParser(
+    allow_no_value=False,
+    strict=True,          # catch duplicate keys
+    delimiters=(":",),    # IMPORTANT: matches your format
+    interpolation=None
+)
 
+#try:
+#    parser.read_string(output_text)
+#except configparser.Error as e:
+#    print("[!] Failed to parse INI output")
+#    print(e)
+#    print(output_text)
+#    sys.exit(1)
 # Validate JSON
 #try:
 #    module_data = json.loads(output_text)
@@ -122,7 +136,9 @@ except yaml.YAMLError as e:
 #with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
 #    json.dump(module_data, f, indent=2, ensure_ascii=False)
 
+#with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+#    yaml.dump(module_data, f, sort_keys=False, allow_unicode=True)
 with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-    yaml.dump(module_data, f, sort_keys=False, allow_unicode=True)
+    f.write(output_text.strip() + "\n")
 
 print(f"[+] Conversion complete: {OUTPUT_FILE}")
