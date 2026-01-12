@@ -1,7 +1,7 @@
 {
   "meta": {
-    "created": "2026-01-11T18:05:26.542656",
-    "last_updated": "2026-01-11T18:09:50.600099+00:00",
+    "created": "2026-01-12T15:35:09.913949+00:00",
+    "last_updated": "2026-01-12T15:39:17.014091+00:00",
     "schema_version": 3
   },
   "module": {
@@ -375,13 +375,13 @@
               "id": null,
               "goal": "Surviving the fall and avoiding injury.",
               "checks": [],
-              "dm_notes": "Imported as descriptive placeholder"
+              "dm_notes": "Imported placeholder"
             },
             {
               "id": null,
               "goal": "Persuading or calming wary animals.",
               "checks": [],
-              "dm_notes": "Imported as descriptive placeholder"
+              "dm_notes": "Imported placeholder"
             }
           ],
           "atmosphere": [
@@ -428,13 +428,13 @@
               "id": null,
               "goal": "Navigating the ice slides safely (Dexterity Acrobatics)",
               "checks": [],
-              "dm_notes": "Imported as descriptive placeholder"
+              "dm_notes": "Imported placeholder"
             },
             {
               "id": null,
               "goal": "Enduring the freezing cold (Constitution saves)",
               "checks": [],
-              "dm_notes": "Imported as descriptive placeholder"
+              "dm_notes": "Imported placeholder"
             }
           ],
           "atmosphere": [
@@ -948,7 +948,7 @@
       }
     },
     "source": "data/IceRoadTrackers.json",
-    "loaded_at": "2026-01-11T18:08:38.114490+00:00"
+    "loaded_at": "2026-01-12T15:35:09.914773+00:00"
   },
   "characters": {
     "pcs": {
@@ -1004,59 +1004,50 @@
       },
       "non_player_characters": {}
     },
-    "source": "pc_store.json",
-    "last_loaded_at": "2026-01-11T18:08:38.120178+00:00"
+    "npcs": {},
+    "source": "characters.json",
+    "last_loaded_at": "2026-01-12T15:35:09.916284+00:00"
   },
-  "world": {},
   "global_flags": {},
   "timelines": {},
   "messages": [
     {
       "role": "user",
-      "content": "list the characters"
+      "content": "Narrate the start of the adventure, setup the players to get going"
     },
     {
       "role": "assistant",
-      "content": "The characters present in the party are:\n\n- Garrick Almsford: Human Paladin, tall with long blonde beard, carries chainmail, shield, longsword; known for plain truth-telling and faithfulness.\n\n- Puss N. Boots: Male Tabaxi Rogue, small orange feline wearing studded leather armor, a fancy turquoise pirate hat with peacock feather; self-described charming and overconfident street survivor.\n\n- Tiktik Spellfeather: Female Kenku Wizard, a dark-feathered raven robed and carrying a side pack; brooding and cynical with necromantic leanings.\n\n- Juna: Female Wood-Elf Barbarian, tall tan-skinned with purple eyes, wields a great axe and two hand axes; young, naive, quick-tempered, favors direct confrontation."
+      "content": "The biting wind howls like a living thing across the narrow Spine World Pass, ice crystals shimmering on jagged rocks under a leaden sky suffused with a faint, eerie glow of unending twilight. Around you, the frozen peaks of the Spine of the World rise sharp and unyielding, their shadows reaching long and cold like spectral claws. Your breaths mist in the frigid air, and every step crunches against the brittle snow—each one a reminder that this wild northern land is no place for the faint of heart.\n\nBefore you stretches a frozen trail, barely visible through the drifting snowflakes, leading deeper into Icewind Dale’s frozen embrace. The weary tracks of travelers and creatures alike mar the pristine white, vanishing beyond a bend where the mountain narrows sharply. Far ahead, a faint scurrying movement catches your eye—a small, determined muskrat darts between rocks, pausing now and then to look back as if beckoning you to follow.\n\nSuddenly, from the cliffs above, a thunderous rumble shakes the air—the distant threat of avalanche looms closer. Ice and snow begin to shift with deadly intent. There’s no time to hesitate. The muskrat’s quick, purposeful movements offer the only chance to escape the impending fury of the mountain.\n\nYou stand at the threshold. The frozen wilds await your courage and resolve.\n\nWhat do you do?"
     },
     {
       "role": "user",
-      "content": "list the players"
+      "content": "does it appear to be an avalanche, garrick asks"
     },
     {
       "role": "assistant",
-      "content": "The players' characters are:\n\n- Garrick Almsford, Human Paladin\n- Puss N. Boots, Male Tabaxi Rogue\n- Tiktik Spellfeather, Female Kenku Wizard\n- Juna, Female Wood-Elf Barbarian"
+      "content": "As the distant thunder rolls through the narrow pass, the very mountains tremble beneath your feet, Garrick. Snow and ice begin cascading from the heights above—a sudden, roaring tide of white hurtling down the cliffs with fierce, devastating intent. The crushed trees and shattered rocks in its path suggest that this is no mere snowfall—this is indeed an avalanche, a deadly force racing toward you with relentless speed.\n\nThe muskrat chattering urgently at your feet seems to acknowledge the urgency, its furtive glances beckoning you to follow before the snowbursts engulf the pass.\n\nThe choice is stark: trust the instinct of this small creature and follow it into the narrow fissure winding between the rocks—or risk standing your ground against the oncoming avalanche’s crushing force.\n\nThe icy wind bites deeper now; time is pressing.\n\nWhat is your move?"
     },
     {
       "role": "user",
-      "content": "describe Garrick"
+      "content": "the party rushes behind the small muskrat to follow it."
     },
     {
       "role": "assistant",
-      "content": "Garrick Almsford is a tall human male with a square frame and striking blue eyes. His long blonde beard complements his chainmail armor, and he carries both a longsword and a shield. Known for his unwavering faith, Garrick speaks plainly and truthfully, sometimes to a blunt degree. Born to humble clergy and raised to defend the helpless, his life is centered around his steadfast devotion."
+      "content": "Without hesitation, your party bolts after the muskrat, its small, nimble form darting through a narrow fissure nestled between jagged rocks. The roar of the avalanche grows thunderous, ice and snow billowing like a storm behind you. Sharp shards of ice and snowflakes claw at your skin, but the muskrat presses on unperturbed, its urgency lending you relentless momentum.\n\nThe fissure twists and narrows, but the path remains passable. Glimmers of faint light ahead promise shelter as the avalanche’s fury crashes just behind, echoing through the mountains like the wrath of the earth itself. Your breaths come hard and fast—this desperate flight feels like the fragile boundary between life and a frozen grave.\n\nAs the last echoes of the avalanche fade, the muskrat halts in a cavernous opening, its tiny eyes gleaming with a strange intelligence. Before you stands a towering, gnarled shape—a great boar with tusks that gleam like frosted steel. This is Mother Tusk.\n\nHer deep, gruff voice rumbles through the chamber. “You’ve survived the mountain’s wrath. Come, safe yourselves within. There’s much to be done, and little time.”\n\nThe chill lingers, but here, in the hollow beneath the mountains, you find a fragile warmth—and perhaps, allies in this savage land.\n\nWhat will you do?"
     },
     {
       "role": "user",
-      "content": "describe Juna"
+      "content": "Listen to the great boar, and follow inside, and listen"
     },
     {
       "role": "assistant",
-      "content": "Juna is a tall Wood-Elf female with tan skin and striking purple eyes. She wears breeches and wields a great axe along with two hand axes. Young and somewhat naive, she is quick to anger and prefers to be up front in any confrontation, often using her strength to intimidate others. Her background is as an outlander, having lived most of her life isolated in a forest and gaining favor with a local barbarian tribe."
-    },
-    {
-      "role": "user",
-      "content": "set the opening scene"
-    },
-    {
-      "role": "assistant",
-      "content": "A biting wind howls through the narrow mountain pass known as the Spine of the World. Snow swirls thickly, blotting out distant peaks and transforming the trail into a slippery gauntlet edged by jagged ice formations. Above, a low gray sky threatens more snowfall, and the faint rumble of shifting snow echoes ominously from the slopes. The cold seeps into bone, while shadows flicker as shapes dart just out of focus on the edges — the silent watchers of the frozen wilderness.\n\nSuddenly, a small white muskrat bursts from the snowbank, darting toward you with frantic urgency. Its bright eyes lock on yours as the distant thunder of a gathering avalanche grows louder, shaking loose snow and ice along the narrow pass. Survival demands swift action: follow the muskrat into the hidden fissure before the mountain claims all in its deadly collapse."
+      "content": "You nod in quiet agreement and step forward alongside your companions, each of you drawn by the grave authority in Mother Tusk’s voice. The great boar’s eyes gleam with ancient wisdom and a fierce protective spark. Carefully, you follow her deeper into the cavern’s shadowed recesses.\n\nInside, the air grows warmer, touched by an earthy musk and the faint rustle of movement. Crystals of ice glint in the dim light, casting refracted hues across crude tapestries of fur and bone hung upon stone walls. Strange shapes stir—a fox with eyes like polished amber, a raven preening its glossy feathers, and other creatures silently watching, as if measuring your worth.\n\nMother Tusk’s voice lowers but remains firm. “You have fled the storm, but a greater chill grips this land. My kin and I hold vigil, but we are fractured and hunted. There is one among us, a scout-child—Spritzel, an otter quick and curious—who has gone missing by the Redwaters’ shore. Wolves prowl, and dark forces stir in the rime.”\n\nShe fixes you all with a heavy gaze. “Help me find Spritzel, and you will earn not just shelter, but allies against the evernight that creeps across Icewind Dale. Will you answer this call?”\n\nThe cavern hums with latent power; the muskrat chirps softly at your feet, eager. \n\nWhat do you say?"
     }
   ],
   "story_log": [
-    "The characters present in the party are:\n\n- Garrick Almsford: Human Paladin, tall with long blonde beard, carries chainmail, shield, longsword; known for plain truth-telling and faithfulness.\n\n- Puss N. Boots: Male Tabaxi Rogue, small orange feline wearing studded leather armor, a fancy turquoise pirate hat with peacock feather; self-described charming and overconfident street survivor.\n\n- Tiktik Spellfeather: Female Kenku Wizard, a dark-feathered raven robed and carrying a side pack; brooding and cynical with necromantic leanings.\n\n- Juna: Female Wood-Elf Barbarian, tall tan-skinned with purple eyes, wields a great axe and two hand axes; young, naive, quick-tempered, favors direct confrontation.",
-    "The players' characters are:\n\n- Garrick Almsford, Human Paladin\n- Puss N. Boots, Male Tabaxi Rogue\n- Tiktik Spellfeather, Female Kenku Wizard\n- Juna, Female Wood-Elf Barbarian",
-    "Garrick Almsford is a tall human male with a square frame and striking blue eyes. His long blonde beard complements his chainmail armor, and he carries both a longsword and a shield. Known for his unwavering faith, Garrick speaks plainly and truthfully, sometimes to a blunt degree. Born to humble clergy and raised to defend the helpless, his life is centered around his steadfast devotion.",
-    "Juna is a tall Wood-Elf female with tan skin and striking purple eyes. She wears breeches and wields a great axe along with two hand axes. Young and somewhat naive, she is quick to anger and prefers to be up front in any confrontation, often using her strength to intimidate others. Her background is as an outlander, having lived most of her life isolated in a forest and gaining favor with a local barbarian tribe.",
-    "A biting wind howls through the narrow mountain pass known as the Spine of the World. Snow swirls thickly, blotting out distant peaks and transforming the trail into a slippery gauntlet edged by jagged ice formations. Above, a low gray sky threatens more snowfall, and the faint rumble of shifting snow echoes ominously from the slopes. The cold seeps into bone, while shadows flicker as shapes dart just out of focus on the edges — the silent watchers of the frozen wilderness.\n\nSuddenly, a small white muskrat bursts from the snowbank, darting toward you with frantic urgency. Its bright eyes lock on yours as the distant thunder of a gathering avalanche grows louder, shaking loose snow and ice along the narrow pass. Survival demands swift action: follow the muskrat into the hidden fissure before the mountain claims all in its deadly collapse."
+    "The biting wind howls like a living thing across the narrow Spine World Pass, ice crystals shimmering on jagged rocks under a leaden sky suffused with a faint, eerie glow of unending twilight. Around you, the frozen peaks of the Spine of the World rise sharp and unyielding, their shadows reaching long and cold like spectral claws. Your breaths mist in the frigid air, and every step crunches against the brittle snow—each one a reminder that this wild northern land is no place for the faint of heart.\n\nBefore you stretches a frozen trail, barely visible through the drifting snowflakes, leading deeper into Icewind Dale’s frozen embrace. The weary tracks of travelers and creatures alike mar the pristine white, vanishing beyond a bend where the mountain narrows sharply. Far ahead, a faint scurrying movement catches your eye—a small, determined muskrat darts between rocks, pausing now and then to look back as if beckoning you to follow.\n\nSuddenly, from the cliffs above, a thunderous rumble shakes the air—the distant threat of avalanche looms closer. Ice and snow begin to shift with deadly intent. There’s no time to hesitate. The muskrat’s quick, purposeful movements offer the only chance to escape the impending fury of the mountain.\n\nYou stand at the threshold. The frozen wilds await your courage and resolve.\n\nWhat do you do?",
+    "As the distant thunder rolls through the narrow pass, the very mountains tremble beneath your feet, Garrick. Snow and ice begin cascading from the heights above—a sudden, roaring tide of white hurtling down the cliffs with fierce, devastating intent. The crushed trees and shattered rocks in its path suggest that this is no mere snowfall—this is indeed an avalanche, a deadly force racing toward you with relentless speed.\n\nThe muskrat chattering urgently at your feet seems to acknowledge the urgency, its furtive glances beckoning you to follow before the snowbursts engulf the pass.\n\nThe choice is stark: trust the instinct of this small creature and follow it into the narrow fissure winding between the rocks—or risk standing your ground against the oncoming avalanche’s crushing force.\n\nThe icy wind bites deeper now; time is pressing.\n\nWhat is your move?",
+    "Without hesitation, your party bolts after the muskrat, its small, nimble form darting through a narrow fissure nestled between jagged rocks. The roar of the avalanche grows thunderous, ice and snow billowing like a storm behind you. Sharp shards of ice and snowflakes claw at your skin, but the muskrat presses on unperturbed, its urgency lending you relentless momentum.\n\nThe fissure twists and narrows, but the path remains passable. Glimmers of faint light ahead promise shelter as the avalanche’s fury crashes just behind, echoing through the mountains like the wrath of the earth itself. Your breaths come hard and fast—this desperate flight feels like the fragile boundary between life and a frozen grave.\n\nAs the last echoes of the avalanche fade, the muskrat halts in a cavernous opening, its tiny eyes gleaming with a strange intelligence. Before you stands a towering, gnarled shape—a great boar with tusks that gleam like frosted steel. This is Mother Tusk.\n\nHer deep, gruff voice rumbles through the chamber. “You’ve survived the mountain’s wrath. Come, safe yourselves within. There’s much to be done, and little time.”\n\nThe chill lingers, but here, in the hollow beneath the mountains, you find a fragile warmth—and perhaps, allies in this savage land.\n\nWhat will you do?",
+    "You nod in quiet agreement and step forward alongside your companions, each of you drawn by the grave authority in Mother Tusk’s voice. The great boar’s eyes gleam with ancient wisdom and a fierce protective spark. Carefully, you follow her deeper into the cavern’s shadowed recesses.\n\nInside, the air grows warmer, touched by an earthy musk and the faint rustle of movement. Crystals of ice glint in the dim light, casting refracted hues across crude tapestries of fur and bone hung upon stone walls. Strange shapes stir—a fox with eyes like polished amber, a raven preening its glossy feathers, and other creatures silently watching, as if measuring your worth.\n\nMother Tusk’s voice lowers but remains firm. “You have fled the storm, but a greater chill grips this land. My kin and I hold vigil, but we are fractured and hunted. There is one among us, a scout-child—Spritzel, an otter quick and curious—who has gone missing by the Redwaters’ shore. Wolves prowl, and dark forces stir in the rime.”\n\nShe fixes you all with a heavy gaze. “Help me find Spritzel, and you will earn not just shelter, but allies against the evernight that creeps across Icewind Dale. Will you answer this call?”\n\nThe cavern hums with latent power; the muskrat chirps softly at your feet, eager. \n\nWhat do you say?"
   ]
 }
