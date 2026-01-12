@@ -1,117 +1,1062 @@
 {
+  "meta": {
+    "created": "2026-01-11T18:05:26.542656",
+    "last_updated": "2026-01-11T18:09:50.600099+00:00",
+    "schema_version": 3
+  },
+  "module": {
+    "id": "ice_road_trackers",
+    "title": "Ice Road Trackers",
+    "data": {
+      "module": {
+        "id": "ice_road_trackers",
+        "title": "Ice Road Trackers",
+        "theme": [
+          "frozen wilderness",
+          "survival",
+          "animal kinship",
+          "mystery"
+        ],
+        "tone": [
+          "tense",
+          "dire",
+          "hopeful",
+          "adventurous"
+        ],
+        "plot_hooks": [
+          {
+            "id": "adventure_hook_1",
+            "title": "Seeking Treasure and Adventure",
+            "summary": "The characters are traveling from the Sword Coast into Icewind Dale seeking fortune and adventure.",
+            "how_party_learns": "This is presented by the adventure introduction as a primary motive for traveling into Icewind Dale.",
+            "starting_location": "spine_world_pass",
+            "connected_threads": [
+              "avalanche_survival",
+              "rescue_spritzel",
+              "curse_everlasting_rime"
+            ],
+            "dm_notes": "Players may create their own backgrounds and motivations connected to this hook. Encourage the party to discuss what brought them to the cold north."
+          },
+          {
+            "id": "adventure_hook_2",
+            "title": "Driven by Secrets",
+            "summary": "Each character has a secret that drives them north into the frozen wilds.",
+            "how_party_learns": "Suggested for party background customization at session start.",
+            "starting_location": "spine_world_pass",
+            "connected_threads": [
+              "avalanche_survival",
+              "rescue_spritzel",
+              "curse_everlasting_rime"
+            ],
+            "dm_notes": "Players are encouraged to develop a personal secret that may be revealed or developed during play."
+          }
+        ],
+        "starting_location": "spine_world_pass",
+        "starting_area": "avalanche_fissure_cavern",
+        "version": "1.0"
+      },
+      "threads": {
+        "avalanche_survival": {
+          "id": "avalanche_survival",
+          "title": "Trapped in the Avalanche",
+          "status": "active",
+          "priority": "primary",
+          "description": "The party is caught in an avalanche while traversing a mountain pass north into Icewind Dale and must follow a mysterious muskrat to survive.",
+          "hook": "The avalanche threatens immediate death; following the muskrat reveals a hidden escape route.",
+          "current_objective": "Escape the avalanche by following the muskrat into the fissure.",
+          "next_milestone": "Meet Mother Tusk and her menagerie.",
+          "connected_elements": {
+            "threads": [
+              "rescue_spritzel"
+            ],
+            "locations": [
+              "spine_world_pass",
+              "cavern_tunnels"
+            ],
+            "areas": [
+              "avalanche_fissure_cavern"
+            ],
+            "npcs": [
+              "mother_tusk",
+              "muskie"
+            ],
+            "items": [],
+            "factions": [
+              "mother_tusks_family"
+            ],
+            "consequences": [
+              "party_rescued_by_mother_tusk"
+            ],
+            "encounter_pool": [
+              "avalanche_event"
+            ],
+            "plot_branches": [
+              "agree_to_help_mother_tusk"
+            ]
+          },
+          "player_knowledge": {
+            "known_to_players": [
+              "Following the muskrat is the only apparent way to survive. There is urgency to escape the avalanche."
+            ],
+            "truth_hidden": [
+              "Mother Tusk orchestrated the muskrat rescue as a way to recruit help for her own cause."
+            ]
+          },
+          "success_conditions": [
+            "Party escapes the avalanche via the fissure.",
+            "Players meet Mother Tusk alive."
+          ],
+          "failure_conditions": [
+            "Characters remain in the open and are buried by the avalanche."
+          ],
+          "dm_notes": "This thread sets up the basic party connection to Mother Tusk. The avalanche should feel deadly and require urgent action."
+        },
+        "rescue_spritzel": {
+          "id": "rescue_spritzel",
+          "title": "Rescue Spritzel",
+          "status": "active",
+          "priority": "primary",
+          "description": "Mother Tusk asks the party to find and rescue her scout-child, the otter Spritzel, who has gone missing near Easthaven.",
+          "hook": "Mother Tusk requests the PCs check on her missing otter in exchange for helping them survive.",
+          "current_objective": "Find Spritzel by following animal tracks along Redwaters’ shore.",
+          "next_milestone": "Confront the pack of wolves pursuing Spritzel and his otters.",
+          "connected_elements": {
+            "threads": [
+              "avalanche_survival"
+            ],
+            "locations": [
+              "redwaters_shore",
+              "ice_slides_cave"
+            ],
+            "areas": [
+              "ice_slides_cave_chamber"
+            ],
+            "npcs": [
+              "mother_tusk",
+              "spritzel",
+              "vundrel"
+            ],
+            "items": [
+              "boots_of_false_tracks",
+              "spritzels_pearl_earring"
+            ],
+            "factions": [
+              "mother_tusks_family"
+            ],
+            "consequences": [
+              "spritzel_rescued_or_lost"
+            ],
+            "encounter_pool": [
+              "wolf_pack_chase"
+            ],
+            "plot_branches": [
+              "spritzel_saved",
+              "spritzel_lost"
+            ]
+          },
+          "player_knowledge": {
+            "known_to_players": [
+              "Mother Tusk's otter scout is missing and likely being hunted by wolves nearby."
+            ],
+            "truth_hidden": [
+              "One of the wolves is awakened and acts under orders from a corrupted druid seeking Mother Tusk."
+            ]
+          },
+          "success_conditions": [
+            "Spritzel is saved and safely returned to the encampment.",
+            "Party survives the cold and makes it back to Mother Tusk."
+          ],
+          "failure_conditions": [
+            "Spritzel is killed or captured by wolves.",
+            "Party succumbs to freezing conditions."
+          ],
+          "dm_notes": "Highlight the urgency due to weather, the odd intelligence of the lead wolf (Vundrel), and the role of the awakened druid as a background threat."
+        },
+        "curse_everlasting_rime": {
+          "id": "curse_everlasting_rime",
+          "title": "The Everlasting Rime",
+          "status": "dormant",
+          "priority": "twist",
+          "description": "Icewind Dale is cursed with unending twilight due to a magical curse from the goddess Auril. Survival is more difficult, and travel is hampered.",
+          "hook": "Party learns gradually from NPCs, strange phenomenon, and the darkness.",
+          "current_objective": "Understand the nature of the curse and its effects on the land.",
+          "next_milestone": "Find evidence or lore connecting Auril directly to the rime.",
+          "connected_elements": {
+            "threads": [],
+            "locations": [
+              "icewind_dale_region"
+            ],
+            "areas": [],
+            "npcs": [
+              "mother_tusk"
+            ],
+            "items": [],
+            "factions": [],
+            "consequences": [],
+            "encounter_pool": [],
+            "plot_branches": []
+          },
+          "player_knowledge": {
+            "known_to_players": [
+              "The land is cursed with permanent twilight and freezing conditions."
+            ],
+            "truth_hidden": [
+              "Mother Tusk suspects a divine curse from Auril, and that the awakened druid may be a minion."
+            ]
+          },
+          "success_conditions": [
+            "Curse's source is understood or revealed."
+          ],
+          "failure_conditions": [
+            "Curse persists and hampers survival throughout adventure."
+          ],
+          "dm_notes": "This thread is foreshadowed but not directly resolvable in this sample adventure."
+        }
+      },
+      "locations": {
+        "spine_world_pass": {
+          "id": "spine_world_pass",
+          "name": "Mountain Pass in the Spine of the World",
+          "type": "wilderness",
+          "environmental_conditions": [
+            "mountainous",
+            "blizzard",
+            "avalanche risk",
+            "dim light"
+          ],
+          "notable_features": [
+            "hidden fissures",
+            "narrow trail",
+            "rapidly descending snow"
+          ],
+          "connected_areas": [
+            "avalanche_fissure_cavern"
+          ],
+          "connected_npcs": [],
+          "available_services": [],
+          "travel_times": {
+            "icewind_dale_region": "4 hours",
+            "mother_tusk_encampment": "3 hours"
+          },
+          "dm_notes": "Initial setting for the avalanche event. Travel is dangerous and slow."
+        },
+        "mother_tusk_encampment": {
+          "id": "mother_tusk_encampment",
+          "name": "Mother Tusk's Encampment",
+          "type": "dungeon",
+          "environmental_conditions": [
+            "icy cavern",
+            "dim light",
+            "protected"
+          ],
+          "notable_features": [
+            "large walrus",
+            "animal menagerie",
+            "warm fire"
+          ],
+          "connected_areas": [
+            "cavern_tunnels"
+          ],
+          "connected_npcs": [
+            "mother_tusk",
+            "muskie"
+          ],
+          "available_services": [
+            "long rest",
+            "basic healing (cure wounds scrolls)",
+            "information"
+          ],
+          "travel_times": {
+            "spine_world_pass": "3 hours",
+            "redwaters_shore": "2 hours"
+          },
+          "dm_notes": "Safe haven for the party between quests; animals are wary of outsiders."
+        },
+        "redwaters_shore": {
+          "id": "redwaters_shore",
+          "name": "Redwaters Shore",
+          "type": "wilderness",
+          "environmental_conditions": [
+            "frozen lake",
+            "deep snow",
+            "dim light",
+            "bitter wind"
+          ],
+          "notable_features": [
+            "animal tracks",
+            "signs of struggle"
+          ],
+          "connected_areas": [
+            "ice_slides_cave_chamber"
+          ],
+          "connected_npcs": [
+            "spritzel"
+          ],
+          "available_services": [],
+          "travel_times": {
+            "mother_tusk_encampment": "2 hours",
+            "easthaven": "8 hours"
+          },
+          "dm_notes": "Otters' trail and wolf tracks are found here."
+        },
+        "ice_slides_cave": {
+          "id": "ice_slides_cave",
+          "name": "Ice Slides Cave",
+          "type": "dungeon",
+          "environmental_conditions": [
+            "ice slide",
+            "subzero water",
+            "cloying darkness"
+          ],
+          "notable_features": [
+            "steep icy tunnel",
+            "echoes of combat"
+          ],
+          "connected_areas": [
+            "ice_slides_cave_chamber"
+          ],
+          "connected_npcs": [
+            "vundrel"
+          ],
+          "available_services": [],
+          "travel_times": {
+            "redwaters_shore": "immediate"
+          },
+          "dm_notes": "Cave leads to the main encounter with wolves and otters."
+        },
+        "icewind_dale_region": {
+          "id": "icewind_dale_region",
+          "name": "Icewind Dale",
+          "type": "region",
+          "environmental_conditions": [
+            "perpetual twilight",
+            "freezing",
+            "dangerous weather",
+            "blizzards"
+          ],
+          "notable_features": [
+            "Ten-Towns",
+            "Auril's curse",
+            "animals on the run"
+          ],
+          "connected_areas": [],
+          "connected_npcs": [],
+          "available_services": [],
+          "travel_times": {},
+          "dm_notes": "Overall campaign region. Perpetual dim light due to Auril’s curse."
+        }
+      },
+      "areas": {
+        "avalanche_fissure_cavern": {
+          "id": "avalanche_fissure_cavern",
+          "name": "Avalanche Fissure Cavern",
+          "parent_location": "spine_world_pass",
+          "area_type": "cave",
+          "size_ft": "20x40 ft",
+          "description": {
+            "read_aloud": "The icy slide dumps you unceremoniously into a cold cavern. The muskrat stares you in the eye, then wiggles a bit, as if happy to see you survived the close call.",
+            "summary": "A natural cavern beneath the avalanche, room for several people, damp and cold, shadows conceal a menagerie of animals."
+          },
+          "environmental_conditions": [
+            "icy",
+            "enclosed",
+            "dim light"
+          ],
+          "lighting": "dim",
+          "connected_areas": {
+            "deeper_cavern": "cavern_tunnels"
+          },
+          "enemies": [],
+          "treasure": [],
+          "traps": [],
+          "puzzles": [],
+          "skill_challenges": [
+            {
+              "id": null,
+              "goal": "Surviving the fall and avoiding injury.",
+              "checks": [],
+              "dm_notes": "Imported as descriptive placeholder"
+            },
+            {
+              "id": null,
+              "goal": "Persuading or calming wary animals.",
+              "checks": [],
+              "dm_notes": "Imported as descriptive placeholder"
+            }
+          ],
+          "atmosphere": [
+            "chill",
+            "echoing",
+            "animal sounds"
+          ],
+          "dm_notes": "Site for meeting Mother Tusk. Use animal voices and shadows to set the scene."
+        },
+        "ice_slides_cave_chamber": {
+          "id": "ice_slides_cave_chamber",
+          "name": "Ice Slides Cave Chamber",
+          "parent_location": "ice_slides_cave",
+          "area_type": "interior_room",
+          "size_ft": "40x50 ft",
+          "description": {
+            "read_aloud": "The ice slides end in a chamber flooded with a foot of frigid water. The otters swim adeptly at the far side of the cavern, avoiding the wolves’ snapping jaws.",
+            "summary": "Main chamber at the bottom of the ice slides, partly submerged, slick icy shelves, home to the climactic wolf-otter battle."
+          },
+          "environmental_conditions": [
+            "frigid water",
+            "icy shelves",
+            "slippery"
+          ],
+          "lighting": "dim",
+          "connected_areas": {
+            "surface_exit": "redwaters_shore"
+          },
+          "enemies": [
+            "wolf_1",
+            "wolf_2",
+            "wolf_3",
+            "wolf_4",
+            "vundrel"
+          ],
+          "treasure": [
+            "boots_of_false_tracks",
+            "spritzels_pearl_earring"
+          ],
+          "traps": [],
+          "puzzles": [],
+          "skill_challenges": [
+            {
+              "id": null,
+              "goal": "Navigating the ice slides safely (Dexterity Acrobatics)",
+              "checks": [],
+              "dm_notes": "Imported as descriptive placeholder"
+            },
+            {
+              "id": null,
+              "goal": "Enduring the freezing cold (Constitution saves)",
+              "checks": [],
+              "dm_notes": "Imported as descriptive placeholder"
+            }
+          ],
+          "atmosphere": [
+            "slippery chaos",
+            "dangerous chill",
+            "animal panic"
+          ],
+          "dm_notes": "Manage initiative and provide consequences for failed Acrobatics checks and cold survival. Spritzel and the otters can help the party, but are not direct combatants."
+        }
+      },
+      "items": {
+        "boots_of_false_tracks": {
+          "id": "boots_of_false_tracks",
+          "name": "Boots of False Tracks",
+          "type": "magic_item",
+          "rarity": "common",
+          "location": "ice_slides_cave_chamber",
+          "magical": true,
+          "description": "Comfortable, fur-lined boots embroidered with gaudy, worthless gems. While wearing them, you may choose to leave tracks like another humanoid of your size.",
+          "properties": [
+            "footwear",
+            "track-altering"
+          ],
+          "curse": null,
+          "weight_value": {
+            "weight_lb": 2,
+            "value_gp": 25
+          },
+          "connected_threads": [
+            "rescue_spritzel"
+          ],
+          "lore": "Made for scoundrels and spies, these boots are popular among smugglers.",
+          "acquisition_method": "Looted from a frozen explorer in the ice slides cave.",
+          "quest_significance": "A small aid to future tracking or evasion encounters.",
+          "consequences_when_obtained": [],
+          "dm_notes": "Only one pair is found; describe the former owner's remains as a reminder of the land's lethality."
+        },
+        "spritzels_pearl_earring": {
+          "id": "spritzels_pearl_earring",
+          "name": "Spritzel's Pearl Earring",
+          "type": "mundane",
+          "rarity": "common",
+          "location": "spritzel",
+          "magical": false,
+          "description": "A shiny pearl earring, prized by Spritzel, serving as thanks to the party for saving him.",
+          "properties": [
+            "decorative",
+            "keepsake"
+          ],
+          "curse": null,
+          "weight_value": {
+            "weight_lb": 0.1,
+            "value_gp": 10
+          },
+          "connected_threads": [
+            "rescue_spritzel"
+          ],
+          "lore": "Spritzel found it on a shoreline and made it his signature accessory.",
+          "acquisition_method": "Gifted to party by Spritzel.",
+          "quest_significance": "Token of friendship and gratitude; minor roleplay value.",
+          "consequences_when_obtained": [],
+          "dm_notes": "Present as a nonmagical trophy; Spritzel will remember who keeps it."
+        }
+      },
+      "npcs": {
+        "mother_tusk": {
+          "id": "mother_tusk",
+          "name": "Mother Tusk",
+          "role": "Protector of the Awakened Animals",
+          "race": "Awakened Walrus",
+          "class": null,
+          "level": null,
+          "location": "mother_tusk_encampment",
+          "status": "alive",
+          "alignment": "neutral good",
+          "relationship_to_party": "rescuer, quest-giver",
+          "trust_level": 70,
+          "personality": [
+            "caring",
+            "cautious",
+            "ruthless if her family is threatened"
+          ],
+          "appearance": "A massive, ten-foot-long walrus with intelligent eyes and a commanding presence.",
+          "voice": "Slobbery, deep, slightly rasping Common.",
+          "secrets": [
+            "The goliath druid who awakened her is still alive, corrupted, and hunting her.",
+            "She fears for her family's safety but will not tell the whole truth yet."
+          ],
+          "motivation": "To keep all her awakened animal charges safe.",
+          "fears": [
+            "Losing her family",
+            "Discovery by the druid"
+          ],
+          "goals": [
+            "Protect the family",
+            "Find safety from hunters"
+          ],
+          "knowledge_of_threads": {
+            "avalanche_survival": "Mastermind of the party's rescue; orchestrated their path.",
+            "rescue_spritzel": "Trusts the party with her child's life; knows wolves are not normal.",
+            "curse_everlasting_rime": "Knows it's divine in origin but withholds details."
+          },
+          "information_can_provide": [
+            "Background on awakened animals",
+            "Threats to Icewind Dale",
+            "Directions to Spritzel's last known location"
+          ],
+          "items_possessed": [],
+          "combat_stats": null,
+          "can_die": "no",
+          "connected_threads": [
+            "avalanche_survival",
+            "rescue_spritzel",
+            "curse_everlasting_rime"
+          ],
+          "dm_notes": "Mother Tusk is planned for future episodes; keep her alive and functional. Roleplay her as wary yet fiercely maternal."
+        },
+        "spritzel": {
+          "id": "spritzel",
+          "name": "Spritzel",
+          "role": "Scout, rescued otter",
+          "race": "Awakened Otter",
+          "class": null,
+          "level": null,
+          "location": "redwaters_shore",
+          "status": "alive",
+          "alignment": "chaotic good",
+          "relationship_to_party": "rescued NPC",
+          "trust_level": 85,
+          "personality": [
+            "irrepressible",
+            "flamboyant",
+            "risk-taking",
+            "brave"
+          ],
+          "appearance": "White-furred otter with a brown patch above the right eye, sporting a pearl earring.",
+          "voice": "High, squeaky voice, speaks rapid Common.",
+          "secrets": [
+            "Doesn't fear danger if it's for a good cause.",
+            "Enjoys accumulating shiny things."
+          ],
+          "motivation": "To brave danger and find shiny things.",
+          "fears": [
+            "Dying meaninglessly"
+          ],
+          "goals": [
+            "Scout for Mother Tusk",
+            "Live a storied life"
+          ],
+          "knowledge_of_threads": {
+            "avalanche_survival": "Rescued by party, unaware of bigger schemes.",
+            "rescue_spritzel": "Central; knows he was being hunted by an unusually intelligent wolf."
+          },
+          "information_can_provide": [
+            "Description of black-feathered owlbear spotted near Easthaven",
+            "Hints of the wolves' unnatural behavior"
+          ],
+          "items_possessed": [
+            "spritzels_pearl_earring"
+          ],
+          "combat_stats": null,
+          "can_die": "conditional",
+          "connected_threads": [
+            "rescue_spritzel"
+          ],
+          "dm_notes": "Irrepressible and memorable; rewarding the party with his earring is a strong hook for their continued investment."
+        },
+        "vundrel": {
+          "id": "vundrel",
+          "name": "Vundrel",
+          "role": "Pack leader",
+          "race": "Awakened Wolf",
+          "class": null,
+          "level": null,
+          "location": "ice_slides_cave",
+          "status": "alive",
+          "alignment": "neutral evil",
+          "relationship_to_party": "antagonist",
+          "trust_level": 0,
+          "personality": [
+            "efficient",
+            "driven",
+            "fierce"
+          ],
+          "appearance": "Large, alert wolf with unusual intelligence in her eyes.",
+          "voice": "Deep, snarling Common.",
+          "secrets": [
+            "Works for the corrupted goliath druid.",
+            "Resents her forced subservience."
+          ],
+          "motivation": "To hunt down Mother Tusk's family as ordered.",
+          "fears": [
+            "Disobedience consequences",
+            "Independence"
+          ],
+          "goals": [
+            "Kill or capture awakened animals"
+          ],
+          "knowledge_of_threads": {
+            "rescue_spritzel": "Sees Spritzel as quarry, recognizes party as interference."
+          },
+          "information_can_provide": [
+            "Hints about the druid master and the greater threat"
+          ],
+          "items_possessed": [],
+          "combat_stats": {
+            "hp": 11,
+            "ac": 13,
+            "spd": "40 ft",
+            "special": "Keen Hearing and Smell, Pack Tactics"
+          },
+          "can_die": "yes",
+          "connected_threads": [
+            "rescue_spritzel"
+          ],
+          "dm_notes": "Adjust stats based on party size (dire wolf for strong parties). Vundrel should show unnatural cunning."
+        },
+        "muskie": {
+          "id": "muskie",
+          "name": "Muskie",
+          "role": "Guide muskrat",
+          "race": "Muskrat (awakened or highly trained)",
+          "class": null,
+          "level": null,
+          "location": "spine_world_pass",
+          "status": "alive",
+          "alignment": "neutral",
+          "relationship_to_party": "rescuer/helper",
+          "trust_level": 60,
+          "personality": [
+            "frantic",
+            "loyal"
+          ],
+          "appearance": "Snowy-white muskrat with alert, darting eyes.",
+          "voice": "Silent, communicates by gestures.",
+          "secrets": [],
+          "motivation": "To aid Mother Tusk's plans.",
+          "fears": [],
+          "goals": [
+            "Keep party alive",
+            "Reunite with Mother Tusk"
+          ],
+          "knowledge_of_threads": {
+            "avalanche_survival": "Saves party by leading them into the fissure."
+          },
+          "information_can_provide": [],
+          "items_possessed": [],
+          "combat_stats": null,
+          "can_die": "no",
+          "connected_threads": [
+            "avalanche_survival"
+          ],
+          "dm_notes": "A plot device for guiding the party; handwave combat stats."
+        }
+      },
+      "factions": {
+        "mother_tusks_family": {
+          "id": "mother_tusks_family",
+          "name": "Mother Tusk's Family",
+          "alignment": "neutral good",
+          "goals": [
+            "Survive",
+            "Stay hidden from hunters",
+            "Protect all awakened animals"
+          ],
+          "ideology": "Awakened creatures deserve safety from exploitation or manipulation by humanoids.",
+          "leadership": [
+            "mother_tusk"
+          ],
+          "size": "medium (approx. 30 animals)",
+          "resources": [
+            "hidden caves",
+            "various animal skills"
+          ],
+          "current_plans": [
+            "Avoid detection",
+            "Recruit helpful adventurers"
+          ],
+          "party_standing": "cautiously positive",
+          "threat_level": "minor",
+          "connected_threads": [
+            "avalanche_survival",
+            "rescue_spritzel"
+          ],
+          "dm_notes": "Unusual, sentient animal kin group. They are wary at first but may become strong allies with further episodes."
+        }
+      },
+      "consequences": {
+        "party_rescued_by_mother_tusk": {
+          "id": "party_rescued_by_mother_tusk",
+          "trigger": "Party follows muskrat during avalanche.",
+          "effect": "Party is saved and indebted to Mother Tusk.",
+          "status": "resolved",
+          "potential_payoff": "Leads to party meeting Mother Tusk and becoming involved in her troubles.",
+          "expiration": null,
+          "connected_threads": [
+            "avalanche_survival"
+          ],
+          "connected_locations": [
+            "spine_world_pass"
+          ],
+          "connected_npcs": [
+            "mother_tusk",
+            "muskie"
+          ],
+          "dm_notes": "This is the branching point for all subsequent episodes."
+        },
+        "spritzel_rescued_or_lost": {
+          "id": "spritzel_rescued_or_lost",
+          "trigger": "Resolution of wolf/otter encounter",
+          "effect": "Spritzel is either saved (party receives reward, builds trust) or lost (Mother Tusk withdraws trust and missions).",
+          "status": "ongoing",
+          "potential_payoff": "Spritzel surviving enables future adventure aid.",
+          "expiration": null,
+          "connected_threads": [
+            "rescue_spritzel"
+          ],
+          "connected_locations": [
+            "redwaters_shore",
+            "ice_slides_cave"
+          ],
+          "connected_npcs": [
+            "spritzel"
+          ],
+          "dm_notes": "Determine outcome based on party actions; Spritzel should survive unless party fails drastically."
+        }
+      },
+      "world_state": {
+        "variables": {
+          "darkness_level": {
+            "type": "number",
+            "value": 8,
+            "min": 0,
+            "max": 10,
+            "description": "Represents the prevailing lack of sunlight in Icewind Dale (0 = bright daylight, 10 = perpetual darkness).",
+            "changes_when": "Auril's curse is strengthened or weakened."
+          },
+          "party_cold_exposure": {
+            "type": "number",
+            "value": 0,
+            "min": 0,
+            "max": 6,
+            "description": "Tracks cumulative cold exposure on current mission.",
+            "changes_when": "Party spends 30 min in freezing weather without warmth."
+          }
+        },
+        "faction_standings": {
+          "mother_tusks_family": {
+            "type": "int",
+            "value": 2,
+            "min": -5,
+            "max": 5,
+            "description": "Party relationship with awakened animals",
+            "changes_when": "Saves/rescues animals (+), harms/abandons them (-)"
+          }
+        },
+        "timers": {
+          "avalanche_imminence": {
+            "description": "Time before avalanche hits party in the pass",
+            "value": 30,
+            "unit": "seconds",
+            "ticks_when": "Party delays or ignores muskrat",
+            "on_expire": "Avalanche buries the party, causing near-certain death"
+          },
+          "exposure_limit": {
+            "description": "Cold exposure limit before party suffers exhaustion",
+            "value": 3,
+            "unit": "hours",
+            "ticks_when": "Party is wet or without heat after cave encounter",
+            "on_expire": "Party members must make saves or gain levels of exhaustion"
+          }
+        }
+      },
+      "encounter_pool": {
+        "avalanche_event": {
+          "id": "avalanche_event",
+          "trigger_conditions": [
+            "Party is traveling through the Spine of the World pass",
+            "Snowfall increases"
+          ],
+          "description": "An avalanche descends rapidly, threatening to bury everything in the pass.",
+          "enemy_composition": [],
+          "scalable": false,
+          "loot": [],
+          "connects_to": [
+            "avalanche_survival"
+          ],
+          "dm_notes": "Not a combat encounter, but a skill challenge to escape. Do not use initiative; use urgency and rapid description."
+        },
+        "wolf_pack_chase": {
+          "id": "wolf_pack_chase",
+          "trigger_conditions": [
+            "Party enters the cave chamber at bottom of slides",
+            "Spritzel and otters are present, wolves in pursuit"
+          ],
+          "description": "Pack of four wolves, led by awakened wolf Vundrel (or dire wolf for strong parties), attacks otters and PCs.",
+          "enemy_composition": [
+            "wolf_1",
+            "wolf_2",
+            "wolf_3",
+            "wolf_4",
+            "vundrel"
+          ],
+          "scalable": true,
+          "loot": [
+            "boots_of_false_tracks"
+          ],
+          "connects_to": [
+            "rescue_spritzel"
+          ],
+          "dm_notes": "Adjust number and strength of wolves per party strength. Use otter swarming to help party. The lead wolf speaks and is the key threat."
+        }
+      },
+      "plot_branches": {
+        "agree_to_help_mother_tusk": {
+          "id": "agree_to_help_mother_tusk",
+          "condition": "Party agrees to take on a mission for Mother Tusk",
+          "new_objective": "Complete the chosen rescue or errand for Mother Tusk",
+          "narrative_impact": "Party is trusted with more secrets, access to further help, healing, and information",
+          "consequences": [],
+          "connected_threads": [
+            "rescue_spritzel"
+          ],
+          "dm_notes": "This is a natural branch; refusing aid would cut short the adventure for that character."
+        },
+        "spritzel_saved": {
+          "id": "spritzel_saved",
+          "condition": "Party saves Spritzel from wolves and freezing",
+          "new_objective": "Return to Mother Tusk for reward and rest",
+          "narrative_impact": "Spritzel becomes an ally, party benefits from healing and loot.",
+          "consequences": [
+            "spritzel_rescued_or_lost"
+          ],
+          "connected_threads": [
+            "rescue_spritzel"
+          ],
+          "dm_notes": "Reinforces party's standing with awakened animal faction."
+        },
+        "spritzel_lost": {
+          "id": "spritzel_lost",
+          "condition": "Party fails or refuses to save Spritzel",
+          "new_objective": "Confront Mother Tusk with the outcome",
+          "narrative_impact": "Mother Tusk withdraws trust and future aid; adventure may end early for that PC.",
+          "consequences": [
+            "spritzel_rescued_or_lost"
+          ],
+          "connected_threads": [
+            "rescue_spritzel"
+          ],
+          "dm_notes": "This should only occur on extreme party failure or intentional cruelty."
+        }
+      },
+      "xref_index": {
+        "by_location": {
+          "spine_world_pass": {
+            "areas": [
+              "avalanche_fissure_cavern"
+            ],
+            "npcs": [
+              "muskie"
+            ],
+            "threads": [
+              "avalanche_survival"
+            ],
+            "items": []
+          },
+          "mother_tusk_encampment": {
+            "areas": [],
+            "npcs": [
+              "mother_tusk"
+            ],
+            "threads": [
+              "rescue_spritzel",
+              "avalanche_survival"
+            ],
+            "items": []
+          },
+          "redwaters_shore": {
+            "areas": [
+              "ice_slides_cave_chamber"
+            ],
+            "npcs": [
+              "spritzel"
+            ],
+            "threads": [
+              "rescue_spritzel"
+            ],
+            "items": []
+          },
+          "ice_slides_cave": {
+            "areas": [
+              "ice_slides_cave_chamber"
+            ],
+            "npcs": [
+              "vundrel"
+            ],
+            "threads": [
+              "rescue_spritzel"
+            ],
+            "items": []
+          },
+          "icewind_dale_region": {
+            "areas": [],
+            "npcs": [],
+            "threads": [
+              "curse_everlasting_rime"
+            ],
+            "items": []
+          }
+        }
+      }
+    },
+    "source": "data/IceRoadTrackers.json",
+    "loaded_at": "2026-01-11T18:08:38.114490+00:00"
+  },
+  "characters": {
+    "pcs": {
+      "player_characters": {
+        "Garrick": {
+          "name": "Garrick Almsford",
+          "race": "Human",
+          "sex": "Male",
+          "class": "Paladin",
+          "background": "Acolyte",
+          "appearance": "Tall, square framed blonde long bearded human with chainmail, longsword and shield with striking blue eyes.",
+          "personality": "Faith is the axis around which his life turns. He doesn't waver easily, even under pressure.",
+          "backstory": "Born to humble clergy and raised to defend the helpless.",
+          "notes": "Lies make him physically uncomfortable; He speaks truths plainly, sometimes too bluntly.",
+          "items": [
+            "Chainmail",
+            "Shield"
+          ]
+        },
+        "Puss": {
+          "name": "Puss N. Boots",
+          "race": "Tabaxi",
+          "sex": "Male",
+          "class": "Rogue",
+          "background": "Urchin",
+          "appearance": "Small stature orange tabi with large ears, green eyes a soft white under belly. Wearing studded leather armor, boots a fancy belt and a fancy turqoius pirate hat with a peacock feather.",
+          "personality": "Self described charming. Arrogant and overconfident.",
+          "backstory": "As a kitten he was thrown into a river in a sock. He managed to escape and spent most of his life on the streets. Where he was taken in by a swordmaster. He learned mastery afrom the swordmaster and started adventuring when the swordmaster died.",
+          "notes": "Prefers one sided solutions; often tries to pursuade NPCs with deciet or persuasion."
+        },
+        "Tiktik": {
+          "name": "Tiktik Spellfeather",
+          "race": "Kenku",
+          "sex": "Female",
+          "class": "Wizard",
+          "background": "Artisan",
+          "appearance": "Medium sized raven with robes and side pack.",
+          "personality": "Dark, brooding, cynical distrusting.",
+          "backstory": "A traveling wizard whose aspirations lend towards necromancy and darkness.",
+          "notes": "Prefers fatal solutions; often tries to instigate NPCs with words."
+        },
+        "Juna": {
+          "name": "Juna",
+          "race": "Wood-Elf",
+          "sex": "Female",
+          "class": "Barbarian",
+          "background": "Outlander",
+          "appearance": "Tall tan skinned, purple eyes with breeches, wearing a great axe and two hand axes.",
+          "personality": "Young naive and quick to anger.",
+          "backstory": "Lived in a forest for most of her life, isolated from society gaining favor with a local barbarian tribe. ",
+          "notes": "Prefers being up front and in the fray; often tries to intimidate NPCs with a show of strength."
+        }
+      },
+      "non_player_characters": {}
+    },
+    "source": "pc_store.json",
+    "last_loaded_at": "2026-01-11T18:08:38.120178+00:00"
+  },
+  "world": {},
+  "global_flags": {},
+  "timelines": {},
   "messages": [
+    {
+      "role": "user",
+      "content": "list the characters"
+    },
+    {
+      "role": "assistant",
+      "content": "The characters present in the party are:\n\n- Garrick Almsford: Human Paladin, tall with long blonde beard, carries chainmail, shield, longsword; known for plain truth-telling and faithfulness.\n\n- Puss N. Boots: Male Tabaxi Rogue, small orange feline wearing studded leather armor, a fancy turquoise pirate hat with peacock feather; self-described charming and overconfident street survivor.\n\n- Tiktik Spellfeather: Female Kenku Wizard, a dark-feathered raven robed and carrying a side pack; brooding and cynical with necromantic leanings.\n\n- Juna: Female Wood-Elf Barbarian, tall tan-skinned with purple eyes, wields a great axe and two hand axes; young, naive, quick-tempered, favors direct confrontation."
+    },
+    {
+      "role": "user",
+      "content": "list the players"
+    },
+    {
+      "role": "assistant",
+      "content": "The players' characters are:\n\n- Garrick Almsford, Human Paladin\n- Puss N. Boots, Male Tabaxi Rogue\n- Tiktik Spellfeather, Female Kenku Wizard\n- Juna, Female Wood-Elf Barbarian"
+    },
+    {
+      "role": "user",
+      "content": "describe Garrick"
+    },
+    {
+      "role": "assistant",
+      "content": "Garrick Almsford is a tall human male with a square frame and striking blue eyes. His long blonde beard complements his chainmail armor, and he carries both a longsword and a shield. Known for his unwavering faith, Garrick speaks plainly and truthfully, sometimes to a blunt degree. Born to humble clergy and raised to defend the helpless, his life is centered around his steadfast devotion."
+    },
+    {
+      "role": "user",
+      "content": "describe Juna"
+    },
+    {
+      "role": "assistant",
+      "content": "Juna is a tall Wood-Elf female with tan skin and striking purple eyes. She wears breeches and wields a great axe along with two hand axes. Young and somewhat naive, she is quick to anger and prefers to be up front in any confrontation, often using her strength to intimidate others. Her background is as an outlander, having lived most of her life isolated in a forest and gaining favor with a local barbarian tribe."
+    },
     {
       "role": "user",
       "content": "set the opening scene"
     },
     {
       "role": "assistant",
-      "content": "**Midwinter Market, Sea Ward**\n\nThe Midwinter Market bustles under a sky thick with snowflakes, lanterns casting warm golden pools across velvet-draped stalls. The air is fragrant with the mingling scents of spiced pastries and steaming mulled wine, while cheerful carolers weave their melodies through the lively crowd. Merchants offer handcrafted instruments, pastries, and holiday trinkets, their voices rising and falling amid the festive din. Nearby, citizens of Waterdeep laugh and barter, wrapped in furs against the chilled winter evening. Beyond the market, the grand silhouette of Cassalanter Villa looms, its windows glowing with candlelight, promising warmth and celebration inside."
-    },
-    {
-      "role": "user",
-      "content": "describe the party "
-    },
-    {
-      "role": "assistant",
-      "content": "The group moving through the bustling market is a striking assembly. Garrick Almsford, a tall human paladin, stands firm in shining chainmail, his square-jawed face framed by a long blonde beard and piercing blue eyes that reflect unyielding faith. Beside him, Puss N. Boots, a small tabaxi rogue with vivid orange fur and a soft white underbelly, moves with lithe grace; his large ears twitch attentively beneath a fanciful turquoise pirate hat adorned with a peacock feather, and his studded leather armor gleams faintly in the lantern light. Nearby, Tiktik Spellfeather, a kenku wizard clad in modest robes and carrying a side pack, observes the scene with dark, brooding eyes, a shadow of cynicism etched in her features. Finally, Juna, a tall wood-elf barbarian with tanned skin and striking purple eyes, grips her great axe and twin hand axes confidently, her expression a mixture of youthful naivete and fiery determination as she takes in the warmth and bustle around her. Together, they cut a distinctive figure amid the joyous crowd of Waterdeep\u2019s Midwinter Market."
-    },
-    {
-      "role": "user",
-      "content": "Is the party already headed to the Villa?"
-    },
-    {
-      "role": "assistant",
-      "content": "The party stands at the lively Midwinter Market, taking in the festive sights and sounds. The grand, candle-lit windows of Cassalanter Villa lie beyond the bustling stalls, visible down the streets leading from the market. The invitation to the gala waits to be heeded, and the villa\u2019s warm glow beckons as the next destination."
-    },
-    {
-      "role": "user",
-      "content": "The party approaches the Villa "
-    },
-    {
-      "role": "assistant",
-      "content": "**Cassalanter Villa**\n\nThe grand doors of the Cassalanter Villa rise before you, their dark wood polished to a deep sheen under flickering lantern light. Soft strains of music drift through the air from within, hinting at the elegant gala underway. The stone steps are dusted with fresh snow that crunches softly beneath approaching footsteps. Patrolled by a pair of stern-faced guards in polished armor, the entrance exudes both warmth and a hint of cautious vigilance, as guests arrive and are welcomed into the lavish halls beyond. Warmth and flickering candlelight spill through tall windows, suggesting a gathering both festive and refined awaits inside."
-    },
-    {
-      "role": "user",
-      "content": "the party looks around describe what they see and any notable objects people or things"
-    },
-    {
-      "role": "assistant",
-      "content": "The wide foyer inside the villa gleams with polished marble floors and richly woven carpets, footsteps muffled against the soft expanse. Crystal chandeliers cast sparkling light across elegantly dressed guests engaged in animated conversation, their laughter mingling with the delicate strains of a harp and violin duet coming from a raised platform nearby. Along the walls hang exquisite paintings of serene landscapes and ancestral portraits, their gilded frames glowing softly in the candlelight. Nearby, a well-dressed butler moves discreetly, offering trays of sparkling wine and delicate hors d\u2019oeuvres. At one corner, a gilded grand piano waits silently, its polished surface reflecting flickers of warm firelight from an ornate hearth. A small group gathers near the doorway leading to the ballroom, exchanging whispers and occasionally glancing toward the entrance. The atmosphere hums with anticipation, but an undercurrent of guarded caution seems woven beneath the polished veneer of festivity."
-    },
-    {
-      "role": "user",
-      "content": "summarize the adventure for the DM"
-    },
-    {
-      "role": "assistant",
-      "content": "The adventure begins as the party attends the festive Midwinter Gala at the Cassalanter Villa in Waterdeep. Shortly after arrival, the celebrated opera singer Aria Cavatina is attacked by an imp, triggering a lockdown enforced by the City Watch and casting suspicion and tension among the noble guests. The party is enlisted by Captain Staget to investigate the fiendish assault and uncover the source of the supernatural threat.\n\nExploration of the villa reveals a puzzle centered around a children\u2019s toy sigil and a cryptic fable known as The Wooden Girl. The Cassalanter children\u2019s playroom holds key clues\u2014and encounters with a mischievous imp named Chernok who aids but also complicates the investigation. As the party assembles the toy sigil, they learn it serves as a gateway linked to an ancient altar in the City of the Dead.\n\nThe climax occurs when the party travels to the cemetery at night and completes the toy sigil upon the unmarked altar, inadvertently summoning Koluchki, a dangerous spined devil. The final challenge is to defeat this fiend while using accumulated knowledge and resources\u2014such as holy water or arcane rites\u2014to close the fiendish portal and end the threat.\n\nThroughout, social interactions influence the City Watch\u2019s view of the party, particularly their handling of the Cassalanter children and guests. Optional side quests include aiding Aria in restoring her family\u2019s ancient magical song and breaking the curse of an ornate music box captivating one of the children.\n\nSuccess results in the restoration of peace to the gala and rewards from grateful allies; failure allows infernal influences to persist, inviting further threats and City Watch scrutiny. The module encourages a balance of investigation, social diplomacy, and cautious confrontation under a festive yet darkening shadow."
-    },
-    {
-      "role": "user",
-      "content": "the party enters into the villa and scans the area looking for anything suspicious"
-    },
-    {
-      "role": "assistant",
-      "content": "As the party steps inside the Cassalanter Villa, their eyes take in the polished marble floors glinting beneath crystal chandeliers, the soft murmur of elegant conversations, and the gentle music weaving through the air. Guests clad in fine attire mingle near lavish tapestries and ancestral portraits, while a poised butler moves quietly among them with trays of wine and hors d\u2019oeuvres. Near the entrance to the ballroom, some guests exchange furtive whispers and occasional glances toward the villa\u2019s depths. Amid the refined gaiety, a subtle tension lingers\u2014an undercurrent of guarded watchfulness you sense beneath the surface. Nothing immediately draws attention as overtly suspicious, but the careful eyes of the assembled hosts seem to hold secrets just beneath their polished smiles."
-    },
-    {
-      "role": "user",
-      "content": "list the party members"
-    },
-    {
-      "role": "assistant",
-      "content": "The party consists of four members:\n\n- Garrick Almsford, a tall human paladin clad in shining chainmail, bearing a longsword and shield, with piercing blue eyes and a long blonde beard.\n- Puss N. Boots, a small orange tabaxi rogue wearing studded leather armor and a turquoise pirate hat adorned with a peacock feather, nimble and charming.\n- Tiktik Spellfeather, a dark-eyed kenku wizard dressed in modest robes with a side pack, brooding and cynical.\n- Juna, a tall wood-elf barbarian with tanned skin and striking purple eyes, wielding a great axe and two hand axes, confident and fiery."
-    },
-    {
-      "role": "user",
-      "content": "Garrick moves towards the butler and asks. \"excuse me sir, is the food complimentary?\""
-    },
-    {
-      "role": "assistant",
-      "content": "The butler, a composed figure with keen eyes and impeccable posture, pauses gracefully before responding. With a polite nod, he replies in a measured tone, \"Good evening, sir. The hors d\u2019oeuvres and refreshments are provided courtesy of the Cassalanter family for their guests. Please, enjoy them freely as part of the gala\u2019s hospitality.\" He glances briefly toward the ballroom before adding, \"If there is anything specific you require, I am at your service.\""
-    },
-    {
-      "role": "user",
-      "content": "Garrick grabs the entire tray, rudely releiving the butler of his burden"
-    },
-    {
-      "role": "assistant",
-      "content": "The butler\u2019s eyes widen briefly in surprise as Garrick lifts the entire tray with firm resolve. Maintaining his calm demeanor, he inclines his head slightly, though a faint tightening around his lips betrays his disapproval of the abrupt action. Around, a few nearby guests glance briefly at the scene, their polite smiles flickering with curiosity. The butler remains poised but now stands empty-handed, awaiting whether Garrick intends to share or sample the hors d\u2019oeuvres himself."
-    },
-    {
-      "role": "user",
-      "content": "Garrick eats all of the food and drink on the tray within minutes and returns the empty tray and glasses to the butler, and belches loudly. "
-    },
-    {
-      "role": "assistant",
-      "content": "The butler\u2019s composed expression tightens into a thin smile, eyes flickering with restrained disapproval as Garrick swiftly consumes the entire tray's contents. Around you, nearby guests exchange raised eyebrows and quiet murmurs, their polite demeanor momentarily strained by the unexpected display. After Garrick returns the empty tray and glasses, the butler inclines his head with a formal nod, murmuring, \"I trust you are satisfied, sir. Should you require anything further, do not hesitate to ask.\" The music and conversation resume, though a subtle ripple of surprise lingers in the air."
-    },
-    {
-      "role": "user",
-      "content": "Nope garrick responds, and moves along through the crowd. Describe the number of guests and the size of the room. "
-    },
-    {
-      "role": "assistant",
-      "content": "The ballroom stretches wide, easily accommodating over a hundred guests who mingle in elegant clusters throughout the spacious chamber. High vaulted ceilings soar above, crystal chandeliers casting shimmering light that dances across polished wooden floors and gleaming marble accents. Servants glide smoothly among the crowd, bearing trays with delicate treats and sparkling wines. Despite the grand scale, the room feels intimate with richly embroidered tapestries and ornate moldings framing tall windows frosted with winter\u2019s breath. The hum of conversation swells like melodic undertones beneath the soft strains of a live orchestra positioned near the far side of the room."
+      "content": "A biting wind howls through the narrow mountain pass known as the Spine of the World. Snow swirls thickly, blotting out distant peaks and transforming the trail into a slippery gauntlet edged by jagged ice formations. Above, a low gray sky threatens more snowfall, and the faint rumble of shifting snow echoes ominously from the slopes. The cold seeps into bone, while shadows flicker as shapes dart just out of focus on the edges — the silent watchers of the frozen wilderness.\n\nSuddenly, a small white muskrat bursts from the snowbank, darting toward you with frantic urgency. Its bright eyes lock on yours as the distant thunder of a gathering avalanche grows louder, shaking loose snow and ice along the narrow pass. Survival demands swift action: follow the muskrat into the hidden fissure before the mountain claims all in its deadly collapse."
     }
   ],
   "story_log": [
-    "**Midwinter Market, Sea Ward**\n\nThe Midwinter Market bustles under a sky thick with snowflakes, lanterns casting warm golden pools across velvet-draped stalls. The air is fragrant with the mingling scents of spiced pastries and steaming mulled wine, while cheerful carolers weave their melodies through the lively crowd. Merchants offer handcrafted instruments, pastries, and holiday trinkets, their voices rising and falling amid the festive din. Nearby, citizens of Waterdeep laugh and barter, wrapped in furs against the chilled winter evening. Beyond the market, the grand silhouette of Cassalanter Villa looms, its windows glowing with candlelight, promising warmth and celebration inside.",
-    "The group moving through the bustling market is a striking assembly. Garrick Almsford, a tall human paladin, stands firm in shining chainmail, his square-jawed face framed by a long blonde beard and piercing blue eyes that reflect unyielding faith. Beside him, Puss N. Boots, a small tabaxi rogue with vivid orange fur and a soft white underbelly, moves with lithe grace; his large ears twitch attentively beneath a fanciful turquoise pirate hat adorned with a peacock feather, and his studded leather armor gleams faintly in the lantern light. Nearby, Tiktik Spellfeather, a kenku wizard clad in modest robes and carrying a side pack, observes the scene with dark, brooding eyes, a shadow of cynicism etched in her features. Finally, Juna, a tall wood-elf barbarian with tanned skin and striking purple eyes, grips her great axe and twin hand axes confidently, her expression a mixture of youthful naivete and fiery determination as she takes in the warmth and bustle around her. Together, they cut a distinctive figure amid the joyous crowd of Waterdeep\u2019s Midwinter Market.",
-    "The party stands at the lively Midwinter Market, taking in the festive sights and sounds. The grand, candle-lit windows of Cassalanter Villa lie beyond the bustling stalls, visible down the streets leading from the market. The invitation to the gala waits to be heeded, and the villa\u2019s warm glow beckons as the next destination.",
-    "**Cassalanter Villa**\n\nThe grand doors of the Cassalanter Villa rise before you, their dark wood polished to a deep sheen under flickering lantern light. Soft strains of music drift through the air from within, hinting at the elegant gala underway. The stone steps are dusted with fresh snow that crunches softly beneath approaching footsteps. Patrolled by a pair of stern-faced guards in polished armor, the entrance exudes both warmth and a hint of cautious vigilance, as guests arrive and are welcomed into the lavish halls beyond. Warmth and flickering candlelight spill through tall windows, suggesting a gathering both festive and refined awaits inside.",
-    "The wide foyer inside the villa gleams with polished marble floors and richly woven carpets, footsteps muffled against the soft expanse. Crystal chandeliers cast sparkling light across elegantly dressed guests engaged in animated conversation, their laughter mingling with the delicate strains of a harp and violin duet coming from a raised platform nearby. Along the walls hang exquisite paintings of serene landscapes and ancestral portraits, their gilded frames glowing softly in the candlelight. Nearby, a well-dressed butler moves discreetly, offering trays of sparkling wine and delicate hors d\u2019oeuvres. At one corner, a gilded grand piano waits silently, its polished surface reflecting flickers of warm firelight from an ornate hearth. A small group gathers near the doorway leading to the ballroom, exchanging whispers and occasionally glancing toward the entrance. The atmosphere hums with anticipation, but an undercurrent of guarded caution seems woven beneath the polished veneer of festivity.",
-    "The adventure begins as the party attends the festive Midwinter Gala at the Cassalanter Villa in Waterdeep. Shortly after arrival, the celebrated opera singer Aria Cavatina is attacked by an imp, triggering a lockdown enforced by the City Watch and casting suspicion and tension among the noble guests. The party is enlisted by Captain Staget to investigate the fiendish assault and uncover the source of the supernatural threat.\n\nExploration of the villa reveals a puzzle centered around a children\u2019s toy sigil and a cryptic fable known as The Wooden Girl. The Cassalanter children\u2019s playroom holds key clues\u2014and encounters with a mischievous imp named Chernok who aids but also complicates the investigation. As the party assembles the toy sigil, they learn it serves as a gateway linked to an ancient altar in the City of the Dead.\n\nThe climax occurs when the party travels to the cemetery at night and completes the toy sigil upon the unmarked altar, inadvertently summoning Koluchki, a dangerous spined devil. The final challenge is to defeat this fiend while using accumulated knowledge and resources\u2014such as holy water or arcane rites\u2014to close the fiendish portal and end the threat.\n\nThroughout, social interactions influence the City Watch\u2019s view of the party, particularly their handling of the Cassalanter children and guests. Optional side quests include aiding Aria in restoring her family\u2019s ancient magical song and breaking the curse of an ornate music box captivating one of the children.\n\nSuccess results in the restoration of peace to the gala and rewards from grateful allies; failure allows infernal influences to persist, inviting further threats and City Watch scrutiny. The module encourages a balance of investigation, social diplomacy, and cautious confrontation under a festive yet darkening shadow.",
-    "As the party steps inside the Cassalanter Villa, their eyes take in the polished marble floors glinting beneath crystal chandeliers, the soft murmur of elegant conversations, and the gentle music weaving through the air. Guests clad in fine attire mingle near lavish tapestries and ancestral portraits, while a poised butler moves quietly among them with trays of wine and hors d\u2019oeuvres. Near the entrance to the ballroom, some guests exchange furtive whispers and occasional glances toward the villa\u2019s depths. Amid the refined gaiety, a subtle tension lingers\u2014an undercurrent of guarded watchfulness you sense beneath the surface. Nothing immediately draws attention as overtly suspicious, but the careful eyes of the assembled hosts seem to hold secrets just beneath their polished smiles.",
-    "The party consists of four members:\n\n- Garrick Almsford, a tall human paladin clad in shining chainmail, bearing a longsword and shield, with piercing blue eyes and a long blonde beard.\n- Puss N. Boots, a small orange tabaxi rogue wearing studded leather armor and a turquoise pirate hat adorned with a peacock feather, nimble and charming.\n- Tiktik Spellfeather, a dark-eyed kenku wizard dressed in modest robes with a side pack, brooding and cynical.\n- Juna, a tall wood-elf barbarian with tanned skin and striking purple eyes, wielding a great axe and two hand axes, confident and fiery.",
-    "The butler, a composed figure with keen eyes and impeccable posture, pauses gracefully before responding. With a polite nod, he replies in a measured tone, \"Good evening, sir. The hors d\u2019oeuvres and refreshments are provided courtesy of the Cassalanter family for their guests. Please, enjoy them freely as part of the gala\u2019s hospitality.\" He glances briefly toward the ballroom before adding, \"If there is anything specific you require, I am at your service.\"",
-    "The butler\u2019s eyes widen briefly in surprise as Garrick lifts the entire tray with firm resolve. Maintaining his calm demeanor, he inclines his head slightly, though a faint tightening around his lips betrays his disapproval of the abrupt action. Around, a few nearby guests glance briefly at the scene, their polite smiles flickering with curiosity. The butler remains poised but now stands empty-handed, awaiting whether Garrick intends to share or sample the hors d\u2019oeuvres himself.",
-    "The butler\u2019s composed expression tightens into a thin smile, eyes flickering with restrained disapproval as Garrick swiftly consumes the entire tray's contents. Around you, nearby guests exchange raised eyebrows and quiet murmurs, their polite demeanor momentarily strained by the unexpected display. After Garrick returns the empty tray and glasses, the butler inclines his head with a formal nod, murmuring, \"I trust you are satisfied, sir. Should you require anything further, do not hesitate to ask.\" The music and conversation resume, though a subtle ripple of surprise lingers in the air.",
-    "The ballroom stretches wide, easily accommodating over a hundred guests who mingle in elegant clusters throughout the spacious chamber. High vaulted ceilings soar above, crystal chandeliers casting shimmering light that dances across polished wooden floors and gleaming marble accents. Servants glide smoothly among the crowd, bearing trays with delicate treats and sparkling wines. Despite the grand scale, the room feels intimate with richly embroidered tapestries and ornate moldings framing tall windows frosted with winter\u2019s breath. The hum of conversation swells like melodic undertones beneath the soft strains of a live orchestra positioned near the far side of the room."
-  ],
-  "active_npcs": [],
-  "global_flags": {},
-  "combatants": []
+    "The characters present in the party are:\n\n- Garrick Almsford: Human Paladin, tall with long blonde beard, carries chainmail, shield, longsword; known for plain truth-telling and faithfulness.\n\n- Puss N. Boots: Male Tabaxi Rogue, small orange feline wearing studded leather armor, a fancy turquoise pirate hat with peacock feather; self-described charming and overconfident street survivor.\n\n- Tiktik Spellfeather: Female Kenku Wizard, a dark-feathered raven robed and carrying a side pack; brooding and cynical with necromantic leanings.\n\n- Juna: Female Wood-Elf Barbarian, tall tan-skinned with purple eyes, wields a great axe and two hand axes; young, naive, quick-tempered, favors direct confrontation.",
+    "The players' characters are:\n\n- Garrick Almsford, Human Paladin\n- Puss N. Boots, Male Tabaxi Rogue\n- Tiktik Spellfeather, Female Kenku Wizard\n- Juna, Female Wood-Elf Barbarian",
+    "Garrick Almsford is a tall human male with a square frame and striking blue eyes. His long blonde beard complements his chainmail armor, and he carries both a longsword and a shield. Known for his unwavering faith, Garrick speaks plainly and truthfully, sometimes to a blunt degree. Born to humble clergy and raised to defend the helpless, his life is centered around his steadfast devotion.",
+    "Juna is a tall Wood-Elf female with tan skin and striking purple eyes. She wears breeches and wields a great axe along with two hand axes. Young and somewhat naive, she is quick to anger and prefers to be up front in any confrontation, often using her strength to intimidate others. Her background is as an outlander, having lived most of her life isolated in a forest and gaining favor with a local barbarian tribe.",
+    "A biting wind howls through the narrow mountain pass known as the Spine of the World. Snow swirls thickly, blotting out distant peaks and transforming the trail into a slippery gauntlet edged by jagged ice formations. Above, a low gray sky threatens more snowfall, and the faint rumble of shifting snow echoes ominously from the slopes. The cold seeps into bone, while shadows flicker as shapes dart just out of focus on the edges — the silent watchers of the frozen wilderness.\n\nSuddenly, a small white muskrat bursts from the snowbank, darting toward you with frantic urgency. Its bright eyes lock on yours as the distant thunder of a gathering avalanche grows louder, shaking loose snow and ice along the narrow pass. Survival demands swift action: follow the muskrat into the hidden fissure before the mountain claims all in its deadly collapse."
+  ]
 }

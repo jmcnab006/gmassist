@@ -23,9 +23,10 @@ from openai import OpenAI
 # -----------------------------
 
 MODEL = "gpt-4.1"
-OUTPUT_FILE = "module.json"
+OUTPUT_FILE = "archive/module.json"
 #SYSTEM_PROMPT="prompts/parse_module/parse_module_ds.prompt"
 SYSTEM_PROMPT="prompts/parse_module/parse_module_ini.prompt"
+SYSTEM_PROMPT="prompts/parse_module/parse_module_claude2.prompt"
 
 # -----------------------------
 # VALIDATION
