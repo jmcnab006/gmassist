@@ -1,0 +1,2201 @@
+{
+  "module": {
+    "id": "treasure_of_the_broken_hoard",
+    "title": "Treasure of the Broken Hoard",
+    "theme": [
+      "treasure hunting",
+      "giant intrigue",
+      "adventurers league",
+      "storm king's thunder"
+    ],
+    "tone": [
+      "heroic",
+      "adventurous",
+      "mystery",
+      "quick-paced",
+      "episodic"
+    ],
+    "plot_hooks": [
+      {
+        "id": "hook_veradda_stoor_employment",
+        "title": "Employment by Veradda Stoor",
+        "summary": "The adventurers are contacted to aid famed treasure hunter Veradda Stoor in retrieving ancient dragon cultist treasure caches in the Greypeak Mountains.",
+        "how_party_learns": "Players receive word through their faction, rumors, or a notice to meet Veradda at a clearing east of the village of Parnast.",
+        "starting_location": "loc_parnast_region",
+        "connected_threads": [
+          "thread_missing_veradda",
+          "thread_cult_treasures",
+          "thread_competing_giants"
+        ],
+        "dm_notes": "Establish strong adventurer motivation, tie in faction interest if appropriate."
+      }
+    ],
+    "starting_location": "loc_parnast_region",
+    "starting_area": "area_clearing",
+    "version": "1.0"
+  },
+  "threads": {
+    "thread_missing_veradda": {
+      "id": "thread_missing_veradda",
+      "title": "The Fate of Veradda Stoor",
+      "status": "resolved",
+      "priority": "primary",
+      "description": "Adventurers arrive to meet Veradda Stoor, finding her dead and her notes partially stolen.",
+      "hook": "Veradda's mysterious death and missing notes kick off the search for the dragon cultist caches.",
+      "current_objective": "Find clues about Veradda's murder and recover her notes and treasure locations.",
+      "next_milestone": "Locate the first treasure cache using recovered notes.",
+      "connected_elements": {
+        "threads": [
+          "thread_cult_treasures",
+          "thread_competing_giants"
+        ],
+        "locations": [
+          "loc_parnast_region"
+        ],
+        "areas": [
+          "area_clearing"
+        ],
+        "npcs": [
+          "npc_veradda_stoor"
+        ],
+        "items": [
+          "item_notes_veradda",
+          "item_scrolls_veradda"
+        ],
+        "factions": [
+          "faction_dragon_cult",
+          "faction_giants",
+          "faction_adventurers_league"
+        ],
+        "consequences": [
+          "conseq_veradda_death"
+        ],
+        "encounter_pool": [],
+        "plot_branches": []
+      },
+      "player_knowledge": {
+        "known_to_players": "Veradda was murdered and her notes are torn; remaining notes point to five treasure sites.",
+        "truth_hidden": "Giants and their agents killed her after learning of her knowledge from another source."
+      },
+      "success_conditions": [
+        "Party examines Veradda's body and recovers clues and backup notes."
+      ],
+      "failure_conditions": [
+        "Party ignores murder or fails to gather her extra notes."
+      ],
+      "dm_notes": "This sets the stage for all five mini-adventures. Emphasize clues at the scene, hint at giant involvement."
+    },
+    "thread_cult_treasures": {
+      "id": "thread_cult_treasures",
+      "title": "Caches of the Cult of the Dragon",
+      "status": "active",
+      "priority": "primary",
+      "description": "Five caches of treasure were hidden across the Greypeak Mountains by the defeated Cult of the Dragon.",
+      "hook": "Recovered notes and scrolls identify the locations of ancient caches.",
+      "current_objective": "Travel to each cache site and solve its challenges.",
+      "next_milestone": "Secure treasures in all five sites.",
+      "connected_elements": {
+        "threads": [
+          "thread_competing_giants"
+        ],
+        "locations": [
+          "loc_beneath_the_hills_cave",
+          "loc_upon_the_stones_field",
+          "loc_against_the_frost_mountain",
+          "loc_through_the_fires_outpost",
+          "loc_above_the_clouds_shrine"
+        ],
+        "areas": [
+          "area_beneath_the_hills_entrance",
+          "area_stone_field",
+          "area_frost_secret_path",
+          "area_fires_entry",
+          "area_clouds_path"
+        ],
+        "npcs": [],
+        "items": [
+          "item_ledger_dragon_cult",
+          "item_necklace_copper_charms",
+          "item_stone_giant_nose_ring",
+          "item_topaz",
+          "item_melted_silver",
+          "item_giant_coins",
+          "item_cultist_loot"
+        ],
+        "factions": [
+          "faction_dragon_cult"
+        ],
+        "consequences": [
+          "conseq_giants_rivalry",
+          "conseq_elemental_fire",
+          "conseq_frost_magic",
+          "conseq_shrine_sanctity"
+        ],
+        "encounter_pool": [
+          "encounter_swarm_goblins",
+          "encounter_giant_badgers",
+          "encounter_greed_motes",
+          "encounter_magmin",
+          "encounter_giant_owl"
+        ],
+        "plot_branches": [
+          "plotbranch_steal_shrine_plates",
+          "plotbranch_save_blooddrinker"
+        ]
+      },
+      "player_knowledge": {
+        "known_to_players": "The party has clues to five cult caches. Each site presents unique challenges.",
+        "truth_hidden": "Giants and rival factions seek the caches for their own ambitions."
+      },
+      "success_conditions": [
+        "Locate and survive all five cache sites.",
+        "Secure at least one significant treasure for the party or their patrons."
+      ],
+      "failure_conditions": [
+        "Party is driven out or killed before accessing any cache.",
+        "Rivals claim all caches before the party."
+      ],
+      "dm_notes": "The main structure: present mini-adventures sequentially or as time allows."
+    },
+    "thread_competing_giants": {
+      "id": "thread_competing_giants",
+      "title": "Giant Rivalries",
+      "status": "active",
+      "priority": "secondary",
+      "description": "With the Ordning shattered, various giant clans (hill, frost, fire, stone, storm) compete for power and seek treasures to bolster their status.",
+      "hook": "Signs of giant interference at cache sites and reports of giant activity in the region.",
+      "current_objective": "Survive giant plots and possibly ally with or avert disaster from the giants.",
+      "next_milestone": "Encounter a giant or witness evidence of giant intervention.",
+      "connected_elements": {
+        "threads": [
+          "thread_cult_treasures"
+        ],
+        "locations": [
+          "loc_beneath_the_hills_cave",
+          "loc_upon_the_stones_field",
+          "loc_against_the_frost_mountain",
+          "loc_through_the_fires_outpost",
+          "loc_above_the_clouds_shrine"
+        ],
+        "areas": [],
+        "npcs": [
+          "npc_slayermighty",
+          "npc_kraddokk"
+        ],
+        "items": [],
+        "factions": [
+          "faction_giants",
+          "faction_true_nimbus"
+        ],
+        "consequences": [
+          "conseq_giants_rivalry",
+          "conseq_shrine_sanctity"
+        ],
+        "encounter_pool": [
+          "encounter_hill_giant",
+          "encounter_giant_owl"
+        ],
+        "plot_branches": [
+          "plotbranch_steal_shrine_plates",
+          "plotbranch_befriend_kraddokk"
+        ]
+      },
+      "player_knowledge": {
+        "known_to_players": "Numerous signs point to giant involvement and rivalry for treasures.",
+        "truth_hidden": "Each clan seeks to outdo the others, sometimes using minions (goblins, kobolds, cultists)."
+      },
+      "success_conditions": [
+        "Players survive encountering giants or their minions.",
+        "Potential alliance with Kraddokk the storm giant."
+      ],
+      "failure_conditions": [
+        "Party is targeted by giants for theft or desecration.",
+        "Party triggers giant wrath."
+      ],
+      "dm_notes": "Introduce giant agents or direct intervention as the story progresses, and adjust party standing based on their choices."
+    }
+  },
+  "locations": {
+    "loc_parnast_region": {
+      "id": "loc_parnast_region",
+      "name": "Parnast Region",
+      "type": "region",
+      "environmental_conditions": [
+        "temperate",
+        "wooded foothills",
+        "proximity to Greypeak Mountains"
+      ],
+      "notable_features": [
+        "Black Road",
+        "hamlet of Parnast",
+        "clearing meeting point"
+      ],
+      "connected_areas": [
+        "area_clearing"
+      ],
+      "connected_npcs": [
+        "npc_veradda_stoor"
+      ],
+      "available_services": [
+        "basic housing",
+        "small-town supplies",
+        "spellcasting (Mielikki temple)"
+      ],
+      "travel_times": {
+        "loc_beneath_the_hills_cave": "1 day",
+        "loc_upon_the_stones_field": "2 days",
+        "loc_against_the_frost_mountain": "2.5 days",
+        "loc_through_the_fires_outpost": "1.5 days",
+        "loc_above_the_clouds_shrine": "3 days"
+      },
+      "dm_notes": "Region is a springboard point; adjust relative distances as needed for pacing."
+    },
+    "loc_beneath_the_hills_cave": {
+      "id": "loc_beneath_the_hills_cave",
+      "name": "Cave Beneath the Hills",
+      "type": "dungeon",
+      "environmental_conditions": [
+        "cool",
+        "dark",
+        "unstable tunnels",
+        "goblin activity"
+      ],
+      "notable_features": [
+        "collapsed tunnel",
+        "piles of rubble",
+        "giant's corpse",
+        "stone chest"
+      ],
+      "connected_areas": [
+        "area_beneath_the_hills_entrance",
+        "area_beneath_the_hills_cavern",
+        "area_beneath_the_hills_south_tunnel"
+      ],
+      "connected_npcs": [
+        "npc_slayermighty",
+        "npc_blooddrinker_bear"
+      ],
+      "available_services": [],
+      "travel_times": {
+        "loc_parnast_region": "1 day"
+      },
+      "dm_notes": "Danger escalates with time due to curse effects. Adjust tunnel stability or loot as appropriate."
+    },
+    "loc_upon_the_stones_field": {
+      "id": "loc_upon_the_stones_field",
+      "name": "Stone Field and Boulder Pyramid",
+      "type": "wilderness",
+      "environmental_conditions": [
+        "flat, volcanic stone",
+        "deep gouges",
+        "massive pyramid of boulders"
+      ],
+      "notable_features": [
+        "elemental earth magic",
+        "galeb duhr",
+        "pyramid structure",
+        "kobold tunnels"
+      ],
+      "connected_areas": [
+        "area_stone_field",
+        "area_boulder_pyramid_base",
+        "area_boulder_pyramid_top"
+      ],
+      "connected_npcs": [
+        "npc_gggrkk_galebduhr",
+        "npc_hhffft_galebduhr",
+        "npc_prrrt_galebduhr"
+      ],
+      "available_services": [],
+      "travel_times": {
+        "loc_parnast_region": "2 days"
+      },
+      "dm_notes": "The galeb duhr can provide helpful clues if befriended. The kobold tunnel is small—restrict to small creatures."
+    },
+    "loc_against_the_frost_mountain": {
+      "id": "loc_against_the_frost_mountain",
+      "name": "Green-Sided Mountain",
+      "type": "wilderness",
+      "environmental_conditions": [
+        "northern Greypeaks",
+        "green mineral-tinted stone",
+        "icy winds"
+      ],
+      "notable_features": [
+        "secret doors",
+        "natural tunnels",
+        "ice-covered chamber"
+      ],
+      "connected_areas": [
+        "area_frost_secret_path",
+        "area_frost_secret_doors",
+        "area_frost_main_chamber"
+      ],
+      "connected_npcs": [],
+      "available_services": [],
+      "travel_times": {
+        "loc_parnast_region": "2.5 days"
+      },
+      "dm_notes": "Emphasize cold, treacherous footing, and cursed magic. Let traps set tone of tension."
+    },
+    "loc_through_the_fires_outpost": {
+      "id": "loc_through_the_fires_outpost",
+      "name": "Abandoned Dwarven Outpost",
+      "type": "dungeon",
+      "environmental_conditions": [
+        "ancient stonework",
+        "lava flows",
+        "extreme heat",
+        "smoke"
+      ],
+      "notable_features": [
+        "sentinel room",
+        "forges",
+        "lava river",
+        "Immix fire glyph"
+      ],
+      "connected_areas": [
+        "area_fires_entry",
+        "area_fires_sentry_room",
+        "area_fires_forge_room"
+      ],
+      "connected_npcs": [],
+      "available_services": [],
+      "travel_times": {
+        "loc_parnast_region": "1.5 days"
+      },
+      "dm_notes": "Fire creatures can appear over time; Immix glyph is a threat until deactivated."
+    },
+    "loc_above_the_clouds_shrine": {
+      "id": "loc_above_the_clouds_shrine",
+      "name": "Shrine Above the Clouds",
+      "type": "dungeon",
+      "environmental_conditions": [
+        "high altitude",
+        "cloud cover",
+        "cold",
+        "temple ruins"
+      ],
+      "notable_features": [
+        "brass bell",
+        "force barrier",
+        "cavernous shrine",
+        "giant braziers",
+        "shrine slab"
+      ],
+      "connected_areas": [
+        "area_clouds_path",
+        "area_clouds_shrine_interior"
+      ],
+      "connected_npcs": [
+        "npc_kraddokk"
+      ],
+      "available_services": [],
+      "travel_times": {
+        "loc_parnast_region": "3 days"
+      },
+      "dm_notes": "Riddles and moral choices prominent. Adjust giant's attitude and potential for alliance or curse depending on actions."
+    }
+  },
+  "areas": {
+    "area_clearing": {
+      "id": "area_clearing",
+      "name": "Clearing Outside Parnast",
+      "parent_location": "loc_parnast_region",
+      "area_type": "exterior",
+      "size_ft": "80x80",
+      "description": {
+        "read_aloud": "You arrive at a well-trodden clearing east of Parnast. Blood stains and footprints mar the ground, and the wind carries a scent of death.",
+        "summary": "Meeting site for Veradda Stoor, discovery of murder, and recovery of backup notes."
+      },
+      "environmental_conditions": [
+        "open air",
+        "dawn/dusk",
+        "trampled vegetation"
+      ],
+      "lighting": "bright",
+      "connected_areas": {},
+      "enemies": [],
+      "treasure": [
+        "item_notes_veradda",
+        "item_scrolls_veradda"
+      ],
+      "traps": [],
+      "puzzles": [],
+      "skill_challenges": [],
+      "atmosphere": [
+        "ominous",
+        "tense",
+        "mystery"
+      ],
+      "dm_notes": "Maximize slow build of suspense and clue-gathering."
+    },
+    "area_beneath_the_hills_entrance": {
+      "id": "area_beneath_the_hills_entrance",
+      "name": "Cave Entrance - Beneath the Hills",
+      "parent_location": "loc_beneath_the_hills_cave",
+      "area_type": "exterior",
+      "size_ft": null,
+      "description": {
+        "read_aloud": "Outside the opening, the adventurers see a variety of obvious tracks. The tunnel is dark and chilly.",
+        "summary": "Entrance tunnel, tracks reveal goblin, giant, and bear recent activity."
+      },
+      "environmental_conditions": [
+        "rocky",
+        "dim light",
+        "cold air"
+      ],
+      "lighting": "dim",
+      "connected_areas": {
+        "north": "area_beneath_the_hills_cavern"
+      },
+      "enemies": [],
+      "treasure": [],
+      "traps": [],
+      "puzzles": [],
+      "skill_challenges": [
+        {
+          "challenge": "track identification",
+          "dc": 15,
+          "skill": "Nature"
+        }
+      ],
+      "atmosphere": [
+        "foreboding",
+        "expectant"
+      ],
+      "dm_notes": "Note tracks and encourage player investigation."
+    },
+    "area_beneath_the_hills_cavern": {
+      "id": "area_beneath_the_hills_cavern",
+      "name": "Main Cavern - Beneath the Hills",
+      "parent_location": "loc_beneath_the_hills_cave",
+      "area_type": "interior_room",
+      "size_ft": "60x40",
+      "description": {
+        "read_aloud": "The large cavern is empty of living creatures, with several lanterns lighting piles of rubble. Two tunnels exit: one clear south, one collapsed east.",
+        "summary": "Arena for first goblin fight, evidence of sabotage, giant's feet in rubble."
+      },
+      "environmental_conditions": [
+        "rock dust",
+        "faint echoes",
+        "unstable"
+      ],
+      "lighting": "bright",
+      "connected_areas": {
+        "south": "area_beneath_the_hills_south_tunnel",
+        "east": null
+      },
+      "enemies": [
+        "enemy_goblin_1",
+        "enemy_goblin_2",
+        "enemy_goblin_3",
+        "enemy_goblin_4"
+      ],
+      "treasure": [
+        "item_alchemists_fire_1",
+        "item_alchemists_fire_2"
+      ],
+      "traps": [],
+      "puzzles": [],
+      "skill_challenges": [],
+      "atmosphere": [
+        "dusty",
+        "urgent",
+        "perilous"
+      ],
+      "dm_notes": "Introduce goblin surliness and clues about the collapse. Reduce goblin count for weak parties or add for strong."
+    },
+    "area_beneath_the_hills_south_tunnel": {
+      "id": "area_beneath_the_hills_south_tunnel",
+      "name": "Southern Tunnel - Beneath the Hills",
+      "parent_location": "loc_beneath_the_hills_cave",
+      "area_type": "interior_hallway",
+      "size_ft": null,
+      "description": {
+        "read_aloud": "A scurrying sound and high-pitched squeaking echo from the south tunnel—a wave of mouse-sized goblins swarms toward you!",
+        "summary": "Swarms of cursed goblins, darkness falls as lanterns are extinguished."
+      },
+      "environmental_conditions": [
+        "dark",
+        "tight",
+        "noisy"
+      ],
+      "lighting": "dark",
+      "connected_areas": {
+        "north": "area_beneath_the_hills_cavern",
+        "south": "area_beneath_the_hills_final_chamber"
+      },
+      "enemies": [
+        "enemy_goblin_swarm"
+      ],
+      "treasure": [],
+      "traps": [],
+      "puzzles": [],
+      "skill_challenges": [],
+      "atmosphere": [
+        "chaotic",
+        "confusing",
+        "claustrophobic"
+      ],
+      "dm_notes": "Goblins attack with initiative, corpses grow to normal size after death, creating difficult terrain."
+    },
+    "area_beneath_the_hills_final_chamber": {
+      "id": "area_beneath_the_hills_final_chamber",
+      "name": "Final Chamber - Beneath the Hills",
+      "parent_location": "loc_beneath_the_hills_cave",
+      "area_type": "interior_room",
+      "size_ft": null,
+      "description": {
+        "read_aloud": "A small creature with a giant's face stands in front of a massive stone chest—Slayermighty the giant, shrunken by a curse.",
+        "summary": "Home of Slayermighty (cursed giant), Blooddrinker the bear, runed stone chest."
+      },
+      "environmental_conditions": [
+        "artificial light",
+        "rune-etched stone"
+      ],
+      "lighting": "bright",
+      "connected_areas": {
+        "north": "area_beneath_the_hills_south_tunnel"
+      },
+      "enemies": [
+        "enemy_slayermighty"
+      ],
+      "treasure": [
+        "item_potion_healing",
+        "item_necklace_copper_charms"
+      ],
+      "traps": [],
+      "puzzles": [
+        {
+          "puzzle": "Cursed chest and runes",
+          "dc": 10,
+          "skill": "Arcana"
+        }
+      ],
+      "skill_challenges": [],
+      "atmosphere": [
+        "tense",
+        "magical"
+      ],
+      "dm_notes": "Saving Blooddrinker is a story award. Important narrative for the giant rivalry. Shrunken status temporary for giant, but permanent for bear."
+    },
+    "area_stone_field": {
+      "id": "area_stone_field",
+      "name": "Stone Field - Upon the Stones",
+      "parent_location": "loc_upon_the_stones_field",
+      "area_type": "exterior",
+      "size_ft": "200x80",
+      "description": {
+        "read_aloud": "You see a massive boulder pyramid at the far end of a flat stone field riven with deep gouges.",
+        "summary": "Approach to pyramid, combat with giant badgers concealed in the gouges."
+      },
+      "environmental_conditions": [
+        "volcanic",
+        "sunlit",
+        "drafty"
+      ],
+      "lighting": "bright",
+      "connected_areas": {
+        "north": "area_boulder_pyramid_base"
+      },
+      "enemies": [
+        "enemy_giant_badger_1",
+        "enemy_giant_badger_2",
+        "enemy_giant_badger_3",
+        "enemy_giant_badger_4",
+        "enemy_giant_badger_5"
+      ],
+      "treasure": [],
+      "traps": [],
+      "puzzles": [],
+      "skill_challenges": [
+        {
+          "challenge": "crossing gouges in combat",
+          "dc": 5,
+          "skill": "Acrobatics"
+        }
+      ],
+      "atmosphere": [
+        "open",
+        "hostile",
+        "bleak"
+      ],
+      "dm_notes": "Handle animal can pacify badgers; wisdom roll needed for temporary truce."
+    },
+    "area_boulder_pyramid_base": {
+      "id": "area_boulder_pyramid_base",
+      "name": "Base of Boulder Pyramid",
+      "parent_location": "loc_upon_the_stones_field",
+      "area_type": "exterior",
+      "size_ft": null,
+      "description": {
+        "read_aloud": "Enormous boulders fused with elemental magic form the base. Runes are inscribed throughout.",
+        "summary": "Base climb and interaction possibility with galeb duhr siblings."
+      },
+      "environmental_conditions": [
+        "carved stone",
+        "arcane runes"
+      ],
+      "lighting": "bright",
+      "connected_areas": {
+        "up": "area_boulder_pyramid_top",
+        "south": "area_stone_field"
+      },
+      "enemies": [],
+      "treasure": [],
+      "traps": [],
+      "puzzles": [],
+      "skill_challenges": [
+        {
+          "challenge": "Climb boulders",
+          "dc": 10,
+          "skill": "Athletics"
+        }
+      ],
+      "atmosphere": [
+        "arcane",
+        "mysterious"
+      ],
+      "dm_notes": "Friend of Prrrt award if players assist galeb duhr."
+    },
+    "area_boulder_pyramid_top": {
+      "id": "area_boulder_pyramid_top",
+      "name": "Apex of Boulder Pyramid",
+      "parent_location": "loc_upon_the_stones_field",
+      "area_type": "exterior",
+      "size_ft": null,
+      "description": {
+        "read_aloud": "At the pyramid summit, a stone giant corpse blocks the runed entry. Arcane riddle awaits.",
+        "summary": "Necromantic trap, passphrase puzzle, access to partially looted cache."
+      },
+      "environmental_conditions": [
+        "chilly wind",
+        "arcane glow"
+      ],
+      "lighting": "dim",
+      "connected_areas": {
+        "down": "area_boulder_pyramid_base"
+      },
+      "enemies": [],
+      "treasure": [
+        "item_ledger_dragon_cult",
+        "item_stone_giant_nose_ring",
+        "item_scroll_comprehend_languages"
+      ],
+      "traps": [
+        {
+          "trap": "rune trap",
+          "dc": 10,
+          "skill": "Arcana",
+          "damage": "2d4 necrotic"
+        }
+      ],
+      "puzzles": [
+        {
+          "puzzle": "Passphrase required to enter—'HAIL DRAGON QUEEN'"
+        }
+      ],
+      "skill_challenges": [],
+      "atmosphere": [
+        "elevated",
+        "puzzling"
+      ],
+      "dm_notes": "If players struggle with puzzle, provide dragon cult clues."
+    },
+    "area_frost_secret_path": {
+      "id": "area_frost_secret_path",
+      "name": "Secret Path - Against the Frost",
+      "parent_location": "loc_against_the_frost_mountain",
+      "area_type": "exterior",
+      "size_ft": null,
+      "description": {
+        "read_aloud": "A narrow ledge halfway up a green-sided mountain, steep and frigid with deadly drop to one side.",
+        "summary": "Path to secret doors; searching triggers rockslide or glyph trap."
+      },
+      "environmental_conditions": [
+        "icy",
+        "narrow",
+        "cold wind"
+      ],
+      "lighting": "dim",
+      "connected_areas": {},
+      "enemies": [],
+      "treasure": [],
+      "traps": [
+        {
+          "trap": "thunder glyph",
+          "dc": 15,
+          "skill": "Investigation",
+          "damage": "2d6 thunder"
+        }
+      ],
+      "puzzles": [],
+      "skill_challenges": [
+        {
+          "challenge": "Find secret doors",
+          "dc": 15,
+          "skill": "Perception/Investigation"
+        }
+      ],
+      "atmosphere": [
+        "hazardous",
+        "tense"
+      ],
+      "dm_notes": "Rockslide can be used to hasten entry or add urgency."
+    },
+    "area_frost_main_chamber": {
+      "id": "area_frost_main_chamber",
+      "name": "Icy Chamber - Against the Frost",
+      "parent_location": "loc_against_the_frost_mountain",
+      "area_type": "interior_room",
+      "size_ft": "40x40",
+      "description": {
+        "read_aloud": "A massive chamber with an icy floor. Two dead frost giants and a supernatural diamond atop a pedestal.",
+        "summary": "Greed cursed diamond, greed motes attack, saving throws required."
+      },
+      "environmental_conditions": [
+        "ice",
+        "green glow",
+        "thick air"
+      ],
+      "lighting": "bright",
+      "connected_areas": {},
+      "enemies": [
+        "enemy_greed_mote_1",
+        "enemy_greed_mote_2",
+        "enemy_greed_mote_3"
+      ],
+      "treasure": [
+        "item_giant_coins",
+        "item_diamond_dust",
+        "item_potion_healing_1",
+        "item_potion_healing_2"
+      ],
+      "traps": [],
+      "puzzles": [],
+      "skill_challenges": [
+        {
+          "challenge": "Survive icy floor (difficult terrain)",
+          "dc": 15,
+          "skill": "Acrobatics"
+        }
+      ],
+      "atmosphere": [
+        "cursed",
+        "distorted",
+        "greedy"
+      ],
+      "dm_notes": "Make the supernatural link between diamond and motes clear; shattering diamond is key to succeed."
+    },
+    "area_fires_entry": {
+      "id": "area_fires_entry",
+      "name": "Entryway - Through the Fires",
+      "parent_location": "loc_through_the_fires_outpost",
+      "area_type": "interior_hallway",
+      "size_ft": null,
+      "description": {
+        "read_aloud": "The party enters ancient dwarven stone halls, dust and fresh footprints marking recent passage.",
+        "summary": "Leads to sentry room with kobolds and evidence of fighting."
+      },
+      "environmental_conditions": [
+        "dusty",
+        "old stonework"
+      ],
+      "lighting": "dim",
+      "connected_areas": {
+        "south": "area_fires_sentry_room"
+      },
+      "enemies": [],
+      "treasure": [],
+      "traps": [],
+      "puzzles": [],
+      "skill_challenges": [],
+      "atmosphere": [
+        "abandoned",
+        "watchful"
+      ],
+      "dm_notes": "Can introduce signs of kobold presence or magmin scorch marks."
+    },
+    "area_fires_sentry_room": {
+      "id": "area_fires_sentry_room",
+      "name": "Sentry Room - Through the Fires",
+      "parent_location": "loc_through_the_fires_outpost",
+      "area_type": "interior_room",
+      "size_ft": "25x30",
+      "description": {
+        "read_aloud": "Kobolds fortify barricades against the southern corridor, central stone sentinel post with hidden door.",
+        "summary": "Initial NPC negotiation or combat, clues to fire giants, magic items offered by kobolds."
+      },
+      "environmental_conditions": [
+        "smoky",
+        "cramped",
+        "makeshift barricades"
+      ],
+      "lighting": "dim",
+      "connected_areas": {
+        "north": "area_fires_entry",
+        "south": "area_fires_forge_room"
+      },
+      "enemies": [
+        "enemy_kobold_1",
+        "enemy_kobold_2",
+        "enemy_kobold_3",
+        "enemy_kobold_4",
+        "enemy_kobold_5",
+        "enemy_kobold_6",
+        "enemy_kobold_7",
+        "enemy_kobold_8"
+      ],
+      "treasure": [
+        "item_scroll_disguise_self",
+        "item_topaz"
+      ],
+      "traps": [],
+      "puzzles": [],
+      "skill_challenges": [],
+      "atmosphere": [
+        "tense",
+        "negotiable"
+      ],
+      "dm_notes": "Kobolds will parley if overwhelmed. Offer deals to ensure survival."
+    },
+    "area_fires_forge_room": {
+      "id": "area_fires_forge_room",
+      "name": "Forge Room - Through the Fires",
+      "parent_location": "loc_through_the_fires_outpost",
+      "area_type": "interior_room",
+      "size_ft": "40x50",
+      "description": {
+        "read_aloud": "Glowing lava river splits the floor, smoky pits and erupting Immix symbol on far wall.",
+        "summary": "Fight with magmin, deactivate Immix glyph through multi-step ritual, retrieve melted silver."
+      },
+      "environmental_conditions": [
+        "hot",
+        "smoke",
+        "lava"
+      ],
+      "lighting": "bright",
+      "connected_areas": {
+        "north": "area_fires_sentry_room"
+      },
+      "enemies": [
+        "enemy_magmin_1",
+        "enemy_magmin_2"
+      ],
+      "treasure": [
+        "item_melted_silver"
+      ],
+      "traps": [],
+      "puzzles": [
+        {
+          "puzzle": "Deactivate Immix glyph—Ritual steps required."
+        }
+      ],
+      "skill_challenges": [],
+      "atmosphere": [
+        "fiery",
+        "stifling",
+        "dangerous"
+      ],
+      "dm_notes": "Magmin respawn if Immix glyph not deactivated. Silver is hard to retrieve before deactivation."
+    },
+    "area_clouds_path": {
+      "id": "area_clouds_path",
+      "name": "Cloud Path - Above the Clouds",
+      "parent_location": "loc_above_the_clouds_shrine",
+      "area_type": "exterior",
+      "size_ft": null,
+      "description": {
+        "read_aloud": "Ascending the Greypeak's highest slopes, you pass through cloud banks to see a brass bell and cave entrance.",
+        "summary": "Approach to the temple, giant owl attack, bell riddle to enter."
+      },
+      "environmental_conditions": [
+        "cold",
+        "windy",
+        "very high altitude"
+      ],
+      "lighting": "bright",
+      "connected_areas": {
+        "east": "area_clouds_shrine_interior"
+      },
+      "enemies": [
+        "enemy_giant_owl_1",
+        "enemy_giant_owl_2",
+        "enemy_giant_owl_3",
+        "enemy_giant_owl_4"
+      ],
+      "treasure": [],
+      "traps": [],
+      "puzzles": [
+        {
+          "puzzle": "Answer bell riddle to bypass force barrier"
+        }
+      ],
+      "skill_challenges": [],
+      "atmosphere": [
+        "majestic",
+        "isolated"
+      ],
+      "dm_notes": "Adventurer with giant language can read mantras; ringing bell unsolved is dangerous."
+    },
+    "area_clouds_shrine_interior": {
+      "id": "area_clouds_shrine_interior",
+      "name": "Shrine Interior - Above the Clouds",
+      "parent_location": "loc_above_the_clouds_shrine",
+      "area_type": "interior_room",
+      "size_ft": "80x50",
+      "description": {
+        "read_aloud": "Enormous cavern, four tarnished copper braziers, ancient slab, faded mural. Braziers ignite with elemental guardians.",
+        "summary": "Ice and steam mephit fight, loot dead cultists, interact with storm giant Kraddokk upon exit."
+      },
+      "environmental_conditions": [
+        "cold air",
+        "massive vaulted space"
+      ],
+      "lighting": "dim (braziers flare to bright during fight)",
+      "connected_areas": {
+        "west": "area_clouds_path"
+      },
+      "enemies": [
+        "enemy_ice_mephit_1",
+        "enemy_ice_mephit_2"
+      ],
+      "treasure": [
+        "item_cultist_loot",
+        "item_potion_healing_3",
+        "item_potion_healing_4",
+        "item_potion_healing_5",
+        "item_potion_healing_6",
+        "item_potion_healing_7",
+        "item_potion_healing_8",
+        "item_potion_healing_9"
+      ],
+      "traps": [],
+      "puzzles": [],
+      "skill_challenges": [],
+      "atmosphere": [
+        "reverent",
+        "eerily powerful"
+      ],
+      "dm_notes": "Giants may react to theft of plates; conversation with Kraddokk sets up future adventures or campaign consequences."
+    }
+  },
+  "items": {
+    "item_notes_veradda": {
+      "id": "item_notes_veradda",
+      "name": "Veradda Stoor's Notes",
+      "type": "quest_item",
+      "rarity": "common",
+      "location": "area_clearing",
+      "magical": false,
+      "description": "Original notes regarding the five Cult of the Dragon treasure caches.",
+      "properties": [
+        "clues to caches",
+        "directions"
+      ],
+      "curse": null,
+      "weight_value": {
+        "weight_lb": 2,
+        "value_gp": 0
+      },
+      "connected_threads": [
+        "thread_missing_veradda",
+        "thread_cult_treasures"
+      ],
+      "lore": "Notes compiled by Veradda, renowned treasure hunter.",
+      "acquisition_method": "Found on Veradda's corpse.",
+      "quest_significance": "Provides all cache starting points.",
+      "consequences_when_obtained": [],
+      "dm_notes": "Players must recover to begin the adventure. Partial, as some pages are missing."
+    },
+    "item_scrolls_veradda": {
+      "id": "item_scrolls_veradda",
+      "name": "Backup Scrolls of Cache Directions",
+      "type": "quest_item",
+      "rarity": "common",
+      "location": "area_clearing",
+      "magical": false,
+      "description": "Copy of cache locations, including cryptic clues and mission notes.",
+      "properties": [
+        "cache locations"
+      ],
+      "curse": null,
+      "weight_value": {
+        "weight_lb": 1,
+        "value_gp": 0
+      },
+      "connected_threads": [
+        "thread_cult_treasures"
+      ],
+      "lore": "Veradda wisely kept duplicates.",
+      "acquisition_method": "Found on Veradda's person after her death.",
+      "quest_significance": "Ensures adventure can proceed after her murder.",
+      "consequences_when_obtained": [],
+      "dm_notes": ""
+    },
+    "item_alchemists_fire_1": {
+      "id": "item_alchemists_fire_1",
+      "name": "Alchemist's Fire (Vial 1)",
+      "type": "consumable",
+      "rarity": "uncommon",
+      "location": "area_beneath_the_hills_cavern",
+      "magical": false,
+      "description": "A sticky, ignitable substance in a glass vial.",
+      "properties": [
+        "flammable",
+        "combat use"
+      ],
+      "curse": null,
+      "weight_value": {
+        "weight_lb": 1,
+        "value_gp": 25
+      },
+      "connected_threads": [],
+      "lore": "Crafted by goblin chemists.",
+      "acquisition_method": "Looted from goblins.",
+      "quest_significance": null,
+      "consequences_when_obtained": [],
+      "dm_notes": "Two vials total in goblin fight."
+    },
+    "item_alchemists_fire_2": {
+      "id": "item_alchemists_fire_2",
+      "name": "Alchemist's Fire (Vial 2)",
+      "type": "consumable",
+      "rarity": "uncommon",
+      "location": "area_beneath_the_hills_cavern",
+      "magical": false,
+      "description": "A sticky, ignitable substance in a glass vial.",
+      "properties": [
+        "flammable",
+        "combat use"
+      ],
+      "curse": null,
+      "weight_value": {
+        "weight_lb": 1,
+        "value_gp": 25
+      },
+      "connected_threads": [],
+      "lore": "",
+      "acquisition_method": "Looted from goblins.",
+      "quest_significance": null,
+      "consequences_when_obtained": [],
+      "dm_notes": ""
+    },
+    "item_potion_healing": {
+      "id": "item_potion_healing",
+      "name": "Potion of Healing",
+      "type": "magic_item",
+      "rarity": "common",
+      "location": "area_beneath_the_hills_final_chamber",
+      "magical": true,
+      "description": "A magical potion that restores hit points.",
+      "properties": [
+        "healing 2d4+2"
+      ],
+      "curse": null,
+      "weight_value": {
+        "weight_lb": 0.5,
+        "value_gp": 50
+      },
+      "connected_threads": [],
+      "lore": "Widely known among adventurers.",
+      "acquisition_method": "Looted from Slayermighty.",
+      "quest_significance": "Consumable utility for party.",
+      "consequences_when_obtained": [],
+      "dm_notes": ""
+    },
+    "item_necklace_copper_charms": {
+      "id": "item_necklace_copper_charms",
+      "name": "Necklace of 20 Copper Charms",
+      "type": "mundane",
+      "rarity": "common",
+      "location": "area_beneath_the_hills_final_chamber",
+      "magical": false,
+      "description": "A necklace worn by Slayermighty, the giant.",
+      "properties": [
+        "value only"
+      ],
+      "curse": null,
+      "weight_value": {
+        "weight_lb": 1,
+        "value_gp": 200
+      },
+      "connected_threads": [],
+      "lore": "Possibly a tribal trophy or keepsake.",
+      "acquisition_method": "Looted from Slayermighty.",
+      "quest_significance": "Treasure.",
+      "consequences_when_obtained": [],
+      "dm_notes": ""
+    },
+    "item_ledger_dragon_cult": {
+      "id": "item_ledger_dragon_cult",
+      "name": "Cult of the Dragon Ledger",
+      "type": "quest_item",
+      "rarity": "rare",
+      "location": "area_boulder_pyramid_top",
+      "magical": false,
+      "description": "A book listing names/locations of secret cult members, partially ruined by acid.",
+      "properties": [
+        "valuable to authorities"
+      ],
+      "curse": null,
+      "weight_value": {
+        "weight_lb": 3,
+        "value_gp": 100
+      },
+      "connected_threads": [
+        "thread_cult_treasures"
+      ],
+      "lore": "Marks traitors and allies of the dragon cult.",
+      "acquisition_method": "Recovered from secret cache in pyramid; may be damaged.",
+      "quest_significance": "Hand-in proof for faction/authorities.",
+      "consequences_when_obtained": [],
+      "dm_notes": "Reduce value by 25 gp per failed trap disarm."
+    },
+    "item_stone_giant_nose_ring": {
+      "id": "item_stone_giant_nose_ring",
+      "name": "Stone Giant Nose Ring",
+      "type": "mundane",
+      "rarity": "uncommon",
+      "location": "area_boulder_pyramid_top",
+      "magical": false,
+      "description": "A massive silver ring worn by the dead giant.",
+      "properties": [
+        "valuable",
+        "giant tribal artifact"
+      ],
+      "curse": null,
+      "weight_value": {
+        "weight_lb": 4,
+        "value_gp": 100
+      },
+      "connected_threads": [],
+      "lore": "Stone giant craftsmanship.",
+      "acquisition_method": "Taken from giant's corpse.",
+      "quest_significance": "Loot; possible trophy.",
+      "consequences_when_obtained": [],
+      "dm_notes": ""
+    },
+    "item_scroll_comprehend_languages": {
+      "id": "item_scroll_comprehend_languages",
+      "name": "Scroll of Comprehend Languages",
+      "type": "magic_item",
+      "rarity": "common",
+      "location": "area_boulder_pyramid_top",
+      "magical": true,
+      "description": "Spell scroll granting the spell comprehend languages.",
+      "properties": [
+        "utility magic"
+      ],
+      "curse": null,
+      "weight_value": {
+        "weight_lb": 0.1,
+        "value_gp": 50
+      },
+      "connected_threads": [],
+      "lore": "",
+      "acquisition_method": "Loot from stone giant's pouch.",
+      "quest_significance": "Provides magical translation.",
+      "consequences_when_obtained": [],
+      "dm_notes": ""
+    },
+    "item_topaz": {
+      "id": "item_topaz",
+      "name": "Topaz",
+      "type": "mundane",
+      "rarity": "uncommon",
+      "location": "area_fires_sentry_room",
+      "magical": false,
+      "description": "A cut gemstone offered by kobolds.",
+      "properties": [
+        "value only"
+      ],
+      "curse": null,
+      "weight_value": {
+        "weight_lb": 0.2,
+        "value_gp": 50
+      },
+      "connected_threads": [],
+      "lore": "",
+      "acquisition_method": "Bribed from kobolds in exchange for safe passage.",
+      "quest_significance": "Treasure.",
+      "consequences_when_obtained": [],
+      "dm_notes": ""
+    },
+    "item_scroll_disguise_self": {
+      "id": "item_scroll_disguise_self",
+      "name": "Scroll of Disguise Self",
+      "type": "magic_item",
+      "rarity": "common",
+      "location": "area_fires_sentry_room",
+      "magical": true,
+      "description": "Spell scroll of disguise self, useful for infiltration.",
+      "properties": [
+        "illusion magic"
+      ],
+      "curse": null,
+      "weight_value": {
+        "weight_lb": 0.1,
+        "value_gp": 30
+      },
+      "connected_threads": [],
+      "lore": "",
+      "acquisition_method": "Bribed or looted from kobolds.",
+      "quest_significance": "Consumable for magical disguise.",
+      "consequences_when_obtained": [],
+      "dm_notes": ""
+    },
+    "item_melted_silver": {
+      "id": "item_melted_silver",
+      "name": "Melted Silver Ingot",
+      "type": "mundane",
+      "rarity": "rare",
+      "location": "area_fires_forge_room",
+      "magical": false,
+      "description": "Large lump of silver scorched by fire magic.",
+      "properties": [
+        "trade value"
+      ],
+      "curse": null,
+      "weight_value": {
+        "weight_lb": 10,
+        "value_gp": 150
+      },
+      "connected_threads": [],
+      "lore": "",
+      "acquisition_method": "Recovered from forge room by surviving fire and magmin.",
+      "quest_significance": "Loot.",
+      "consequences_when_obtained": [],
+      "dm_notes": ""
+    },
+    "item_giant_coins": {
+      "id": "item_giant_coins",
+      "name": "Giant Gold Coins",
+      "type": "mundane",
+      "rarity": "rare",
+      "location": "area_frost_main_chamber",
+      "magical": false,
+      "description": "Oversized gold coins taken from the frost giant bodies.",
+      "properties": [
+        "value"
+      ],
+      "curse": null,
+      "weight_value": {
+        "weight_lb": 1,
+        "value_gp": 100
+      },
+      "connected_threads": [],
+      "lore": "",
+      "acquisition_method": "Loot from dead frost giants.",
+      "quest_significance": "Treasure.",
+      "consequences_when_obtained": [],
+      "dm_notes": ""
+    },
+    "item_diamond_dust": {
+      "id": "item_diamond_dust",
+      "name": "Diamond Dust",
+      "type": "mundane",
+      "rarity": "rare",
+      "location": "area_frost_main_chamber",
+      "magical": false,
+      "description": "Residual magical dust from shattered greed diamond.",
+      "properties": [
+        "material component",
+        "trade good"
+      ],
+      "curse": null,
+      "weight_value": {
+        "weight_lb": 0.5,
+        "value_gp": 100
+      },
+      "connected_threads": [],
+      "lore": "",
+      "acquisition_method": "Collected after destroying cursed diamond.",
+      "quest_significance": "Quest reward and spellcaster resource.",
+      "consequences_when_obtained": [],
+      "dm_notes": ""
+    },
+    "item_potion_healing_1": {
+      "id": "item_potion_healing_1",
+      "name": "Potion of Healing",
+      "type": "magic_item",
+      "rarity": "common",
+      "location": "area_frost_main_chamber",
+      "magical": true,
+      "description": "Healing potion recovered from giant corpse.",
+      "properties": [
+        "healing"
+      ],
+      "curse": null,
+      "weight_value": {
+        "weight_lb": 0.5,
+        "value_gp": 50
+      },
+      "connected_threads": [],
+      "lore": "",
+      "acquisition_method": "Loot from frost giant.",
+      "quest_significance": "",
+      "consequences_when_obtained": [],
+      "dm_notes": ""
+    },
+    "item_potion_healing_2": {
+      "id": "item_potion_healing_2",
+      "name": "Potion of Healing",
+      "type": "magic_item",
+      "rarity": "common",
+      "location": "area_frost_main_chamber",
+      "magical": true,
+      "description": "Healing potion recovered from giant corpse.",
+      "properties": [
+        "healing"
+      ],
+      "curse": null,
+      "weight_value": {
+        "weight_lb": 0.5,
+        "value_gp": 50
+      },
+      "connected_threads": [],
+      "lore": "",
+      "acquisition_method": "Loot from frost giant.",
+      "quest_significance": "",
+      "consequences_when_obtained": [],
+      "dm_notes": ""
+    },
+    "item_cultist_loot": {
+      "id": "item_cultist_loot",
+      "name": "Dragon Cultist Loot",
+      "type": "mundane",
+      "rarity": "common",
+      "location": "area_clouds_shrine_interior",
+      "magical": false,
+      "description": "Coins, gems, and jewelry taken from the slain cultists’ bodies.",
+      "properties": [
+        "trade value"
+      ],
+      "curse": null,
+      "weight_value": {
+        "weight_lb": 2,
+        "value_gp": 200
+      },
+      "connected_threads": [],
+      "lore": "",
+      "acquisition_method": "Looted from cultist corpses at shrine.",
+      "quest_significance": "Treasure.",
+      "consequences_when_obtained": [],
+      "dm_notes": ""
+    },
+    "item_potion_healing_3": {
+      "id": "item_potion_healing_3",
+      "name": "Potion of Healing",
+      "type": "magic_item",
+      "rarity": "common",
+      "location": "area_clouds_shrine_interior",
+      "magical": true,
+      "description": "Healing potion found in shrine loot.",
+      "properties": [
+        "healing"
+      ],
+      "curse": null,
+      "weight_value": {
+        "weight_lb": 0.5,
+        "value_gp": 50
+      },
+      "connected_threads": [],
+      "lore": "",
+      "acquisition_method": "Loot from cultists or given by Kraddokk.",
+      "quest_significance": "",
+      "consequences_when_obtained": [],
+      "dm_notes": ""
+    }
+  },
+  "npcs": {
+    "npc_veradda_stoor": {
+      "id": "npc_veradda_stoor",
+      "name": "Veradda Stoor",
+      "role": "Renowned treasure hunter",
+      "race": "human",
+      "class": "Rogue",
+      "level": 7,
+      "location": "loc_parnast_region",
+      "status": "dead",
+      "alignment": "neutral good",
+      "relationship_to_party": "would-be employer",
+      "trust_level": 50,
+      "personality": [
+        "meticulous",
+        "brave",
+        "well connected"
+      ],
+      "appearance": "Weathered, sharp-featured woman. Practical travel clothes, light armor, and various pouches.",
+      "voice": "Confident and rapid, lightly accented from long travel.",
+      "secrets": [
+        "Had backup cache notes hidden on her for safety.",
+        "Murdered by giant agents."
+      ],
+      "motivation": "Uncover and protect dangerous treasures.",
+      "fears": [
+        "Falling into dragon cult hands",
+        "Giant threats"
+      ],
+      "goals": [
+        "Recruit capable team",
+        "Map all cache locations"
+      ],
+      "knowledge_of_threads": {
+        "thread_missing_veradda": "Knew she was being watched by rival parties.",
+        "thread_cult_treasures": "Primary source for all five caches.",
+        "thread_competing_giants": "Suspected giants were now involved in cult treasure hunts."
+      },
+      "information_can_provide": [
+        "Cache clues (via notes)",
+        "Worry about giant and cult activity"
+      ],
+      "items_possessed": [
+        "item_notes_veradda",
+        "item_scrolls_veradda"
+      ],
+      "combat_stats": null,
+      "can_die": "yes",
+      "connected_threads": [
+        "thread_missing_veradda",
+        "thread_cult_treasures"
+      ],
+      "dm_notes": "Veradda's murder is the inciting incident. Present body and clues early."
+    },
+    "npc_slayermighty": {
+      "id": "npc_slayermighty",
+      "name": "Slayermighty",
+      "role": "Cursed hill giant",
+      "race": "hill giant (shrunken)",
+      "class": null,
+      "level": 5,
+      "location": "loc_beneath_the_hills_cave",
+      "status": "alive",
+      "alignment": "lawful evil",
+      "relationship_to_party": "enemy",
+      "trust_level": 0,
+      "personality": [
+        "furious",
+        "prideful",
+        "cunning"
+      ],
+      "appearance": "Hill giant, now goblin-sized, in furs wielding a club; rough, wild hair.",
+      "voice": "Deep, echoing rants, slips into Giant curses.",
+      "secrets": [
+        "Believes size will soon return.",
+        "Serves competing giants against other clans."
+      ],
+      "motivation": "Regain full stature and prove dominance.",
+      "fears": [
+        "Permanent curse",
+        "Loss of status"
+      ],
+      "goals": [
+        "Defeat all rivals",
+        "Regain size"
+      ],
+      "knowledge_of_threads": {
+        "thread_cult_treasures": "Knows caches exist, desperate to claim first.",
+        "thread_competing_giants": "Acts as pawn in giant rivalry."
+      },
+      "information_can_provide": [
+        "Some rivalry details if captured (unreliable)"
+      ],
+      "items_possessed": [
+        "item_potion_healing",
+        "item_necklace_copper_charms"
+      ],
+      "combat_stats": {
+        "armor_class": 13,
+        "hit_points": 27,
+        "attacks": [
+          "Greatclub (2/turn)",
+          "Rock"
+        ],
+        "special": "Multiattack incapacitates on 2 hits"
+      },
+      "can_die": "yes",
+      "connected_threads": [
+        "thread_competing_giants"
+      ],
+      "dm_notes": "Plays up giant ego even when tiny. Rants about greatness during and after combat."
+    },
+    "npc_blooddrinker_bear": {
+      "id": "npc_blooddrinker_bear",
+      "name": "Blooddrinker",
+      "role": "Cursed Bear Companion",
+      "race": "black bear (shrunken)",
+      "class": null,
+      "level": null,
+      "location": "loc_beneath_the_hills_cave",
+      "status": "alive",
+      "alignment": "unaligned",
+      "relationship_to_party": "potential pet",
+      "trust_level": 30,
+      "personality": [
+        "loyal",
+        "traumatized",
+        "playful when safe"
+      ],
+      "appearance": "Tiny black bear the size of a housecat.",
+      "voice": "Animal growls and whimpers.",
+      "secrets": [
+        "Curse is permanent unless cured; will die unless treated"
+      ],
+      "motivation": "Comfort and food.",
+      "fears": [
+        "Loud noise",
+        "sudden movement"
+      ],
+      "goals": [
+        "Survive, find a new master"
+      ],
+      "knowledge_of_threads": {},
+      "information_can_provide": [],
+      "items_possessed": [],
+      "combat_stats": null,
+      "can_die": "conditional",
+      "connected_threads": [],
+      "dm_notes": "If rescued, becomes a story award pet. Emphasize helplessness; DC 10 Medicine or Arcana to save."
+    },
+    "npc_gggrkk_galebduhr": {
+      "id": "npc_gggrkk_galebduhr",
+      "name": "Ggrrkk",
+      "role": "Galeb Duhr Sibling",
+      "race": "galeb duhr",
+      "class": null,
+      "level": null,
+      "location": "loc_upon_the_stones_field",
+      "status": "alive",
+      "alignment": "neutral",
+      "relationship_to_party": "potential ally",
+      "trust_level": 45,
+      "personality": [
+        "grumbly",
+        "wry",
+        "old-fashioned"
+      ],
+      "appearance": "Stone boulder with an expressive face and limbs.",
+      "voice": "Deep, gravelly; ponders before speaking.",
+      "secrets": [],
+      "motivation": "Guard the pyramid, interact with passersby.",
+      "fears": [
+        "Infestation by beetles"
+      ],
+      "goals": [
+        "Relieve sibling's discomfort"
+      ],
+      "knowledge_of_threads": {
+        "thread_cult_treasures": "Knows caches built, cultists worked with a dragon."
+      },
+      "information_can_provide": [
+        "Pyramid construction details",
+        "Clues to passphrase puzzle"
+      ],
+      "items_possessed": [],
+      "combat_stats": null,
+      "can_die": "no",
+      "connected_threads": [],
+      "dm_notes": "Use for vital clue distribution if players stall on puzzle."
+    },
+    "npc_hhffft_galebduhr": {
+      "id": "npc_hhffft_galebduhr",
+      "name": "Hhffft",
+      "role": "Galeb Duhr Sibling",
+      "race": "galeb duhr",
+      "class": null,
+      "level": null,
+      "location": "loc_upon_the_stones_field",
+      "status": "alive",
+      "alignment": "neutral",
+      "relationship_to_party": "potential ally",
+      "trust_level": 45,
+      "personality": [
+        "stern",
+        "observant",
+        "quiet"
+      ],
+      "appearance": "Nearly identical to Ggrrkk, larger.",
+      "voice": "More whispering rumble.",
+      "secrets": [],
+      "motivation": "Family support.",
+      "fears": [],
+      "goals": [
+        "Guard pyramid"
+      ],
+      "knowledge_of_threads": {},
+      "information_can_provide": [],
+      "items_possessed": [],
+      "combat_stats": null,
+      "can_die": "no",
+      "connected_threads": [],
+      "dm_notes": ""
+    },
+    "npc_prrrt_galebduhr": {
+      "id": "npc_prrrt_galebduhr",
+      "name": "Prrrt",
+      "role": "Galeb Duhr Sibling (Infested)",
+      "race": "galeb duhr",
+      "class": null,
+      "level": null,
+      "location": "loc_upon_the_stones_field",
+      "status": "alive",
+      "alignment": "neutral",
+      "relationship_to_party": "potential ally",
+      "trust_level": 40,
+      "personality": [
+        "irritated",
+        "needy",
+        "comical"
+      ],
+      "appearance": "Boulder mid-pyramid, larger cracks.",
+      "voice": "Higher-pitched stone grinding.",
+      "secrets": [
+        "Beetle infestation can be fixed by intelligent adventurer."
+      ],
+      "motivation": "Get rid of beetles.",
+      "fears": [
+        "Beetles"
+      ],
+      "goals": [
+        "Be free of irritation"
+      ],
+      "knowledge_of_threads": {},
+      "information_can_provide": [
+        "Puzzle hint if aided: the giant's passphrase was incorrect."
+      ],
+      "items_possessed": [],
+      "combat_stats": null,
+      "can_die": "no",
+      "connected_threads": [],
+      "dm_notes": "DM awards Friend of Prrrt story if helped."
+    },
+    "npc_kraddokk": {
+      "id": "npc_kraddokk",
+      "name": "Kraddokk",
+      "role": "Storm Giant Guardian",
+      "race": "storm giant",
+      "class": null,
+      "level": null,
+      "location": "loc_above_the_clouds_shrine",
+      "status": "alive",
+      "alignment": "lawful neutral",
+      "relationship_to_party": "potential ally or rival",
+      "trust_level": 50,
+      "personality": [
+        "booming",
+        "philosophical",
+        "not quick to anger"
+      ],
+      "appearance": "Massive blue-skinned giant with dignified armor and storm-wreathed hair.",
+      "voice": "Thunderous, warm, contemplative.",
+      "secrets": [
+        "Has come to check state of desecrated Annam shrine."
+      ],
+      "motivation": "Preserve sanctity of giant holy sites.",
+      "fears": [
+        "Desecration",
+        "Loss of tradition"
+      ],
+      "goals": [
+        "Warn mortals about giant struggles",
+        "Preserve Annam's legacy"
+      ],
+      "knowledge_of_threads": {
+        "thread_competing_giants": "Fully aware of giant infighting; sees mortals as bargaining chips."
+      },
+      "information_can_provide": [
+        "Giant civil war lore",
+        "Advice to avoid giant lands",
+        "Potions of healing if befriended"
+      ],
+      "items_possessed": [],
+      "combat_stats": null,
+      "can_die": "no",
+      "connected_threads": [
+        "thread_competing_giants"
+      ],
+      "dm_notes": "His attitude determines if party leaves with a curse or a friend. Roleplay wisdom and gravitas."
+    }
+  },
+  "factions": {
+    "faction_dragon_cult": {
+      "id": "faction_dragon_cult",
+      "name": "Cult of the Dragon",
+      "alignment": "evil",
+      "goals": [
+        "Amass treasure",
+        "Revive or empower draconic overlords"
+      ],
+      "ideology": "Dragons are rightful rulers of the world—the strong must guide the rest.",
+      "leadership": [],
+      "size": "fragmented - hundreds across the region",
+      "resources": [
+        "treasure caches",
+        "arcane traps",
+        "ally kobold tribes"
+      ],
+      "current_plans": [
+        "Hide remaining caches",
+        "Destabilize rivals"
+      ],
+      "party_standing": "hostile",
+      "threat_level": "major",
+      "connected_threads": [
+        "thread_cult_treasures"
+      ],
+      "dm_notes": "Cult influence felt through hidden traps and cursed deposits. No overt leadership present."
+    },
+    "faction_giants": {
+      "id": "faction_giants",
+      "name": "Giantkind (Hill, Stone, Frost, Fire, Storm)",
+      "alignment": "varies",
+      "goals": [
+        "Outdo rival giant clans",
+        "Secure treasure and power",
+        "Restore or redefine Ordning"
+      ],
+      "ideology": "Supremacy and order via strength and accomplishment.",
+      "leadership": [
+        "npc_kraddokk"
+      ],
+      "size": "scores of giants and hundreds of minions",
+      "resources": [
+        "minions",
+        "magic",
+        "physical might"
+      ],
+      "current_plans": [
+        "Collect caches as proofs of strength",
+        "Deny rivals"
+      ],
+      "party_standing": "variable",
+      "threat_level": "major",
+      "connected_threads": [
+        "thread_competing_giants"
+      ],
+      "dm_notes": "Clans not unified—party actions can affect future giant alliances."
+    },
+    "faction_true_nimbus": {
+      "id": "faction_true_nimbus",
+      "name": "Clan True-Nimbus",
+      "alignment": "evil",
+      "goals": [
+        "Topple hill giants",
+        "Acquire treasure for cloud giants"
+      ],
+      "ideology": "Only the cloud giants deserve to rule among giants.",
+      "leadership": [],
+      "size": "secretive, a few dozen",
+      "resources": [
+        "spies",
+        "magical traps",
+        "arrogance"
+      ],
+      "current_plans": [
+        "Sabotage rival caches",
+        "Mock and discourage lesser giants"
+      ],
+      "party_standing": "unknown",
+      "threat_level": "minor",
+      "connected_threads": [
+        "thread_competing_giants"
+      ],
+      "dm_notes": "Leave mocking notes, plant traps for rivals."
+    },
+    "faction_adventurers_league": {
+      "id": "faction_adventurers_league",
+      "name": "Adventurers League",
+      "alignment": "good",
+      "goals": [
+        "Foster adventuring",
+        "Preserve safety of the Realms"
+      ],
+      "ideology": "Support heroes, write legends, prevent misuse of power.",
+      "leadership": [],
+      "size": "many across Faerûn",
+      "resources": [
+        "network of adventurers",
+        "information flow",
+        "faction awards"
+      ],
+      "current_plans": [
+        "Engage new recruits via caches"
+      ],
+      "party_standing": "member or ally",
+      "threat_level": "minor",
+      "connected_threads": [
+        "thread_cult_treasures",
+        "thread_missing_veradda"
+      ],
+      "dm_notes": "Bestow rewards (downtime, reputation, assistance) to successful participants."
+    }
+  },
+  "consequences": {
+    "conseq_veradda_death": {
+      "id": "conseq_veradda_death",
+      "trigger": "Party discovers Veradda Stoor's corpse.",
+      "effect": "Party forced to operate without her guidance; giants and rivals alerted to cache search.",
+      "status": "resolved",
+      "potential_payoff": "Caches found, with greater risk and competition.",
+      "expiration": null,
+      "connected_threads": [
+        "thread_missing_veradda"
+      ],
+      "connected_locations": [
+        "loc_parnast_region"
+      ],
+      "connected_npcs": [
+        "npc_veradda_stoor"
+      ],
+      "dm_notes": "Sets the plot in motion. Allows for hooks into rival parties."
+    },
+    "conseq_giants_rivalry": {
+      "id": "conseq_giants_rivalry",
+      "trigger": "Any cache is looted or evidence of giant infighting found.",
+      "effect": "Giant attention increases; may result in direct confrontation.",
+      "status": "ongoing",
+      "potential_payoff": "Potential alliances or curses, increased stakes.",
+      "expiration": null,
+      "connected_threads": [
+        "thread_competing_giants"
+      ],
+      "connected_locations": [
+        "loc_beneath_the_hills_cave",
+        "loc_upon_the_stones_field",
+        "loc_against_the_frost_mountain"
+      ],
+      "connected_npcs": [
+        "npc_kraddokk",
+        "npc_slayermighty"
+      ],
+      "dm_notes": "Player decisions may shift party standing among giants."
+    },
+    "conseq_elemental_fire": {
+      "id": "conseq_elemental_fire",
+      "trigger": "Immix symbol remains active or adventurers rest in forge.",
+      "effect": "Magmin and other fire creatures attack increasingly.",
+      "status": "escalating",
+      "potential_payoff": "Hard-fought treasure, possible magical boons if fire is properly dealt with.",
+      "expiration": null,
+      "connected_threads": [
+        "thread_cult_treasures"
+      ],
+      "connected_locations": [
+        "loc_through_the_fires_outpost"
+      ],
+      "connected_npcs": [],
+      "dm_notes": "Fire threat persists until symbol is deactivated. Danger increases with delay."
+    },
+    "conseq_frost_magic": {
+      "id": "conseq_frost_magic",
+      "trigger": "Party succumbs to or disables greed curse in icy chamber.",
+      "effect": "Victims may later be stunned by great wealth, possibly cause party strife.",
+      "status": "ongoing",
+      "potential_payoff": "Can be removed with magic or roleplay; introduces extra party complication.",
+      "expiration": null,
+      "connected_threads": [
+        "thread_cult_treasures"
+      ],
+      "connected_locations": [
+        "loc_against_the_frost_mountain"
+      ],
+      "connected_npcs": [],
+      "dm_notes": "Award Victim of Greed story in notes."
+    },
+    "conseq_shrine_sanctity": {
+      "id": "conseq_shrine_sanctity",
+      "trigger": "Party attempts to loot or desecrate Annam's shrine.",
+      "effect": "If party steals gold plates or disrespects shrine, they are cursed by giants.",
+      "status": "ongoing",
+      "potential_payoff": "Gain loot OR earn favor of Kraddokk and future giant allies.",
+      "expiration": null,
+      "connected_threads": [
+        "thread_competing_giants"
+      ],
+      "connected_locations": [
+        "loc_above_the_clouds_shrine"
+      ],
+      "connected_npcs": [
+        "npc_kraddokk"
+      ],
+      "dm_notes": "Hated by Giants or Friend of Kraddokk story award."
+    }
+  },
+  "world_state": {
+    "variables": {
+      "giant_attention": {
+        "type": "integer",
+        "value": 0,
+        "min": 0,
+        "max": 10,
+        "description": "Tracks how much the party has attracted giantkind's interest.",
+        "changes_when": "Caches looted, shrines desecrated, or giants confronted."
+      },
+      "fire_alert": {
+        "type": "integer",
+        "value": 0,
+        "min": 0,
+        "max": 6,
+        "description": "Counts magmin waves based on party speed in the fire outpost.",
+        "changes_when": "Resting or time spent in forge room."
+      }
+    },
+    "faction_standings": {
+      "faction_dragon_cult": -2,
+      "faction_giants": 0,
+      "faction_true_nimbus": 0,
+      "faction_adventurers_league": 1
+    },
+    "timers": {
+      "magmin_wave_timer": {
+        "description": "Time between magmin attacks in forge room.",
+        "value": 5,
+        "unit": "minutes",
+        "ticks_when": "Resting or after magmin defeated.",
+        "on_expire": "New magmin arrive from lava."
+      },
+      "curse_reversal": {
+        "description": "Time until shrinking curse on Slayermighty and bear wears off.",
+        "value": 1,
+        "unit": "hours",
+        "ticks_when": "After defeat or delay in the cave chamber.",
+        "on_expire": "Slayermighty returns to giant size, bear dies unless saved."
+      }
+    }
+  },
+  "encounter_pool": {
+    "encounter_swarm_goblins": {
+      "id": "encounter_swarm_goblins",
+      "trigger_conditions": [
+        "Entering southern tunnel of Beneath the Hills",
+        "After initial goblin fight"
+      ],
+      "description": "Swarm of mouse-sized cursed goblins attacks from the dark.",
+      "enemy_composition": [
+        "swarm of cursed goblins"
+      ],
+      "scalable": true,
+      "loot": [],
+      "connects_to": [
+        "thread_cult_treasures"
+      ],
+      "dm_notes": "Play up chaos of darkness and corpse growth; possible additional swarms for stronger parties."
+    },
+    "encounter_giant_badgers": {
+      "id": "encounter_giant_badgers",
+      "trigger_conditions": [
+        "Crossing stone field at Upon the Stones"
+      ],
+      "description": "Pack of giant badgers ambushes intruders.",
+      "enemy_composition": [
+        "giant badger x5 (adjust for party size)"
+      ],
+      "scalable": true,
+      "loot": [],
+      "connects_to": [
+        "thread_cult_treasures"
+      ],
+      "dm_notes": "Calm with DC 20 Handle Animal; can avoid some combat if succeeded."
+    },
+    "encounter_greed_motes": {
+      "id": "encounter_greed_motes",
+      "trigger_conditions": [
+        "Entering ice chamber with greed diamond"
+      ],
+      "description": "Greed motes linked to cursed diamond appear on failed saves.",
+      "enemy_composition": [
+        "greed mote x3 (scalable)"
+      ],
+      "scalable": true,
+      "loot": [
+        "item_diamond_dust"
+      ],
+      "connects_to": [
+        "thread_cult_treasures"
+      ],
+      "dm_notes": "Diamond must be destroyed to end combat; motes are otherwise invulnerable."
+    },
+    "encounter_magmin": {
+      "id": "encounter_magmin",
+      "trigger_conditions": [
+        "Attempting to bypass or deactivate Immix glyph in Fires outpost"
+      ],
+      "description": "Magmin spawn every 5 minutes or after combat defeat while fire symbol is active.",
+      "enemy_composition": [
+        "magmin x2 initially, then more"
+      ],
+      "scalable": true,
+      "loot": [],
+      "connects_to": [
+        "thread_cult_treasures"
+      ],
+      "dm_notes": "Deactivating Immix stops spawns; increase number for long delays."
+    },
+    "encounter_giant_owl": {
+      "id": "encounter_giant_owl",
+      "trigger_conditions": [
+        "Approaching shrine above clouds",
+        "After bell interaction"
+      ],
+      "description": "Giant owls attack to defend the path—as servants of Kraddokk.",
+      "enemy_composition": [
+        "giant owl x4 (scalable)"
+      ],
+      "scalable": true,
+      "loot": [],
+      "connects_to": [
+        "thread_competing_giants"
+      ],
+      "dm_notes": "Increase/decrease number for party size or strength."
+    }
+  },
+  "plot_branches": {
+    "plotbranch_steal_shrine_plates": {
+      "id": "plotbranch_steal_shrine_plates",
+      "condition": "Party removes one or more gold plates from Annam's shrine.",
+      "new_objective": "Escape mountain while cursed and pursued by giantkind.",
+      "narrative_impact": "Party is marked as desecrators, Hated by Giants story award, future giant hostility.",
+      "consequences": [
+        "conseq_shrine_sanctity"
+      ],
+      "connected_threads": [
+        "thread_competing_giants"
+      ],
+      "dm_notes": "Tie-in to later campaigns or league play; future giants prioritize attacks on cursed party members."
+    },
+    "plotbranch_save_blooddrinker": {
+      "id": "plotbranch_save_blooddrinker",
+      "condition": "Party rescues and tames the shrunken bear, Blooddrinker.",
+      "new_objective": "Player may keep Blooddrinker as a loyal, tiny pet.",
+      "narrative_impact": "Story award gives reputation for bear-saving; special interactions possible.",
+      "consequences": [],
+      "connected_threads": [
+        "thread_cult_treasures"
+      ],
+      "dm_notes": "Bear can't fight or aid in combat but is a charming companion; roleplay downtime training as desired."
+    },
+    "plotbranch_befriend_kraddokk": {
+      "id": "plotbranch_befriend_kraddokk",
+      "condition": "Party converses with Kraddokk and shows respect for Annam's shrine.",
+      "new_objective": "Earn the storm giant's favor; potential boons or alliances.",
+      "narrative_impact": "Friend of Kraddokk story award; possible future rescue or information.",
+      "consequences": [],
+      "connected_threads": [
+        "thread_competing_giants"
+      ],
+      "dm_notes": "Friendship may affect future league modules."
+    }
+  },
+  "xref_index": {
+    "by_location": {
+      "loc_parnast_region": {
+        "areas": [
+          "area_clearing"
+        ],
+        "npcs": [
+          "npc_veradda_stoor"
+        ],
+        "threads": [
+          "thread_missing_veradda"
+        ],
+        "items": [
+          "item_notes_veradda",
+          "item_scrolls_veradda"
+        ]
+      },
+      "loc_beneath_the_hills_cave": {
+        "areas": [
+          "area_beneath_the_hills_entrance",
+          "area_beneath_the_hills_cavern",
+          "area_beneath_the_hills_south_tunnel",
+          "area_beneath_the_hills_final_chamber"
+        ],
+        "npcs": [
+          "npc_slayermighty",
+          "npc_blooddrinker_bear"
+        ],
+        "threads": [
+          "thread_cult_treasures",
+          "thread_competing_giants"
+        ],
+        "items": [
+          "item_alchemists_fire_1",
+          "item_alchemists_fire_2",
+          "item_potion_healing",
+          "item_necklace_copper_charms"
+        ]
+      },
+      "loc_upon_the_stones_field": {
+        "areas": [
+          "area_stone_field",
+          "area_boulder_pyramid_base",
+          "area_boulder_pyramid_top"
+        ],
+        "npcs": [
+          "npc_gggrkk_galebduhr",
+          "npc_hhffft_galebduhr",
+          "npc_prrrt_galebduhr"
+        ],
+        "threads": [
+          "thread_cult_treasures",
+          "thread_competing_giants"
+        ],
+        "items": [
+          "item_ledger_dragon_cult",
+          "item_stone_giant_nose_ring",
+          "item_scroll_comprehend_languages"
+        ]
+      },
+      "loc_against_the_frost_mountain": {
+        "areas": [
+          "area_frost_secret_path",
+          "area_frost_main_chamber"
+        ],
+        "npcs": [],
+        "threads": [
+          "thread_cult_treasures"
+        ],
+        "items": [
+          "item_giant_coins",
+          "item_diamond_dust",
+          "item_potion_healing_1",
+          "item_potion_healing_2"
+        ]
+      },
+      "loc_through_the_fires_outpost": {
+        "areas": [
+          "area_fires_entry",
+          "area_fires_sentry_room",
+          "area_fires_forge_room"
+        ],
+        "npcs": [],
+        "threads": [
+          "thread_cult_treasures"
+        ],
+        "items": [
+          "item_scroll_disguise_self",
+          "item_topaz",
+          "item_melted_silver"
+        ]
+      },
+      "loc_above_the_clouds_shrine": {
+        "areas": [
+          "area_clouds_path",
+          "area_clouds_shrine_interior"
+        ],
+        "npcs": [
+          "npc_kraddokk"
+        ],
+        "threads": [
+          "thread_competing_giants"
+        ],
+        "items": [
+          "item_cultist_loot",
+          "item_potion_healing_3"
+        ]
+      }
+    }
+  }
+}
