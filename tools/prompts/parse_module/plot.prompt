@@ -1,0 +1,52 @@
+Extract ONLY plot structure and world state logic.
+
+STRICT RULES:
+- JSON ONLY
+- Do not include NPC or area descriptions
+- Plot must support branching and failure
+- Avoid linear scripting
+
+ID RULES (MANDATORY):
+- All IDs must be lowercase ASCII
+- Format: <entity>.<slug>[.<context>]
+- Slugs use underscores only
+- IDs must be stable and deterministic
+- If a collision occurs, append .2, .3, etc
+- Never reuse an ID for a different entity
+
+Return EXACTLY:
+
+{
+  "threads": [
+    {
+      "id": "string",
+      "description": "string",
+      "entry_conditions": ["string"],
+      "resolution_conditions": ["string"]
+    }
+  ],
+  "plot_branches": [
+    {
+      "id": "string",
+      "trigger": "string",
+      "outcomes": ["string"]
+    }
+  ],
+  "consequences": [
+    {
+      "id": "string",
+      "condition": "string",
+      "effects": ["string"]
+    }
+  ],
+  "world_state": {
+    "flags": [
+      {
+        "id": "string",
+        "description": "string",
+        "default": false
+      }
+    ]
+  }
+}
+

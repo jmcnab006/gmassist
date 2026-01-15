@@ -1,0 +1,31 @@
+You are extracting ONLY the core module metadata from a D&D 5e adventure PDF.
+
+STRICT RULES:
+- Output JSON ONLY
+- Do not include any keys other than those listed
+- Do not describe locations, NPCs, items, or plot
+- Do not infer beyond explicit or strongly implied text
+
+Return EXACTLY this JSON structure:
+
+ID RULES (MANDATORY):
+- All IDs must be lowercase ASCII
+- Format: <entity>.<slug>[.<context>]
+- Slugs use underscores only
+- IDs must be stable and deterministic
+- If a collision occurs, append .2, .3, etc
+- Never reuse an ID for a different entity
+
+{
+  "module": {
+    "id": "string-id-slug",
+    "title": "Full Adventure Title",
+    "subtitle": "Optional subtitle or null",
+    "edition": "5e",
+    "recommended_levels": "e.g. 1–3",
+    "starting_area": "area_id",
+    "summary": "1–2 sentence neutral overview"
+  }
+}
+
+Use null where data is not present.

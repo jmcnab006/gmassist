@@ -1,0 +1,42 @@
+Extract ONLY NPCs and factions.
+
+STRICT RULES:
+- JSON ONLY
+- Do not include stat blocks
+- Do not include encounters or plot steps
+- NPC motivations must be concise and explicit
+
+Return EXACTLY:
+
+ID RULES (MANDATORY):
+- All IDs must be lowercase ASCII
+- Format: <entity>.<slug>[.<context>]
+- Slugs use underscores only
+- IDs must be stable and deterministic
+- If a collision occurs, append .2, .3, etc
+- Never reuse an ID for a different entity
+
+{
+  "npcs": [
+    {
+      "id": "string",
+      "name": "string",
+      "role": "string",
+      "location_id": "string or null",
+      "faction_id": "string or null",
+      "motivation": "string",
+      "secrets": ["string"]
+    }
+  ],
+  "factions": [
+    {
+      "id": "string",
+      "name": "string",
+      "goal": "string",
+      "allies": ["faction_id"],
+      "enemies": ["faction_id"]
+    }
+  ]
+}
+
+Use null when location or faction is unknown.

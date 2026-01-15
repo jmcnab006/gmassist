@@ -20,7 +20,8 @@ from openai import OpenAI
 # CONFIG
 # -----------------------------
 
-MODEL = "gpt-4.1"
+#MODEL = "gpt-4.1"
+MODEL = "gpt-4.1-mini"
 DEFAULT_OUTPUT = "module.json"
 
 SYSTEM_PROMPT_PATH = "prompts/parse_module/parse_module_json.prompt"

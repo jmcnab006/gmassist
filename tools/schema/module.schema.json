@@ -1,0 +1,32 @@
+{
+  "name": "module",
+  "description": "Core adventure metadata",
+  "root_key": "module",
+  "fields": {
+    "id": {
+      "type": "string",
+      "description": "Stable module identifier"
+    },
+    "title": {
+      "type": "string",
+      "description": "Full adventure title"
+    },
+    "subtitle": {
+      "type": ["string", "null"]
+    },
+    "edition": {
+      "type": "string",
+      "const": "5e"
+    },
+    "recommended_levels": {
+      "type": ["string", "null"]
+    },
+    "starting_area": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string",
+      "max_sentences": 2
+    }
+  }
+}

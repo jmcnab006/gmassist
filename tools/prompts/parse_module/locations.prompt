@@ -1,0 +1,40 @@
+Extract ONLY locations and areas from the adventure.
+
+STRICT RULES:
+- JSON ONLY
+- Do not include NPCs, items, encounters, or plot logic
+- Areas must belong to locations
+- Use stable area IDs (e.g. "1A", "2C", "CAVE_ENTRANCE")
+
+Return EXACTLY this structure:
+
+ID RULES (MANDATORY):
+- All IDs must be lowercase ASCII
+- Format: <entity>.<slug>[.<context>]
+- Slugs use underscores only
+- IDs must be stable and deterministic
+- If a collision occurs, append .2, .3, etc
+- Never reuse an ID for a different entity
+
+{
+  "locations": [
+    {
+      "id": "string",
+      "name": "string",
+      "description": "short neutral description"
+    }
+  ],
+  "areas": [
+    {
+      "id": "string",
+      "location_id": "string",
+      "name": "string",
+      "description": "player-facing description",
+      "connects_to": ["area_id"],
+      "features": ["string"],
+      "hazards": ["string"]
+    }
+  ]
+}
+
+If a field is not described in the text, use an empty array.
