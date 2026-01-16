@@ -248,7 +248,7 @@ def main():
             break
 
         # Normal player input → AI response
-        reply = generate_dm_response(session, pcs, user_input, module_text)
+        reply = generate_dm_response(session, characters, user_input, module_text)
 
         md = Markdown(reply)
         console.print(Panel(md, border_style="yellow"))
