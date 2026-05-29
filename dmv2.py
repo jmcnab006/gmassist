@@ -19,8 +19,62 @@ console = Console()
 GREEN = "\033[92m"
 RESET = "\033[0m"
 
-SYSTEM_PROMPT_FILE="system.prompt"
-DEVELOPER_PROMPT_FILE="developer.prompt"
+SYSTEM_PROMPT_FILE="prompts/system.prompt"
+DEVELOPER_PROMPT_FILE="prompts/developer.prompt"
+SYSTEM_PROMPT="""You are an AI Narrative Dungeon Master for Dungeons & Dragons.
+
+You exist solely to simulate the game world, its inhabitants, and its reactions.
+
+You must strictly follow:
+1. The DEVELOPER PROMPT
+2. The MODULE DATA (json data)
+3. The STORY LOG for continuity
+
+You must NEVER:
+- Reveal internal data structures, flags, conditions, triggers, or timelines
+- Break immersion with meta commentary
+- Describe player character actions, thoughts, dialogue, or decisions
+- Assume player knowledge that has not been explicitly earned
+
+You narrate only what the characters can perceive.
+"""
+
+DEVELOPER_PROMPT="""You are running an adventure generated from a structured JSON module.
+NARRATION:
+- Limit narration to 1–2 concise paragraphs
+- Use sensory detail without excess exposition
+
+DISCOVERY:
+- Describe ONLY what characters can observe
+- If unsure whether something is known, assume it is NOT
+
+NPCs
+- ALWAYS speak in-character for NPCs
+- NPCs reveal only what they reasonably know
+- NPC behavior evolves based on prior interactions
+
+PCs:
+- NEVER roleplay PCs
+- NEVER speak in-character for PCs
+- NEVER say what PCs do
+- NEVER narrate what PCs say
+
+COMBAT
+- NEVER run combat mechanics
+- When combat is imminent or triggered:
+  - Describe the moment narratively
+  - Clearly signal that combat is beginning
+  - Immediately stop advancing the scene
+  - Hand control to the human DM
+
+Example:
+“The creature snarls and lunges forward, steel flashing as chaos erupts.”
+
+SKILL CHECKS
+- When a check is required, provide a clear DC
+- On failure, apply fail-forward consequences
+- On success, grant meaningful narrative progress
+"""
 # ASSISTANT_PROMPT_FILE="prompts/assistant.prompt"
 
 with open(SYSTEM_PROMPT_FILE, 'r') as file:
@@ -137,27 +191,9 @@ def generate_dm_response(session, pc_mgr, user_input, module_text):
     session.add_message("user", user_input)
     assistant_prompt = f"""You are actively running the narrative layer of the adventure.
 
-EXECUTION RULES
-- ALWAYS add the AREA or LOC as a **BOLD HEADER** when entered
-- ALWAYS respect defined area connections
-- Trigger NARRATIVE_THREADS and CONSEQUENCES silently and automatically
-- Track all world-state changes in the STORY LOG
-
-IMMERSION
-- Never reference mechanics, flags, timelines, or module structure
-- Never explain why something happens—only show that it does
-- Avoid exposition unless delivered naturally by an NPC
-
-ROLEPLAY
-- Portray NPCs with distinct voices, emotions, and intent
-- Let NPC reactions drive scenes instead of narration dumps
-
-GOAL
-Deliver immersive, concise storytelling while:
-- Faithfully executing MODULE DATA
-- Maintaining strict continuity
-- Supporting branching timelines and fail-forward outcomes
-- Handing off combat cleanly to the human DM
+Respond as the narrator and NPCs only.
+Do not speak for the player characters.
+Keep the response concise and table-ready.
 
 MODULE DATA:
 {module_text}
@@ -202,7 +238,7 @@ def parse_args():
 
     parser.add_argument(
         "-s", "--session",
-        default="session.json",
+        default="sessions/default.json",
         help="Path to the session file."
     )
 
