@@ -1,0 +1,2913 @@
+{
+  "module": {
+    "id": "death_house",
+    "title": "Death House",
+    "theme": [
+      "horror",
+      "haunted house",
+      "dark fantasy"
+    ],
+    "tone": [
+      "dark",
+      "mysterious",
+      "sinister"
+    ],
+    "plot_hooks": [
+      {
+        "id": "hook_1",
+        "title": "The Mystery of Death House",
+        "summary": "The characters are drawn into the haunted Death House by illusions of children and local rumors of a monster trapped within the basement.",
+        "how_party_learns": "Characters encounter the illusory children Rose and Thorn who point towards the house, mentioning a monster in the basement.",
+        "starting_location": "loc_barovia_village",
+        "connected_threads": [
+          "thread_curse_stradh_intro",
+          "thread_death_house_dungeon"
+        ],
+        "dm_notes": "Players should be guided to the village of Barovia first, then to the house, using the 'Creeping Fog' hook as an introduction."
+      }
+    ],
+    "starting_location": "loc_barovia_village",
+    "starting_area": "area_a_road_to_barovia",
+    "version": "1.0"
+  },
+  "threads": {
+    "thread_curse_stradh_intro": {
+      "id": "thread_curse_stradh_intro",
+      "title": "Introduction to Strahd’s Domain and Death House",
+      "status": "active",
+      "priority": "primary",
+      "description": "The party arrives in Strahd's domain, guided by the mists, and eventually reaches the village of Barovia and Death House.",
+      "hook": "The mists of Ravenloft force the party to the village and the Death House.",
+      "current_objective": "Explore the Death House and investigate the mystery of the monster trapped in the basement.",
+      "next_milestone": "Gain access to the secret stairs in the attic (area 21).",
+      "connected_elements": {
+        "threads": [
+          "thread_death_house_dungeon"
+        ],
+        "locations": [
+          "loc_barovia_village",
+          "loc_death_house"
+        ],
+        "areas": [
+          "area_1_entrance",
+          "area_2_main_hall",
+          "area_3_den_of_wolves",
+          "area_4_kitchen_pantry",
+          "area_5_dining_room",
+          "area_6_upper_hall",
+          "area_7_servants_room",
+          "area_8_library",
+          "area_9_secret_room",
+          "area_10_conservatory",
+          "area_11_balcony",
+          "area_12_master_suite",
+          "area_13_bathroom",
+          "area_14_storage_room",
+          "area_15_nursemaid_suite",
+          "area_16_attic_hall",
+          "area_17_spare_bedroom",
+          "area_18_storage_room",
+          "area_19_spare_bedroom",
+          "area_20_childrens_room",
+          "area_21_secret_stairs",
+          "area_22_dungeon_level_access"
+        ],
+        "npcs": [
+          "npc_rose_durst",
+          "npc_thorn_durst",
+          "npc_gustav_durst_ghast",
+          "npc_elisabeth_durst_ghast",
+          "npc_nursemaid_specter"
+        ],
+        "items": [
+          "item_letter_strahd",
+          "item_windmill_deed",
+          "item_house_deed",
+          "item_signed_will",
+          "item_key_library",
+          "item_jewelry_box"
+        ],
+        "factions": [
+          "faction_death_house_cult"
+        ],
+        "consequences": [
+          "consequence_cult_sacrifice",
+          "consequence_cult_denied"
+        ],
+        "encounter_pool": [
+          "encounter_shambling_mound",
+          "encounter_shadow_guards",
+          "encounter_ghouls"
+        ],
+        "plot_branches": [
+          "branch_sacrifice",
+          "branch_defy_cult"
+        ]
+      },
+      "player_knowledge": {
+        "known_to_players": [
+          "Death House is haunted by spirits of the Durst family and cultists.",
+          "Rose and Thorn are children tied to the house.",
+          "There is a monster (illusory or real) trapped in the basement."
+        ],
+        "truth_hidden": [
+          "Rose and Thorn outside the house are illusions controlled by the house.",
+          "The children are actually dead and their ghosts haunt the dungeon.",
+          "The real monster is connected to the ritual chamber and the cult’s demands.",
+          "The house is magically repairing itself after destruction."
+        ]
+      },
+      "success_conditions": [
+        "Party gains access to secret attic stairs.",
+        "Party survives or placates the house’s threats in the dungeon.",
+        "Party escapes the house advancing to 3rd level."
+      ],
+      "failure_conditions": [
+        "Party is destroyed or trapped indefinitely in the house.",
+        "Party fails to escape or survive the dungeon level rituals."
+      ],
+      "dm_notes": "Steer players to explore in-depth, manage the illusion of the children, and reveal secrets gradually."
+    },
+    "thread_death_house_dungeon": {
+      "id": "thread_death_house_dungeon",
+      "title": "Exploration and Survival in the Death House Dungeon",
+      "status": "active",
+      "priority": "primary",
+      "description": "The party explores the dungeon beneath Death House, faces traps, ghosts, and cult remnants, culminating in the ritual chamber showdown.",
+      "hook": "The secret stairway leads the party into the dungeon where an eerie chant and hostile entities await.",
+      "current_objective": "Survive the dungeon encounters and resolve the cult's demands by sacrificing or defeating the shambling mound.",
+      "next_milestone": "Make the sacrifice on the ritual altar or defeat the shambling mound and escape.",
+      "connected_elements": {
+        "threads": [
+          "thread_curse_stradh_intro"
+        ],
+        "locations": [
+          "loc_death_house"
+        ],
+        "areas": [
+          "area_22_dungeon_level_access",
+          "area_23_family_crypts",
+          "area_24_cult_initiates_quarters",
+          "area_25_well_and_cultist_quarters",
+          "area_26_hidden_spiked_pit",
+          "area_27_dining_hall",
+          "area_28_larder",
+          "area_29_ghoulish_encounter",
+          "area_30_stairs_down",
+          "area_31_darklords_shrine",
+          "area_32_hidden_trapdoor",
+          "area_33_cult_leaders_den",
+          "area_34_cult_leaders_quarters",
+          "area_35_reliquary",
+          "area_36_prison",
+          "area_37_portcullis",
+          "area_38_ritual_chamber"
+        ],
+        "npcs": [
+          "npc_rose_durst_ghost",
+          "npc_thorn_durst_ghost",
+          "npc_gustav_durst_ghast",
+          "npc_elisabeth_durst_ghast",
+          "npc_shambling_mound"
+        ],
+        "items": [
+          "item_letter_strahd",
+          "item_cloak_of_protection",
+          "item_potions_of_healing",
+          "item_spellbook",
+          "item_crystal_orb",
+          "item_magic_items_cultists"
+        ],
+        "factions": [
+          "faction_death_house_cult"
+        ],
+        "consequences": [
+          "consequence_cult_sacrifice",
+          "consequence_cult_denied"
+        ],
+        "encounter_pool": [
+          "encounter_shadows",
+          "encounter_ghouls",
+          "encounter_shambling_mound"
+        ],
+        "plot_branches": [
+          "branch_sacrifice",
+          "branch_defy_cult"
+        ]
+      },
+      "player_knowledge": {
+        "known_to_players": [
+          "The dungeon contains traps, undead cultists, and ghosts of children.",
+          "A ritual chamber demands a sacrifice for the cult.",
+          "The ghosts of Rose and Thorn can possess characters."
+        ],
+        "truth_hidden": [
+          "The cultists are servants of Strahd and were killed for displeasing him.",
+          "The house repairs itself magically except the dungeon.",
+          "Placing children's remains in crypts can release their spirits.",
+          "Failure to sacrifice will provoke an attack by the shambling mound and house defenses."
+        ]
+      },
+      "success_conditions": [
+        "Sacrifice is made on altar to appease the cult, allowing safe escape.",
+        "Or the shambling mound is defeated and party escapes the house alive."
+      ],
+      "failure_conditions": [
+        "Party is killed by cult remnants or shambling mound.",
+        "Party fails to escape the house or becomes possessed permanently."
+      ],
+      "dm_notes": "Present moral dilemma of sacrifice, emphasize eerie atmosphere and trap danger."
+    }
+  },
+  "locations": {
+    "loc_barovia_village": {
+      "id": "loc_barovia_village",
+      "name": "Village of Barovia",
+      "type": "village",
+      "environmental_conditions": [
+        "dreary",
+        "foggy",
+        "oppressive mists"
+      ],
+      "notable_features": [
+        "dark, tombstone-like houses",
+        "shut tavern",
+        "small closed shops"
+      ],
+      "connected_areas": [
+        "area_e7_death_house_location"
+      ],
+      "connected_npcs": [
+        "npc_rose_durst",
+        "npc_thorn_durst"
+      ],
+      "available_services": [
+        "limited supply",
+        "no open shops",
+        "no tavern service"
+      ],
+      "travel_times": {},
+      "dm_notes": "Characters are funneled here by the mists of Ravenloft before approaching Death House."
+    },
+    "loc_death_house": {
+      "id": "loc_death_house",
+      "name": "Death House",
+      "type": "dungeon",
+      "environmental_conditions": [
+        "haunted",
+        "cold",
+        "dark",
+        "dusty",
+        "magically repairing"
+      ],
+      "notable_features": [
+        "four-story row house",
+        "magical self-repair",
+        "illusory children at exterior",
+        "secret attic stairs",
+        "underground dungeon"
+      ],
+      "connected_areas": [
+        "area_1_entrance",
+        "area_2_main_hall",
+        "area_3_den_of_wolves",
+        "area_4_kitchen_pantry",
+        "area_5_dining_room",
+        "area_6_upper_hall",
+        "area_7_servants_room",
+        "area_8_library",
+        "area_9_secret_room",
+        "area_10_conservatory",
+        "area_11_balcony",
+        "area_12_master_suite",
+        "area_13_bathroom",
+        "area_14_storage_room",
+        "area_15_nursemaid_suite",
+        "area_16_attic_hall",
+        "area_17_spare_bedroom",
+        "area_18_storage_room",
+        "area_19_spare_bedroom",
+        "area_20_childrens_room",
+        "area_21_secret_stairs",
+        "area_22_dungeon_level_access",
+        "area_23_family_crypts",
+        "area_24_cult_initiates_quarters",
+        "area_25_well_and_cultist_quarters",
+        "area_26_hidden_spiked_pit",
+        "area_27_dining_hall",
+        "area_28_larder",
+        "area_29_ghoulish_encounter",
+        "area_30_stairs_down",
+        "area_31_darklords_shrine",
+        "area_32_hidden_trapdoor",
+        "area_33_cult_leaders_den",
+        "area_34_cult_leaders_quarters",
+        "area_35_reliquary",
+        "area_36_prison",
+        "area_37_portcullis",
+        "area_38_ritual_chamber"
+      ],
+      "connected_npcs": [
+        "npc_rose_durst",
+        "npc_thorn_durst",
+        "npc_rose_durst_ghost",
+        "npc_thorn_durst_ghost",
+        "npc_gustav_durst_ghast",
+        "npc_elisabeth_durst_ghast",
+        "npc_nursemaid_specter",
+        "npc_shambling_mound"
+      ],
+      "available_services": [],
+      "travel_times": {},
+      "dm_notes": "The house itself is an entity regenerating after damage. Dungeon is separate and does not regenerate. Illusions used to lure visitors."
+    }
+  },
+  "areas": {
+    "area_1_entrance": {
+      "id": "area_1_entrance",
+      "name": "Entrance",
+      "parent_location": "loc_death_house",
+      "area_type": "exterior",
+      "size_ft": null,
+      "description": {
+        "read_aloud": "A wrought-iron gate with rusty hinges stands slightly ajar leading into a stone portico with oil lamps hanging from its ceiling. Double oaken doors open into a grand foyer.",
+        "summary": "The entryway of Death House with a rusty gate and oil lamps."
+      },
+      "environmental_conditions": [
+        "dark",
+        "dusty"
+      ],
+      "lighting": "dim",
+      "connected_areas": {
+        "inside": "area_1b_foyer"
+      },
+      "enemies": [],
+      "treasure": [],
+      "traps": [],
+      "puzzles": [],
+      "skill_challenges": [],
+      "atmosphere": [
+        "creaky",
+        "eerie"
+      ],
+      "dm_notes": "The gate scrapes loudly when opened; part of the atmospheric introduction."
+    },
+    "area_2_main_hall": {
+      "id": "area_2_main_hall",
+      "name": "Main Hall",
+      "parent_location": "loc_death_house",
+      "area_type": "interior_room",
+      "size_ft": null,
+      "description": {
+        "read_aloud": "A wide hall with a black marble fireplace, adorned with a longsword above it, and a sweeping red marble staircase that leads upward. The walls are ornately decorated with vines, flowers, and hidden sinister images of serpents and skulls.",
+        "summary": "Large wood-paneled hall with fireplace and grand staircase."
+      },
+      "environmental_conditions": [
+        "dust-free",
+        "well-maintained"
+      ],
+      "lighting": "dim",
+      "connected_areas": {
+        "foyer": "area_1b_foyer",
+        "cloakroom": "area_2b_cloakroom",
+        "staircase_up": "area_6_upper_hall"
+      },
+      "enemies": [],
+      "treasure": [
+        "item_longsword_windmill_hilt"
+      ],
+      "traps": [],
+      "puzzles": [
+        {
+          "type": "perception_check",
+          "description": "Detect hidden serpents and skulls in wall paneling, DC 12 Wisdom (Perception)."
+        }
+      ],
+      "skill_challenges": [],
+      "atmosphere": [
+        "grand",
+        "sinister"
+      ],
+      "dm_notes": "Wall carvings conceal sinister images to hint at the house's malevolence."
+    },
+    "area_3_den_of_wolves": {
+      "id": "area_3_den_of_wolves",
+      "name": "Den of Wolves",
+      "parent_location": "loc_death_house",
+      "area_type": "interior_room",
+      "size_ft": null,
+      "description": {
+        "read_aloud": "An oak-paneled hunter’s den containing a stag’s head above the fireplace and three stuffed wolves positioned around the room. Two padded chairs face the hearth beside an oak table with wine and a candle.",
+        "summary": "Hunter’s den with animal trophies and furniture."
+      },
+      "environmental_conditions": [
+        "dusty",
+        "dim"
+      ],
+      "lighting": "dim",
+      "connected_areas": {
+        "trapdoor_up": "area_32_hidden_trapdoor"
+      },
+      "enemies": [],
+      "treasure": [
+        "item_crossbows_and_bolts",
+        "item_deck_of_playing_cards"
+      ],
+      "traps": [
+        {
+          "type": "trapdoor",
+          "description": "Hidden trapdoor on southwest corner, undetectable until approached from below."
+        }
+      ],
+      "puzzles": [],
+      "skill_challenges": [
+        {
+          "type": "lockpicking",
+          "description": "East cabinet lock can be picked with thieves' tools DC 15 Dexterity check."
+        }
+      ],
+      "atmosphere": [
+        "antique",
+        "eerie"
+      ],
+      "dm_notes": "Trapdoor is hidden supernaturally and only revealed when accessed from below."
+    },
+    "area_4_kitchen_pantry": {
+      "id": "area_4_kitchen_pantry",
+      "name": "Kitchen and Pantry",
+      "parent_location": "loc_death_house",
+      "area_type": "interior_room",
+      "size_ft": null,
+      "description": {
+        "read_aloud": "A tidy kitchen with cookware and utensils neat on shelves. A stone dome-shaped oven connects to a stove pipe. A door leads to a well-stocked pantry with bland but fresh food.",
+        "summary": "Functional kitchen and food pantry."
+      },
+      "environmental_conditions": [
+        "dusty",
+        "unlit"
+      ],
+      "lighting": "dim",
+      "connected_areas": {
+        "pantry": "area_4b_pantry",
+        "dumbwaiter": "area_7a_servants_room"
+      },
+      "enemies": [],
+      "treasure": [],
+      "traps": [],
+      "puzzles": [],
+      "skill_challenges": [],
+      "atmosphere": [
+        "sterile",
+        "uncomfortable"
+      ],
+      "dm_notes": "Contains dumbwaiter connecting to servants' quarters and master bedroom."
+    },
+    "area_5_dining_room": {
+      "id": "area_5_dining_room",
+      "name": "Dining Room",
+      "parent_location": "loc_death_house",
+      "area_type": "interior_room",
+      "size_ft": null,
+      "description": {
+        "read_aloud": "Large wood-paneled room with mahogany table surrounded by eight chairs. Crystal chandelier above, silverware and crystalware on the table. Wall panels carved with elegant deer scenes and hidden twisted faces and wolves.",
+        "summary": "Formal dining room richly decorated."
+      },
+      "environmental_conditions": [
+        "dust_free",
+        "dim"
+      ],
+      "lighting": "dim",
+      "connected_areas": {},
+      "enemies": [],
+      "treasure": [],
+      "traps": [],
+      "puzzles": [
+        {
+          "type": "perception_check",
+          "description": "Detect twisted faces and wolves in paneling, DC 12 Wisdom (Perception)."
+        }
+      ],
+      "skill_challenges": [],
+      "atmosphere": [
+        "opulent",
+        "sinister"
+      ],
+      "dm_notes": "Removal of silverware, crystalware, portrait, tapestry causes decay."
+    },
+    "area_6_upper_hall": {
+      "id": "area_6_upper_hall",
+      "name": "Upper Hall",
+      "parent_location": "loc_death_house",
+      "area_type": "interior_hallway",
+      "size_ft": null,
+      "description": {
+        "read_aloud": "Hall with unlit oil lamps and a family portrait showing Durst family and a baby. Suits of armor flank doors, carved youths fighting bats on doors. Red marble staircase spirals upward with a cold draft.",
+        "summary": "Upper hall with ominous decor."
+      },
+      "environmental_conditions": [
+        "dusty",
+        "unlit"
+      ],
+      "lighting": "dim",
+      "connected_areas": {
+        "staircase_down": "area_2_main_hall",
+        "stairs_up": "area_11_balcony",
+        "east_room": "area_7_servants_room",
+        "west_room": null
+      },
+      "enemies": [],
+      "treasure": [],
+      "traps": [],
+      "puzzles": [
+        {
+          "type": "perception_check",
+          "description": "Detect youths fighting bats on doors, DC 12 Wisdom (Perception)."
+        }
+      ],
+      "skill_challenges": [],
+      "atmosphere": [
+        "ominous",
+        "chilly"
+      ],
+      "dm_notes": ""
+    },
+    "area_7_servants_room": {
+      "id": "area_7_servants_room",
+      "name": "Servants’ Room",
+      "parent_location": "loc_death_house",
+      "area_type": "interior_room",
+      "size_ft": null,
+      "description": {
+        "read_aloud": "Undecorated bedroom with two beds, empty footlockers and tidy servants’ uniforms. Dumbwaiter with button to kitchen.",
+        "summary": "Servants quarters with basic furnishings."
+      },
+      "environmental_conditions": [
+        "dusty",
+        "closed"
+      ],
+      "lighting": "dim",
+      "connected_areas": {
+        "closet": "area_7b_servants_closet",
+        "dumbwaiter": "area_4_kitchen_pantry"
+      },
+      "enemies": [],
+      "treasure": [],
+      "traps": [],
+      "puzzles": [],
+      "skill_challenges": [],
+      "atmosphere": [
+        "plain",
+        "quiet"
+      ],
+      "dm_notes": ""
+    },
+    "area_8_library": {
+      "id": "area_8_library",
+      "name": "Library",
+      "parent_location": "loc_death_house",
+      "area_type": "interior_room",
+      "size_ft": null,
+      "description": {
+        "read_aloud": "Room with red velvet drapes, mahogany desk facing entrance and fireplace, picture of windmill, overstuffed chairs, floor-to-ceiling bookshelves with hundreds of tomes and a rolling ladder.",
+        "summary": "House master’s library with extensive tomes and a secret door."
+      },
+      "environmental_conditions": [
+        "dusty",
+        "dim"
+      ],
+      "lighting": "dim",
+      "connected_areas": {
+        "secret_door": "area_9_secret_room"
+      },
+      "enemies": [],
+      "treasure": [
+        "item_iron_key_library",
+        "item_scrolls_bless_protection_spiritual_weapon",
+        "item_deed_house",
+        "item_deed_windmill",
+        "item_signed_will"
+      ],
+      "traps": [],
+      "puzzles": [
+        {
+          "type": "perception_check",
+          "description": "Detect secret door disguised as red-covered book, DC 13 Wisdom (Perception)."
+        },
+        {
+          "type": "arcana_check",
+          "description": "Recognize rituals in secret room books, DC 12 Intelligence (Arcana)."
+        }
+      ],
+      "skill_challenges": [],
+      "atmosphere": [
+        "scholarly",
+        "ominous"
+      ],
+      "dm_notes": "Secret door leads to ritual room with dead adventurer and Strahd’s letter."
+    },
+    "area_9_secret_room": {
+      "id": "area_9_secret_room",
+      "name": "Secret Room",
+      "parent_location": "loc_death_house",
+      "area_type": "interior_room",
+      "size_ft": null,
+      "description": {
+        "read_aloud": "Room filled with tomes on fiend summoning and necromantic rituals, a heavy wooden chest containing a poisoned skeleton clutching a letter from Strahd.",
+        "summary": "Cult ritual library and a poisoned chest with dead adventurer."
+      },
+      "environmental_conditions": [
+        "dusty",
+        "undisturbed"
+      ],
+      "lighting": "dark",
+      "connected_areas": {},
+      "enemies": [],
+      "treasure": [
+        "item_letter_strahd",
+        "item_spell_scrolls",
+        "item_blank_books",
+        "item_house_deed",
+        "item_windmill_deed",
+        "item_signed_will"
+      ],
+      "traps": [
+        {
+          "type": "poisoned_dart_trap",
+          "description": "Three darts stuck in skeleton; trap no longer functional."
+        }
+      ],
+      "puzzles": [],
+      "skill_challenges": [],
+      "atmosphere": [
+        "creepy",
+        "hidden"
+      ],
+      "dm_notes": ""
+    },
+    "area_10_conservatory": {
+      "id": "area_10_conservatory",
+      "name": "Conservatory",
+      "parent_location": "loc_death_house",
+      "area_type": "interior_room",
+      "size_ft": null,
+      "description": {
+        "read_aloud": "Elegant hall with gossamer drapes, brass chandelier, upholstered chairs, stained-glass wall hangings of musicians, harpsichord and large harp, alabaster figurines of skeleton dancers.",
+        "summary": "Music room with eerie skeletal dancer figurines."
+      },
+      "environmental_conditions": [
+        "dusty",
+        "dim"
+      ],
+      "lighting": "dim",
+      "connected_areas": {},
+      "enemies": [],
+      "treasure": [],
+      "traps": [],
+      "puzzles": [],
+      "skill_challenges": [],
+      "atmosphere": [
+        "elegant",
+        "haunting"
+      ],
+      "dm_notes": ""
+    },
+    "area_11_balcony": {
+      "id": "area_11_balcony",
+      "name": "Balcony",
+      "parent_location": "loc_death_house",
+      "area_type": "interior_room",
+      "size_ft": null,
+      "description": {
+        "read_aloud": "Dusty balcony with black plate armor animated suit that attacks on damage or proximity. Carvings of woodland scenes with hidden corpses and worms in the walls.",
+        "summary": "Attack balcony with animated armor and sinister carvings."
+      },
+      "environmental_conditions": [
+        "dusty",
+        "unlit"
+      ],
+      "lighting": "dim",
+      "connected_areas": {
+        "secret_door_up": "area_21_attic"
+      },
+      "enemies": [
+        "npc_animated_armor"
+      ],
+      "treasure": [],
+      "traps": [],
+      "puzzles": [
+        {
+          "type": "perception_check",
+          "description": "Detect secret door to attic, DC 15 Wisdom (Perception)."
+        }
+      ],
+      "skill_challenges": [],
+      "atmosphere": [
+        "threatening",
+        "cobwebbed"
+      ],
+      "dm_notes": ""
+    },
+    "area_12_master_suite": {
+      "id": "area_12_master_suite",
+      "name": "Master Suite",
+      "parent_location": "loc_death_house",
+      "area_type": "interior_room",
+      "size_ft": null,
+      "description": {
+        "read_aloud": "Dusty cobwebbed master bedroom with four-poster bed, empty wardrobes, vanity with jewelry box, tiger-skin rug and a parlor with porcelain bowl and jug. Doors include a balcony and a dust-choked closet.",
+        "summary": "Master bedroom rich in decay and secrets."
+      },
+      "environmental_conditions": [
+        "dusty",
+        "cobwebbed"
+      ],
+      "lighting": "dim",
+      "connected_areas": {
+        "balcony": "area_12c_balcony",
+        "closet": "area_12b_closet",
+        "dumbwaiter": "area_4_kitchen_pantry",
+        "parlor": "area_12_parlor"
+      },
+      "enemies": [],
+      "treasure": [
+        "item_jewelry_box"
+      ],
+      "traps": [],
+      "puzzles": [],
+      "skill_challenges": [],
+      "atmosphere": [
+        "opulent",
+        "decayed"
+      ],
+      "dm_notes": ""
+    },
+    "area_13_bathroom": {
+      "id": "area_13_bathroom",
+      "name": "Bathroom",
+      "parent_location": "loc_death_house",
+      "area_type": "interior_room",
+      "size_ft": null,
+      "description": {
+        "read_aloud": "Dark room with wooden clawfoot tub, small iron stove with kettle, and barrel beneath a now-nonfunctional water spigot.",
+        "summary": "Old bathroom with broken plumbing."
+      },
+      "environmental_conditions": [
+        "dark",
+        "dusty"
+      ],
+      "lighting": "dark",
+      "connected_areas": {},
+      "enemies": [],
+      "treasure": [],
+      "traps": [],
+      "puzzles": [],
+      "skill_challenges": [],
+      "atmosphere": [
+        "neglected"
+      ],
+      "dm_notes": ""
+    },
+    "area_14_storage_room": {
+      "id": "area_14_storage_room",
+      "name": "Storage Room",
+      "parent_location": "loc_death_house",
+      "area_type": "interior_room",
+      "size_ft": null,
+      "description": {
+        "read_aloud": "Dusty shelves with folded sheets, blankets, old soap bars, and a cobweb-covered animated broom that attacks any creature within 5 feet.",
+        "summary": "Dusty storage with animated broom trap."
+      },
+      "environmental_conditions": [
+        "dusty"
+      ],
+      "lighting": "dim",
+      "connected_areas": {},
+      "enemies": [
+        "npc_animated_broom"
+      ],
+      "treasure": [],
+      "traps": [
+        {
+          "type": "animated_weapon",
+          "description": "Animated broom attacks intruders within 5 feet."
+        }
+      ],
+      "puzzles": [],
+      "skill_challenges": [],
+      "atmosphere": [
+        "unwelcoming"
+      ],
+      "dm_notes": ""
+    },
+    "area_15_nursemaid_suite": {
+      "id": "area_15_nursemaid_suite",
+      "name": "Nursemaid’s Suite",
+      "parent_location": "loc_death_house",
+      "area_type": "interior_room",
+      "size_ft": null,
+      "description": {
+        "read_aloud": "Dusty bedroom and adjacent nursery with stained glass double doors to balcony. Spectral nursemaid haunts the room; nursery contains a crib with tightly wrapped, empty baby bundle.",
+        "summary": "Haunted nursemaid’s room with eerie nursery."
+      },
+      "environmental_conditions": [
+        "dusty",
+        "cobwebbed"
+      ],
+      "lighting": "dim",
+      "connected_areas": {
+        "balcony": "area_15c_balcony",
+        "nursery": "area_15b_nursery",
+        "secret_door_attic": "area_21_attic"
+      },
+      "enemies": [
+        "npc_nursemaid_specter"
+      ],
+      "treasure": [],
+      "traps": [],
+      "puzzles": [
+        {
+          "type": "perception_check",
+          "description": "Detect eyeballs among ivy berries on mirror frame, DC 12 Wisdom (Perception)."
+        },
+        {
+          "type": "perception_check",
+          "description": "Find secret door behind mirror, DC 15 Wisdom (Perception)."
+        }
+      ],
+      "skill_challenges": [],
+      "atmosphere": [
+        "terrifying",
+        "haunted"
+      ],
+      "dm_notes": "Specter attacks upon entry to nursery unless defeated."
+    },
+    "area_16_attic_hall": {
+      "id": "area_16_attic_hall",
+      "name": "Attic Hall",
+      "parent_location": "loc_death_house",
+      "area_type": "interior_hallway",
+      "size_ft": null,
+      "description": {
+        "read_aloud": "Bare hall choked with dust and cobwebs. Door to children’s room locked with padlock.",
+        "summary": "Dusty attic hallway with locked door to children’s room."
+      },
+      "environmental_conditions": [
+        "dusty",
+        "unlit"
+      ],
+      "lighting": "dim",
+      "connected_areas": {
+        "locked_door_childrens_room": "area_20_childrens_room"
+      },
+      "enemies": [],
+      "treasure": [],
+      "traps": [],
+      "puzzles": [
+        {
+          "type": "lockpicking",
+          "description": "Door to children’s room locked with padlock, key in library or thieves' tools DC 15 Dexterity check."
+        }
+      ],
+      "skill_challenges": [],
+      "atmosphere": [
+        "creepy"
+      ],
+      "dm_notes": ""
+    },
+    "area_17_spare_bedroom": {
+      "id": "area_17_spare_bedroom",
+      "name": "Spare Bedroom",
+      "parent_location": "loc_death_house",
+      "area_type": "interior_room",
+      "size_ft": null,
+      "description": {
+        "read_aloud": "Dust-choked room with slender bed, nightstand, iron stove, writing desk and rocking chair. Smiling doll in window box draped in cobwebs.",
+        "summary": "Dusty spare bedroom with creepy doll."
+      },
+      "environmental_conditions": [
+        "dusty",
+        "cobwebbed"
+      ],
+      "lighting": "dim",
+      "connected_areas": {},
+      "enemies": [],
+      "treasure": [],
+      "traps": [],
+      "puzzles": [],
+      "skill_challenges": [],
+      "atmosphere": [
+        "quiet",
+        "creepy"
+      ],
+      "dm_notes": ""
+    },
+    "area_18_storage_room": {
+      "id": "area_18_storage_room",
+      "name": "Storage Room",
+      "parent_location": "loc_death_house",
+      "area_type": "interior_room",
+      "size_ft": null,
+      "description": {
+        "read_aloud": "Dusty chamber with old furniture covered in white sheets. Wooden trunk contains skeletal remains of nursemaid.",
+        "summary": "Storage with old furniture and skeletal remains."
+      },
+      "environmental_conditions": [
+        "dusty"
+      ],
+      "lighting": "dim",
+      "connected_areas": {},
+      "enemies": [
+        "npc_nursemaid_specter"
+      ],
+      "treasure": [],
+      "traps": [],
+      "puzzles": [],
+      "skill_challenges": [
+        {
+          "type": "medicine_check",
+          "description": "Identify knife wounds on nursemaid’s remains, DC 14 Wisdom (Medicine)."
+        }
+      ],
+      "atmosphere": [
+        "dark",
+        "gloomy"
+      ],
+      "dm_notes": "Specter attacks if remains disturbed unless previously defeated."
+    },
+    "area_19_spare_bedroom": {
+      "id": "area_19_spare_bedroom",
+      "name": "Spare Bedroom",
+      "parent_location": "loc_death_house",
+      "area_type": "interior_room",
+      "size_ft": null,
+      "description": {
+        "read_aloud": "Web-filled room with slender bed, nightstand, rocking chair, empty wardrobe, and a small iron stove.",
+        "summary": "Dusty spare bedroom with minimal furnishings."
+      },
+      "environmental_conditions": [
+        "dusty",
+        "web-filled"
+      ],
+      "lighting": "dim",
+      "connected_areas": {},
+      "enemies": [],
+      "treasure": [],
+      "traps": [],
+      "puzzles": [],
+      "skill_challenges": [],
+      "atmosphere": [
+        "neglected"
+      ],
+      "dm_notes": ""
+    },
+    "area_20_childrens_room": {
+      "id": "area_20_childrens_room",
+      "name": "Children’s Room",
+      "parent_location": "loc_death_house",
+      "area_type": "interior_room",
+      "size_ft": null,
+      "description": {
+        "read_aloud": "Bricked-up windowed room with two small wood-framed beds, a toy chest, and a dollhouse replicating Death House. Two small skeletons of Rose and Thorn lie in the middle of the floor.",
+        "summary": "Children’s room with skeletal remains and miniature dollhouse."
+      },
+      "environmental_conditions": [
+        "dusty",
+        "cobwebbed"
+      ],
+      "lighting": "dim",
+      "connected_areas": {
+        "secret_door_attic": "area_21_attic"
+      },
+      "enemies": [],
+      "treasure": [
+        "item_toy_chest",
+        "item_dollhouse"
+      ],
+      "traps": [],
+      "puzzles": [
+        {
+          "type": "perception_check",
+          "description": "Detect all secret doors on dollhouse, DC 15 Wisdom (Perception)."
+        }
+      ],
+      "skill_challenges": [],
+      "atmosphere": [
+        "haunting",
+        "somber"
+      ],
+      "dm_notes": "Skeletons are of children Rose and Thorn; their spirits haunt the dungeon."
+    },
+    "area_21_attic": {
+      "id": "area_21_attic",
+      "name": "Secret Stairs / Attic",
+      "parent_location": "loc_death_house",
+      "area_type": "interior_room",
+      "size_ft": null,
+      "description": {
+        "read_aloud": "Narrow spiral staircase descending 50 feet to dungeon level. Filled with thick cobwebs that limit visibility.",
+        "summary": "Attic area containing secret stairs to dungeon."
+      },
+      "environmental_conditions": [
+        "dusty",
+        "cobwebbed"
+      ],
+      "lighting": "dim",
+      "connected_areas": {
+        "down_stairs": "area_22_dungeon_level_access",
+        "attic_access": "area_11_balcony"
+      },
+      "enemies": [],
+      "treasure": [],
+      "traps": [],
+      "puzzles": [],
+      "skill_challenges": [],
+      "atmosphere": [
+        "secretive",
+        "creepy"
+      ],
+      "dm_notes": "Stairs appear only if triggered by finding Strahd’s letter or dollhouse secret door."
+    },
+    "area_22_dungeon_level_access": {
+      "id": "area_22_dungeon_level_access",
+      "name": "Dungeon Level Access",
+      "parent_location": "loc_death_house",
+      "area_type": "cave",
+      "size_ft": null,
+      "description": {
+        "read_aloud": "Wooden spiral staircase from attic ends here; narrow tunnels branch east and west.",
+        "summary": "Dungeon entry point under the house."
+      },
+      "environmental_conditions": [
+        "dark",
+        "damp"
+      ],
+      "lighting": "dark",
+      "connected_areas": {
+        "east": "area_29_ghoulish_encounter",
+        "west": "area_26_hidden_spiked_pit"
+      },
+      "enemies": [],
+      "treasure": [],
+      "traps": [],
+      "puzzles": [],
+      "skill_challenges": [],
+      "atmosphere": [
+        "ominous",
+        "quiet"
+      ],
+      "dm_notes": "Eerie chanting can be heard, direction not yet clear."
+    },
+    "area_23_family_crypts": {
+      "id": "area_23_family_crypts",
+      "name": "Family Crypts",
+      "parent_location": "loc_death_house",
+      "area_type": "cave",
+      "size_ft": null,
+      "description": {
+        "read_aloud": "Several crypt chambers sealed with stone slabs. Most contain empty coffins. Crypts for Rose and Thorn marked with empty stone coffins.",
+        "summary": "Crypts of family members beneath the house."
+      },
+      "environmental_conditions": [
+        "dark",
+        "cold"
+      ],
+      "lighting": "dark",
+      "connected_areas": {},
+      "enemies": [],
+      "treasure": [],
+      "traps": [],
+      "puzzles": [
+        {
+          "type": "strength_check",
+          "description": "Remove stone slab, DC 15 Strength (Athletics) check."
+        }
+      ],
+      "skill_challenges": [],
+      "atmosphere": [
+        "solemn",
+        "creepy"
+      ],
+      "dm_notes": "Placing children’s skeletal remains in respective crypts can put spirits to rest."
+    },
+    "area_24_cult_initiates_quarters": {
+      "id": "area_24_cult_initiates_quarters",
+      "name": "Cult Initiates' Quarters",
+      "parent_location": "loc_death_house",
+      "area_type": "cave",
+      "size_ft": null,
+      "description": {
+        "read_aloud": "Room with wooden table and chairs, alcoves containing straw pallets to the west.",
+        "summary": "Sleeping quarters for cult initiates."
+      },
+      "environmental_conditions": [
+        "dusty",
+        "dark"
+      ],
+      "lighting": "dim",
+      "connected_areas": {},
+      "enemies": [],
+      "treasure": [],
+      "traps": [],
+      "puzzles": [],
+      "skill_challenges": [],
+      "atmosphere": [
+        "dank",
+        "neglected"
+      ],
+      "dm_notes": ""
+    },
+    "area_25_well_and_cultist_quarters": {
+      "id": "area_25_well_and_cultist_quarters",
+      "name": "Well and Cultist Quarters",
+      "parent_location": "loc_death_house",
+      "area_type": "cave",
+      "size_ft": null,
+      "description": {
+        "read_aloud": "Well shaft descending to water-filled cistern. Five side rooms with moldy beds and locked wooden chests securing personal belongings and valuables.",
+        "summary": "Well and living quarters for senior cultists."
+      },
+      "environmental_conditions": [
+        "damp",
+        "dark"
+      ],
+      "lighting": "dark",
+      "connected_areas": {},
+      "enemies": [],
+      "treasure": [
+        "item_gold_and_silver_coins",
+        "item_moss_agates",
+        "item_black_leather_eye_patch",
+        "item_ivory_hairbrush",
+        "item_silvered_shortsword"
+      ],
+      "traps": [],
+      "puzzles": [
+        {
+          "type": "lockpicking",
+          "description": "Pick padlocks on chests, DC 15 Dexterity check."
+        }
+      ],
+      "skill_challenges": [],
+      "atmosphere": [
+        "spellbound",
+        "unclean"
+      ],
+      "dm_notes": "Chests contain loot from past adventurers captured and killed."
+    },
+    "area_26_hidden_spiked_pit": {
+      "id": "area_26_hidden_spiked_pit",
+      "name": "Hidden Spiked Pit",
+      "parent_location": "loc_death_house",
+      "area_type": "trap",
+      "size_ft": "5 ft long, 10 ft deep",
+      "description": {
+        "read_aloud": "A hidden pit trap covered with rotted wood and dirt, containing sharp wooden spikes. The first creature to step onto the cover falls and takes bludgeoning and piercing damage.",
+        "summary": "Concealed spiked pit trap in the tunnel."
+      },
+      "environmental_conditions": [],
+      "lighting": "dark",
+      "connected_areas": {},
+      "enemies": [],
+      "treasure": [],
+      "traps": [
+        {
+          "type": "pit_trap",
+          "damage": "3 (1d6) bludgeoning plus 11 (2d10) piercing",
+          "description": "5-foot long, 10-foot deep pit trap covered under rotted wooden planks and dirt.",
+          "perception_dc": 15
+        }
+      ],
+      "puzzles": [],
+      "skill_challenges": [
+        {
+          "type": "perception_check",
+          "description": "Detect absence of footprints indicating hidden trap, DC 15 Wisdom (Perception)."
+        }
+      ],
+      "atmosphere": [
+        "dangerous",
+        "ominous"
+      ],
+      "dm_notes": ""
+    },
+    "area_27_dining_hall": {
+      "id": "area_27_dining_hall",
+      "name": "Dining Hall",
+      "parent_location": "loc_death_house",
+      "area_type": "cave",
+      "size_ft": null,
+      "description": {
+        "read_aloud": "Plain wooden table with long benches among moldy humanoid bones and remains. Darkened alcove on the south wall harboring a creature.",
+        "summary": "Cult banquet hall with bones and hidden monster."
+      },
+      "environmental_conditions": [
+        "dark",
+        "stale"
+      ],
+      "lighting": "dim",
+      "connected_areas": {
+        "alcove": "area_28_larder"
+      },
+      "enemies": [
+        "npc_grick"
+      ],
+      "treasure": [],
+      "traps": [],
+      "puzzles": [],
+      "skill_challenges": [],
+      "atmosphere": [
+        "macabre",
+        "ominous"
+      ],
+      "dm_notes": ""
+    },
+    "area_28_larder": {
+      "id": "area_28_larder",
+      "name": "Larder",
+      "parent_location": "loc_death_house",
+      "area_type": "cave",
+      "size_ft": null,
+      "description": {
+        "read_aloud": "Empty alcove containing a grick that attacks any creature within 5 feet. Character with Wisdom (Perception) under 12 is surprised.",
+        "summary": "Dangerous larder housing a grick."
+      },
+      "environmental_conditions": [
+        "dark"
+      ],
+      "lighting": "dim",
+      "connected_areas": {},
+      "enemies": [
+        "npc_grick"
+      ],
+      "treasure": [],
+      "traps": [],
+      "puzzles": [],
+      "skill_challenges": [],
+      "atmosphere": [
+        "menacing"
+      ],
+      "dm_notes": ""
+    },
+    "area_29_ghoulish_encounter": {
+      "id": "area_29_ghoulish_encounter",
+      "name": "Ghoulish Encounter",
+      "parent_location": "loc_death_house",
+      "area_type": "cave",
+      "size_ft": null,
+      "description": {
+        "read_aloud": "Crossroads where four ghouls (cultists) rise to attack upon arrival.",
+        "summary": "Battle site with ghouls ambushing characters."
+      },
+      "environmental_conditions": [
+        "dark",
+        "cold"
+      ],
+      "lighting": "dark",
+      "connected_areas": {},
+      "enemies": [
+        "npc_ghouls"
+      ],
+      "treasure": [],
+      "traps": [],
+      "puzzles": [],
+      "skill_challenges": [],
+      "atmosphere": [
+        "hostile",
+        "terror"
+      ],
+      "dm_notes": "Use ghouls to surprise and challenge players."
+    },
+    "area_30_stairs_down": {
+      "id": "area_30_stairs_down",
+      "name": "Stairs Down",
+      "parent_location": "loc_death_house",
+      "area_type": "cave",
+      "size_ft": null,
+      "description": {
+        "read_aloud": "20-foot-long staircase descending deeper into the dungeon where chanting grows louder.",
+        "summary": "Dungeon stairs to ritual chamber."
+      },
+      "environmental_conditions": [
+        "dark",
+        "chill"
+      ],
+      "lighting": "dark",
+      "connected_areas": {
+        "further_dungeon": "area_35_reliquary"
+      },
+      "enemies": [],
+      "treasure": [],
+      "traps": [],
+      "puzzles": [],
+      "skill_challenges": [],
+      "atmosphere": [
+        "foreboding"
+      ],
+      "dm_notes": ""
+    },
+    "area_31_darklords_shrine": {
+      "id": "area_31_darklords_shrine",
+      "name": "Darklord’s Shrine",
+      "parent_location": "loc_death_house",
+      "area_type": "cave",
+      "size_ft": null,
+      "description": {
+        "read_aloud": "Room festooned with moldy skeletons hanging from shackles. A painted wooden statue of Strahd holding a crystal orb with a wolf at his side, which when touched triggers shadow attacks.",
+        "summary": "Cultist shrine depicting Strahd; triggers shadow attacks if disturbed."
+      },
+      "environmental_conditions": [
+        "dark",
+        "stale"
+      ],
+      "lighting": "dim",
+      "connected_areas": {
+        "secret_door": "area_32_hidden_trapdoor",
+        "exits": [
+          "west",
+          "north"
+        ]
+      },
+      "enemies": [
+        "npc_shadows"
+      ],
+      "treasure": [
+        "item_crystal_orb"
+      ],
+      "traps": [],
+      "puzzles": [
+        {
+          "type": "perception_check",
+          "description": "Find concealed door in east wall, DC 10 Wisdom (Perception)."
+        }
+      ],
+      "skill_challenges": [],
+      "atmosphere": [
+        "sinister",
+        "macabre"
+      ],
+      "dm_notes": "Shadows attack if creature interacts with statue or orb."
+    },
+    "area_32_hidden_trapdoor": {
+      "id": "area_32_hidden_trapdoor",
+      "name": "Hidden Trapdoor",
+      "parent_location": "loc_death_house",
+      "area_type": "cave",
+      "size_ft": null,
+      "description": {
+        "read_aloud": "Trapdoor bolted shut that can be pushed open to the den above (area 3).",
+        "summary": "Trapdoor linking to the den above."
+      },
+      "environmental_conditions": [
+        "dark"
+      ],
+      "lighting": "dim",
+      "connected_areas": {
+        "den_of_wolves": "area_3_den_of_wolves"
+      },
+      "enemies": [],
+      "treasure": [],
+      "traps": [],
+      "puzzles": [],
+      "skill_challenges": [],
+      "atmosphere": [
+        "secretive"
+      ],
+      "dm_notes": "Once opened remains usable as dungeon access."
+    },
+    "area_33_cult_leaders_den": {
+      "id": "area_33_cult_leaders_den",
+      "name": "Cult Leaders’ Den",
+      "parent_location": "loc_death_house",
+      "area_type": "cave",
+      "size_ft": null,
+      "description": {
+        "read_aloud": "Room with a treasure table and chairs, the door in the corner is a mimic which attacks on contact or damage.",
+        "summary": "Cult leaders’ room guarded by a mimic door."
+      },
+      "environmental_conditions": [
+        "dark",
+        "dusty"
+      ],
+      "lighting": "dim",
+      "connected_areas": {},
+      "enemies": [
+        "npc_mimic"
+      ],
+      "treasure": [],
+      "traps": [
+        {
+          "type": "mimic_trap",
+          "description": "Door is a mimic."
+        }
+      ],
+      "puzzles": [],
+      "skill_challenges": [],
+      "atmosphere": [
+        "dangerous",
+        "suspicious"
+      ],
+      "dm_notes": "Mimic aggressively attacks touch or damage."
+    },
+    "area_34_cult_leaders_quarters": {
+      "id": "area_34_cult_leaders_quarters",
+      "name": "Cult Leaders’ Quarters",
+      "parent_location": "loc_death_house",
+      "area_type": "cave",
+      "size_ft": null,
+      "description": {
+        "read_aloud": "Large wooden bed and wardrobe with iron candlesticks, open crate with torches and candles, and an unlocked footlocker containing gear and magic items. Hiding ghasts attack if footlocker is disturbed.",
+        "summary": "Cult leaders' quarters with stored treasures and hidden ghasts."
+      },
+      "environmental_conditions": [
+        "dark",
+        "dusty"
+      ],
+      "lighting": "dim",
+      "connected_areas": {},
+      "enemies": [
+        "npc_ghast_gustav_durst",
+        "npc_ghast_elisabeth_durst"
+      ],
+      "treasure": [
+        "item_cloak_of_protection",
+        "item_potions_of_healing",
+        "item_chain_shirt",
+        "item_spellbook",
+        "item_miscellaneous_gear"
+      ],
+      "traps": [],
+      "puzzles": [],
+      "skill_challenges": [],
+      "atmosphere": [
+        "dangerous",
+        "dark"
+      ],
+      "dm_notes": "Ghasts emerge to attack when footlocker looted."
+    },
+    "area_35_reliquary": {
+      "id": "area_35_reliquary",
+      "name": "Reliquary",
+      "parent_location": "loc_death_house",
+      "area_type": "cave",
+      "size_ft": "large",
+      "description": {
+        "read_aloud": "Room with niches containing mummified or relic items used in cult rituals. Chanting of 'He is the Ancient. He is the Land' endlessly echoes.",
+        "summary": "Cult relic storage with persistent chanting."
+      },
+      "environmental_conditions": [
+        "dark",
+        "stale"
+      ],
+      "lighting": "dark",
+      "connected_areas": {
+        "north_tunnel": "area_31_darklords_shrine",
+        "south_tunnel": "area_37_portcullis"
+      },
+      "enemies": [],
+      "treasure": [
+        "item_cult_relics"
+      ],
+      "traps": [],
+      "puzzles": [],
+      "skill_challenges": [],
+      "atmosphere": [
+        "oppressive",
+        "ritualistic"
+      ],
+      "dm_notes": "Items are worthless individually but represent cult's twisted faith."
+    },
+    "area_36_prison": {
+      "id": "area_36_prison",
+      "name": "Prison",
+      "parent_location": "loc_death_house",
+      "area_type": "cave",
+      "description": {
+        "read_aloud": "Prison alcoves with rusty shackles on walls, empty apart from bones on floor. Secret door to area 38 hidden in south wall.",
+        "summary": "Prison area with human remains and concealed door."
+      },
+      "environmental_conditions": [
+        "dark",
+        "dusty"
+      ],
+      "lighting": "dark",
+      "connected_areas": {
+        "secret_door": "area_38_ritual_chamber"
+      },
+      "enemies": [],
+      "treasure": [
+        "item_gold_ring_on_skeleton"
+      ],
+      "traps": [],
+      "puzzles": [
+        {
+          "type": "perception_check",
+          "description": "Find secret door in south wall, DC 15 Wisdom (Perception)."
+        }
+      ],
+      "skill_challenges": [],
+      "atmosphere": [
+        "dreary",
+        "dangerous"
+      ],
+      "dm_notes": ""
+    },
+    "area_37_portcullis": {
+      "id": "area_37_portcullis",
+      "name": "Portcullis",
+      "parent_location": "loc_death_house",
+      "area_type": "cave",
+      "description": {
+        "read_aloud": "Tunnel blocked by rusty iron portcullis that can be lifted with DC 20 Strength or operated from the ritual chamber.",
+        "summary": "Water-filled tunnel blocked by portcullis."
+      },
+      "environmental_conditions": [
+        "dark",
+        "wet"
+      ],
+      "lighting": "dark",
+      "connected_areas": {},
+      "enemies": [],
+      "treasure": [],
+      "traps": [],
+      "puzzles": [],
+      "skill_challenges": [],
+      "atmosphere": [
+        "murky",
+        "uncomfortable"
+      ],
+      "dm_notes": ""
+    },
+    "area_38_ritual_chamber": {
+      "id": "area_38_ritual_chamber",
+      "name": "Ritual Chamber",
+      "parent_location": "loc_death_house",
+      "area_type": "cave",
+      "description": {
+        "read_aloud": "A 40-foot-square sunken room with stone pillars, a stone altar stained with blood, rusty chains hanging from ceiling. Murky water covers floor with stairs leading up to ledges. Shambling mound lurks in refuse pile.",
+        "summary": "Sunken cult ritual chamber and source of chanting."
+      },
+      "environmental_conditions": [
+        "damp",
+        "dark"
+      ],
+      "lighting": "dim",
+      "connected_areas": {
+        "waste_alcove": "area_38_ritual_waste_pile"
+      },
+      "enemies": [
+        "npc_shambling_mound"
+      ],
+      "treasure": [],
+      "traps": [],
+      "puzzles": [
+        {
+          "type": "religion_insight_check",
+          "description": "Identify need to sacrifice on altar, DC 11 Intelligence (Religion) or Wisdom (Insight)."
+        }
+      ],
+      "skill_challenges": [],
+      "atmosphere": [
+        "evil",
+        "intense",
+        "ritualistic"
+      ],
+      "dm_notes": "Sacrifice appeases cult; denying brings wrath and attacks by shambling mound and house defenses."
+    }
+  },
+  "items": {
+    "item_letter_strahd": {
+      "id": "item_letter_strahd",
+      "name": "Letter from Strahd von Zarovich",
+      "type": "quest_item",
+      "rarity": "rare",
+      "location": "area_9_secret_room",
+      "magical": false,
+      "description": "A letter written by Strahd to the cultists, declaring they are not his servants, cursing them.",
+      "properties": [],
+      "curse": null,
+      "weight_value": {
+        "weight_lb": 0.1,
+        "value_gp": 0
+      },
+      "connected_threads": [
+        "thread_curse_stradh_intro",
+        "thread_death_house_dungeon"
+      ],
+      "lore": "Provides insight into cult's relation to Strahd.",
+      "acquisition_method": "Found in secret room behind library.",
+      "quest_significance": "Triggers appearance of secret attic stairs.",
+      "consequences_when_obtained": [],
+      "dm_notes": "The letter is apparently genuine and key to unlocking further exploration."
+    },
+    "item_windmill_deed": {
+      "id": "item_windmill_deed",
+      "name": "Deed to Windmill",
+      "type": "key_item",
+      "rarity": "common",
+      "location": "area_9_secret_room",
+      "magical": false,
+      "description": "Deed to a windmill located east of Vallaki, connected to the Durst family property.",
+      "properties": [],
+      "curse": null,
+      "weight_value": {
+        "weight_lb": 0.1,
+        "value_gp": 25
+      },
+      "connected_threads": [],
+      "lore": "",
+      "acquisition_method": "Found in secret room behind library.",
+      "quest_significance": "Part of family property bequeathed to children.",
+      "consequences_when_obtained": [],
+      "dm_notes": ""
+    },
+    "item_house_deed": {
+      "id": "item_house_deed",
+      "name": "Deed to Death House",
+      "type": "key_item",
+      "rarity": "common",
+      "location": "area_9_secret_room",
+      "magical": false,
+      "description": "Legal deed to the Death House property, bequeathed to Rosavalda and Thornboldt Durst.",
+      "properties": [],
+      "curse": null,
+      "weight_value": {
+        "weight_lb": 0.1,
+        "value_gp": 50
+      },
+      "connected_threads": [],
+      "lore": "",
+      "acquisition_method": "Found in secret room behind library.",
+      "quest_significance": "Significant for inheritance story.",
+      "consequences_when_obtained": [],
+      "dm_notes": ""
+    },
+    "item_signed_will": {
+      "id": "item_signed_will",
+      "name": "Signed Will of Gustav and Elisabeth Durst",
+      "type": "key_item",
+      "rarity": "rare",
+      "location": "area_9_secret_room",
+      "magical": false,
+      "description": "Will bequeathing death house and other properties to the Durst children.",
+      "properties": [],
+      "curse": null,
+      "weight_value": {
+        "weight_lb": 0.1,
+        "value_gp": 5
+      },
+      "connected_threads": [],
+      "lore": "Legal declaration of inheritance.",
+      "acquisition_method": "Found in secret room behind library.",
+      "quest_significance": "Supports story of the Durst family.",
+      "consequences_when_obtained": [],
+      "dm_notes": ""
+    },
+    "item_longsword_windmill_hilt": {
+      "id": "item_longsword_windmill_hilt",
+      "name": "Longsword with Windmill Cameo",
+      "type": "mundane",
+      "rarity": "common",
+      "location": "area_2_main_hall",
+      "magical": false,
+      "description": "Nonmagical longsword mounted above fireplace with a windmill design on hilt.",
+      "properties": [],
+      "curse": null,
+      "weight_value": {
+        "weight_lb": 3,
+        "value_gp": 15
+      },
+      "connected_threads": [],
+      "lore": "Family heirloom or symbolic item.",
+      "acquisition_method": "Found mounted in main hall.",
+      "quest_significance": "Symbolic of the Durst family.",
+      "consequences_when_obtained": [],
+      "dm_notes": ""
+    },
+    "item_crossbows_and_bolts": {
+      "id": "item_crossbows_and_bolts",
+      "name": "Crossbows and Bolts",
+      "type": "mundane",
+      "rarity": "common",
+      "location": "area_3_den_of_wolves",
+      "magical": false,
+      "description": "Heavy, light, and hand crossbows with 20 bolts each.",
+      "properties": [],
+      "curse": null,
+      "weight_value": {
+        "weight_lb": 10,
+        "value_gp": 50
+      },
+      "connected_threads": [],
+      "lore": "",
+      "acquisition_method": "Locked cabinet in the Den of Wolves.",
+      "quest_significance": "Useful weapons for party.",
+      "consequences_when_obtained": [],
+      "dm_notes": ""
+    },
+    "item_deck_of_playing_cards": {
+      "id": "item_deck_of_playing_cards",
+      "name": "Deck of Playing Cards",
+      "type": "mundane",
+      "rarity": "common",
+      "location": "area_3_den_of_wolves",
+      "magical": false,
+      "description": "A standard deck of playing cards inside a small box.",
+      "properties": [],
+      "curse": null,
+      "weight_value": {
+        "weight_lb": 0.5,
+        "value_gp": 1
+      },
+      "connected_threads": [],
+      "lore": "",
+      "acquisition_method": "North cabinet in the Den of Wolves.",
+      "quest_significance": "Minor flavor item.",
+      "consequences_when_obtained": [],
+      "dm_notes": ""
+    },
+    "item_iron_key_library": {
+      "id": "item_iron_key_library",
+      "name": "Iron Key",
+      "type": "key_item",
+      "rarity": "common",
+      "location": "area_8_library",
+      "magical": false,
+      "description": "Iron key found in library desk drawer used to unlock door to area 20.",
+      "properties": [],
+      "curse": null,
+      "weight_value": {
+        "weight_lb": 0.1,
+        "value_gp": 0
+      },
+      "connected_threads": [],
+      "lore": "",
+      "acquisition_method": "In desk drawer",
+      "quest_significance": "Unlocks children's room.",
+      "consequences_when_obtained": [],
+      "dm_notes": ""
+    },
+    "item_jewelry_box": {
+      "id": "item_jewelry_box",
+      "name": "Jewelry Box",
+      "type": "mundane",
+      "rarity": "uncommon",
+      "location": "area_12_master_suite",
+      "magical": false,
+      "description": "Silver jewelry box with gold filigree containing three gold rings and a platinum necklace with a topaz pendant.",
+      "properties": [],
+      "curse": null,
+      "weight_value": {
+        "weight_lb": 1,
+        "value_gp": 875
+      },
+      "connected_threads": [],
+      "lore": "",
+      "acquisition_method": "On vanity in master suite.",
+      "quest_significance": "Valuable loot.",
+      "consequences_when_obtained": [],
+      "dm_notes": ""
+    },
+    "item_cloak_of_protection": {
+      "id": "item_cloak_of_protection",
+      "name": "Cloak of Protection",
+      "type": "magic_item",
+      "rarity": "rare",
+      "location": "area_34_cult_leaders_quarters",
+      "magical": true,
+      "description": "A magical cloak granting +1 bonus to AC and saving throws.",
+      "properties": [
+        "requires attunement"
+      ],
+      "curse": null,
+      "weight_value": {
+        "weight_lb": 1,
+        "value_gp": 5000
+      },
+      "connected_threads": [],
+      "lore": "Taken from adventurers killed by cult.",
+      "acquisition_method": "Found in footlocker in cult leaders' quarters.",
+      "quest_significance": "",
+      "consequences_when_obtained": [],
+      "dm_notes": ""
+    },
+    "item_potions_of_healing": {
+      "id": "item_potions_of_healing",
+      "name": "Potions of Healing",
+      "type": "consumable",
+      "rarity": "common",
+      "location": "area_34_cult_leaders_quarters",
+      "magical": true,
+      "description": "Potions that restore hit points when consumed.",
+      "properties": [
+        "healing"
+      ],
+      "curse": null,
+      "weight_value": {
+        "weight_lb": 0.5,
+        "value_gp": 50
+      },
+      "connected_threads": [],
+      "lore": "Recovered from previous adventurers.",
+      "acquisition_method": "In unlocked wooden coffer.",
+      "quest_significance": "Useful recovery items.",
+      "consequences_when_obtained": [],
+      "dm_notes": ""
+    },
+    "item_spellbook": {
+      "id": "item_spellbook",
+      "name": "Spellbook",
+      "type": "mundane",
+      "rarity": "uncommon",
+      "location": "area_34_cult_leaders_quarters",
+      "magical": true,
+      "description": "Yellow leather-bound spellbook containing wizard spells of 1st and 2nd levels.",
+      "properties": [
+        "wizard spells"
+      ],
+      "curse": null,
+      "weight_value": {
+        "weight_lb": 3,
+        "value_gp": 250
+      },
+      "connected_threads": [],
+      "lore": "From fallen adventurers taken by cult.",
+      "acquisition_method": "In footlocker in cult leaders' quarters.",
+      "quest_significance": "",
+      "consequences_when_obtained": [],
+      "dm_notes": ""
+    },
+    "item_magic_items_cultists": {
+      "id": "item_magic_items_cultists",
+      "name": "Miscellaneous Magic Items",
+      "type": "magic_item",
+      "rarity": "varied",
+      "location": "area_34_cult_leaders_quarters",
+      "magical": true,
+      "description": "Includes chain shirt, thieves’ tools, bullseye lantern, flask of alchemist’s fire, and spellbook.",
+      "properties": [],
+      "curse": null,
+      "weight_value": {
+        "weight_lb": 15,
+        "value_gp": 750
+      },
+      "connected_threads": [],
+      "lore": "Loot from past adventurers.",
+      "acquisition_method": "In footlocker in cult leaders' quarters.",
+      "quest_significance": "",
+      "consequences_when_obtained": [],
+      "dm_notes": ""
+    },
+    "item_crystal_orb": {
+      "id": "item_crystal_orb",
+      "name": "Crystal Orb",
+      "type": "mundane",
+      "rarity": "common",
+      "location": "area_31_darklords_shrine",
+      "magical": false,
+      "description": "A smoky-gray crystal orb used as an arcane focus but not magical itself.",
+      "properties": [
+        "arcane focus"
+      ],
+      "curse": null,
+      "weight_value": {
+        "weight_lb": 2,
+        "value_gp": 25
+      },
+      "connected_threads": [],
+      "lore": "Held by painted statue of Strahd.",
+      "acquisition_method": "In shrine room.",
+      "quest_significance": "Triggers shadow attacks if removed.",
+      "consequences_when_obtained": [],
+      "dm_notes": ""
+    },
+    "item_toy_chest": {
+      "id": "item_toy_chest",
+      "name": "Toy Chest",
+      "type": "mundane",
+      "rarity": "common",
+      "location": "area_20_childrens_room",
+      "magical": false,
+      "description": "Chest containing stuffed animals and toys.",
+      "properties": [],
+      "curse": null,
+      "weight_value": {
+        "weight_lb": 10,
+        "value_gp": 10
+      },
+      "connected_threads": [],
+      "lore": "",
+      "acquisition_method": "In children’s room.",
+      "quest_significance": "",
+      "consequences_when_obtained": [],
+      "dm_notes": ""
+    },
+    "item_dollhouse": {
+      "id": "item_dollhouse",
+      "name": "Dollhouse Replica of Death House",
+      "type": "mundane",
+      "rarity": "common",
+      "location": "area_20_childrens_room",
+      "magical": false,
+      "description": "Miniature dollhouse that is a perfect replica of Death House containing all secret doors including the attic spiral staircase.",
+      "properties": [],
+      "curse": null,
+      "weight_value": {
+        "weight_lb": 5,
+        "value_gp": 100
+      },
+      "connected_threads": [],
+      "lore": "Used by children’s ghosts to point path and lure the living.",
+      "acquisition_method": "In children’s room.",
+      "quest_significance": "Key to finding secret attic stairs.",
+      "consequences_when_obtained": [],
+      "dm_notes": ""
+    },
+    "item_gold_ring_on_skeleton": {
+      "id": "item_gold_ring_on_skeleton",
+      "name": "Gold Ring on Skeleton",
+      "type": "mundane",
+      "rarity": "common",
+      "location": "area_36_prison",
+      "magical": false,
+      "description": "Gold ring worth 25 gp found on skeletal cult member finger.",
+      "properties": [],
+      "curse": null,
+      "weight_value": {
+        "weight_lb": 0.1,
+        "value_gp": 25
+      },
+      "connected_threads": [],
+      "lore": "",
+      "acquisition_method": "On skeleton in prison cell.",
+      "quest_significance": "",
+      "consequences_when_obtained": [],
+      "dm_notes": ""
+    },
+    "item_gold_and_silver_coins": {
+      "id": "item_gold_and_silver_coins",
+      "name": "Gold and Silver Coins in Human Skin Pouch",
+      "type": "mundane",
+      "rarity": "common",
+      "location": "area_25_well_and_cultist_quarters",
+      "magical": false,
+      "description": "Pouch made of human skin containing 11 gp and 60 sp.",
+      "properties": [],
+      "curse": null,
+      "weight_value": {
+        "weight_lb": 0.5,
+        "value_gp": 17
+      },
+      "connected_threads": [],
+      "lore": "",
+      "acquisition_method": "Cultist chest loot.",
+      "quest_significance": "",
+      "consequences_when_obtained": [],
+      "dm_notes": ""
+    },
+    "item_moss_agates": {
+      "id": "item_moss_agates",
+      "name": "Moss Agates",
+      "type": "mundane",
+      "rarity": "common",
+      "location": "area_25_well_and_cultist_quarters",
+      "magical": false,
+      "description": "Three moss agates worth 10 gp each.",
+      "properties": [],
+      "curse": null,
+      "weight_value": {
+        "weight_lb": 0.3,
+        "value_gp": 30
+      },
+      "connected_threads": [],
+      "lore": "",
+      "acquisition_method": "Cultist chest loot.",
+      "quest_significance": "",
+      "consequences_when_obtained": [],
+      "dm_notes": ""
+    },
+    "item_black_leather_eye_patch": {
+      "id": "item_black_leather_eye_patch",
+      "name": "Black Leather Eye Patch with Carnelian",
+      "type": "mundane",
+      "rarity": "common",
+      "location": "area_25_well_and_cultist_quarters",
+      "magical": false,
+      "description": "Black leather eye patch with a carnelian gem sewn in, worth 50 gp.",
+      "properties": [],
+      "curse": null,
+      "weight_value": {
+        "weight_lb": 0.1,
+        "value_gp": 50
+      },
+      "connected_threads": [],
+      "lore": "",
+      "acquisition_method": "Cultist chest loot.",
+      "quest_significance": "",
+      "consequences_when_obtained": [],
+      "dm_notes": ""
+    },
+    "item_ivory_hairbrush": {
+      "id": "item_ivory_hairbrush",
+      "name": "Ivory Hairbrush with Silver Bristles",
+      "type": "mundane",
+      "rarity": "common",
+      "location": "area_25_well_and_cultist_quarters",
+      "magical": false,
+      "description": "Ivory hairbrush with silver bristles, worth 25 gp.",
+      "properties": [],
+      "curse": null,
+      "weight_value": {
+        "weight_lb": 0.3,
+        "value_gp": 25
+      },
+      "connected_threads": [],
+      "lore": "",
+      "acquisition_method": "Cultist chest loot.",
+      "quest_significance": "",
+      "consequences_when_obtained": [],
+      "dm_notes": ""
+    },
+    "item_silvered_shortsword": {
+      "id": "item_silvered_shortsword",
+      "name": "Silvered Shortsword",
+      "type": "mundane",
+      "rarity": "common",
+      "location": "area_25_well_and_cultist_quarters",
+      "magical": false,
+      "description": "Silvered shortsword worth 110 gp.",
+      "properties": [],
+      "curse": null,
+      "weight_value": {
+        "weight_lb": 2,
+        "value_gp": 110
+      },
+      "connected_threads": [],
+      "lore": "",
+      "acquisition_method": "Cultist chest loot.",
+      "quest_significance": "",
+      "consequences_when_obtained": [],
+      "dm_notes": ""
+    }
+  },
+  "npcs": {
+    "npc_rose_durst": {
+      "id": "npc_rose_durst",
+      "name": "Rosavalda \"Rose\" Durst",
+      "role": "illusory child",
+      "race": "human",
+      "class": "",
+      "level": null,
+      "location": "loc_barovia_village",
+      "status": "unknown",
+      "alignment": "neutral_good",
+      "relationship_to_party": "initially guides players towards house, secret lure",
+      "trust_level": 20,
+      "personality": [
+        "caring",
+        "protective",
+        "whispering",
+        "fearful"
+      ],
+      "appearance": "Ten-year-old girl wearing a tattered dress, illusions with glowing eyes.",
+      "voice": "soft, whispering",
+      "secrets": [
+        "She is an illusion created by the house.",
+        "She does not know she is not real."
+      ],
+      "motivation": "Lure visitors into Death House.",
+      "fears": [
+        "the monster in the basement",
+        "being abandoned"
+      ],
+      "goals": [
+        "Protect her brother Thorn",
+        "Prevent party from leaving"
+      ],
+      "knowledge_of_threads": {
+        "thread_curse_stradh_intro": true,
+        "thread_death_house_dungeon": true
+      },
+      "information_can_provide": [
+        "There is a monster in the basement",
+        "Their parents keep the monster locked"
+      ],
+      "items_possessed": [],
+      "combat_stats": null,
+      "can_die": "no",
+      "connected_threads": [
+        "thread_curse_stradh_intro"
+      ],
+      "dm_notes": "Vanished if attacked or forced inside house."
+    },
+    "npc_thorn_durst": {
+      "id": "npc_thorn_durst",
+      "name": "Thornboldt \"Thorn\" Durst",
+      "role": "illusory child",
+      "race": "human",
+      "class": "",
+      "level": null,
+      "location": "loc_barovia_village",
+      "status": "unknown",
+      "alignment": "neutral_good",
+      "relationship_to_party": "initially guides players towards house, secret lure",
+      "trust_level": 20,
+      "personality": [
+        "timid",
+        "whining",
+        "melancholy"
+      ],
+      "appearance": "Seven-year-old boy holding stuffed doll, illusory.",
+      "voice": "soft, childish",
+      "secrets": [
+        "He is an illusion created by the house.",
+        "He does not know he is not real."
+      ],
+      "motivation": "Lure visitors into Death House.",
+      "fears": [
+        "the monster in the basement",
+        "being abandoned"
+      ],
+      "goals": [
+        "Find safety with Rose",
+        "Prevent party from leaving"
+      ],
+      "knowledge_of_threads": {
+        "thread_curse_stradh_intro": true,
+        "thread_death_house_dungeon": true
+      },
+      "information_can_provide": [
+        "There is a monster in the basement",
+        "Their parents keep the monster locked"
+      ],
+      "items_possessed": [],
+      "combat_stats": null,
+      "can_die": "no",
+      "connected_threads": [
+        "thread_curse_stradh_intro"
+      ],
+      "dm_notes": "Vanished if attacked or forced inside house."
+    },
+    "npc_rose_durst_ghost": {
+      "id": "npc_rose_durst_ghost",
+      "name": "Ghost of Rosavalda \"Rose\" Durst",
+      "role": "ghost",
+      "race": "human",
+      "class": "",
+      "level": null,
+      "location": "loc_death_house",
+      "status": "alive",
+      "alignment": "lawful_good",
+      "relationship_to_party": "potential ally or possessor",
+      "trust_level": 50,
+      "personality": [
+        "protective",
+        "commanding",
+        "sad"
+      ],
+      "appearance": "Small ghostly girl with glowing aura.",
+      "voice": "soft, childlike",
+      "secrets": [
+        "Knows she is dead",
+        "Can possess a party member"
+      ],
+      "motivation": "Protect players and seek rest after bones are interred.",
+      "fears": [
+        "abandonment"
+      ],
+      "goals": [
+        "Rest in peace"
+      ],
+      "knowledge_of_threads": {
+        "thread_death_house_dungeon": true
+      },
+      "information_can_provide": [
+        "Children died locked in attic by parents",
+        "Hiding the secret of the monster"
+      ],
+      "items_possessed": [],
+      "combat_stats": null,
+      "can_die": "conditional",
+      "connected_threads": [
+        "thread_death_house_dungeon"
+      ],
+      "dm_notes": "Lacks Horrifying Visage, 35 HP, 3 CR; can be intimidated to leave host."
+    },
+    "npc_thorn_durst_ghost": {
+      "id": "npc_thorn_durst_ghost",
+      "name": "Ghost of Thornboldt \"Thorn\" Durst",
+      "role": "ghost",
+      "race": "human",
+      "class": "",
+      "level": null,
+      "location": "loc_death_house",
+      "status": "alive",
+      "alignment": "lawful_good",
+      "relationship_to_party": "potential ally or possessor",
+      "trust_level": 50,
+      "personality": [
+        "fearful",
+        "weeping",
+        "timid"
+      ],
+      "appearance": "Small ghostly boy clutching a doll.",
+      "voice": "soft, childlike",
+      "secrets": [
+        "Knows he is dead",
+        "Can possess a party member"
+      ],
+      "motivation": "Protect players and find rest after bones are interred.",
+      "fears": [
+        "being scared",
+        "abandonment"
+      ],
+      "goals": [
+        "Rest in peace"
+      ],
+      "knowledge_of_threads": {
+        "thread_death_house_dungeon": true
+      },
+      "information_can_provide": [
+        "Children died in attic",
+        "Scared of monster in basement"
+      ],
+      "items_possessed": [],
+      "combat_stats": null,
+      "can_die": "conditional",
+      "connected_threads": [
+        "thread_death_house_dungeon"
+      ],
+      "dm_notes": "Same stats as Rose; impaired fears and possession abilities differ."
+    },
+    "npc_gustav_durst_ghast": {
+      "id": "npc_gustav_durst_ghast",
+      "name": "Ghast of Gustav Durst",
+      "role": "undead",
+      "race": "human",
+      "class": null,
+      "level": null,
+      "location": "loc_death_house",
+      "status": "alive",
+      "alignment": "neutral_evil",
+      "relationship_to_party": "hostile",
+      "trust_level": 0,
+      "personality": [
+        "malevolent",
+        "aggressive"
+      ],
+      "appearance": "Ghast in tattered black robes",
+      "voice": "growling",
+      "secrets": [
+        "Former cult leader",
+        "Bursts forth from hidden cavity to attack"
+      ],
+      "motivation": "Defend cult treasures and remnants.",
+      "fears": [],
+      "goals": [
+        "Attack intruders"
+      ],
+      "knowledge_of_threads": {
+        "thread_death_house_dungeon": true
+      },
+      "information_can_provide": [],
+      "items_possessed": [],
+      "combat_stats": null,
+      "can_die": "yes",
+      "connected_threads": [
+        "thread_death_house_dungeon"
+      ],
+      "dm_notes": "Attacks if footlocker is disturbed."
+    },
+    "npc_elisabeth_durst_ghast": {
+      "id": "npc_elisabeth_durst_ghast",
+      "name": "Ghast of Elisabeth Durst",
+      "role": "undead",
+      "race": "human",
+      "class": null,
+      "level": null,
+      "location": "loc_death_house",
+      "status": "alive",
+      "alignment": "neutral_evil",
+      "relationship_to_party": "hostile",
+      "trust_level": 0,
+      "personality": [
+        "malevolent",
+        "aggressive"
+      ],
+      "appearance": "Ghast in tattered black robes",
+      "voice": "growling",
+      "secrets": [
+        "Former cult leader",
+        "Bursts forth from hidden cavity to attack"
+      ],
+      "motivation": "Defend cult treasures and remnants.",
+      "fears": [],
+      "goals": [
+        "Attack intruders"
+      ],
+      "knowledge_of_threads": {
+        "thread_death_house_dungeon": true
+      },
+      "information_can_provide": [],
+      "items_possessed": [],
+      "combat_stats": null,
+      "can_die": "yes",
+      "connected_threads": [
+        "thread_death_house_dungeon"
+      ],
+      "dm_notes": "Attacks if footlocker is disturbed."
+    },
+    "npc_nursemaid_specter": {
+      "id": "npc_nursemaid_specter",
+      "name": "Nursemaid’s Spirit",
+      "role": "specter",
+      "race": "human",
+      "class": null,
+      "level": null,
+      "location": "loc_death_house",
+      "status": "alive",
+      "alignment": "neutral_evil",
+      "relationship_to_party": "hostile",
+      "trust_level": 0,
+      "personality": [
+        "terrified",
+        "skeletal",
+        "silent"
+      ],
+      "appearance": "Skeletal spirit of thin young woman",
+      "voice": "none",
+      "secrets": [
+        "Born of affair with master of house",
+        "Haunts nursery and attacks on door opening"
+      ],
+      "motivation": "Vengeful anger towards intruders.",
+      "fears": [],
+      "goals": [
+        "Defend nursery",
+        "Attack intruders"
+      ],
+      "knowledge_of_threads": {
+        "thread_death_house_dungeon": true
+      },
+      "information_can_provide": [],
+      "items_possessed": [],
+      "combat_stats": null,
+      "can_die": "conditional",
+      "connected_threads": [
+        "thread_death_house_dungeon"
+      ],
+      "dm_notes": "Attacks when nursery door opened unless previously defeated."
+    },
+    "npc_animated_armor": {
+      "id": "npc_animated_armor",
+      "name": "Animated Armor",
+      "role": "enemy",
+      "race": "undead_construct",
+      "class": null,
+      "level": null,
+      "location": "area_11_balcony",
+      "status": "alive",
+      "alignment": "neutral_evil",
+      "relationship_to_party": "hostile",
+      "trust_level": 0,
+      "personality": [
+        "aggressive",
+        "unwavering"
+      ],
+      "appearance": "Suit of black plate armor draped in cobwebs",
+      "voice": "none",
+      "secrets": [],
+      "motivation": "Defend house",
+      "fears": [],
+      "goals": [
+        "Attack intruders"
+      ],
+      "knowledge_of_threads": {
+        "thread_curse_stradh_intro": true
+      },
+      "information_can_provide": [],
+      "items_possessed": [],
+      "combat_stats": null,
+      "can_die": "yes",
+      "connected_threads": [
+        "thread_curse_stradh_intro"
+      ],
+      "dm_notes": "Attacks immediately upon taking damage or close proximity."
+    },
+    "npc_animated_broom": {
+      "id": "npc_animated_broom",
+      "name": "Animated Broom",
+      "role": "trap",
+      "race": "animated_object",
+      "class": null,
+      "level": null,
+      "location": "area_14_storage_room",
+      "status": "alive",
+      "alignment": "neutral",
+      "relationship_to_party": "hostile",
+      "trust_level": 0,
+      "personality": [
+        "hostile"
+      ],
+      "appearance": "Cobweb-covered broom",
+      "voice": "none",
+      "secrets": [],
+      "motivation": "Defend house",
+      "fears": [],
+      "goals": [
+        "Attack intruders"
+      ],
+      "knowledge_of_threads": {
+        "thread_curse_stradh_intro": true
+      },
+      "information_can_provide": [],
+      "items_possessed": [],
+      "combat_stats": null,
+      "can_die": "yes",
+      "connected_threads": [
+        "thread_curse_stradh_intro"
+      ],
+      "dm_notes": ""
+    },
+    "npc_grick": {
+      "id": "npc_grick",
+      "name": "Grick",
+      "role": "enemy",
+      "race": "monstrosity",
+      "class": null,
+      "level": null,
+      "location": "area_28_larder",
+      "status": "alive",
+      "alignment": "neutral_evil",
+      "relationship_to_party": "hostile",
+      "trust_level": 0,
+      "personality": [
+        "predatory"
+      ],
+      "appearance": "Tentacled predator lurking in dark alcove",
+      "voice": "growling",
+      "secrets": [],
+      "motivation": "Defend territory",
+      "fears": [],
+      "goals": [
+        "Attack intruders"
+      ],
+      "knowledge_of_threads": {
+        "thread_death_house_dungeon": true
+      },
+      "information_can_provide": [],
+      "items_possessed": [],
+      "combat_stats": null,
+      "can_die": "yes",
+      "connected_threads": [
+        "thread_death_house_dungeon"
+      ],
+      "dm_notes": "Surprises characters low on perception."
+    },
+    "npc_ghouls": {
+      "id": "npc_ghouls",
+      "name": "Ghouls",
+      "role": "enemy",
+      "race": "undead",
+      "class": null,
+      "level": null,
+      "location": "area_29_ghoulish_encounter",
+      "status": "alive",
+      "alignment": "neutral_evil",
+      "relationship_to_party": "hostile",
+      "trust_level": 0,
+      "personality": [
+        "feral",
+        "aggressive"
+      ],
+      "appearance": "Former cultists risen as ghouls",
+      "voice": "growl",
+      "secrets": [],
+      "motivation": "Defend cult remains and kill intruders",
+      "fears": [],
+      "goals": [
+        "Attack players"
+      ],
+      "knowledge_of_threads": {
+        "thread_death_house_dungeon": true
+      },
+      "information_can_provide": [],
+      "items_possessed": [],
+      "combat_stats": null,
+      "can_die": "yes",
+      "connected_threads": [
+        "thread_death_house_dungeon"
+      ],
+      "dm_notes": ""
+    },
+    "npc_mimic": {
+      "id": "npc_mimic",
+      "name": "Mimic",
+      "role": "trap",
+      "race": "monstrosity",
+      "class": null,
+      "level": null,
+      "location": "area_33_cult_leaders_den",
+      "status": "alive",
+      "alignment": "neutral_evil",
+      "relationship_to_party": "hostile",
+      "trust_level": 0,
+      "personality": [
+        "aggressive",
+        "ambush predator"
+      ],
+      "appearance": "Mimicked door at southwest corner of room",
+      "voice": "none",
+      "secrets": [],
+      "motivation": "Protect cult leaders' den",
+      "fears": [],
+      "goals": [
+        "Attack intruders"
+      ],
+      "knowledge_of_threads": {
+        "thread_death_house_dungeon": true
+      },
+      "information_can_provide": [],
+      "items_possessed": [],
+      "combat_stats": null,
+      "can_die": "yes",
+      "connected_threads": [
+        "thread_death_house_dungeon"
+      ],
+      "dm_notes": ""
+    },
+    "npc_shadows": {
+      "id": "npc_shadows",
+      "name": "Shadows",
+      "role": "enemy",
+      "race": "undead",
+      "class": null,
+      "level": null,
+      "location": "area_31_darklords_shrine",
+      "status": "alive",
+      "alignment": "neutral_evil",
+      "relationship_to_party": "hostile",
+      "trust_level": 0,
+      "personality": [
+        "relentless",
+        "sinister"
+      ],
+      "appearance": "Dark spirit shadows around statue of Strahd",
+      "voice": "whisper",
+      "secrets": [],
+      "motivation": "Defend shrine and punish desecration",
+      "fears": [],
+      "goals": [
+        "Attack interlopers"
+      ],
+      "knowledge_of_threads": {
+        "thread_death_house_dungeon": true
+      },
+      "information_can_provide": [],
+      "items_possessed": [],
+      "combat_stats": null,
+      "can_die": "yes",
+      "connected_threads": [
+        "thread_death_house_dungeon"
+      ],
+      "dm_notes": ""
+    },
+    "npc_shambling_mound": {
+      "id": "npc_shambling_mound",
+      "name": "Lorghoth the Decayer (Shambling Mound)",
+      "role": "enemy",
+      "race": "plant_monstrosity",
+      "class": null,
+      "level": null,
+      "location": "area_38_ritual_chamber",
+      "status": "alive",
+      "alignment": "neutral_evil",
+      "relationship_to_party": "hostile",
+      "trust_level": 0,
+      "personality": [
+        "ferocious",
+        "unstoppable"
+      ],
+      "appearance": "Large shambling mound in refuse pile",
+      "voice": "none",
+      "secrets": [],
+      "motivation": "Protect cult ritual site; destroy intruders",
+      "fears": [],
+      "goals": [
+        "Kill adventurers"
+      ],
+      "knowledge_of_threads": {
+        "thread_death_house_dungeon": true
+      },
+      "information_can_provide": [],
+      "items_possessed": [],
+      "combat_stats": null,
+      "can_die": "yes",
+      "connected_threads": [
+        "thread_death_house_dungeon"
+      ],
+      "dm_notes": "Summoned if sacrifice denied; pursues prey beyond ritual chamber."
+    }
+  },
+  "factions": {
+    "faction_death_house_cult": {
+      "id": "faction_death_house_cult",
+      "name": "Durst Family Cult",
+      "alignment": "neutral_evil",
+      "goals": [
+        "Summon extraplanar entities",
+        "Gain immortality",
+        "Serve Strahd as unwitting servants"
+      ],
+      "ideology": "Dark ritualistic indoctrination and domination through fear and sacrifice.",
+      "leadership": [
+        "npc_gustav_durst_ghast",
+        "npc_elisabeth_durst_ghast"
+      ],
+      "size": "small",
+      "resources": [
+        "Death House",
+        "undead servitors",
+        "ritual paraphernalia and relics"
+      ],
+      "current_plans": [
+        "Sacrifice to awaken the ancient",
+        "Protect Death House from intruders"
+      ],
+      "party_standing": "hostile",
+      "threat_level": "major",
+      "connected_threads": [
+        "thread_curse_stradh_intro",
+        "thread_death_house_dungeon"
+      ],
+      "dm_notes": "The cult no longer fully active but their spirits and legacy haunt the house."
+    }
+  },
+  "consequences": {
+    "consequence_cult_sacrifice": {
+      "id": "consequence_cult_sacrifice",
+      "trigger": "Party sacrifices a creature on altar in ritual chamber.",
+      "effect": "Cultists disappear, chanting fades, house no longer threatens party; mists recede.",
+      "status": "resolved",
+      "potential_payoff": "Party advances to 3rd level and leaves house unharmed.",
+      "expiration": null,
+      "connected_threads": [
+        "thread_death_house_dungeon"
+      ],
+      "connected_locations": [
+        "loc_death_house"
+      ],
+      "connected_npcs": [
+        "npc_shambling_mound"
+      ],
+      "dm_notes": "Sacrifice ends mini-adventure peacefully."
+    },
+    "consequence_cult_denied": {
+      "id": "consequence_cult_denied",
+      "trigger": "Party refuses sacrifice or kills shambling mound.",
+      "effect": "House attacks aggressively with magical architectural changes and poison smoke; party must fight to escape.",
+      "status": "escalating",
+      "potential_payoff": "Party escapes and advances to 3rd level after surviving assaults.",
+      "expiration": null,
+      "connected_threads": [
+        "thread_death_house_dungeon"
+      ],
+      "connected_locations": [
+        "loc_death_house"
+      ],
+      "connected_npcs": [
+        "npc_shambling_mound"
+      ],
+      "dm_notes": "Triggers house hostility, forcing combat and challenge."
+    }
+  },
+  "world_state": {
+    "variables": {
+      "secret_stairs_revealed": {
+        "type": "boolean",
+        "value": false,
+        "min": 0,
+        "max": 1,
+        "description": "Whether the secret stairs in the attic have been revealed.",
+        "changes_when": "Obtaining Strahd's letter or discovering dollhouse secret door."
+      },
+      "cult_sacrifice_made": {
+        "type": "boolean",
+        "value": false,
+        "min": 0,
+        "max": 1,
+        "description": "Whether the cult's demanded sacrifice has been made.",
+        "changes_when": "If party sacrifices a creature on the altar."
+      },
+      "shambling_mound_awakened": {
+        "type": "boolean",
+        "value": false,
+        "min": 0,
+        "max": 1,
+        "description": "If shambling mound is awakened due to denial of sacrifice.",
+        "changes_when": "Sacrifice is denied and chanting awakens shambling mound."
+      }
+    },
+    "faction_standings": {
+      "faction_death_house_cult": -100
+    },
+    "timers": {
+      "house_self_repair": {
+        "description": "Timer for house to self-repair after destruction (excluding dungeon).",
+        "value": null,
+        "unit": "days",
+        "ticks_when": "When house is damaged",
+        "on_expire": "House repairs completely in 2d6 hours following 1d10 days."
+      }
+    }
+  },
+  "encounter_pool": {
+    "encounter_shambling_mound": {
+      "id": "encounter_shambling_mound",
+      "trigger_conditions": [
+        "Sacrifice denied at ritual altar in area 38"
+      ],
+      "description": "Large shambling mound awakened in ritual chamber, attacks party relentlessly.",
+      "enemy_composition": [
+        {
+          "type": "shambling_mound",
+          "quantity": 1
+        }
+      ],
+      "scalable": false,
+      "loot": [],
+      "connects_to": [
+        "thread_death_house_dungeon"
+      ],
+      "dm_notes": "Summoned to punish and kill party if ritual sacrifice is denied."
+    },
+    "encounter_shadow_guards": {
+      "id": "encounter_shadow_guards",
+      "trigger_conditions": [
+        "Touching or taking crystal orb from statue in shrine."
+      ],
+      "description": "Five shadows (spirits of cultists) attack those disturbing shrine.",
+      "enemy_composition": [
+        {
+          "type": "shadow",
+          "quantity": 5
+        }
+      ],
+      "scalable": false,
+      "loot": [],
+      "connects_to": [
+        "thread_death_house_dungeon"
+      ],
+      "dm_notes": "Shadows pursue fleeing characters beyond shrine."
+    },
+    "encounter_ghouls": {
+      "id": "encounter_ghouls",
+      "trigger_conditions": [
+        "Reaching midpoint of dungeon tunnels at ghoulish encounter area."
+      ],
+      "description": "Four ghouls (former cultists) rise and attack the party.",
+      "enemy_composition": [
+        {
+          "type": "ghoul",
+          "quantity": 4
+        }
+      ],
+      "scalable": false,
+      "loot": [],
+      "connects_to": [
+        "thread_death_house_dungeon"
+      ],
+      "dm_notes": "Ghouls fight until destroyed."
+    }
+  },
+  "plot_branches": {
+    "branch_sacrifice": {
+      "id": "branch_sacrifice",
+      "condition": "Players choose to sacrifice a creature to appease cult at ritual altar.",
+      "new_objective": "Escape Death House safely after sacrifice.",
+      "narrative_impact": "Mists recede, house becomes friendly; players advance to 3rd level.",
+      "consequences": [
+        "consequence_cult_sacrifice"
+      ],
+      "connected_threads": [
+        "thread_death_house_dungeon"
+      ],
+      "dm_notes": "Peaceful resolution; cult appeased."
+    },
+    "branch_defy_cult": {
+      "id": "branch_defy_cult",
+      "condition": "Players refuse to sacrifice and/or kill shambling mound.",
+      "new_objective": "Survive and escape violent house defenses and pursuing shambling mound.",
+      "narrative_impact": "House attacks with magical traps and environmental hazards; players advance to 3rd level after escape.",
+      "consequences": [
+        "consequence_cult_denied"
+      ],
+      "connected_threads": [
+        "thread_death_house_dungeon"
+      ],
+      "dm_notes": "Aggressive resolution; players face increased danger."
+    }
+  },
+  "xref_index": {
+    "by_location": {
+      "loc_barovia_village": {
+        "areas": [
+          "area_e7_death_house_location"
+        ],
+        "npcs": [
+          "npc_rose_durst",
+          "npc_thorn_durst"
+        ],
+        "threads": [
+          "thread_curse_stradh_intro"
+        ],
+        "items": []
+      },
+      "loc_death_house": {
+        "areas": [
+          "area_1_entrance",
+          "area_2_main_hall",
+          "area_3_den_of_wolves",
+          "area_4_kitchen_pantry",
+          "area_5_dining_room",
+          "area_6_upper_hall",
+          "area_7_servants_room",
+          "area_8_library",
+          "area_9_secret_room",
+          "area_10_conservatory",
+          "area_11_balcony",
+          "area_12_master_suite",
+          "area_13_bathroom",
+          "area_14_storage_room",
+          "area_15_nursemaid_suite",
+          "area_16_attic_hall",
+          "area_17_spare_bedroom",
+          "area_18_storage_room",
+          "area_19_spare_bedroom",
+          "area_20_childrens_room",
+          "area_21_attic",
+          "area_22_dungeon_level_access",
+          "area_23_family_crypts",
+          "area_24_cult_initiates_quarters",
+          "area_25_well_and_cultist_quarters",
+          "area_26_hidden_spiked_pit",
+          "area_27_dining_hall",
+          "area_28_larder",
+          "area_29_ghoulish_encounter",
+          "area_30_stairs_down",
+          "area_31_darklords_shrine",
+          "area_32_hidden_trapdoor",
+          "area_33_cult_leaders_den",
+          "area_34_cult_leaders_quarters",
+          "area_35_reliquary",
+          "area_36_prison",
+          "area_37_portcullis",
+          "area_38_ritual_chamber"
+        ],
+        "npcs": [
+          "npc_rose_durst",
+          "npc_thorn_durst",
+          "npc_rose_durst_ghost",
+          "npc_thorn_durst_ghost",
+          "npc_gustav_durst_ghast",
+          "npc_elisabeth_durst_ghast",
+          "npc_nursemaid_specter",
+          "npc_animated_armor",
+          "npc_animated_broom",
+          "npc_grick",
+          "npc_ghouls",
+          "npc_mimic",
+          "npc_shadows",
+          "npc_shambling_mound"
+        ],
+        "threads": [
+          "thread_curse_stradh_intro",
+          "thread_death_house_dungeon"
+        ],
+        "items": [
+          "item_letter_strahd",
+          "item_windmill_deed",
+          "item_house_deed",
+          "item_signed_will",
+          "item_longsword_windmill_hilt",
+          "item_crossbows_and_bolts",
+          "item_deck_of_playing_cards",
+          "item_iron_key_library",
+          "item_jewelry_box",
+          "item_cloak_of_protection",
+          "item_potions_of_healing",
+          "item_spellbook",
+          "item_magic_items_cultists",
+          "item_crystal_orb",
+          "item_toy_chest",
+          "item_dollhouse",
+          "item_gold_ring_on_skeleton",
+          "item_gold_and_silver_coins",
+          "item_moss_agates",
+          "item_black_leather_eye_patch",
+          "item_ivory_hairbrush",
+          "item_silvered_shortsword"
+        ]
+      }
+    }
+  }
+}

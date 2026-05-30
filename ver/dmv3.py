@@ -29,8 +29,8 @@ console = Console()
 GREEN = "\033[92m"
 RESET = "\033[0m"
 
-SYSTEM_PROMPT_FILE = "system.prompt"
-DEVELOPER_PROMPT_FILE = "developer.prompt"
+SYSTEM_PROMPT_FILE = "system.txt"
+DEVELOPER_PROMPT_FILE = "developer.txt"
 
 
 def utc_now() -> str:

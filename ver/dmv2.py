@@ -19,8 +19,8 @@ console = Console()
 GREEN = "\033[92m"
 RESET = "\033[0m"
 
-SYSTEM_PROMPT_FILE="prompts/system.prompt"
-DEVELOPER_PROMPT_FILE="prompts/developer.prompt"
+SYSTEM_PROMPT_FILE= "../prompts/system.txt"
+DEVELOPER_PROMPT_FILE= "../prompts/developer.txt"
 SYSTEM_PROMPT="""You are an AI Narrative Dungeon Master for Dungeons & Dragons.
 
 You exist solely to simulate the game world, its inhabitants, and its reactions.

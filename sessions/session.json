@@ -1,0 +1,1053 @@
+{
+  "meta": {
+    "created": "2026-01-12T15:35:09.913949+00:00",
+    "last_updated": "2026-01-12T15:39:17.014091+00:00",
+    "schema_version": 3
+  },
+  "module": {
+    "id": "ice_road_trackers",
+    "title": "Ice Road Trackers",
+    "data": {
+      "module": {
+        "id": "ice_road_trackers",
+        "title": "Ice Road Trackers",
+        "theme": [
+          "frozen wilderness",
+          "survival",
+          "animal kinship",
+          "mystery"
+        ],
+        "tone": [
+          "tense",
+          "dire",
+          "hopeful",
+          "adventurous"
+        ],
+        "plot_hooks": [
+          {
+            "id": "adventure_hook_1",
+            "title": "Seeking Treasure and Adventure",
+            "summary": "The characters are traveling from the Sword Coast into Icewind Dale seeking fortune and adventure.",
+            "how_party_learns": "This is presented by the adventure introduction as a primary motive for traveling into Icewind Dale.",
+            "starting_location": "spine_world_pass",
+            "connected_threads": [
+              "avalanche_survival",
+              "rescue_spritzel",
+              "curse_everlasting_rime"
+            ],
+            "dm_notes": "Players may create their own backgrounds and motivations connected to this hook. Encourage the party to discuss what brought them to the cold north."
+          },
+          {
+            "id": "adventure_hook_2",
+            "title": "Driven by Secrets",
+            "summary": "Each character has a secret that drives them north into the frozen wilds.",
+            "how_party_learns": "Suggested for party background customization at session start.",
+            "starting_location": "spine_world_pass",
+            "connected_threads": [
+              "avalanche_survival",
+              "rescue_spritzel",
+              "curse_everlasting_rime"
+            ],
+            "dm_notes": "Players are encouraged to develop a personal secret that may be revealed or developed during play."
+          }
+        ],
+        "starting_location": "spine_world_pass",
+        "starting_area": "avalanche_fissure_cavern",
+        "version": "1.0"
+      },
+      "threads": {
+        "avalanche_survival": {
+          "id": "avalanche_survival",
+          "title": "Trapped in the Avalanche",
+          "status": "active",
+          "priority": "primary",
+          "description": "The party is caught in an avalanche while traversing a mountain pass north into Icewind Dale and must follow a mysterious muskrat to survive.",
+          "hook": "The avalanche threatens immediate death; following the muskrat reveals a hidden escape route.",
+          "current_objective": "Escape the avalanche by following the muskrat into the fissure.",
+          "next_milestone": "Meet Mother Tusk and her menagerie.",
+          "connected_elements": {
+            "threads": [
+              "rescue_spritzel"
+            ],
+            "locations": [
+              "spine_world_pass",
+              "cavern_tunnels"
+            ],
+            "areas": [
+              "avalanche_fissure_cavern"
+            ],
+            "npcs": [
+              "mother_tusk",
+              "muskie"
+            ],
+            "items": [],
+            "factions": [
+              "mother_tusks_family"
+            ],
+            "consequences": [
+              "party_rescued_by_mother_tusk"
+            ],
+            "encounter_pool": [
+              "avalanche_event"
+            ],
+            "plot_branches": [
+              "agree_to_help_mother_tusk"
+            ]
+          },
+          "player_knowledge": {
+            "known_to_players": [
+              "Following the muskrat is the only apparent way to survive. There is urgency to escape the avalanche."
+            ],
+            "truth_hidden": [
+              "Mother Tusk orchestrated the muskrat rescue as a way to recruit help for her own cause."
+            ]
+          },
+          "success_conditions": [
+            "Party escapes the avalanche via the fissure.",
+            "Players meet Mother Tusk alive."
+          ],
+          "failure_conditions": [
+            "Characters remain in the open and are buried by the avalanche."
+          ],
+          "dm_notes": "This thread sets up the basic party connection to Mother Tusk. The avalanche should feel deadly and require urgent action."
+        },
+        "rescue_spritzel": {
+          "id": "rescue_spritzel",
+          "title": "Rescue Spritzel",
+          "status": "active",
+          "priority": "primary",
+          "description": "Mother Tusk asks the party to find and rescue her scout-child, the otter Spritzel, who has gone missing near Easthaven.",
+          "hook": "Mother Tusk requests the PCs check on her missing otter in exchange for helping them survive.",
+          "current_objective": "Find Spritzel by following animal tracks along Redwaters’ shore.",
+          "next_milestone": "Confront the pack of wolves pursuing Spritzel and his otters.",
+          "connected_elements": {
+            "threads": [
+              "avalanche_survival"
+            ],
+            "locations": [
+              "redwaters_shore",
+              "ice_slides_cave"
+            ],
+            "areas": [
+              "ice_slides_cave_chamber"
+            ],
+            "npcs": [
+              "mother_tusk",
+              "spritzel",
+              "vundrel"
+            ],
+            "items": [
+              "boots_of_false_tracks",
+              "spritzels_pearl_earring"
+            ],
+            "factions": [
+              "mother_tusks_family"
+            ],
+            "consequences": [
+              "spritzel_rescued_or_lost"
+            ],
+            "encounter_pool": [
+              "wolf_pack_chase"
+            ],
+            "plot_branches": [
+              "spritzel_saved",
+              "spritzel_lost"
+            ]
+          },
+          "player_knowledge": {
+            "known_to_players": [
+              "Mother Tusk's otter scout is missing and likely being hunted by wolves nearby."
+            ],
+            "truth_hidden": [
+              "One of the wolves is awakened and acts under orders from a corrupted druid seeking Mother Tusk."
+            ]
+          },
+          "success_conditions": [
+            "Spritzel is saved and safely returned to the encampment.",
+            "Party survives the cold and makes it back to Mother Tusk."
+          ],
+          "failure_conditions": [
+            "Spritzel is killed or captured by wolves.",
+            "Party succumbs to freezing conditions."
+          ],
+          "dm_notes": "Highlight the urgency due to weather, the odd intelligence of the lead wolf (Vundrel), and the role of the awakened druid as a background threat."
+        },
+        "curse_everlasting_rime": {
+          "id": "curse_everlasting_rime",
+          "title": "The Everlasting Rime",
+          "status": "dormant",
+          "priority": "twist",
+          "description": "Icewind Dale is cursed with unending twilight due to a magical curse from the goddess Auril. Survival is more difficult, and travel is hampered.",
+          "hook": "Party learns gradually from NPCs, strange phenomenon, and the darkness.",
+          "current_objective": "Understand the nature of the curse and its effects on the land.",
+          "next_milestone": "Find evidence or lore connecting Auril directly to the rime.",
+          "connected_elements": {
+            "threads": [],
+            "locations": [
+              "icewind_dale_region"
+            ],
+            "areas": [],
+            "npcs": [
+              "mother_tusk"
+            ],
+            "items": [],
+            "factions": [],
+            "consequences": [],
+            "encounter_pool": [],
+            "plot_branches": []
+          },
+          "player_knowledge": {
+            "known_to_players": [
+              "The land is cursed with permanent twilight and freezing conditions."
+            ],
+            "truth_hidden": [
+              "Mother Tusk suspects a divine curse from Auril, and that the awakened druid may be a minion."
+            ]
+          },
+          "success_conditions": [
+            "Curse's source is understood or revealed."
+          ],
+          "failure_conditions": [
+            "Curse persists and hampers survival throughout adventure."
+          ],
+          "dm_notes": "This thread is foreshadowed but not directly resolvable in this sample adventure."
+        }
+      },
+      "locations": {
+        "spine_world_pass": {
+          "id": "spine_world_pass",
+          "name": "Mountain Pass in the Spine of the World",
+          "type": "wilderness",
+          "environmental_conditions": [
+            "mountainous",
+            "blizzard",
+            "avalanche risk",
+            "dim light"
+          ],
+          "notable_features": [
+            "hidden fissures",
+            "narrow trail",
+            "rapidly descending snow"
+          ],
+          "connected_areas": [
+            "avalanche_fissure_cavern"
+          ],
+          "connected_npcs": [],
+          "available_services": [],
+          "travel_times": {
+            "icewind_dale_region": "4 hours",
+            "mother_tusk_encampment": "3 hours"
+          },
+          "dm_notes": "Initial setting for the avalanche event. Travel is dangerous and slow."
+        },
+        "mother_tusk_encampment": {
+          "id": "mother_tusk_encampment",
+          "name": "Mother Tusk's Encampment",
+          "type": "dungeon",
+          "environmental_conditions": [
+            "icy cavern",
+            "dim light",
+            "protected"
+          ],
+          "notable_features": [
+            "large walrus",
+            "animal menagerie",
+            "warm fire"
+          ],
+          "connected_areas": [
+            "cavern_tunnels"
+          ],
+          "connected_npcs": [
+            "mother_tusk",
+            "muskie"
+          ],
+          "available_services": [
+            "long rest",
+            "basic healing (cure wounds scrolls)",
+            "information"
+          ],
+          "travel_times": {
+            "spine_world_pass": "3 hours",
+            "redwaters_shore": "2 hours"
+          },
+          "dm_notes": "Safe haven for the party between quests; animals are wary of outsiders."
+        },
+        "redwaters_shore": {
+          "id": "redwaters_shore",
+          "name": "Redwaters Shore",
+          "type": "wilderness",
+          "environmental_conditions": [
+            "frozen lake",
+            "deep snow",
+            "dim light",
+            "bitter wind"
+          ],
+          "notable_features": [
+            "animal tracks",
+            "signs of struggle"
+          ],
+          "connected_areas": [
+            "ice_slides_cave_chamber"
+          ],
+          "connected_npcs": [
+            "spritzel"
+          ],
+          "available_services": [],
+          "travel_times": {
+            "mother_tusk_encampment": "2 hours",
+            "easthaven": "8 hours"
+          },
+          "dm_notes": "Otters' trail and wolf tracks are found here."
+        },
+        "ice_slides_cave": {
+          "id": "ice_slides_cave",
+          "name": "Ice Slides Cave",
+          "type": "dungeon",
+          "environmental_conditions": [
+            "ice slide",
+            "subzero water",
+            "cloying darkness"
+          ],
+          "notable_features": [
+            "steep icy tunnel",
+            "echoes of combat"
+          ],
+          "connected_areas": [
+            "ice_slides_cave_chamber"
+          ],
+          "connected_npcs": [
+            "vundrel"
+          ],
+          "available_services": [],
+          "travel_times": {
+            "redwaters_shore": "immediate"
+          },
+          "dm_notes": "Cave leads to the main encounter with wolves and otters."
+        },
+        "icewind_dale_region": {
+          "id": "icewind_dale_region",
+          "name": "Icewind Dale",
+          "type": "region",
+          "environmental_conditions": [
+            "perpetual twilight",
+            "freezing",
+            "dangerous weather",
+            "blizzards"
+          ],
+          "notable_features": [
+            "Ten-Towns",
+            "Auril's curse",
+            "animals on the run"
+          ],
+          "connected_areas": [],
+          "connected_npcs": [],
+          "available_services": [],
+          "travel_times": {},
+          "dm_notes": "Overall campaign region. Perpetual dim light due to Auril’s curse."
+        }
+      },
+      "areas": {
+        "avalanche_fissure_cavern": {
+          "id": "avalanche_fissure_cavern",
+          "name": "Avalanche Fissure Cavern",
+          "parent_location": "spine_world_pass",
+          "area_type": "cave",
+          "size_ft": "20x40 ft",
+          "description": {
+            "read_aloud": "The icy slide dumps you unceremoniously into a cold cavern. The muskrat stares you in the eye, then wiggles a bit, as if happy to see you survived the close call.",
+            "summary": "A natural cavern beneath the avalanche, room for several people, damp and cold, shadows conceal a menagerie of animals."
+          },
+          "environmental_conditions": [
+            "icy",
+            "enclosed",
+            "dim light"
+          ],
+          "lighting": "dim",
+          "connected_areas": {
+            "deeper_cavern": "cavern_tunnels"
+          },
+          "enemies": [],
+          "treasure": [],
+          "traps": [],
+          "puzzles": [],
+          "skill_challenges": [
+            {
+              "id": null,
+              "goal": "Surviving the fall and avoiding injury.",
+              "checks": [],
+              "dm_notes": "Imported placeholder"
+            },
+            {
+              "id": null,
+              "goal": "Persuading or calming wary animals.",
+              "checks": [],
+              "dm_notes": "Imported placeholder"
+            }
+          ],
+          "atmosphere": [
+            "chill",
+            "echoing",
+            "animal sounds"
+          ],
+          "dm_notes": "Site for meeting Mother Tusk. Use animal voices and shadows to set the scene."
+        },
+        "ice_slides_cave_chamber": {
+          "id": "ice_slides_cave_chamber",
+          "name": "Ice Slides Cave Chamber",
+          "parent_location": "ice_slides_cave",
+          "area_type": "interior_room",
+          "size_ft": "40x50 ft",
+          "description": {
+            "read_aloud": "The ice slides end in a chamber flooded with a foot of frigid water. The otters swim adeptly at the far side of the cavern, avoiding the wolves’ snapping jaws.",
+            "summary": "Main chamber at the bottom of the ice slides, partly submerged, slick icy shelves, home to the climactic wolf-otter battle."
+          },
+          "environmental_conditions": [
+            "frigid water",
+            "icy shelves",
+            "slippery"
+          ],
+          "lighting": "dim",
+          "connected_areas": {
+            "surface_exit": "redwaters_shore"
+          },
+          "enemies": [
+            "wolf_1",
+            "wolf_2",
+            "wolf_3",
+            "wolf_4",
+            "vundrel"
+          ],
+          "treasure": [
+            "boots_of_false_tracks",
+            "spritzels_pearl_earring"
+          ],
+          "traps": [],
+          "puzzles": [],
+          "skill_challenges": [
+            {
+              "id": null,
+              "goal": "Navigating the ice slides safely (Dexterity Acrobatics)",
+              "checks": [],
+              "dm_notes": "Imported placeholder"
+            },
+            {
+              "id": null,
+              "goal": "Enduring the freezing cold (Constitution saves)",
+              "checks": [],
+              "dm_notes": "Imported placeholder"
+            }
+          ],
+          "atmosphere": [
+            "slippery chaos",
+            "dangerous chill",
+            "animal panic"
+          ],
+          "dm_notes": "Manage initiative and provide consequences for failed Acrobatics checks and cold survival. Spritzel and the otters can help the party, but are not direct combatants."
+        }
+      },
+      "items": {
+        "boots_of_false_tracks": {
+          "id": "boots_of_false_tracks",
+          "name": "Boots of False Tracks",
+          "type": "magic_item",
+          "rarity": "common",
+          "location": "ice_slides_cave_chamber",
+          "magical": true,
+          "description": "Comfortable, fur-lined boots embroidered with gaudy, worthless gems. While wearing them, you may choose to leave tracks like another humanoid of your size.",
+          "properties": [
+            "footwear",
+            "track-altering"
+          ],
+          "curse": null,
+          "weight_value": {
+            "weight_lb": 2,
+            "value_gp": 25
+          },
+          "connected_threads": [
+            "rescue_spritzel"
+          ],
+          "lore": "Made for scoundrels and spies, these boots are popular among smugglers.",
+          "acquisition_method": "Looted from a frozen explorer in the ice slides cave.",
+          "quest_significance": "A small aid to future tracking or evasion encounters.",
+          "consequences_when_obtained": [],
+          "dm_notes": "Only one pair is found; describe the former owner's remains as a reminder of the land's lethality."
+        },
+        "spritzels_pearl_earring": {
+          "id": "spritzels_pearl_earring",
+          "name": "Spritzel's Pearl Earring",
+          "type": "mundane",
+          "rarity": "common",
+          "location": "spritzel",
+          "magical": false,
+          "description": "A shiny pearl earring, prized by Spritzel, serving as thanks to the party for saving him.",
+          "properties": [
+            "decorative",
+            "keepsake"
+          ],
+          "curse": null,
+          "weight_value": {
+            "weight_lb": 0.1,
+            "value_gp": 10
+          },
+          "connected_threads": [
+            "rescue_spritzel"
+          ],
+          "lore": "Spritzel found it on a shoreline and made it his signature accessory.",
+          "acquisition_method": "Gifted to party by Spritzel.",
+          "quest_significance": "Token of friendship and gratitude; minor roleplay value.",
+          "consequences_when_obtained": [],
+          "dm_notes": "Present as a nonmagical trophy; Spritzel will remember who keeps it."
+        }
+      },
+      "npcs": {
+        "mother_tusk": {
+          "id": "mother_tusk",
+          "name": "Mother Tusk",
+          "role": "Protector of the Awakened Animals",
+          "race": "Awakened Walrus",
+          "class": null,
+          "level": null,
+          "location": "mother_tusk_encampment",
+          "status": "alive",
+          "alignment": "neutral good",
+          "relationship_to_party": "rescuer, quest-giver",
+          "trust_level": 70,
+          "personality": [
+            "caring",
+            "cautious",
+            "ruthless if her family is threatened"
+          ],
+          "appearance": "A massive, ten-foot-long walrus with intelligent eyes and a commanding presence.",
+          "voice": "Slobbery, deep, slightly rasping Common.",
+          "secrets": [
+            "The goliath druid who awakened her is still alive, corrupted, and hunting her.",
+            "She fears for her family's safety but will not tell the whole truth yet."
+          ],
+          "motivation": "To keep all her awakened animal charges safe.",
+          "fears": [
+            "Losing her family",
+            "Discovery by the druid"
+          ],
+          "goals": [
+            "Protect the family",
+            "Find safety from hunters"
+          ],
+          "knowledge_of_threads": {
+            "avalanche_survival": "Mastermind of the party's rescue; orchestrated their path.",
+            "rescue_spritzel": "Trusts the party with her child's life; knows wolves are not normal.",
+            "curse_everlasting_rime": "Knows it's divine in origin but withholds details."
+          },
+          "information_can_provide": [
+            "Background on awakened animals",
+            "Threats to Icewind Dale",
+            "Directions to Spritzel's last known location"
+          ],
+          "items_possessed": [],
+          "combat_stats": null,
+          "can_die": "no",
+          "connected_threads": [
+            "avalanche_survival",
+            "rescue_spritzel",
+            "curse_everlasting_rime"
+          ],
+          "dm_notes": "Mother Tusk is planned for future episodes; keep her alive and functional. Roleplay her as wary yet fiercely maternal."
+        },
+        "spritzel": {
+          "id": "spritzel",
+          "name": "Spritzel",
+          "role": "Scout, rescued otter",
+          "race": "Awakened Otter",
+          "class": null,
+          "level": null,
+          "location": "redwaters_shore",
+          "status": "alive",
+          "alignment": "chaotic good",
+          "relationship_to_party": "rescued NPC",
+          "trust_level": 85,
+          "personality": [
+            "irrepressible",
+            "flamboyant",
+            "risk-taking",
+            "brave"
+          ],
+          "appearance": "White-furred otter with a brown patch above the right eye, sporting a pearl earring.",
+          "voice": "High, squeaky voice, speaks rapid Common.",
+          "secrets": [
+            "Doesn't fear danger if it's for a good cause.",
+            "Enjoys accumulating shiny things."
+          ],
+          "motivation": "To brave danger and find shiny things.",
+          "fears": [
+            "Dying meaninglessly"
+          ],
+          "goals": [
+            "Scout for Mother Tusk",
+            "Live a storied life"
+          ],
+          "knowledge_of_threads": {
+            "avalanche_survival": "Rescued by party, unaware of bigger schemes.",
+            "rescue_spritzel": "Central; knows he was being hunted by an unusually intelligent wolf."
+          },
+          "information_can_provide": [
+            "Description of black-feathered owlbear spotted near Easthaven",
+            "Hints of the wolves' unnatural behavior"
+          ],
+          "items_possessed": [
+            "spritzels_pearl_earring"
+          ],
+          "combat_stats": null,
+          "can_die": "conditional",
+          "connected_threads": [
+            "rescue_spritzel"
+          ],
+          "dm_notes": "Irrepressible and memorable; rewarding the party with his earring is a strong hook for their continued investment."
+        },
+        "vundrel": {
+          "id": "vundrel",
+          "name": "Vundrel",
+          "role": "Pack leader",
+          "race": "Awakened Wolf",
+          "class": null,
+          "level": null,
+          "location": "ice_slides_cave",
+          "status": "alive",
+          "alignment": "neutral evil",
+          "relationship_to_party": "antagonist",
+          "trust_level": 0,
+          "personality": [
+            "efficient",
+            "driven",
+            "fierce"
+          ],
+          "appearance": "Large, alert wolf with unusual intelligence in her eyes.",
+          "voice": "Deep, snarling Common.",
+          "secrets": [
+            "Works for the corrupted goliath druid.",
+            "Resents her forced subservience."
+          ],
+          "motivation": "To hunt down Mother Tusk's family as ordered.",
+          "fears": [
+            "Disobedience consequences",
+            "Independence"
+          ],
+          "goals": [
+            "Kill or capture awakened animals"
+          ],
+          "knowledge_of_threads": {
+            "rescue_spritzel": "Sees Spritzel as quarry, recognizes party as interference."
+          },
+          "information_can_provide": [
+            "Hints about the druid master and the greater threat"
+          ],
+          "items_possessed": [],
+          "combat_stats": {
+            "hp": 11,
+            "ac": 13,
+            "spd": "40 ft",
+            "special": "Keen Hearing and Smell, Pack Tactics"
+          },
+          "can_die": "yes",
+          "connected_threads": [
+            "rescue_spritzel"
+          ],
+          "dm_notes": "Adjust stats based on party size (dire wolf for strong parties). Vundrel should show unnatural cunning."
+        },
+        "muskie": {
+          "id": "muskie",
+          "name": "Muskie",
+          "role": "Guide muskrat",
+          "race": "Muskrat (awakened or highly trained)",
+          "class": null,
+          "level": null,
+          "location": "spine_world_pass",
+          "status": "alive",
+          "alignment": "neutral",
+          "relationship_to_party": "rescuer/helper",
+          "trust_level": 60,
+          "personality": [
+            "frantic",
+            "loyal"
+          ],
+          "appearance": "Snowy-white muskrat with alert, darting eyes.",
+          "voice": "Silent, communicates by gestures.",
+          "secrets": [],
+          "motivation": "To aid Mother Tusk's plans.",
+          "fears": [],
+          "goals": [
+            "Keep party alive",
+            "Reunite with Mother Tusk"
+          ],
+          "knowledge_of_threads": {
+            "avalanche_survival": "Saves party by leading them into the fissure."
+          },
+          "information_can_provide": [],
+          "items_possessed": [],
+          "combat_stats": null,
+          "can_die": "no",
+          "connected_threads": [
+            "avalanche_survival"
+          ],
+          "dm_notes": "A plot device for guiding the party; handwave combat stats."
+        }
+      },
+      "factions": {
+        "mother_tusks_family": {
+          "id": "mother_tusks_family",
+          "name": "Mother Tusk's Family",
+          "alignment": "neutral good",
+          "goals": [
+            "Survive",
+            "Stay hidden from hunters",
+            "Protect all awakened animals"
+          ],
+          "ideology": "Awakened creatures deserve safety from exploitation or manipulation by humanoids.",
+          "leadership": [
+            "mother_tusk"
+          ],
+          "size": "medium (approx. 30 animals)",
+          "resources": [
+            "hidden caves",
+            "various animal skills"
+          ],
+          "current_plans": [
+            "Avoid detection",
+            "Recruit helpful adventurers"
+          ],
+          "party_standing": "cautiously positive",
+          "threat_level": "minor",
+          "connected_threads": [
+            "avalanche_survival",
+            "rescue_spritzel"
+          ],
+          "dm_notes": "Unusual, sentient animal kin group. They are wary at first but may become strong allies with further episodes."
+        }
+      },
+      "consequences": {
+        "party_rescued_by_mother_tusk": {
+          "id": "party_rescued_by_mother_tusk",
+          "trigger": "Party follows muskrat during avalanche.",
+          "effect": "Party is saved and indebted to Mother Tusk.",
+          "status": "resolved",
+          "potential_payoff": "Leads to party meeting Mother Tusk and becoming involved in her troubles.",
+          "expiration": null,
+          "connected_threads": [
+            "avalanche_survival"
+          ],
+          "connected_locations": [
+            "spine_world_pass"
+          ],
+          "connected_npcs": [
+            "mother_tusk",
+            "muskie"
+          ],
+          "dm_notes": "This is the branching point for all subsequent episodes."
+        },
+        "spritzel_rescued_or_lost": {
+          "id": "spritzel_rescued_or_lost",
+          "trigger": "Resolution of wolf/otter encounter",
+          "effect": "Spritzel is either saved (party receives reward, builds trust) or lost (Mother Tusk withdraws trust and missions).",
+          "status": "ongoing",
+          "potential_payoff": "Spritzel surviving enables future adventure aid.",
+          "expiration": null,
+          "connected_threads": [
+            "rescue_spritzel"
+          ],
+          "connected_locations": [
+            "redwaters_shore",
+            "ice_slides_cave"
+          ],
+          "connected_npcs": [
+            "spritzel"
+          ],
+          "dm_notes": "Determine outcome based on party actions; Spritzel should survive unless party fails drastically."
+        }
+      },
+      "world_state": {
+        "variables": {
+          "darkness_level": {
+            "type": "number",
+            "value": 8,
+            "min": 0,
+            "max": 10,
+            "description": "Represents the prevailing lack of sunlight in Icewind Dale (0 = bright daylight, 10 = perpetual darkness).",
+            "changes_when": "Auril's curse is strengthened or weakened."
+          },
+          "party_cold_exposure": {
+            "type": "number",
+            "value": 0,
+            "min": 0,
+            "max": 6,
+            "description": "Tracks cumulative cold exposure on current mission.",
+            "changes_when": "Party spends 30 min in freezing weather without warmth."
+          }
+        },
+        "faction_standings": {
+          "mother_tusks_family": {
+            "type": "int",
+            "value": 2,
+            "min": -5,
+            "max": 5,
+            "description": "Party relationship with awakened animals",
+            "changes_when": "Saves/rescues animals (+), harms/abandons them (-)"
+          }
+        },
+        "timers": {
+          "avalanche_imminence": {
+            "description": "Time before avalanche hits party in the pass",
+            "value": 30,
+            "unit": "seconds",
+            "ticks_when": "Party delays or ignores muskrat",
+            "on_expire": "Avalanche buries the party, causing near-certain death"
+          },
+          "exposure_limit": {
+            "description": "Cold exposure limit before party suffers exhaustion",
+            "value": 3,
+            "unit": "hours",
+            "ticks_when": "Party is wet or without heat after cave encounter",
+            "on_expire": "Party members must make saves or gain levels of exhaustion"
+          }
+        }
+      },
+      "encounter_pool": {
+        "avalanche_event": {
+          "id": "avalanche_event",
+          "trigger_conditions": [
+            "Party is traveling through the Spine of the World pass",
+            "Snowfall increases"
+          ],
+          "description": "An avalanche descends rapidly, threatening to bury everything in the pass.",
+          "enemy_composition": [],
+          "scalable": false,
+          "loot": [],
+          "connects_to": [
+            "avalanche_survival"
+          ],
+          "dm_notes": "Not a combat encounter, but a skill challenge to escape. Do not use initiative; use urgency and rapid description."
+        },
+        "wolf_pack_chase": {
+          "id": "wolf_pack_chase",
+          "trigger_conditions": [
+            "Party enters the cave chamber at bottom of slides",
+            "Spritzel and otters are present, wolves in pursuit"
+          ],
+          "description": "Pack of four wolves, led by awakened wolf Vundrel (or dire wolf for strong parties), attacks otters and PCs.",
+          "enemy_composition": [
+            "wolf_1",
+            "wolf_2",
+            "wolf_3",
+            "wolf_4",
+            "vundrel"
+          ],
+          "scalable": true,
+          "loot": [
+            "boots_of_false_tracks"
+          ],
+          "connects_to": [
+            "rescue_spritzel"
+          ],
+          "dm_notes": "Adjust number and strength of wolves per party strength. Use otter swarming to help party. The lead wolf speaks and is the key threat."
+        }
+      },
+      "plot_branches": {
+        "agree_to_help_mother_tusk": {
+          "id": "agree_to_help_mother_tusk",
+          "condition": "Party agrees to take on a mission for Mother Tusk",
+          "new_objective": "Complete the chosen rescue or errand for Mother Tusk",
+          "narrative_impact": "Party is trusted with more secrets, access to further help, healing, and information",
+          "consequences": [],
+          "connected_threads": [
+            "rescue_spritzel"
+          ],
+          "dm_notes": "This is a natural branch; refusing aid would cut short the adventure for that character."
+        },
+        "spritzel_saved": {
+          "id": "spritzel_saved",
+          "condition": "Party saves Spritzel from wolves and freezing",
+          "new_objective": "Return to Mother Tusk for reward and rest",
+          "narrative_impact": "Spritzel becomes an ally, party benefits from healing and loot.",
+          "consequences": [
+            "spritzel_rescued_or_lost"
+          ],
+          "connected_threads": [
+            "rescue_spritzel"
+          ],
+          "dm_notes": "Reinforces party's standing with awakened animal faction."
+        },
+        "spritzel_lost": {
+          "id": "spritzel_lost",
+          "condition": "Party fails or refuses to save Spritzel",
+          "new_objective": "Confront Mother Tusk with the outcome",
+          "narrative_impact": "Mother Tusk withdraws trust and future aid; adventure may end early for that PC.",
+          "consequences": [
+            "spritzel_rescued_or_lost"
+          ],
+          "connected_threads": [
+            "rescue_spritzel"
+          ],
+          "dm_notes": "This should only occur on extreme party failure or intentional cruelty."
+        }
+      },
+      "xref_index": {
+        "by_location": {
+          "spine_world_pass": {
+            "areas": [
+              "avalanche_fissure_cavern"
+            ],
+            "npcs": [
+              "muskie"
+            ],
+            "threads": [
+              "avalanche_survival"
+            ],
+            "items": []
+          },
+          "mother_tusk_encampment": {
+            "areas": [],
+            "npcs": [
+              "mother_tusk"
+            ],
+            "threads": [
+              "rescue_spritzel",
+              "avalanche_survival"
+            ],
+            "items": []
+          },
+          "redwaters_shore": {
+            "areas": [
+              "ice_slides_cave_chamber"
+            ],
+            "npcs": [
+              "spritzel"
+            ],
+            "threads": [
+              "rescue_spritzel"
+            ],
+            "items": []
+          },
+          "ice_slides_cave": {
+            "areas": [
+              "ice_slides_cave_chamber"
+            ],
+            "npcs": [
+              "vundrel"
+            ],
+            "threads": [
+              "rescue_spritzel"
+            ],
+            "items": []
+          },
+          "icewind_dale_region": {
+            "areas": [],
+            "npcs": [],
+            "threads": [
+              "curse_everlasting_rime"
+            ],
+            "items": []
+          }
+        }
+      }
+    },
+    "source": "data/IceRoadTrackers.json",
+    "loaded_at": "2026-01-12T15:35:09.914773+00:00"
+  },
+  "characters": {
+    "pcs": {
+      "player_characters": {
+        "Garrick": {
+          "name": "Garrick Almsford",
+          "race": "Human",
+          "sex": "Male",
+          "class": "Paladin",
+          "background": "Acolyte",
+          "appearance": "Tall, square framed blonde long bearded human with chainmail, longsword and shield with striking blue eyes.",
+          "personality": "Faith is the axis around which his life turns. He doesn't waver easily, even under pressure.",
+          "backstory": "Born to humble clergy and raised to defend the helpless.",
+          "notes": "Lies make him physically uncomfortable; He speaks truths plainly, sometimes too bluntly.",
+          "items": [
+            "Chainmail",
+            "Shield"
+          ]
+        },
+        "Puss": {
+          "name": "Puss N. Boots",
+          "race": "Tabaxi",
+          "sex": "Male",
+          "class": "Rogue",
+          "background": "Urchin",
+          "appearance": "Small stature orange tabi with large ears, green eyes a soft white under belly. Wearing studded leather armor, boots a fancy belt and a fancy turqoius pirate hat with a peacock feather.",
+          "personality": "Self described charming. Arrogant and overconfident.",
+          "backstory": "As a kitten he was thrown into a river in a sock. He managed to escape and spent most of his life on the streets. Where he was taken in by a swordmaster. He learned mastery afrom the swordmaster and started adventuring when the swordmaster died.",
+          "notes": "Prefers one sided solutions; often tries to pursuade NPCs with deciet or persuasion."
+        },
+        "Tiktik": {
+          "name": "Tiktik Spellfeather",
+          "race": "Kenku",
+          "sex": "Female",
+          "class": "Wizard",
+          "background": "Artisan",
+          "appearance": "Medium sized raven with robes and side pack.",
+          "personality": "Dark, brooding, cynical distrusting.",
+          "backstory": "A traveling wizard whose aspirations lend towards necromancy and darkness.",
+          "notes": "Prefers fatal solutions; often tries to instigate NPCs with words."
+        },
+        "Juna": {
+          "name": "Juna",
+          "race": "Wood-Elf",
+          "sex": "Female",
+          "class": "Barbarian",
+          "background": "Outlander",
+          "appearance": "Tall tan skinned, purple eyes with breeches, wearing a great axe and two hand axes.",
+          "personality": "Young naive and quick to anger.",
+          "backstory": "Lived in a forest for most of her life, isolated from society gaining favor with a local barbarian tribe. ",
+          "notes": "Prefers being up front and in the fray; often tries to intimidate NPCs with a show of strength."
+        }
+      },
+      "non_player_characters": {}
+    },
+    "npcs": {},
+    "source": "characters.json",
+    "last_loaded_at": "2026-01-12T15:35:09.916284+00:00"
+  },
+  "global_flags": {},
+  "timelines": {},
+  "messages": [
+    {
+      "role": "user",
+      "content": "Narrate the start of the adventure, setup the players to get going"
+    },
+    {
+      "role": "assistant",
+      "content": "The biting wind howls like a living thing across the narrow Spine World Pass, ice crystals shimmering on jagged rocks under a leaden sky suffused with a faint, eerie glow of unending twilight. Around you, the frozen peaks of the Spine of the World rise sharp and unyielding, their shadows reaching long and cold like spectral claws. Your breaths mist in the frigid air, and every step crunches against the brittle snow—each one a reminder that this wild northern land is no place for the faint of heart.\n\nBefore you stretches a frozen trail, barely visible through the drifting snowflakes, leading deeper into Icewind Dale’s frozen embrace. The weary tracks of travelers and creatures alike mar the pristine white, vanishing beyond a bend where the mountain narrows sharply. Far ahead, a faint scurrying movement catches your eye—a small, determined muskrat darts between rocks, pausing now and then to look back as if beckoning you to follow.\n\nSuddenly, from the cliffs above, a thunderous rumble shakes the air—the distant threat of avalanche looms closer. Ice and snow begin to shift with deadly intent. There’s no time to hesitate. The muskrat’s quick, purposeful movements offer the only chance to escape the impending fury of the mountain.\n\nYou stand at the threshold. The frozen wilds await your courage and resolve.\n\nWhat do you do?"
+    },
+    {
+      "role": "user",
+      "content": "does it appear to be an avalanche, garrick asks"
+    },
+    {
+      "role": "assistant",
+      "content": "As the distant thunder rolls through the narrow pass, the very mountains tremble beneath your feet, Garrick. Snow and ice begin cascading from the heights above—a sudden, roaring tide of white hurtling down the cliffs with fierce, devastating intent. The crushed trees and shattered rocks in its path suggest that this is no mere snowfall—this is indeed an avalanche, a deadly force racing toward you with relentless speed.\n\nThe muskrat chattering urgently at your feet seems to acknowledge the urgency, its furtive glances beckoning you to follow before the snowbursts engulf the pass.\n\nThe choice is stark: trust the instinct of this small creature and follow it into the narrow fissure winding between the rocks—or risk standing your ground against the oncoming avalanche’s crushing force.\n\nThe icy wind bites deeper now; time is pressing.\n\nWhat is your move?"
+    },
+    {
+      "role": "user",
+      "content": "the party rushes behind the small muskrat to follow it."
+    },
+    {
+      "role": "assistant",
+      "content": "Without hesitation, your party bolts after the muskrat, its small, nimble form darting through a narrow fissure nestled between jagged rocks. The roar of the avalanche grows thunderous, ice and snow billowing like a storm behind you. Sharp shards of ice and snowflakes claw at your skin, but the muskrat presses on unperturbed, its urgency lending you relentless momentum.\n\nThe fissure twists and narrows, but the path remains passable. Glimmers of faint light ahead promise shelter as the avalanche’s fury crashes just behind, echoing through the mountains like the wrath of the earth itself. Your breaths come hard and fast—this desperate flight feels like the fragile boundary between life and a frozen grave.\n\nAs the last echoes of the avalanche fade, the muskrat halts in a cavernous opening, its tiny eyes gleaming with a strange intelligence. Before you stands a towering, gnarled shape—a great boar with tusks that gleam like frosted steel. This is Mother Tusk.\n\nHer deep, gruff voice rumbles through the chamber. “You’ve survived the mountain’s wrath. Come, safe yourselves within. There’s much to be done, and little time.”\n\nThe chill lingers, but here, in the hollow beneath the mountains, you find a fragile warmth—and perhaps, allies in this savage land.\n\nWhat will you do?"
+    },
+    {
+      "role": "user",
+      "content": "Listen to the great boar, and follow inside, and listen"
+    },
+    {
+      "role": "assistant",
+      "content": "You nod in quiet agreement and step forward alongside your companions, each of you drawn by the grave authority in Mother Tusk’s voice. The great boar’s eyes gleam with ancient wisdom and a fierce protective spark. Carefully, you follow her deeper into the cavern’s shadowed recesses.\n\nInside, the air grows warmer, touched by an earthy musk and the faint rustle of movement. Crystals of ice glint in the dim light, casting refracted hues across crude tapestries of fur and bone hung upon stone walls. Strange shapes stir—a fox with eyes like polished amber, a raven preening its glossy feathers, and other creatures silently watching, as if measuring your worth.\n\nMother Tusk’s voice lowers but remains firm. “You have fled the storm, but a greater chill grips this land. My kin and I hold vigil, but we are fractured and hunted. There is one among us, a scout-child—Spritzel, an otter quick and curious—who has gone missing by the Redwaters’ shore. Wolves prowl, and dark forces stir in the rime.”\n\nShe fixes you all with a heavy gaze. “Help me find Spritzel, and you will earn not just shelter, but allies against the evernight that creeps across Icewind Dale. Will you answer this call?”\n\nThe cavern hums with latent power; the muskrat chirps softly at your feet, eager. \n\nWhat do you say?"
+    }
+  ],
+  "story_log": [
+    "The biting wind howls like a living thing across the narrow Spine World Pass, ice crystals shimmering on jagged rocks under a leaden sky suffused with a faint, eerie glow of unending twilight. Around you, the frozen peaks of the Spine of the World rise sharp and unyielding, their shadows reaching long and cold like spectral claws. Your breaths mist in the frigid air, and every step crunches against the brittle snow—each one a reminder that this wild northern land is no place for the faint of heart.\n\nBefore you stretches a frozen trail, barely visible through the drifting snowflakes, leading deeper into Icewind Dale’s frozen embrace. The weary tracks of travelers and creatures alike mar the pristine white, vanishing beyond a bend where the mountain narrows sharply. Far ahead, a faint scurrying movement catches your eye—a small, determined muskrat darts between rocks, pausing now and then to look back as if beckoning you to follow.\n\nSuddenly, from the cliffs above, a thunderous rumble shakes the air—the distant threat of avalanche looms closer. Ice and snow begin to shift with deadly intent. There’s no time to hesitate. The muskrat’s quick, purposeful movements offer the only chance to escape the impending fury of the mountain.\n\nYou stand at the threshold. The frozen wilds await your courage and resolve.\n\nWhat do you do?",
+    "As the distant thunder rolls through the narrow pass, the very mountains tremble beneath your feet, Garrick. Snow and ice begin cascading from the heights above—a sudden, roaring tide of white hurtling down the cliffs with fierce, devastating intent. The crushed trees and shattered rocks in its path suggest that this is no mere snowfall—this is indeed an avalanche, a deadly force racing toward you with relentless speed.\n\nThe muskrat chattering urgently at your feet seems to acknowledge the urgency, its furtive glances beckoning you to follow before the snowbursts engulf the pass.\n\nThe choice is stark: trust the instinct of this small creature and follow it into the narrow fissure winding between the rocks—or risk standing your ground against the oncoming avalanche’s crushing force.\n\nThe icy wind bites deeper now; time is pressing.\n\nWhat is your move?",
+    "Without hesitation, your party bolts after the muskrat, its small, nimble form darting through a narrow fissure nestled between jagged rocks. The roar of the avalanche grows thunderous, ice and snow billowing like a storm behind you. Sharp shards of ice and snowflakes claw at your skin, but the muskrat presses on unperturbed, its urgency lending you relentless momentum.\n\nThe fissure twists and narrows, but the path remains passable. Glimmers of faint light ahead promise shelter as the avalanche’s fury crashes just behind, echoing through the mountains like the wrath of the earth itself. Your breaths come hard and fast—this desperate flight feels like the fragile boundary between life and a frozen grave.\n\nAs the last echoes of the avalanche fade, the muskrat halts in a cavernous opening, its tiny eyes gleaming with a strange intelligence. Before you stands a towering, gnarled shape—a great boar with tusks that gleam like frosted steel. This is Mother Tusk.\n\nHer deep, gruff voice rumbles through the chamber. “You’ve survived the mountain’s wrath. Come, safe yourselves within. There’s much to be done, and little time.”\n\nThe chill lingers, but here, in the hollow beneath the mountains, you find a fragile warmth—and perhaps, allies in this savage land.\n\nWhat will you do?",
+    "You nod in quiet agreement and step forward alongside your companions, each of you drawn by the grave authority in Mother Tusk’s voice. The great boar’s eyes gleam with ancient wisdom and a fierce protective spark. Carefully, you follow her deeper into the cavern’s shadowed recesses.\n\nInside, the air grows warmer, touched by an earthy musk and the faint rustle of movement. Crystals of ice glint in the dim light, casting refracted hues across crude tapestries of fur and bone hung upon stone walls. Strange shapes stir—a fox with eyes like polished amber, a raven preening its glossy feathers, and other creatures silently watching, as if measuring your worth.\n\nMother Tusk’s voice lowers but remains firm. “You have fled the storm, but a greater chill grips this land. My kin and I hold vigil, but we are fractured and hunted. There is one among us, a scout-child—Spritzel, an otter quick and curious—who has gone missing by the Redwaters’ shore. Wolves prowl, and dark forces stir in the rime.”\n\nShe fixes you all with a heavy gaze. “Help me find Spritzel, and you will earn not just shelter, but allies against the evernight that creeps across Icewind Dale. Will you answer this call?”\n\nThe cavern hums with latent power; the muskrat chirps softly at your feet, eager. \n\nWhat do you say?"
+  ]
+}
