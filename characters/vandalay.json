@@ -1,0 +1,76 @@
+{
+	"player_characters": {
+		"Cosmo": {
+			  "name": "Cosmo VanDalay",
+			  "race": "Halfling",
+			  "sex": "Male",
+			  "class": "Paladin",
+			  "background": "Heartward Company",
+			  "appearance": "Dashing halfling, with a goatee and unkempt hair. Wearing chainmail ornamented with images of vines and nature.",
+			  "personality": "Through your acts of mercy, kindness, and forgiveness, kindle the light of hope in the world, beating back despair.",
+			  "backstory": "Citizen of the halfling village Hamptons, while raising a family was encouraged to adventure as a company with his family.",
+			  "notes": "Respect the life and the love and the beauty. Art and life are everywhere. Bring hope to the world",
+			  "items": [
+					"Chainmail",
+					"Longsword",
+					"Shield"
+				]
+		},
+		"Mulva": {
+			  "name": "Mulva VanDalay",
+			  "race": "Halfling",
+			  "sex": "Female",
+			  "class": "Bard",
+			  "background": "Heartward Company",
+			  "appearance": "Long curly unkempt hair and leather armor. Carries a violin with her.",
+			  "personality": "Knowledgable, know it all, answer for everything",
+			  "backstory": "Citizen of the halfling village Hamptons, while raising a family was encouraged to adventure as a company with his family.",
+			  "notes": "Caretaker and supporter of her family and those around her.."
+		},
+		"Art": {
+			  "name": "Art VanDalay",
+			  "race": "Halfling",
+			  "sex": "Male",
+			  "class": "Cleric",
+			  "background": "Heartward Company",
+			  "appearance": "Small younger halfling male, the image of his father.",
+			  "personality": "Light, playful and pranksterish.",
+			  "backstory": "Citizen of the halfling village Hamptons, while raising a family was encouraged to adventure as a company with his family.",
+			  "notes": "Enjoys revalry and playful attitudes. Jokes and pranks."
+		},
+		"Mia": {
+			  "name": "Mia VanDalay",
+			  "race": "Halfling",
+			  "sex": "Female",
+			  "class": "Wizard",
+			  "background": "Heartward Company",
+			  "appearance": "Small even for halfling sizes. Barely out of childhood embracing the arcane.",
+			  "personality": "Young naive and unsure of herself.",
+			  "backstory": "Citizen of the halfling village Hamptons, while raising a family was encouraged to adventure as a company with his family.",
+			  "notes": "Unsure of her actions and what to do at any given time, frustration lends to flight."
+		},
+		"Bix": {
+			  "name": "Bix (Roxy) VanDalay",
+			  "race": "Tabaxi",
+			  "sex": "Female",
+			  "class": "Rogue",
+			  "background": "Heartward Company",
+			  "appearance": "Small tabaxi rogue in leathers, grey fur and bit green eyes.",
+			  "personality": "Wildcard personality, uncertainty is her middle name.",
+			  "backstory": "Citizen of the halfling village Hamptons, while raising a family was encouraged to adventure as a company with his family.",
+			  "notes": "Quick to anger and easy to provoke."
+		},
+		"Pickles": {
+			  "name": "Pickles VanDalay",
+			  "race": "Unicorn",
+			  "sex": "Female",
+			  "background": "Heartward Company",
+			  "appearance": "Unicorn foal",
+			  "personality": "Young naive and prone to outbursts has no understanding of her own power.",
+			  "backstory": "VanDalay family found her alone in the wood and provided her a place and helped her grow, now part of the family.",
+			  "notes": "Basically a toddler with superpowers."
+		}
+	},
+	"non_player_characters":{}
+
+}

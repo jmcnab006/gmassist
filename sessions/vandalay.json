@@ -1,0 +1,90 @@
+{
+  "model": "gpt-5.4-mini",
+  "summary": "The Vanderlays traveled north along the High Road toward Nightstone after hearing rumors of trouble there: goblins in the area, a settlement in distress, and a reward offered by Lady Velrosa Nandar. Other rumors mentioned the Nightstone Inn, possible work guarding a noble hunt, and a dispute with the elves of Ardeep Forest.\n\nAt dusk, the party reached the turnoff from the High Road and followed the trail into the hills. Pickles led the way. Cosmo cast light to help the group see. Nightstone came into view as a walled settlement ringed by a river moat, with a lowered drawbridge, stone watchtowers, a windmill, and several wooden buildings. A bell kept ringing continuously from somewhere inside the village.\n\nThe party crossed the drawbridge and entered the village square in this order: Cosmo, Art, Mia, Roxy, and Mulva. Mia suggested speaking in halfling among the close group. The square was muddy and empty, with a deep hole where something once stood, an empty cart, a covered well to the north, and signs for the Nightstone Inn and the Lionshield Coster. No villagers were seen. The watchtowers at the entrance were silent and unguarded. The muddy ground showed disturbed tracks, boots, scuffs, and the prints of several creatures moving in different directions.\n\nThe party moved to the temple to investigate the bell. Bix climbed the outside of the temple toward the steeple. The temple door stood open, and the bell sound was strongest there. Inside were stained-glass windows, wooden benches, a simple pulpit, and a dirt floor. A back room door stood half open to the west of the pulpit. From that direction came creaking rope and scratchy movement, as if something small were moving around in the steeple.",
+  "log": [
+    {
+      "time": "2026-07-03T16:16:48",
+      "prompt": "the party finds the goblins ringing the bell and the goblins attack",
+      "response": "The half-open door swings inward, and the noise from the steeple comes into full view: two goblins are up in the back room, one swinging on a knotted rope beneath the bell while the other clings nearby in the cluttered shadows. Their movements jolt the bell again and again, sending hard metallic notes crashing through the temple. Straw is strewn across the floor, and the mattress in the corner has been torn open, its stuffing pulled loose.\n\nWhen the goblins spot you, they drop from the rope with a clatter of bare feet on wood, scimitars flashing in the dim light. Their faces twist into sharp grins as they rush forward from the back room toward the doorway, barking out jagged cries over the bell\u2019s ringing. The bell keeps pealing for a few more beats as they move, then the room fills with the scrape of metal, the thud of boots, and the rush of the first attack."
+    },
+    {
+      "time": "2026-07-03T16:23:10",
+      "prompt": "the party killed one of the goblins and subdued the other to interrogate.",
+      "response": "The temple\u2019s back room is a cramped jumble of torn straw, overturned chests, and scattered cloth. One goblin lies motionless on the wooden floor amid the wreckage, the bell above still trembling with the last of its ringing. The other has been forced to the ground, breathing hard and staring wide-eyed past the party\u2019s weapons and boots.\n\nThe smell of dust and old straw hangs thick in the room. From the steeple above comes only a faint creak of rope and settling wood now that the bell has stopped. The open doorway to the temple floor frames the dim stained-glass light beyond.\n\nThe goblin speaks in a fast, squeaking rush between glances at the dead one and the door.\n\n\u201cDon\u2019t stab, don\u2019t stab. We came for shiny things. Bell is fun. Boss said look in village. Boss Hark. In caves north. Don\u2019t want die.\u201d"
+    },
+    {
+      "time": "2026-07-03T16:25:46",
+      "prompt": "bix wants the goblin to say that again in goblin.",
+      "response": "The goblin\u2019s head jerks up from the floorboards, eyes fixed on Bix as he swallows hard. His voice comes out thin and quick, then shifts into harsher, chittering sounds.\n\n\u201cBree-yark. Shiny things. Bell fun. Boss Hark. Caves north. Don\u2019t want die.\u201d\n\nHe keeps glancing between Bix and the dead goblin on the floor, ears twitching with every creak of the temple wood."
+    },
+    {
+      "time": "2026-07-03T16:26:24",
+      "prompt": "art asks who else is here... bruh",
+      "response": "The goblin on the floor gives a quick, jerky shrug without trying to stand. His eyes flick toward the open doorway and then back to the party.\n\n\u201cTemple? Just us,\u201d he says, voice rough and squeaking. \u201cMe and dead one. Maybe others in village. Goblins in village. Boss Hark in caves north. That\u2019s all I know. Don\u2019t know who else here.\u201d\n\nThe room around him is still: torn straw, a half-open chest, and the dead goblin by the wall. Above, the last faint wobble of the bell has gone quiet."
+    },
+    {
+      "time": "2026-07-03T16:26:53",
+      "prompt": "mia asks, where are the people of this town?",
+      "response": "The goblin lifts his chin a little, still on the floor amid the torn straw and scattered chest contents. His eyes flick toward the open doorway, then back to Mia.\n\n\u201cGone north,\u201d he says in rough Common, each word clipped and nervous. \u201cRan when sky rocks fell. Lots went to caves. Boss Hark got some. Village empty now. Maybe some dead here. Maybe keep have some.\u201d\n\nThe temple is quiet now except for the soft creak of wood overhead. Dust hangs in the air, and the stopped bell leaves the room feeling strangely hollow."
+    },
+    {
+      "time": "2026-07-03T16:27:58",
+      "prompt": "Cosmo asks when did the rocks fall from the sky?",
+      "response": "The goblin\u2019s eyes dart from face to face before he answers, still crouched low on the temple floor.\n\n\u201cThree sleeps ago,\u201d he says. \u201cBig rocks came down from sky. Loud. House smash. Bell ring. People run north. Some die. Some goblins take what\u2019s left.\u201d\n\nHe swallows and glances toward the open doorway, the torn straw rustling a little as he shifts his weight."
+    },
+    {
+      "time": "2026-07-03T16:28:40",
+      "prompt": "who is boss hark",
+      "response": "The goblin on the floor lifts his head and bares small yellow teeth in a nervous, strained grin.\n\n\u201cBoss Hark?\u201d he says. \u201cGoblin boss. In caves north of Nightstone. Boss of goblins there. Big mouth. Mean. Keeps rats. Keeps treasure too, I bet.\u201d\n\nHe keeps his eyes on your weapons while he speaks, shoulders hunched amid the torn straw and scattered wood."
+    },
+    {
+      "time": "2026-07-03T16:30:26",
+      "prompt": "Cosmo explains to the goblin that he wants him to travel away from this area and seek a better life then stealing killing and pillaging. He can do so much more for the world and his kind.",
+      "response": "The goblin stays crouched on the temple floor, eyes flicking between Cosmo and the doorway. Torn straw clings to his sleeves, and the dead goblin lies a few feet away amid the scattered chests and priestly cloth. His breathing is quick and shallow.\n\nAfter a moment, he gives a small, uncertain nod and swallows hard.\n\n\u201cBetter life?\u201d he says. \u201cAway from here?\u201d\n\nHis voice is still rough and shaky, but the words come slower now. He glances toward the open door, then back at Cosmo, as if waiting for the next blow. \u201cMaybe\u2026 maybe north. Maybe not with Hark.\u201d\n\nThe temple is quiet except for the faint creak of old wood overhead. The bell has stopped, and the room feels still and hollow around the two of you."
+    },
+    {
+      "time": "2026-07-03T16:30:39",
+      "prompt": "art gives the goblin 5gp",
+      "response": "The goblin\u2019s eyes drop immediately to the coin, then widen. He reaches for it with both hands, fingers dirty and trembling. The torn straw around him shifts as he scoots back an inch, keeping low on the wooden floor.\n\nHe closes his fist around the gold and stares at it for a long moment, then looks up at Art. His mouth works once before he speaks.\n\n\u201cFive gold,\u201d he says, almost reverently. \u201cBig shiny.\u201d\n\nHe swallows and clutches the coin tighter to his chest."
+    },
+    {
+      "time": "2026-07-03T16:30:44",
+      "prompt": "mia gives him 5gp",
+      "response": "The goblin\u2019s eyes drop to the coin in Mia\u2019s hand, then fix on it as it changes hands. His dirty fingers close around the gold, and he curls inward on the temple floor, clutching it tightly against his chest.\n\nFor a moment he just stares at the five gold pieces, his breathing still quick but less ragged than before. The torn straw around him shifts as he adjusts his grip.\n\n\u201cBig shiny,\u201d he says softly, almost to himself. \u201cMia give.\u201d"
+    },
+    {
+      "time": "2026-07-03T16:31:13",
+      "prompt": "comso gives him 5gp too and tells him to go and have a better life. \u001b[B\u001b[D\u001b[D\u001b[D\u001b[",
+      "response": "The goblin\u2019s hands close around the new coin, piling the gold together in his lap. He keeps his head low on the temple floor, eyes darting once toward the open doorway and then back to Cosmo. The torn straw rustles as he shifts, careful not to make any sudden moves.\n\nHe nods quickly, almost too quickly.\n\n\u201cGo north,\u201d he says in rough, scratchy Common. \u201cNo more Hark. No more stealing here. Better life.\u201d He curls his fingers tighter around the gold and swallows. \u201cI go. I go far.\u201d\n\nThe temple is quiet around the three of you. The dead goblin lies among the scattered chests, and the back room still smells of dust, old wood, and trampled straw."
+    },
+    {
+      "time": "2026-07-03T16:31:20",
+      "prompt": "and they let the goblin flee",
+      "response": "The goblin scrambles up from the temple floor, clutching the gold tight in one dirty hand. He hesitates at the doorway only a moment, then darts out into the village square, light-footed and hunched low.\n\nA few quick, uneven footsteps fade away outside. The temple settles back into silence, with the torn straw, the open chests, and the dead goblin still lying in the back room."
+    },
+    {
+      "time": "2026-07-03T16:41:55",
+      "prompt": "mia is being loud and the worgs that are in the town square come to investitate as the party is planning how they are going to recon the area and look for survivors or those in need.",
+      "response": "From the temple doorway, the square outside answers with heavy pawsteps in the mud. A low, ragged growl rolls across the open air, followed by a second set of claws scraping over wet ground. The bell has gone silent, and in the hush the sounds carry clearly.\n\nThrough the open door and the temple windows, two large wolf-like shapes come into view near the square\u2019s muddy center. Their bodies are lean and dark, their ears pinned back as they angle toward the temple. Wet mud clings to their legs and muzzles. The air outside carries the smell of damp earth and old blood.\n\nOne of the creatures lifts its head and fixes on the temple entrance. Its lips peel back from yellowed teeth as it lets out a deeper, harsher growl. The other lowers its head and starts forward, shoulders bunching under its fur."
+    },
+    {
+      "time": "2026-07-03T16:43:50",
+      "prompt": "the party prepares for incoming wolves by blocking the door with cosmo.",
+      "response": "The temple doorway frames the muddy square beyond, where two wolf-like shapes move closer through the dusk. Their paws slap wet ground, and low growls slip through the open door. The air inside the temple is still and dusty, with torn straw scattered across the back room and the dead goblin lying where he fell.\n\nCosmo braces himself at the door, and the wooden frame groans as weight takes against it. The entrance narrows at once, leaving only a thin slice of the square visible between the door and the jamb. Outside, one of the creatures snuffs loudly at the gap, its breath wet and rough. Claws scrape the threshold. The second shape shifts in the mud just beyond, shoulder pressed low as the growling continues."
+    },
+    {
+      "time": "2026-07-03T17:04:38",
+      "prompt": "cosmo blocks the door with his body to prevent the worgs from entering and attacking his family, taunting the worgs as the party assaults the worgs from behind.",
+      "response": "Cosmo\u2019s body fills the temple doorway, chainmail catching the dim light as he braces against the frame. The wood creaks under the pressure. Beyond him, two wolf-like shapes prowl in the muddy square, their claws squelching in the wet ground. One presses its nose close to the gap and lets out a low, vibrating growl.\n\nThe first blows from behind hit the nearer creature hard. Its shoulders jerk, and it snaps its head around toward the sudden impact. The other wheels in the mud, lips peeled back, ears flattened as it snarls toward the temple entrance. Cosmo\u2019s taunt hangs in the air with the growls and the scrape of claws on stone, while the doorway stays jammed tight and the square beyond turns frantic with movement."
+    },
+    {
+      "time": "2026-07-03T17:05:13",
+      "prompt": "after a long drawn out combat the worgs are defeated and the party stands looking out the temple door",
+      "response": "The square outside lies muddy and churned, marked with deep pawprints, boot tracks, and splashes of dark blood. One worg sprawls near the temple steps with its legs twisted under it. The other lies farther out in the square, half on its side, its fur slick with mud. The air smells of wet earth, old blood, and the sour tang of opened wounds.\n\nInside the temple, torn straw still litters the back room, and the dead goblin remains where he fell. The open doorway frames the empty village square beyond. Far off, the steady creak of wood carries on from the direction of the steeple, faint but distinct in the hush after battle."
+    }
+  ],
+  "settings": {
+    "max_recent_log_entries": 12,
+    "compression_trigger_entries": 20
+  }
+}

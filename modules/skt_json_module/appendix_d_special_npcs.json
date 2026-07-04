@@ -1,0 +1,24 @@
+{
+  "schema": "dm_module_chapter.v1",
+  "title": "Appendix D: Special NPCs",
+  "source": "Storm King's Thunder",
+  "pages": [
+    248,
+    248
+  ],
+  "dm_guidance": {
+    "load_with": "python3 dm.py --module this_file.json ...",
+    "note": "This is one top-level section/chapter only to keep token use manageable."
+  },
+  "sections": [
+    {
+      "id": "appendix_d_special_npcs",
+      "title": "Appendix D: Special NPCs",
+      "pages": [
+        248,
+        248
+      ],
+      "content": "APPENDIX D: SPECIAL NPCs \n: AUGREK BRIGHTHELM \n: Medium humanoid (shield dwaf, lafìl good \n:---------------------\n: Armor Class l 5 (chain shirt, shield) \n: Hit Points 13 (2d8 + 4) \nSpeed 25 ft.\nSTR \n14 (+2) \nDEX \n11 (+O) \nCON \n15 (+2) \nSkills Athletics +4, Perception +2 \nDamage Resistances poison \nINT \n10 (+O) \nWIS \n11 (+O) \nSenses darkvision 60 ft., passive Perception 12 \nLanguages Common, Dwarvish \nCHA \n11 (+O) \nDwarven Resilience. Augrek has advantage on saving throws \nagainst poison. \nACTIONS \nWarhammer. Melee Weapon Attack: +4 to hit, reach 5 ft., one \ntarget. Hit: 6 (ld8 + 2) bludgeoning damage, or 7 (ldlO + 2) \nbludgeoning damage if used with two hands. \nHeavy Crossbow. Ranged Weapon Attack: +2 to hit, range \n100/400 ft., one target. Hit: 5 (ldlO) piercing damage. Augrek \ncarries ten crossbow bolts. \nROLEPLAYING INFORMATION \nSheriff's deputy Augrek guards the southwest gate of Bryn \nShander and welcomes visitors to town. She has a good heart. \nIdeal: \"You'll get farther in life with a kind word than an axe.\" \n1 Bond: \"Bryn Shander is my home. It's my job to protect her.\" \nFlaw: \"I'm head over heels in love with Sheriff Southwell. One \nday I hope to marry him.\" \nSIRAC OF SuzAIL \nMedium humanoid (Chondathan human), lafìl good \nArmor Class 14 (leather) \nHit Points 22 (5d8) \nSpeed 30 ft.\nSTR \n14 (+2) \nDEX \n17 (+3) \nCON \n11 (+O) \nINT \n12 (+1) \nSkills Athletics +4, Insight +3, Survival +3 \nSenses passive Perception 11 \nLanguages Common, Ore \nACTIONS \nWIS \n13 (+1) \nCHA \n16 (+3) \nShortsword. Melee Weapon Attack: +5 to hit, reach 5 ft., one \ntarget. Hit: 6 (ld6 + 3) piercing damage. \nDart. Ranged Weapon Attack: +5 to hit, range 20/60 ft., one \ntarget. Hit: 5 (ld4 + 3) piercing damage. Sirac carries six darts. \nREACTIONS \nParry. Sirac adds 2 to his AC against one melee attack that \nwould hit him. To do so, Sirac must see the attacker and be \nwielding a melee weapon. \nROLEPLAYING INFORMATION \nAn acolyte ofTorm, Sirac grew up on the streets ofSuzail, the \ncapital of Cormyr. He came to lcewind Dale to become a knuck\nlehead trout fisher but instead found religion. The misbegotten \nson of Artus Cimber, a renowned human adventurer, Sirac \nhasn't seen his father since he was a baby. \nIdeal: \"Without duty or loyalty, a man is nothing.\" \nBond: \"lcewind Dale is where I belong for the rest of my life.\" \nFlaw: \"I am honest to a fault.\" \nAPPENDIX D I SPECIAL NPCS"
+    }
+  ]
+}

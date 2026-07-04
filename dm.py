@@ -10,7 +10,8 @@ from typing import Any, Callable
 from openai import OpenAI
 
 
-DEFAULT_MODEL = "gpt-4.1-mini"
+DEFAULT_MODEL = "gpt-5.4-mini"
+#DEFAULT_MODEL = "gpt-4.1-mini"
 
 client = OpenAI()
 COMMANDS: dict[str, dict[str, Any]] = {}

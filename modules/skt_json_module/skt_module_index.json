@@ -1,0 +1,2025 @@
+{
+  "schema": "dm_module_index.v1",
+  "title": "Storm King's Thunder",
+  "source_pdf": "skt.pdf",
+  "page_count": 258,
+  "generated_at": "2026-07-03T20:15:03",
+  "default_use": "Load chapter JSON files individually with dm.py to avoid filling the prompt with the whole book.",
+  "chapters": [
+    {
+      "id": "cover",
+      "title": "Cover",
+      "pages": [
+        1,
+        2
+      ],
+      "sections": [],
+      "starter_excerpt": "STORM KING'S THUNDER."
+    },
+    {
+      "id": "credits",
+      "title": "Credits",
+      "pages": [
+        3,
+        3
+      ],
+      "sections": [],
+      "starter_excerpt": "CREDITS \nLead Designer: Christopher Perkins \nStory Design: Jenna Helland, Adam Lee, Christopher Perkins, \nRichard Whitters \nAdditional Design: Mike Mearls \nManaging Editor: Jeremy Crawford \nEditors: Kim Mohan, Michele Carter \nEditorial Assistance: Matt Sernett, Chris Dupuis, Ben Petrisor, \nSean K Reynolds, Stan! \nStory Consultant: R.A. Salvatore \nD&D Lead Designers: Mike Mearls, Jeremy Crawford \nArt Director: Kate Irwin \nAdditional Art Direction: Shauna Narciso, Richard Whitters \nGraphic Designer: Emi Tanji \nCover Illustrator: Tyler Jacobson \nInterior Illustrators: John-Paul Balmet, Beet, Mark Behm, Eric \nBelisle, Jedd Chevrier, Olga Drebas, Michael Dutton, Wayne \nEngland, Lars Grant-West, Lake Hurwitz, Tyler Jacobson, Julian \nKok, Olly Lawson, Christopher Moeller, Scott Murphy, Chris \nRahn, Ned Rogers, Chris Seaman, Richard Whitters \nCartographers: Jared Blando, Will Doyle, Jason A. Engle, Lee Moyer, \nChristopher Perkins, Mike Schley \nProject Manager: Heather Fleming \nProduct Engineer: Cynda Callaway \nImaging Technicians: Sven Bolen, Carmen Cheung, Kevin Yee \nArt Administration: David Gershman \nPrepress Specialist: Jefferson Dunlap \nOther D&D Team Members: Greg Bilsland, John Feil, Trevor Kidd, \nChristopher Lindsay, Shelly Mazzanoble, Hilary Ross, Liz Schuh, \nNathan Stewart, Greg Tito, Shawn Wood \nDisclaimer: Creatures and objects in this adventure are bigger than they appear. No giant \nbeanstalks were damaged and no golden geese were harmed in the making of this boolc. \n62008669000001 EN \nISBN: 978-0-7869-6600-4 \nFirst Printing: September 2016 \n9 8 7 6 5 4321 \n\nThe following D&D books provided material and inspiration: \nBaker, Richard, Christopher Perkins, and others. Princes of the \nApocalypse. 2015. \nBaur, Wolfgang, Steve Winter, and others. Hoard of the Dragon \nQue"
+    },
+    {
+      "id": "contents",
+      "title": "Contents",
+      "pages": [
+        4,
+        5
+      ],
+      "sections": [],
+      "starter_excerpt": "CONTENTS \nIntroduction ................................................. 7 \nCitadel Felbarr ....................................... 79 \nLeilon ....................................................... 96 \nAdventure Background .............................. 7 \nColdwood ................................................ 79 \nLizard Marsh .......................................... 96 \nThe Ordning ............................................. 8 \nCrags ........................................................ 79 \nLlorkh ...................................................... 96 \nKing Hekaton and His Daughters ....... 9 \nDaggerford .............................................. 80 \nLonely Moor ........................................... 96 \nlymrith ..................................................... 10 \nDawn Pass .............................................. 80 \nLong Road .............................................. 96 \nThe Giant Lords .................................... 10 \nDeadsnows ............................................. 80 \nLongsaddle ............................................. 97 \nSidebar: Creating New Giant Lords ..... 12 \nDeadstone Cleft ..................................... 81 \nLost Peaks .............................................. 97 \nFactions in the North ........................... 12 \nDelimbiyr Road ..................................... 81 \nLoudwater ............................................... 97 \nRunning the Adventure ............................ 13 \nDelimbiyr Vale ....................................... 81 \nLurkwood ................................................ 97 \nSidebar: Tendays and the \nDessarin Hills ........................................ 81 \nLuskan ..................................................... 97 \nRoll ofYears ..................."
+    },
+    {
+      "id": "dramatis_personae",
+      "title": "Dramatis Personae",
+      "pages": [
+        6,
+        7
+      ],
+      "sections": [],
+      "starter_excerpt": "DRAMATIS PERSONAE \nThe main members of the adventure's cast of characters are listed here in alphabetical order for easy reference. \nMajor NPC \nAlastrah \nAugrek Brighthelm \nBeldora \nBraxow \nBrimskarda \nCinderhild \nClaugiyliamatar \nCog \nCressaro \nCryovain \nDarathra Shendrel \nDarz Helgar \nDuvessa Shane \nEigeron \nFelgolos \nGhelryn Foehammer \nGuh \nHarsh nag \nHekaton \nHellenhild \nlsendraug \nlymrith \nKa altar \nKayalithica \nKeila Darkhope \nKhaspere Drylund \nKlauth \nLifferlas \nMarkham Southwell \nMiros Xelbrin \nMirran \nMoog \nDescription \nCloud giant infant daughter of Countess Sansuri \nDwarf sheriff's deputy in Bryn Shander \nHuman spy for the Harpers in Bryn Shander \nStone giant thane in Maelstrom \nFire giant duchess and wife of Duke Zalto \nAdolescent fire giant daughter of Duke Zalto \nReflusive ancient green dragon in the Kryptgarden \nForest \nHill giant guard in Maelstrom \nCloud giant castellan of Lyn Armaal \nAdult white dragon chained aboard the Krigvind \nHuman lord protector of Triboar \nRetired human member of a Waterdhavian thieves' \nguild \nHuman town speaker of Bryn Shander \nCloud giant ghost \nAdult bronze dragon imprisoned by Countess \nSansuri \nDwarf smith and owner of Foehammer's Forge in \nTri boar \nHill giant chief based in Grudd Haug \nlegendary good-aligned frost giant adventurer \nStorm giant king abducted by the Kraken Society \nFrost giant jarl in Maelstrom \nAdult white dragon confined to Svardborg \nAncient blue dragon stirring up trouble among the \nstorm giants \nCloud giant infant son of Countess Sansuri \nStone giant thane based in Deadstone Cleft \nZhentarim spy hiding in the Nightstone Inn \nHuman noble and member of the Kraken Society \nMeddlesome ancient red dragon in Klauthen Vale \nAwakened tree in Goldenfields \nHuman sheriff of Bryn Shander \nHuman proprietor of Nor"
+    },
+    {
+      "id": "introduction",
+      "title": "Introduction",
+      "pages": [
+        8,
+        19
+      ],
+      "sections": [
+        {
+          "id": "adventure_flowchart",
+          "title": "Adventure Flowchart",
+          "level": 2,
+          "pages": [
+            18,
+            19
+          ]
+        }
+      ],
+      "starter_excerpt": "INTRODUCTION \nOU ARE ABOUT TO EMBARK ON A GREAT \nadventure that pits heroes against \ngiants bent on reshaping the world. \nStorm King's Thunder is a DUNGEONS & \nDRAGONS adventure for four to six player \ncharacters. You can start the adventure \nwith 1st-level characters or 5th-level \ncharacters. Either way, the characters \nshould reach at least 11th level by the adventure's \nconclusion. Because giants figure prominently in the \nstory, at least one character should be able to speak and \nunderstand the Giant language. \nThe adventure takes place in the Forgotten Realms, \nspecifically in a region known as the Savage Frontier, in \nthe northwest corner of the continent of Faerfin. None\ntheless, you can easily adapt the adventure to your home \ncampaign by changing the names of various locations \nand factions. \nWe recommend that you read the entire adventure \nbefore attempting to run it. This introduction begins \nwith an \"Adventure Background\" section that summa\nrizes the events that set the adventure in motion. The \n\"Running the Adventure\" section tells you everything \nyou need to know to run the adventure smoothly. That \nsection also presents guidelines for character level \nadvancement, outlines the flow of the adventure, and de\nscribes its major challenges. Once you've reviewed this \nmaterial and are ready to run the adventure, proceed \nwith chapter 1, \"A Great Upheaval,\" if the characters are \nstarting at 1st level, or chapter 2, \"Rumblings,\" if they \nare starting at 5th level. \nADVENTURE BACKGROUND \nThe Savage Frontier (also known as the North) is a cold, \nrugged, sparsely populated land of snow-capped moun\ntains, rocky hills, sprawling forests, and foggy vales. \nIsolated strongholds, ancient burial mounds, and the \nruins of many forgotten empires dot this vast landscape. \nB"
+    },
+    {
+      "id": "chapter_1_a_great_upheaval",
+      "title": "Chapter 1: A Great Upheaval",
+      "pages": [
+        20,
+        37
+      ],
+      "sections": [
+        {
+          "id": "nightstone",
+          "title": "Nightstone",
+          "level": 2,
+          "pages": [
+            21,
+            28
+          ]
+        },
+        {
+          "id": "map_1_1_nightstone",
+          "title": "[Map 1.1: Nightstone]",
+          "level": 3,
+          "pages": [
+            22,
+            28
+          ]
+        },
+        {
+          "id": "dripping_caves",
+          "title": "Dripping Caves",
+          "level": 2,
+          "pages": [
+            29,
+            32
+          ]
+        },
+        {
+          "id": "map_1_2_dripping_caves",
+          "title": "[Map 1.2: Dripping Caves]",
+          "level": 3,
+          "pages": [
+            30,
+            32
+          ]
+        },
+        {
+          "id": "tower_of_zephyros",
+          "title": "Tower of Zephyros",
+          "level": 2,
+          "pages": [
+            33,
+            37
+          ]
+        },
+        {
+          "id": "map_1_3_tower_of_zephyros",
+          "title": "[Map 1.3: Tower of Zephyros]",
+          "level": 3,
+          "pages": [
+            34,
+            37
+          ]
+        }
+      ],
+      "starter_excerpt": "CHAPTER 1: A GREAT UPHEVL \nHIS CHAPTER IS DESIGNED TO ADVANCE A \nparty of 1st-level characters to 5th level. \nThe characters gain levels by accomplish\ning various goals, which are summarized \nin the Character Advancement sidebar at \nthe end of the chapter. If the characters \nare already 5th level, skip ahead to chapter \n2, \"Rumblings,\" using the information in appendix A if \nthe characters are transitioning from another published \nadventure to this one. \nNightstone is a fortified settlement located a few \nmiles south of the Ardeep Forest, in the untamed hills \nbetween Waterdeep and Daggerford. A lonely wooden \nsignpost, standing where the trail to Nightstone meets \nthe High Road, points the way to the settlement. \nNightstone's closest neighbors are the elves of the \nArdeep Forest. Hunters from Nightstone have incurred \nthe elves' wrath on multiple occasions. However, elves \nare the least of the settlement's problems, as fledgling \nheroes who come to Nightstone in search of adventure \nquickly discover. \nThe characters are traveling to Nightstone for one or \nmore of the following reasons: \n• The characters have heard rumors of goblins terroriz\ning the settlement. The High Steward of Nights tone,\nLady Velrosa Nandar, is a Waterdhavian noble. She\nis reportedly offering a reward to anyone willing and\nable to deal with the goblin threat.\n• Nightstone is a popular retreat for wealthy nobles who\nwish to hunt in the Ardeep Forest. Adventurers can\nearn good money by offering their services as guards\non a hunt.\n• The residents of Nightstone have a longstanding and\nseemingly irreconcilable conflict with their northern\nneighbors, the elves of the Ardeep Forest. Lady Vel\nrosa Nandar has been searching for skilled mediators\nto help resolve the dispute.\n• The Nightstone Inn is renowne"
+    },
+    {
+      "id": "chapter_2_rumblings",
+      "title": "Chapter 2: Rumblings",
+      "pages": [
+        38,
+        63
+      ],
+      "sections": [
+        {
+          "id": "bryn_shander",
+          "title": "Bryn Shander",
+          "level": 2,
+          "pages": [
+            39,
+            44
+          ]
+        },
+        {
+          "id": "map_2_1_bryn_shander",
+          "title": "[Map 2.1: Bryn Shander]",
+          "level": 3,
+          "pages": [
+            40,
+            44
+          ]
+        },
+        {
+          "id": "goldenfields",
+          "title": "Goldenfields",
+          "level": 2,
+          "pages": [
+            45,
+            53
+          ]
+        },
+        {
+          "id": "map_2_2_goldenfields",
+          "title": "[Map 2.2: Goldenfields]",
+          "level": 3,
+          "pages": [
+            46,
+            53
+          ]
+        },
+        {
+          "id": "triboar",
+          "title": "Triboar",
+          "level": 2,
+          "pages": [
+            54,
+            63
+          ]
+        },
+        {
+          "id": "map_2_3_triboar",
+          "title": "[Map 2.3: Triboar]",
+          "level": 3,
+          "pages": [
+            56,
+            63
+          ]
+        }
+      ],
+      "starter_excerpt": "CHAPTER 2: RUMBLINGS \nSETTLEMENT IN THE NORTH COMES UNDER \ngiant attack. You decide which location to \nuse: the walled town of Bryn Shander in \nthe cold heart of Icewind Dale; Golden\nfields, a fortified farming settlement and \nabbey northeast of Waterdeep; or Tri boar, \na frontier town and caravan rest stop in \nthe Dessarin Valley. This chapter includes \na map and a detailed overview of each settlement. The \nattacking giants have a specific goal. If the characters \nhelp defend the location against the giants' onslaught \nand succeed in defeating or driving off the attackers, \nthe characters are rewarded with quests that lead them \ndeeper into the adventure. Be warned: these encounters \nare designed to test the party's leadership and tactical \nskills, and characters who don't exercise some degree of \ncaution will likely perish. \nSPECIAL NPCs \nIn this chapter, each player runs not only a player char\nacter but also an NPC who has ties to the settlement \nthat the characters are defending. Once you've deter\nmined where the adventure begins, make photocopies \nof the six NPCs corresponding to the location you've \nchosen. These NPCs are gathered in appendix D. Each \nNPC comes with a brief description, personality traits \n(a bond, an ideal, and a flaw), and a stat block. When the \ngiant attack begins, give one NPC to each player and tell \nthe player where the NPC is at the start of the encounter, as noted in the encounter description. If your group \nhas more than six players, one or more of them won't \nreceive an NPC, and that's okay. (Let the players decide \nwho gets one and who doesn't.) If your group has fewer \nthan six players, give one NPC to each player and put \nthe extra NPCs aside. These leftover NPCs don't partici\npate in the battle. \nAfter giving out the NPCs, read the "
+    },
+    {
+      "id": "chapter_3_the_savage_frontier",
+      "title": "Chapter 3: The Savage Frontier",
+      "pages": [
+        64,
+        121
+      ],
+      "sections": [
+        {
+          "id": "random_wilderness_encounters",
+          "title": "Random Wilderness Encounters",
+          "level": 2,
+          "pages": [
+            69,
+            72
+          ]
+        },
+        {
+          "id": "locations_of_the_north",
+          "title": "Locations of the North",
+          "level": 2,
+          "pages": [
+            73,
+            116
+          ]
+        },
+        {
+          "id": "map_3_1_the_savage_frontier",
+          "title": "[Map 3.1: The Savage Frontier]",
+          "level": 3,
+          "pages": [
+            75,
+            76
+          ]
+        },
+        {
+          "id": "map_3_2_beorunna_s_well",
+          "title": "[Map 3.2: Beorunna's Well]",
+          "level": 3,
+          "pages": [
+            77,
+            82
+          ]
+        },
+        {
+          "id": "map_3_3_everlund",
+          "title": "[Map 3.3: Everlund]",
+          "level": 3,
+          "pages": [
+            83,
+            84
+          ]
+        },
+        {
+          "id": "map_3_4_flint_rock",
+          "title": "[Map 3.4: Flint Rock]",
+          "level": 3,
+          "pages": [
+            85,
+            87
+          ]
+        },
+        {
+          "id": "map_3_5_grandfather_tree",
+          "title": "[Map 3.5: Grandfather Tree]",
+          "level": 3,
+          "pages": [
+            88,
+            89
+          ]
+        },
+        {
+          "id": "map_3_6_grand_worm_cavern",
+          "title": "[Map 3.6: Grand Worm Cavern]",
+          "level": 3,
+          "pages": [
+            90,
+            99
+          ]
+        },
+        {
+          "id": "map_3_7_morgur_s_mound",
+          "title": "[Map 3.7: Morgur's Mound]",
+          "level": 3,
+          "pages": [
+            100,
+            103
+          ]
+        },
+        {
+          "id": "map_3_8_one_stone",
+          "title": "[Map 3.8: One Stone]",
+          "level": 3,
+          "pages": [
+            104,
+            105
+          ]
+        },
+        {
+          "id": "map_3_9_raven_rock",
+          "title": "[Map 3.9: Raven Rock]",
+          "level": 3,
+          "pages": [
+            106,
+            106
+          ]
+        },
+        {
+          "id": "map_3_10_gundarlun_and_ruathym",
+          "title": "[Map 3.10: Gundarlun and Ruathym]",
+          "level": 3,
+          "pages": [
+            107,
+            108
+          ]
+        },
+        {
+          "id": "map_3_11_shining_white",
+          "title": "[Map 3.11: Shining White]",
+          "level": 3,
+          "pages": [
+            109,
+            110
+          ]
+        },
+        {
+          "id": "map_3_12_stone_stand",
+          "title": "[Map 3.12: Stone Stand]",
+          "level": 3,
+          "pages": [
+            111,
+            111
+          ]
+        },
+        {
+          "id": "map_3_13_tuern_and_purple_rocks",
+          "title": "[Map 3.13: Tuern and Purple Rocks]",
+          "level": 3,
+          "pages": [
+            112,
+            116
+          ]
+        },
+        {
+          "id": "featured_encounters",
+          "title": "Featured Encounters",
+          "level": 2,
+          "pages": [
+            117,
+            119
+          ]
+        },
+        {
+          "id": "map_3_14_old_tower",
+          "title": "[Map 3.14: Old Tower]",
+          "level": 3,
+          "pages": [
+            118,
+            119
+          ]
+        },
+        {
+          "id": "figure_3_1_harper_teleportation_circles",
+          "title": "[Figure 3.1: Harper Teleportation Circles]",
+          "level": 2,
+          "pages": [
+            120,
+            121
+          ]
+        }
+      ],
+      "starter_excerpt": "CHAPTER 3: TuE SAVAGE FRONTIER \nVAST FRONTIER SERVES AS THE BACKDROP \nfor this story. As it turns out, giants are \neverywhere and wreaking all sorts of \nhavoc, from the Sword Coast to the desert \nof Anauroch. This chapter describes this \nsetting, beginning with an overview of \nthe Savage Frontier and some of its key \ninhabitants, then presenting descriptions \nof specific locations. The chapter concludes with three \nencounters that help propel the story forward: \n• In the \"Old Tower\" section, adventurers meet a lonely\nhill giant with an axe to grind;\n• The \"Inner Circles\" section describes a series of\nteleportation circles that the adventurers can use to\nexpedite travel;\n• The \"Harshnag\" section introduces adventurers to a \nfrost giant who means to help them. \nUntil the characters find a more expeditious means of\ntransportation, they will be doing a lot of overland travel\ning. Chapter 5 of the Dungeon Master's Guide provides \nadvice and tools to help make wilderness travel fun for \nyou and the players, as well as rules for foraging and be\ncoming lost. You can use the travel-montage approach or \nthe hour-by-hour approach, or you can experiment with \nboth to see which approach works best for you. That \nchapter also includes a table to randomly determine the \nweather and a table of random urban encounters (useful \nwhen the adventurers arrive at a city). \nPEOPLES OF THE NORTH \nThe Savage Frontier, or the North, is a harsh and un\ntamed wilderness dotted with fortified settlements and \nthe lairs of terrible monsters. In hundreds of bloodcur\ndling tales of danger and hardship, the North is por\ntrayed as a vast, cold, and lawless domain that defies all \nattempts to civilize it. Grim dwarfholds, tribes of fierce \nbarbarians, and half-legendary elf realms might stand \nfor a short "
+    },
+    {
+      "id": "chapter_4_the_chosen_path",
+      "title": "Chapter 4: The Chosen Path",
+      "pages": [
+        122,
+        137
+      ],
+      "sections": [
+        {
+          "id": "eye_of_the_all_father",
+          "title": "Eye of the All-Father",
+          "level": 2,
+          "pages": [
+            122,
+            132
+          ]
+        },
+        {
+          "id": "map_4_1_eye_of_the_all_father",
+          "title": "[Map 4.1: Eye of the All-Father]",
+          "level": 3,
+          "pages": [
+            124,
+            132
+          ]
+        },
+        {
+          "id": "map_4_2_harshnag_s_map",
+          "title": "[Map 4.2: Harshnag's Map]",
+          "level": 2,
+          "pages": [
+            133,
+            133
+          ]
+        },
+        {
+          "id": "airship_of_a_cult",
+          "title": "Airship of a Cult",
+          "level": 2,
+          "pages": [
+            133,
+            136
+          ]
+        },
+        {
+          "id": "map_4_3_dragon_cult_airship",
+          "title": "[Map 4.3: Dragon Cult Airship]",
+          "level": 3,
+          "pages": [
+            136,
+            136
+          ]
+        },
+        {
+          "id": "encounter_with_iymrith",
+          "title": "Encounter with Iymrith",
+          "level": 2,
+          "pages": [
+            137,
+            137
+          ]
+        },
+        {
+          "id": "troubleshooting",
+          "title": "Troubleshooting",
+          "level": 2,
+          "pages": [
+            137,
+            137
+          ]
+        }
+      ],
+      "starter_excerpt": "CHAPTER 4: THE CHOSEN A¤H \nUIDED BY HARSHNAG THE FROST GIANT, \nthe adventurers travel to the Spine of the \nWorld, scaling icy mountains to reach a \ntemple built by the giant lords of Ostoria. \nWithin this complex, they find the Eye of \nthe All-Father, a chamber that the ancient \ngiants used as an oracle. Here, the char\nacters eventually choose a path that leads them to the \nstorm giants of Maelstrom, who hold the key to restor\ning order among giants. \nAfter receiving direction from the oracle, the charac\nters embark on the next leg of their quest, but a surprise \nencounter with lymrith threatens to end their effort \nbefore it begins. Realizing that the adventurers are no \nmatch for the ancient blue dragon, Harshnag challenges \nyÙrith, distracting her so that the characters can flee. \nThe temple's stones tremble and fall as the frost giant \nand the blue dragon clash, trapping them under the \nmountain while the characters make good their escape. \nJOURNEY TO THE EYE \nHarsh nag offers to lead the characters to the Eye of the \nAll-Father. He isn't shy about using roads and trails, nor \ndoes he blanch at traversing the uncharted wilderness \nor crossing cold rivers. He expects the characters to \nkeep up but travels at a normal pace so that they don't \nsuffer the effects of exhaustion. \nThe Eye of the All-Father is hidden under the icy \npeaks of the Spine of the World and can be reached \nby way of a mountain pass that starts in the Valley of \nKhedrun. After two days traversing the desolate valley,. \nHarshnag finds the pass. Characters should be 7th level \nwhen they're ready to explore the Eye of the All-Father. \nAn overland journey to the Eye might include one or \nmore random encounters, at your discretion. See the \n\"Random Wilderness Encounters\" section in chapter 3 \nfor more "
+    },
+    {
+      "id": "chapter_5_den_of_the_hill_giants",
+      "title": "Chapter 5: Den of the Hill Giants",
+      "pages": [
+        138,
+        145
+      ],
+      "sections": [
+        {
+          "id": "grudd_haug",
+          "title": "Grudd Haug",
+          "level": 2,
+          "pages": [
+            139,
+            145
+          ]
+        },
+        {
+          "id": "map_5_1_grudd_haug",
+          "title": "[Map 5.1: Grudd Haug]",
+          "level": 3,
+          "pages": [
+            142,
+            145
+          ]
+        }
+      ],
+      "starter_excerpt": "CHAPTER 5: DEN OF THE HILL GIANTS \nI \nN THIS CHAPTER, ADVENTURERS MATCH WITS \nwith Guh, a monstrously fat hill giant chief \nwhose den lies on a branch of the Dessarin\nRiver in the hills northeast of Goldenfields. If \nthe characters defeat Guh and obtain her conch\nof teleportation, they can use it to teleport to \nMaelstrom, King Hekaton's undersea citadel \n(see chapter 10, \"Hold of the Storm Giants\"). \nObtaining the conch is their main goal here. They must \nbe careful not to put the den on alert before eliminating \nkey threats, lest they become overwhelmed by all of \nGrudd Haug's denizens. \nHILL GIANTS \nBefore running this part of the adventure, review the \ninformation on hill giants in the Monster Manual. It will \nhelp you roleplay the giants in this chapter. \nGuH's GLUTTONY \nChief Guh would like hill giants elevated above their tra\nditional betters. But she's no brighter than a typical hill \ngiant, so her plan is anything but inspired. She plans to \neat until she grows so enormous that the gods take no\ntice and show her favor. To her, the biggest giant rules. \nGuh's gluttony knows no bounds. She has been feast\ning for several months and has grown to such a size that \nshe can no longer walk on her own. She spends her time \nslumped in a wagon with broken axles, surrounded by \nheaps of stolen loot and crying out for more food. \nTHE HUNT FOR Foon \nChief Guh has driven away all the other female hill gi\nants in her tribe and taken their husbands as her own. \nShe tasks her many husbands with bringing her food, \nand she doesn't care how they go about it. Some of her \nmates form marauding gangs. Others set out on their \nown, pillaging the countryside for anything edible. \nFarmers who live downriver from Grudd Haug have \nsuffered the most from the giants' depredations. The \nfirs"
+    },
+    {
+      "id": "chapter_6_canyon_of_the_stone_giants",
+      "title": "Chapter 6: Canyon of the Stone Giants",
+      "pages": [
+        146,
+        155
+      ],
+      "sections": [
+        {
+          "id": "deadstone_cleft",
+          "title": "Deadstone Cleft",
+          "level": 2,
+          "pages": [
+            147,
+            151
+          ]
+        },
+        {
+          "id": "map_6_1_deadstone_cleft",
+          "title": "[Map 6.1: Deadstone Cleft]",
+          "level": 2,
+          "pages": [
+            152,
+            155
+          ]
+        }
+      ],
+      "starter_excerpt": "CHAPTER 6: CANYON OF THE STONE GIANTS \nEADSTONE CLEFT IS THE REMOTE CANYON \nlair of a xenophobic clan of stone giants \nwho worship Skoraeus Stonebones. If the \ncharacters defeat the zealous stone giant \nthane Kayalithica and obtain her conch of \nteeÜortation, they can use it to teleport to \nMaelstrom, King Hekaton's undersea cita\ndel (see chapter 10, \"Hold of the Storm Giants\"). Obtain\ning the conch is the adventurers' primary goal in this \npart of their mission. Whether they kill the stone giant \nthane or not is up to them. \nStone giants aren't the only antagonists the characters \nmust face. Thane Kayalithica has won the allegiance \nof the Blue Bear tribe of Uthgardt barbarians, many of \nwhom are camped in Deadstone Cleft. See chapter 3 for \nmore information on this tribe. \nSTONE GIANTS \nBefore running this part of the adventure, review the in\nformation on stone giants in the Monster Manual. \nA Pox ON THE LAND \nUnlike most stone giants, Thane Kayalithica is a neu\ntral evil extremist. She is using the dissolution of the \nordning as an excuse to destroy what she has come to \nfear and abhor-the rapidly spreading civilizations of hu\nmans and their ilk. Kayalithica's followers, who are pre\ndominantly neutral, believe that violence against small \nfolk is justified, because their thane has assured them \nthat she is heeding the will of Skoraeus Stonebones. \nKayalithica believes that the works of the small folk \nare a pox on the land. They desecrate the very stone \nupon which they are built. By obliterating them, she \nhopes to impress the gods and elevate her people to the \ntop of the ordning. By the time the adventurers set a \ncourse for her canyon, Kayalithica has already led major \nassaults against the nearby settlements of Orlbar and \nLlorkh. The stone giant thane now has h"
+    },
+    {
+      "id": "chapter_7_berg_of_the_frost_giants",
+      "title": "Chapter 7: Berg of the Frost Giants",
+      "pages": [
+        156,
+        167
+      ],
+      "sections": [
+        {
+          "id": "svardborg",
+          "title": "Svardborg",
+          "level": 2,
+          "pages": [
+            157,
+            165
+          ]
+        },
+        {
+          "id": "map_7_1_svardborg",
+          "title": "[Map 7.1: Svardborg]",
+          "level": 3,
+          "pages": [
+            161,
+            161
+          ]
+        },
+        {
+          "id": "map_7_2_svardborg_lodges",
+          "title": "[Map 7.2: Svardborg Lodges]",
+          "level": 3,
+          "pages": [
+            162,
+            165
+          ]
+        },
+        {
+          "id": "the_krigvind",
+          "title": "The Krigvind",
+          "level": 2,
+          "pages": [
+            166,
+            167
+          ]
+        },
+        {
+          "id": "map_7_3_the_krigvind",
+          "title": "[Map 7.3: The Krigvind]",
+          "level": 3,
+          "pages": [
+            167,
+            167
+          ]
+        }
+      ],
+      "starter_excerpt": "CHAPTER 7: BERG OF THE FROST GIANTS \nROM THEIR ICY FORTRESS OF SVARDBORG, \nJar! Storvald and his frost giants strike \nr\nout in their ships in search of the Ring \nof iÅter, an artifact they can use to \nbring about the Age of Everlasting Ice. \nAlthough they're far from reaching that \ngoal, the frost giants pose a terrible threat \nto the North. In this part of their mission, \nthe characters confront this threat head-on. \nIf the characters obtain Storvald's conch of telepor\ntaiãn, they can use it to travel to Maelstrom, King \nHekaton's undersea citadel (see chapter 10, \"Hold of \nthe Storm Giants\"). In the course of accomplishing that \ngoal, the characters must elude or overcome the many \nruthless denizens of the fortress. \nThe good news is that things could be worse. The bad \nnews is that they soon will be. When the adventurers \nfirst arrive at Svardborg,Jarl Storvald isn't there. He's \naboard the Krigvind, his flagship, hunting whales in \nthe Sea of Moving Ice. As the characters search for his \nconch, the Krigvind and its giants are on their way back. \nFROST GIANTS \nReview the information on frost giants in the Monster \nManual. It'll help you roleplay the giants in this chapter. \nRECLAIMING SVARDBORG \nWhen Annam the All-Father shattered the ordning,Jarl \nStorvald and his frost giants set sail in an enormous \nship called the Krigvind to reclaim Svardborg, a circle \nof immense lodges built atop an iceberg in the Sea of \nMoving Ice. In Svardborg's temple ofThrym, the giants \nfound seven white dragon eggs. Shortly after the giants \nseized the eggs, a mated pair of adult white dragons, \nCryovain and Isendraug, returned from a hunt and de\nmanded that the giants relinquish their offspring. Stor\nvald threatened to destroy the unhatched wyrmlings un\nless Cryovain and Isendraug subm"
+    },
+    {
+      "id": "chapter_8_forge_of_the_fire_giants",
+      "title": "Chapter 8: Forge of the Fire Giants",
+      "pages": [
+        168,
+        187
+      ],
+      "sections": [
+        {
+          "id": "ironslag",
+          "title": "Ironslag",
+          "level": 2,
+          "pages": [
+            169,
+            187
+          ]
+        },
+        {
+          "id": "map_8_1_ironslag",
+          "title": "[Map 8.1: Ironslag]",
+          "level": 3,
+          "pages": [
+            175,
+            182
+          ]
+        },
+        {
+          "id": "map_8_2_ironslag_lower_level",
+          "title": "[Map 8.2: Ironslag, Lower Level]",
+          "level": 3,
+          "pages": [
+            183,
+            187
+          ]
+        }
+      ],
+      "starter_excerpt": "CHAPTER 8: FORGE OF THE FIRE GIANTS \nALTO'S FOLLOWERS ARE SPREAD THROUGH\nout the North, searching for pieces of an \nadamantine colossus called the Vonin\ndod. The fire giant duke has also struck \nan alliance with the drow of House Xor\nlarrin: he promises to help them destroy \ntheir enemies if the drow help him steal \nMaegera, the fire primordial trapped within the under\nground dwarven city of Gauntlgrym. House Xorlarrin \nonce held Gauntlgrym, but King Bruenor Battlehammer \nand his dwarves recently drove out the dark elves. They \nknow its layout well, however. Duke Zalto has given the \ndrow an iron flask (see chapter 7 of the Dungeon Mas\nter's GuÎ in which to trap Maegera. While the drow \ncreep back into Gauntlgrym to perpetrate this great \ntheft (see the \"Gauntlgrym\" section in chapter 3), Zalto \nreadies his family's ancestral forge for the arrival of \nMaegera and the Vonindod fragments. \nIn this part of their mission, the characters journey \nto Ironslag, Zalto's fortress in the icy mountains north \nof the Silver Marches. Duke Zalto and his fire giants \nunlocked and reclaimed the forge several months ago. \nSince then, the fire giants have captured slaves and put \nthem to work in the forges. The dwarves of Citadel Ad\nbar and Citadel Felbarr are aware that fire giants have \nreturned to Ironslag; however, the dwarves are still re\ncovering from the War of the Silver Marches and aren't \nprepared to mount an attack on the giant fortress. \nCharacters who visit Ironslag must contend not only \nwith the fire giant duke, his family, and his most loyal \nfollowers but also with a village of sinister yakfolk. If \nthe characters obtain Zalto's conch ofteleportation, they \ncan use it to travel to Maelstrom, Hekaton's undersea \ncitadel (see chapter 10, \"Hold of the Storm Giants\") and \na"
+    },
+    {
+      "id": "chapter_9_castle_of_the_cloud_giants",
+      "title": "Chapter 9: Castle of the Cloud Giants",
+      "pages": [
+        188,
+        201
+      ],
+      "sections": [
+        {
+          "id": "lyn_armaal",
+          "title": "Lyn Armaal",
+          "level": 2,
+          "pages": [
+            189,
+            201
+          ]
+        },
+        {
+          "id": "map_9_1_lyn_armaal_level_1",
+          "title": "[Map 9.1: Lyn Armaal, Level 1]",
+          "level": 3,
+          "pages": [
+            195,
+            195
+          ]
+        },
+        {
+          "id": "map_9_2_lyn_armaal_levels_2_6",
+          "title": "[Map 9.2: Lyn Armaal, Levels 2-6]",
+          "level": 3,
+          "pages": [
+            196,
+            201
+          ]
+        }
+      ],
+      "starter_excerpt": "CHAPTER 9: CASTLE OF THE CLOUD GIANTS \nOR AS LONG AS GIANTS HAVE WALKED THE \nworld, cloud giants have been one step \nr\nbelow storm giants in power and influ\nence. Now, with the ordning dissolved, \na few cloud giant nobles have seized \nthe opportunity to rise above the storm \ngiants and thereby fulfill their lifelong \ndream of becoming the true, undisputed \naristocrats among giants. \nOne such noble is Countess Sansuri, who believes \nthat her destiny lies buried in the past, waiting for her to \nunearth it. Sansuri's ancient ancestors, anticipating the \nfall of their great empire, reportedly hid their magical \nknowledge and wealth in vaults and left markers for \nfuture generations to find them. The greatest of these \ntroves was a cache of \"dragon magic\"-spells and arti\nfacts plundered from the lairs of powerful wyrms. Sans\nuri wants to find this cache and use her newfound power \nto destroy her ambitious rivals and convince the rest of \ngiantkind to kneel before her. Sansuri believes the gods \nwill reward her appropriately for doing so. When that \nday comes, all other cloud giants will thank her for do\ning what they could only dream of. \nAfter using telescopes to scour the land below for \nclues, Sansuri has come to the realization that her \nmaps are woefully out of date. She hasn't found a single \nmarker pointing the way to the trove she seeks. When \na curious and danger-prone bronze dragon named Fel\ngolos paid her a visit some weeks ago, Sansuri played \nthe role of benevolent host. She tricked the dragon into \nhelping her and, when its guard was down, captured and \nimprisoned it. When the adventurers come knocking, \nSansuri is in the midst of torturing the bronze dragon \nfor information, hoping it knows where one of the an\ncient Ostorian markers might be. The dragon's roar"
+    },
+    {
+      "id": "chapter_10_hold_of_the_storm_giants",
+      "title": "Chapter 10: Hold of the Storm Giants",
+      "pages": [
+        202,
+        215
+      ],
+      "sections": [
+        {
+          "id": "maelstrom",
+          "title": "Maelstrom",
+          "level": 2,
+          "pages": [
+            203,
+            215
+          ]
+        },
+        {
+          "id": "map_10_1_maelstrom_levels_1_and_2",
+          "title": "[Map 10.1: Maelstrom, Levels 1 and 2]",
+          "level": 3,
+          "pages": [
+            206,
+            213
+          ]
+        },
+        {
+          "id": "map_10_2_maelstrom_level_3",
+          "title": "[Map 10.2: Maelstrom, Level 3]",
+          "level": 3,
+          "pages": [
+            214,
+            215
+          ]
+        }
+      ],
+      "starter_excerpt": "CHAPTER 10: HOLD OF THE STORM GIANTS \nEFORE THE DISSOLUTION OF THE ORDNING, \nthe influence of the storm giants was so \ngreat that lesser giants were compelled to \nabide by their decrees. The storm giants, \nreclusive by nature, did their best to dis\ncourage lesser giants from destroying the \ncivilizations of the small folk. The death \nof Queen Neri and the disappearance of King Hekaton \nhave left Maelstrom in disarray, allowing evil giants to \nrun rampant. \nKing Hekaton saw signs that his eldest daughters \nwere unfit to claim the yÉmskull Throne, so he made \nhis even-keeled youngest daughter, Serissa, his rightful \nheir. She has taken her place on the Wyrmskull Throne, \nbut with the ordning shattered, she doesn't have the \npower to keep the evil giant lords in line. She relies on \ntwo storm giants for counsel: her uncle, Uthor (Hekat\non's younger brother), and the wise, matronly lymrith. \nUnfortunately, neither of them has much respect for \nsmall folk. In that regard, Serissa is alone. Like her \ndearly departed mother, Serissa believes that small folk \nare cleverer and mightier than most giants give them \ncredit for, and as a child, she visited their shores in the \ncompany of her mother and has great affection for them. \nIn this part of their mission, the characters use their \nconch ofteleportation (obtained in a previous chapter) to \nteleport to Maelstrom. Once there, they must make their \nway to Princess Serissa and win her confidence. She \nwants to believe that her father is alive. She also wants \nto believe that the characters are resourceful and strong \nenough to find and rescue King Hekaton, despite what \nUthor and lymrith whisper. If the characters convince \nSerissa that they can help, she shows them a clue found \nnear the corpse of her mother: a wooden coin that "
+    },
+    {
+      "id": "chapter_11_caught_in_the_tentacles",
+      "title": "Chapter 11: Caught in the Tentacles",
+      "pages": [
+        216,
+        225
+      ],
+      "sections": [
+        {
+          "id": "the_grand_dame",
+          "title": "The Grand Dame",
+          "level": 2,
+          "pages": [
+            217,
+            219
+          ]
+        },
+        {
+          "id": "map_11_1_the_grand_dame",
+          "title": "Map 11.1: The Grand Dame",
+          "level": 3,
+          "pages": [
+            218,
+            219
+          ]
+        },
+        {
+          "id": "the_hunt_for_hekaton",
+          "title": "The Hunt for Hekaton",
+          "level": 2,
+          "pages": [
+            220,
+            221
+          ]
+        },
+        {
+          "id": "the_morkoth",
+          "title": "The Morkoth",
+          "level": 2,
+          "pages": [
+            222,
+            223
+          ]
+        },
+        {
+          "id": "map_11_2_the_morkoth",
+          "title": "[Map 11.2: The Morkoth]",
+          "level": 3,
+          "pages": [
+            223,
+            223
+          ]
+        },
+        {
+          "id": "the_kraken_cometh",
+          "title": "The Kraken Cometh",
+          "level": 2,
+          "pages": [
+            224,
+            225
+          ]
+        }
+      ],
+      "starter_excerpt": "CHAPTER 11: CAUGHT IN THE TENTACLES \nPERATIVES OF THE KRAKEN SOCIETY \nhave King Hekaton in their clutches. If \nthe characters forge an alliance with \nPrincess Serissa and agree to find her \nfather, she gives them a wooden coin \npainted with the image of a golden goose \nthat was found near the corpse of her \nslain mother, Queen Neri. Serissa presumes (correctly) \nthat the coin was accidentally dropped by one of her \nmother's assassins. \nThe characters begin this part of their mission by \ntracking the gambling chip to its owner, Lord Khaspere \nDrylund ofYartar. The nobleman is maneuvering to \nbecome the city's new Waterbaron. He runs a gambling \nhall aboard a riverboat named the Grand Dame. Lord \nDrylund's wealthy patrons are the movers and shakers \nofYartar, and he wants to impress them and place them \nin his debt. They come to his riverboat day and night, \nexchanging coins for wooden gambling chips called \n\"golden geese.\" They dine on the finest prepared food, \ndance to marvelous music, and gamble away their chips \nat Lord Drylund's tables, all under the watchful eye of \nhis chief of security, the wizard Pow Ming. \nTracking the wooden coin to its source requires some \ninvestigation and, perhaps, a little help from one or \nmore factions. Once the coin is traced to a gambling \nhall aboard a resplendent riverboat in Yartar, the game \nis afoot! The characters must attack or infiltrate the riv\nerboat to reach Lord Drylund. for only he knows where \nKing Hekaton is kept. Drylund reveals under duress that \nthe storm giant king is sequestered aboard a scry-proof \nvessel called the Morkoth that circles the islands of the \nTrackless Sea, far from prying eyes. Drylund's betrayal \nimmediately precedes his doom, as Slarkrethel reaches \nout from the depths of the Trackless Sea and sla"
+    },
+    {
+      "id": "chapter_12_doom_of_the_desert",
+      "title": "Chapter 12: Doom of the Desert",
+      "pages": [
+        226,
+        231
+      ],
+      "sections": [
+        {
+          "id": "iyrmith_s_lair",
+          "title": "Iyrmith's Lair",
+          "level": 2,
+          "pages": [
+            227,
+            230
+          ]
+        },
+        {
+          "id": "map_12_1_iyrmith_s_lair",
+          "title": "[Map 12.1: Iyrmith's Lair]",
+          "level": 3,
+          "pages": [
+            229,
+            230
+          ]
+        },
+        {
+          "id": "adventure_conclusion",
+          "title": "Adventure Conclusion",
+          "level": 2,
+          "pages": [
+            231,
+            231
+          ]
+        }
+      ],
+      "starter_excerpt": "CHAPTER 12: DOOM OF THE DESERT \nPON HIS RETURN TO MAELSTROM, KING \nl \nHekaton is quick to act against the evil \nthat threatens all giants. With the help \nof his scrying pool, Hekaton figures \nout where Iymrith has gone to ground. \n,._.'-,Z,, \nSeated upon the Wyrmskull Throne, \nHekaton summons the adventurers be\nfore him, thanks them for their help thus far, and asks \nthem to join him as he takes the fight to Iymrith by \nstorming the dragon's lair in the desert of Anauroch. \nIf the characters were unable to rescue the storm gi\nant king, or if Hekaton didn't survive, Princess Serissa \nvows to avenge her father's death, swearing that Iym\nrith's deception will not go unpunished. She reaches out \nto the adventurers one more time, imploring them to \njoin her as she confronts the dragon. \nAn ancient blue dragon is more than a match for a \nparty of 10th-level adventurers, but the characters have \nstorm giants watching their backs. Hekaton or Serissa \nalso gives each character a potion of giant size (see \nappendix B) from the royal treasury, enabling them to \nface the dragon as true giants when the time comes. \nThe storm giants describe the effect and duration of the \npotions, but they leave it to the characters to decide if \nand when to use them. The characters can quaff their \npotions before they enter Iymrith's lair or wait until they \nare about to engage the dragon in battle. Conversely, one \nor more characters might prefer to use the potions only \nas a last resort. \nHekaton or Serissa also gives the party a claw of the \nwyrm rune (see appendix B) recovered from a ship\nwreck near Maelstrom. Like the potions, this item is a \ngift; the characters can do with it what they will. \nFINDING lYMRITH \nThe storm giants bear the burden of finding the dragon \nso that the characters can "
+    },
+    {
+      "id": "appendix_a_linked_adventures",
+      "title": "Appendix A: Linked Adventures",
+      "pages": [
+        232,
+        233
+      ],
+      "sections": [],
+      "starter_excerpt": "APPENDIX A: LINKED ADVENTURES \nWizards of the Coast has published other D&D adven\ntures that can serve as springboards for Storm King's \nThunder, not only getting characters to 5th level but also \ndirecting the characters toward one of the three loca\ntions described in chapter 2. If any of the characters are \nafÏliated with a faction, such as the Harpers, you can \nguide them toward Bryn Shander, Goldenfields, or Tri\nboar by having a representative of that faction give them \na quest. With the growing threat of giants in the North, \nth& quest might be as straightforward as protecting the \nlocation against a possible giant attack. \nLOST MINE OF PHANDELVER \nLost Mine of Phandelver is an adventure in the DUN\nGEONS & DRAGONS Starter Set, designed to take char\nacters from 1st to 5th level. Characters who complete it \nare at the right level to begin Storm King's Thunder, and \nTriboar is their ideal starting point (see chapter 2). The \ntrick is to get them from Phandalin to Triboar, which \nlies east along a trail that cuts across grasslands and \nfoothills. You can simply declare that the party makes \nthe uneventful journey, or you can offer some reason \nwhy they would want to visit Triboar. The town is a good \nplace for them to resupply, upgrade their gear, sell their \nloot, and find new adventures. If those aren't reasons \nenough, here are a few hooks tied to NPCs in Phandalin \nthat you can use to direct the characters toward Triboar. \nLIONSHIELD DELIVERY \nLinene Graywind, who runs the trading post in Phand\nalin on behalf of a mercantile company, the Lionshield \nCoster, has a colleague, Alaestra Ulgar, who lives in \nTriboar with her business partner, Narth Tezrin. Linene \nhas written a letter to her friend, describing recent trib\nulations in Phandalin, and asks the characters t"
+    },
+    {
+      "id": "appendix_b_magic_items",
+      "title": "Appendix B: Magic Items",
+      "pages": [
+        234,
+        240
+      ],
+      "sections": [],
+      "starter_excerpt": "APPENDIX B: MAGIC ITEMS \nThe magic items that are introduced in this adventure \nare detailed here in alphabetical order. \nBANNER OF THE KRIG RUNE \nWondrous item, rare (requires attunement) \nCrafted from a thick, red fabric, this banner measures \n5 feet high and 3 feet wide. The krig (war) rune is \ndisplayed on the fabric with round, metal plates sewn \ninto it. It can be attached to a 10-foot pole to serve as a \nstandard. Furling or unfurling the banner requires an \naction. The banner has the following properties. \nMark of Courage. As a bonus action, you can touch \nthe unfurled banner and cause it to emanate courage. \nYou and your allies are immune to the frightened con\ndition while within 20 feet of it. This benefit lasts for 10 \nminutes or until the banner is furled. Once you use this \nproperty, you can't use it again until you finish a short or \nlong rest. \nSentinel Standard. You can see invisible creatures \nwhile they are within 20 feet of the unfurled banner and \nwithin your line of sight. \nStandard's Shield. As a bonus action, you can touch \nthe unfurled banner and invoke this power. Any ranged \nattack roll that targets you or an ally of yours has dis\nadvantage if the target is within 20 feet of the unfurled \nbanner. This benefit lasts for 1 minute or until the ban\nner is furled. Once you use this property, you can't use it \nagain until you finish a short or long rest. \nGift of Battle. You can transfer the banner's magic to \na place by tracing the krig rune on the ground with your \nfinger. The point where you trace it becomes the center \nCONCH OF' TELEPORTATION \nof a spherical area of magic that has a 500-foot radius \nand that is fixed to the place. The transfer takes 8 hours \nof work that requires the banner to be within 5 feet of \nyou and during which you choose "
+    },
+    {
+      "id": "appendix_c_creatures",
+      "title": "Appendix C: Creatures",
+      "pages": [
+        241,
+        247
+      ],
+      "sections": [],
+      "starter_excerpt": "APPENDIX C: CREATURES \nThis appendix details the new monsters that appear \nin this adventure. It also provides optional actions and \ntraits for giants. \nCRAG CAT \nThe creature referred to in Northlander lore as the \nHunter of Men is a sure-footed predator that can be \nfound anywhere except deep forest, preferring ledges \nand cliffs in the mountains. Its cry resembles a human \nscream of terror. It often elicits such sounds from its vic\ntims, for it prefers human flesh to all other prey. \nCrag cats blend in with natural surroundings. During \nthe winter, their fur turns white to blend in with the \nsnow. At other times of the year, their fur is gray, en\nabling them to hide among the rocks more easily. \nThe crag cat knows its territory and often attacks \nwhen its prey is asleep, exhausted, or otherwise weak\nened. Although crag cats are typically solitary, they can \nbe found in family groups of two parents and ld4 Small \nnoncombatant cubs in the spring, or in hungry packs in \nsevere winter weather. \nCRAG CAT \nLarge beast, unaligned \nArmor Class 13 \nHit Points 34 (4dl0 + 12) \nSpeed 40 ft. \nSTR \n16 (+3) \nDEX \n17 (+3) \nCON \n16 (+3) \nSkills Perception +4, Stealth +7\nINT \n4 (-3) \nWIS \n14 (+2) \nSenses darkvision 60 ft., passive Perception 14 \nLanguages-\nChallenge l (200 XP) \nCHA \n8 (-1) \nNondetection. The cat can't be targeted or detected by any divi\nnation magic or perceived through magical scrying sensors. \nPounce. If the cat moves at least 20 feet straight toward a crea\nture and then hits it with a claw attack on the same turn, that \ntarget must succeed on a DC 13 Strength saving throw or be \nknocked prone. If the target is prone, the cat can make one bite \nattack against it as a bonus action. \nSpell Turning. The cat has advantage on saving throws against \nany spell that targets"
+    },
+    {
+      "id": "appendix_d_special_npcs",
+      "title": "Appendix D: Special NPCs",
+      "pages": [
+        248,
+        248
+      ],
+      "sections": [],
+      "starter_excerpt": "APPENDIX D: SPECIAL NPCs \n: AUGREK BRIGHTHELM \n: Medium humanoid (shield dwaf, lafìl good \n:---------------------\n: Armor Class l 5 (chain shirt, shield) \n: Hit Points 13 (2d8 + 4) \nSpeed 25 ft.\nSTR \n14 (+2) \nDEX \n11 (+O) \nCON \n15 (+2) \nSkills Athletics +4, Perception +2 \nDamage Resistances poison \nINT \n10 (+O) \nWIS \n11 (+O) \nSenses darkvision 60 ft., passive Perception 12 \nLanguages Common, Dwarvish \nCHA \n11 (+O) \nDwarven Resilience. Augrek has advantage on saving throws \nagainst poison. \nACTIONS \nWarhammer. Melee Weapon Attack: +4 to hit, reach 5 ft., one \ntarget. Hit: 6 (ld8 + 2) bludgeoning damage, or 7 (ldlO + 2) \nbludgeoning damage if used with two hands. \nHeavy Crossbow. Ranged Weapon Attack: +2 to hit, range \n100/400 ft., one target. Hit: 5 (ldlO) piercing damage. Augrek \ncarries ten crossbow bolts. \nROLEPLAYING INFORMATION \nSheriff's deputy Augrek guards the southwest gate of Bryn \nShander and welcomes visitors to town. She has a good heart. \nIdeal: \"You'll get farther in life with a kind word than an axe.\" \n1 Bond: \"Bryn Shander is my home. It's my job to protect her.\" \nFlaw: \"I'm head over heels in love with Sheriff Southwell. One \nday I hope to marry him.\" \nSIRAC OF SuzAIL \nMedium humanoid (Chondathan human), lafìl good \nArmor Class 14 (leather) \nHit Points 22 (5d8) \nSpeed 30 ft.\nSTR \n14 (+2) \nDEX \n17 (+3) \nCON \n11 (+O) \nINT \n12 (+1) \nSkills Athletics +4, Insight +3, Survival +3 \nSenses passive Perception 11 \nLanguages Common, Ore \nACTIONS \nWIS \n13 (+1) \nCHA \n16 (+3) \nShortsword. Melee Weapon Attack: +5 to hit, reach 5 ft., one \ntarget. Hit: 6 (ld6 + 3) piercing damage. \nDart. Ranged Weapon Attack: +5 to hit, range 20/60 ft., one \ntarget. Hit: 5 (ld4 + 3) piercing damage. Sirac carries six darts. \nREACTIONS \nParry. Sirac adds 2 to his AC against one melee a"
+    },
+    {
+      "id": "back_cover",
+      "title": "Back Cover",
+      "pages": [
+        1,
+        258
+      ],
+      "sections": [
+        {
+          "id": "adventure_flowchart",
+          "title": "Adventure Flowchart",
+          "level": 2,
+          "pages": [
+            18,
+            19
+          ]
+        },
+        {
+          "id": "nightstone",
+          "title": "Nightstone",
+          "level": 2,
+          "pages": [
+            21,
+            28
+          ]
+        },
+        {
+          "id": "map_1_1_nightstone",
+          "title": "[Map 1.1: Nightstone]",
+          "level": 3,
+          "pages": [
+            22,
+            28
+          ]
+        },
+        {
+          "id": "dripping_caves",
+          "title": "Dripping Caves",
+          "level": 2,
+          "pages": [
+            29,
+            32
+          ]
+        },
+        {
+          "id": "map_1_2_dripping_caves",
+          "title": "[Map 1.2: Dripping Caves]",
+          "level": 3,
+          "pages": [
+            30,
+            32
+          ]
+        },
+        {
+          "id": "tower_of_zephyros",
+          "title": "Tower of Zephyros",
+          "level": 2,
+          "pages": [
+            33,
+            37
+          ]
+        },
+        {
+          "id": "map_1_3_tower_of_zephyros",
+          "title": "[Map 1.3: Tower of Zephyros]",
+          "level": 3,
+          "pages": [
+            34,
+            37
+          ]
+        },
+        {
+          "id": "bryn_shander",
+          "title": "Bryn Shander",
+          "level": 2,
+          "pages": [
+            39,
+            44
+          ]
+        },
+        {
+          "id": "map_2_1_bryn_shander",
+          "title": "[Map 2.1: Bryn Shander]",
+          "level": 3,
+          "pages": [
+            40,
+            44
+          ]
+        },
+        {
+          "id": "goldenfields",
+          "title": "Goldenfields",
+          "level": 2,
+          "pages": [
+            45,
+            53
+          ]
+        },
+        {
+          "id": "map_2_2_goldenfields",
+          "title": "[Map 2.2: Goldenfields]",
+          "level": 3,
+          "pages": [
+            46,
+            53
+          ]
+        },
+        {
+          "id": "triboar",
+          "title": "Triboar",
+          "level": 2,
+          "pages": [
+            54,
+            63
+          ]
+        },
+        {
+          "id": "map_2_3_triboar",
+          "title": "[Map 2.3: Triboar]",
+          "level": 3,
+          "pages": [
+            56,
+            63
+          ]
+        },
+        {
+          "id": "random_wilderness_encounters",
+          "title": "Random Wilderness Encounters",
+          "level": 2,
+          "pages": [
+            69,
+            72
+          ]
+        },
+        {
+          "id": "locations_of_the_north",
+          "title": "Locations of the North",
+          "level": 2,
+          "pages": [
+            73,
+            116
+          ]
+        },
+        {
+          "id": "map_3_1_the_savage_frontier",
+          "title": "[Map 3.1: The Savage Frontier]",
+          "level": 3,
+          "pages": [
+            75,
+            76
+          ]
+        },
+        {
+          "id": "map_3_2_beorunna_s_well",
+          "title": "[Map 3.2: Beorunna's Well]",
+          "level": 3,
+          "pages": [
+            77,
+            82
+          ]
+        },
+        {
+          "id": "map_3_3_everlund",
+          "title": "[Map 3.3: Everlund]",
+          "level": 3,
+          "pages": [
+            83,
+            84
+          ]
+        },
+        {
+          "id": "map_3_4_flint_rock",
+          "title": "[Map 3.4: Flint Rock]",
+          "level": 3,
+          "pages": [
+            85,
+            87
+          ]
+        },
+        {
+          "id": "map_3_5_grandfather_tree",
+          "title": "[Map 3.5: Grandfather Tree]",
+          "level": 3,
+          "pages": [
+            88,
+            89
+          ]
+        },
+        {
+          "id": "map_3_6_grand_worm_cavern",
+          "title": "[Map 3.6: Grand Worm Cavern]",
+          "level": 3,
+          "pages": [
+            90,
+            99
+          ]
+        },
+        {
+          "id": "map_3_7_morgur_s_mound",
+          "title": "[Map 3.7: Morgur's Mound]",
+          "level": 3,
+          "pages": [
+            100,
+            103
+          ]
+        },
+        {
+          "id": "map_3_8_one_stone",
+          "title": "[Map 3.8: One Stone]",
+          "level": 3,
+          "pages": [
+            104,
+            105
+          ]
+        },
+        {
+          "id": "map_3_9_raven_rock",
+          "title": "[Map 3.9: Raven Rock]",
+          "level": 3,
+          "pages": [
+            106,
+            106
+          ]
+        },
+        {
+          "id": "map_3_10_gundarlun_and_ruathym",
+          "title": "[Map 3.10: Gundarlun and Ruathym]",
+          "level": 3,
+          "pages": [
+            107,
+            108
+          ]
+        },
+        {
+          "id": "map_3_11_shining_white",
+          "title": "[Map 3.11: Shining White]",
+          "level": 3,
+          "pages": [
+            109,
+            110
+          ]
+        },
+        {
+          "id": "map_3_12_stone_stand",
+          "title": "[Map 3.12: Stone Stand]",
+          "level": 3,
+          "pages": [
+            111,
+            111
+          ]
+        },
+        {
+          "id": "map_3_13_tuern_and_purple_rocks",
+          "title": "[Map 3.13: Tuern and Purple Rocks]",
+          "level": 3,
+          "pages": [
+            112,
+            116
+          ]
+        },
+        {
+          "id": "featured_encounters",
+          "title": "Featured Encounters",
+          "level": 2,
+          "pages": [
+            117,
+            119
+          ]
+        },
+        {
+          "id": "map_3_14_old_tower",
+          "title": "[Map 3.14: Old Tower]",
+          "level": 3,
+          "pages": [
+            118,
+            119
+          ]
+        },
+        {
+          "id": "figure_3_1_harper_teleportation_circles",
+          "title": "[Figure 3.1: Harper Teleportation Circles]",
+          "level": 2,
+          "pages": [
+            120,
+            121
+          ]
+        },
+        {
+          "id": "eye_of_the_all_father",
+          "title": "Eye of the All-Father",
+          "level": 2,
+          "pages": [
+            122,
+            132
+          ]
+        },
+        {
+          "id": "map_4_1_eye_of_the_all_father",
+          "title": "[Map 4.1: Eye of the All-Father]",
+          "level": 3,
+          "pages": [
+            124,
+            132
+          ]
+        },
+        {
+          "id": "map_4_2_harshnag_s_map",
+          "title": "[Map 4.2: Harshnag's Map]",
+          "level": 2,
+          "pages": [
+            133,
+            133
+          ]
+        },
+        {
+          "id": "airship_of_a_cult",
+          "title": "Airship of a Cult",
+          "level": 2,
+          "pages": [
+            133,
+            136
+          ]
+        },
+        {
+          "id": "map_4_3_dragon_cult_airship",
+          "title": "[Map 4.3: Dragon Cult Airship]",
+          "level": 3,
+          "pages": [
+            136,
+            136
+          ]
+        },
+        {
+          "id": "encounter_with_iymrith",
+          "title": "Encounter with Iymrith",
+          "level": 2,
+          "pages": [
+            137,
+            137
+          ]
+        },
+        {
+          "id": "troubleshooting",
+          "title": "Troubleshooting",
+          "level": 2,
+          "pages": [
+            137,
+            137
+          ]
+        },
+        {
+          "id": "grudd_haug",
+          "title": "Grudd Haug",
+          "level": 2,
+          "pages": [
+            139,
+            145
+          ]
+        },
+        {
+          "id": "map_5_1_grudd_haug",
+          "title": "[Map 5.1: Grudd Haug]",
+          "level": 3,
+          "pages": [
+            142,
+            145
+          ]
+        },
+        {
+          "id": "deadstone_cleft",
+          "title": "Deadstone Cleft",
+          "level": 2,
+          "pages": [
+            147,
+            151
+          ]
+        },
+        {
+          "id": "map_6_1_deadstone_cleft",
+          "title": "[Map 6.1: Deadstone Cleft]",
+          "level": 2,
+          "pages": [
+            152,
+            155
+          ]
+        },
+        {
+          "id": "svardborg",
+          "title": "Svardborg",
+          "level": 2,
+          "pages": [
+            157,
+            165
+          ]
+        },
+        {
+          "id": "map_7_1_svardborg",
+          "title": "[Map 7.1: Svardborg]",
+          "level": 3,
+          "pages": [
+            161,
+            161
+          ]
+        },
+        {
+          "id": "map_7_2_svardborg_lodges",
+          "title": "[Map 7.2: Svardborg Lodges]",
+          "level": 3,
+          "pages": [
+            162,
+            165
+          ]
+        },
+        {
+          "id": "the_krigvind",
+          "title": "The Krigvind",
+          "level": 2,
+          "pages": [
+            166,
+            167
+          ]
+        },
+        {
+          "id": "map_7_3_the_krigvind",
+          "title": "[Map 7.3: The Krigvind]",
+          "level": 3,
+          "pages": [
+            167,
+            167
+          ]
+        },
+        {
+          "id": "ironslag",
+          "title": "Ironslag",
+          "level": 2,
+          "pages": [
+            169,
+            187
+          ]
+        },
+        {
+          "id": "map_8_1_ironslag",
+          "title": "[Map 8.1: Ironslag]",
+          "level": 3,
+          "pages": [
+            175,
+            182
+          ]
+        },
+        {
+          "id": "map_8_2_ironslag_lower_level",
+          "title": "[Map 8.2: Ironslag, Lower Level]",
+          "level": 3,
+          "pages": [
+            183,
+            187
+          ]
+        },
+        {
+          "id": "lyn_armaal",
+          "title": "Lyn Armaal",
+          "level": 2,
+          "pages": [
+            189,
+            201
+          ]
+        },
+        {
+          "id": "map_9_1_lyn_armaal_level_1",
+          "title": "[Map 9.1: Lyn Armaal, Level 1]",
+          "level": 3,
+          "pages": [
+            195,
+            195
+          ]
+        },
+        {
+          "id": "map_9_2_lyn_armaal_levels_2_6",
+          "title": "[Map 9.2: Lyn Armaal, Levels 2-6]",
+          "level": 3,
+          "pages": [
+            196,
+            201
+          ]
+        },
+        {
+          "id": "maelstrom",
+          "title": "Maelstrom",
+          "level": 2,
+          "pages": [
+            203,
+            215
+          ]
+        },
+        {
+          "id": "map_10_1_maelstrom_levels_1_and_2",
+          "title": "[Map 10.1: Maelstrom, Levels 1 and 2]",
+          "level": 3,
+          "pages": [
+            206,
+            213
+          ]
+        },
+        {
+          "id": "map_10_2_maelstrom_level_3",
+          "title": "[Map 10.2: Maelstrom, Level 3]",
+          "level": 3,
+          "pages": [
+            214,
+            215
+          ]
+        },
+        {
+          "id": "the_grand_dame",
+          "title": "The Grand Dame",
+          "level": 2,
+          "pages": [
+            217,
+            219
+          ]
+        },
+        {
+          "id": "map_11_1_the_grand_dame",
+          "title": "Map 11.1: The Grand Dame",
+          "level": 3,
+          "pages": [
+            218,
+            219
+          ]
+        },
+        {
+          "id": "the_hunt_for_hekaton",
+          "title": "The Hunt for Hekaton",
+          "level": 2,
+          "pages": [
+            220,
+            221
+          ]
+        },
+        {
+          "id": "the_morkoth",
+          "title": "The Morkoth",
+          "level": 2,
+          "pages": [
+            222,
+            223
+          ]
+        },
+        {
+          "id": "map_11_2_the_morkoth",
+          "title": "[Map 11.2: The Morkoth]",
+          "level": 3,
+          "pages": [
+            223,
+            223
+          ]
+        },
+        {
+          "id": "the_kraken_cometh",
+          "title": "The Kraken Cometh",
+          "level": 2,
+          "pages": [
+            224,
+            225
+          ]
+        },
+        {
+          "id": "iyrmith_s_lair",
+          "title": "Iyrmith's Lair",
+          "level": 2,
+          "pages": [
+            227,
+            230
+          ]
+        },
+        {
+          "id": "map_12_1_iyrmith_s_lair",
+          "title": "[Map 12.1: Iyrmith's Lair]",
+          "level": 3,
+          "pages": [
+            229,
+            230
+          ]
+        },
+        {
+          "id": "adventure_conclusion",
+          "title": "Adventure Conclusion",
+          "level": 2,
+          "pages": [
+            231,
+            231
+          ]
+        }
+      ],
+      "starter_excerpt": "STORM KING'S THUNDER.\n\nCREDITS \nLead Designer: Christopher Perkins \nStory Design: Jenna Helland, Adam Lee, Christopher Perkins, \nRichard Whitters \nAdditional Design: Mike Mearls \nManaging Editor: Jeremy Crawford \nEditors: Kim Mohan, Michele Carter \nEditorial Assistance: Matt Sernett, Chris Dupuis, Ben Petrisor, \nSean K Reynolds, Stan! \nStory Consultant: R.A. Salvatore \nD&D Lead Designers: Mike Mearls, Jeremy Crawford \nArt Director: Kate Irwin \nAdditional Art Direction: Shauna Narciso, Richard Whitters \nGraphic Designer: Emi Tanji \nCover Illustrator: Tyler Jacobson \nInterior Illustrators: John-Paul Balmet, Beet, Mark Behm, Eric \nBelisle, Jedd Chevrier, Olga Drebas, Michael Dutton, Wayne \nEngland, Lars Grant-West, Lake Hurwitz, Tyler Jacobson, Julian \nKok, Olly Lawson, Christopher Moeller, Scott Murphy, Chris \nRahn, Ned Rogers, Chris Seaman, Richard Whitters \nCartographers: Jared Blando, Will Doyle, Jason A. Engle, Lee Moyer, \nChristopher Perkins, Mike Schley \nProject Manager: Heather Fleming \nProduct Engineer: Cynda Callaway \nImaging Technicians: Sven Bolen, Carmen Cheung, Kevin Yee \nArt Administration: David Gershman \nPrepress Specialist: Jefferson Dunlap \nOther D&D Team Members: Greg Bilsland, John Feil, Trevor Kidd, \nChristopher Lindsay, Shelly Mazzanoble, Hilary Ross, Liz Schuh, \nNathan Stewart, Greg Tito, Shawn Wood \nDisclaimer: Creatures and objects in this adventure are bigger than they appear. No giant \nbeanstalks were damaged and no golden geese were harmed in the making of this boolc. \n62008669000001 EN \nISBN: 978-0-7869-6600-4 \nFirst Printing: September 2016 \n9 8 7 6 5 4321 \n\nThe following D&D books provided material and inspiration: \nBaker, Richard, Christopher Perkins, and others. Princes of the \nApocalypse. 2015. \nBaur, Wolfgang, Steve Winter, and others. H"
+    }
+  ],
+  "toc": [
+    {
+      "level": 1,
+      "title": "Cover",
+      "page_start": 1,
+      "page_end": 2,
+      "id": "cover"
+    },
+    {
+      "level": 1,
+      "title": "Credits",
+      "page_start": 3,
+      "page_end": 3,
+      "id": "credits"
+    },
+    {
+      "level": 1,
+      "title": "Contents",
+      "page_start": 4,
+      "page_end": 5,
+      "id": "contents"
+    },
+    {
+      "level": 1,
+      "title": "Dramatis Personae",
+      "page_start": 6,
+      "page_end": 7,
+      "id": "dramatis_personae"
+    },
+    {
+      "level": 1,
+      "title": "Introduction",
+      "page_start": 8,
+      "page_end": 19,
+      "id": "introduction"
+    },
+    {
+      "level": 2,
+      "title": "Adventure Flowchart",
+      "page_start": 18,
+      "page_end": 19,
+      "id": "adventure_flowchart"
+    },
+    {
+      "level": 1,
+      "title": "Chapter 1: A Great Upheaval",
+      "page_start": 20,
+      "page_end": 37,
+      "id": "chapter_1_a_great_upheaval"
+    },
+    {
+      "level": 2,
+      "title": "Nightstone",
+      "page_start": 21,
+      "page_end": 28,
+      "id": "nightstone"
+    },
+    {
+      "level": 3,
+      "title": "[Map 1.1: Nightstone]",
+      "page_start": 22,
+      "page_end": 28,
+      "id": "map_1_1_nightstone"
+    },
+    {
+      "level": 2,
+      "title": "Dripping Caves",
+      "page_start": 29,
+      "page_end": 32,
+      "id": "dripping_caves"
+    },
+    {
+      "level": 3,
+      "title": "[Map 1.2: Dripping Caves]",
+      "page_start": 30,
+      "page_end": 32,
+      "id": "map_1_2_dripping_caves"
+    },
+    {
+      "level": 2,
+      "title": "Tower of Zephyros",
+      "page_start": 33,
+      "page_end": 37,
+      "id": "tower_of_zephyros"
+    },
+    {
+      "level": 3,
+      "title": "[Map 1.3: Tower of Zephyros]",
+      "page_start": 34,
+      "page_end": 37,
+      "id": "map_1_3_tower_of_zephyros"
+    },
+    {
+      "level": 1,
+      "title": "Chapter 2: Rumblings",
+      "page_start": 38,
+      "page_end": 63,
+      "id": "chapter_2_rumblings"
+    },
+    {
+      "level": 2,
+      "title": "Bryn Shander",
+      "page_start": 39,
+      "page_end": 44,
+      "id": "bryn_shander"
+    },
+    {
+      "level": 3,
+      "title": "[Map 2.1: Bryn Shander]",
+      "page_start": 40,
+      "page_end": 44,
+      "id": "map_2_1_bryn_shander"
+    },
+    {
+      "level": 2,
+      "title": "Goldenfields",
+      "page_start": 45,
+      "page_end": 53,
+      "id": "goldenfields"
+    },
+    {
+      "level": 3,
+      "title": "[Map 2.2: Goldenfields]",
+      "page_start": 46,
+      "page_end": 53,
+      "id": "map_2_2_goldenfields"
+    },
+    {
+      "level": 2,
+      "title": "Triboar",
+      "page_start": 54,
+      "page_end": 63,
+      "id": "triboar"
+    },
+    {
+      "level": 3,
+      "title": "[Map 2.3: Triboar]",
+      "page_start": 56,
+      "page_end": 63,
+      "id": "map_2_3_triboar"
+    },
+    {
+      "level": 1,
+      "title": "Chapter 3: The Savage Frontier",
+      "page_start": 64,
+      "page_end": 121,
+      "id": "chapter_3_the_savage_frontier"
+    },
+    {
+      "level": 2,
+      "title": "Random Wilderness Encounters",
+      "page_start": 69,
+      "page_end": 72,
+      "id": "random_wilderness_encounters"
+    },
+    {
+      "level": 2,
+      "title": "Locations of the North",
+      "page_start": 73,
+      "page_end": 116,
+      "id": "locations_of_the_north"
+    },
+    {
+      "level": 3,
+      "title": "[Map 3.1: The Savage Frontier]",
+      "page_start": 75,
+      "page_end": 76,
+      "id": "map_3_1_the_savage_frontier"
+    },
+    {
+      "level": 3,
+      "title": "[Map 3.2: Beorunna's Well]",
+      "page_start": 77,
+      "page_end": 82,
+      "id": "map_3_2_beorunna_s_well"
+    },
+    {
+      "level": 3,
+      "title": "[Map 3.3: Everlund]",
+      "page_start": 83,
+      "page_end": 84,
+      "id": "map_3_3_everlund"
+    },
+    {
+      "level": 3,
+      "title": "[Map 3.4: Flint Rock]",
+      "page_start": 85,
+      "page_end": 87,
+      "id": "map_3_4_flint_rock"
+    },
+    {
+      "level": 3,
+      "title": "[Map 3.5: Grandfather Tree]",
+      "page_start": 88,
+      "page_end": 89,
+      "id": "map_3_5_grandfather_tree"
+    },
+    {
+      "level": 3,
+      "title": "[Map 3.6: Grand Worm Cavern]",
+      "page_start": 90,
+      "page_end": 99,
+      "id": "map_3_6_grand_worm_cavern"
+    },
+    {
+      "level": 3,
+      "title": "[Map 3.7: Morgur's Mound]",
+      "page_start": 100,
+      "page_end": 103,
+      "id": "map_3_7_morgur_s_mound"
+    },
+    {
+      "level": 3,
+      "title": "[Map 3.8: One Stone]",
+      "page_start": 104,
+      "page_end": 105,
+      "id": "map_3_8_one_stone"
+    },
+    {
+      "level": 3,
+      "title": "[Map 3.9: Raven Rock]",
+      "page_start": 106,
+      "page_end": 106,
+      "id": "map_3_9_raven_rock"
+    },
+    {
+      "level": 3,
+      "title": "[Map 3.10: Gundarlun and Ruathym]",
+      "page_start": 107,
+      "page_end": 108,
+      "id": "map_3_10_gundarlun_and_ruathym"
+    },
+    {
+      "level": 3,
+      "title": "[Map 3.11: Shining White]",
+      "page_start": 109,
+      "page_end": 110,
+      "id": "map_3_11_shining_white"
+    },
+    {
+      "level": 3,
+      "title": "[Map 3.12: Stone Stand]",
+      "page_start": 111,
+      "page_end": 111,
+      "id": "map_3_12_stone_stand"
+    },
+    {
+      "level": 3,
+      "title": "[Map 3.13: Tuern and Purple Rocks]",
+      "page_start": 112,
+      "page_end": 116,
+      "id": "map_3_13_tuern_and_purple_rocks"
+    },
+    {
+      "level": 2,
+      "title": "Featured Encounters",
+      "page_start": 117,
+      "page_end": 119,
+      "id": "featured_encounters"
+    },
+    {
+      "level": 3,
+      "title": "[Map 3.14: Old Tower]",
+      "page_start": 118,
+      "page_end": 119,
+      "id": "map_3_14_old_tower"
+    },
+    {
+      "level": 2,
+      "title": "[Figure 3.1: Harper Teleportation Circles]",
+      "page_start": 120,
+      "page_end": 121,
+      "id": "figure_3_1_harper_teleportation_circles"
+    },
+    {
+      "level": 1,
+      "title": "Chapter 4: The Chosen Path",
+      "page_start": 122,
+      "page_end": 137,
+      "id": "chapter_4_the_chosen_path"
+    },
+    {
+      "level": 2,
+      "title": "Eye of the All-Father",
+      "page_start": 122,
+      "page_end": 132,
+      "id": "eye_of_the_all_father"
+    },
+    {
+      "level": 3,
+      "title": "[Map 4.1: Eye of the All-Father]",
+      "page_start": 124,
+      "page_end": 132,
+      "id": "map_4_1_eye_of_the_all_father"
+    },
+    {
+      "level": 2,
+      "title": "[Map 4.2: Harshnag's Map]",
+      "page_start": 133,
+      "page_end": 133,
+      "id": "map_4_2_harshnag_s_map"
+    },
+    {
+      "level": 2,
+      "title": "Airship of a Cult",
+      "page_start": 133,
+      "page_end": 136,
+      "id": "airship_of_a_cult"
+    },
+    {
+      "level": 3,
+      "title": "[Map 4.3: Dragon Cult Airship]",
+      "page_start": 136,
+      "page_end": 136,
+      "id": "map_4_3_dragon_cult_airship"
+    },
+    {
+      "level": 2,
+      "title": "Encounter with Iymrith",
+      "page_start": 137,
+      "page_end": 137,
+      "id": "encounter_with_iymrith"
+    },
+    {
+      "level": 2,
+      "title": "Troubleshooting",
+      "page_start": 137,
+      "page_end": 137,
+      "id": "troubleshooting"
+    },
+    {
+      "level": 1,
+      "title": "Chapter 5: Den of the Hill Giants",
+      "page_start": 138,
+      "page_end": 145,
+      "id": "chapter_5_den_of_the_hill_giants"
+    },
+    {
+      "level": 2,
+      "title": "Grudd Haug",
+      "page_start": 139,
+      "page_end": 145,
+      "id": "grudd_haug"
+    },
+    {
+      "level": 3,
+      "title": "[Map 5.1: Grudd Haug]",
+      "page_start": 142,
+      "page_end": 145,
+      "id": "map_5_1_grudd_haug"
+    },
+    {
+      "level": 1,
+      "title": "Chapter 6: Canyon of the Stone Giants",
+      "page_start": 146,
+      "page_end": 155,
+      "id": "chapter_6_canyon_of_the_stone_giants"
+    },
+    {
+      "level": 2,
+      "title": "Deadstone Cleft",
+      "page_start": 147,
+      "page_end": 151,
+      "id": "deadstone_cleft"
+    },
+    {
+      "level": 2,
+      "title": "[Map 6.1: Deadstone Cleft]",
+      "page_start": 152,
+      "page_end": 155,
+      "id": "map_6_1_deadstone_cleft"
+    },
+    {
+      "level": 1,
+      "title": "Chapter 7: Berg of the Frost Giants",
+      "page_start": 156,
+      "page_end": 167,
+      "id": "chapter_7_berg_of_the_frost_giants"
+    },
+    {
+      "level": 2,
+      "title": "Svardborg",
+      "page_start": 157,
+      "page_end": 165,
+      "id": "svardborg"
+    },
+    {
+      "level": 3,
+      "title": "[Map 7.1: Svardborg]",
+      "page_start": 161,
+      "page_end": 161,
+      "id": "map_7_1_svardborg"
+    },
+    {
+      "level": 3,
+      "title": "[Map 7.2: Svardborg Lodges]",
+      "page_start": 162,
+      "page_end": 165,
+      "id": "map_7_2_svardborg_lodges"
+    },
+    {
+      "level": 2,
+      "title": "The Krigvind",
+      "page_start": 166,
+      "page_end": 167,
+      "id": "the_krigvind"
+    },
+    {
+      "level": 3,
+      "title": "[Map 7.3: The Krigvind]",
+      "page_start": 167,
+      "page_end": 167,
+      "id": "map_7_3_the_krigvind"
+    },
+    {
+      "level": 1,
+      "title": "Chapter 8: Forge of the Fire Giants",
+      "page_start": 168,
+      "page_end": 187,
+      "id": "chapter_8_forge_of_the_fire_giants"
+    },
+    {
+      "level": 2,
+      "title": "Ironslag",
+      "page_start": 169,
+      "page_end": 187,
+      "id": "ironslag"
+    },
+    {
+      "level": 3,
+      "title": "[Map 8.1: Ironslag]",
+      "page_start": 175,
+      "page_end": 182,
+      "id": "map_8_1_ironslag"
+    },
+    {
+      "level": 3,
+      "title": "[Map 8.2: Ironslag, Lower Level]",
+      "page_start": 183,
+      "page_end": 187,
+      "id": "map_8_2_ironslag_lower_level"
+    },
+    {
+      "level": 1,
+      "title": "Chapter 9: Castle of the Cloud Giants",
+      "page_start": 188,
+      "page_end": 201,
+      "id": "chapter_9_castle_of_the_cloud_giants"
+    },
+    {
+      "level": 2,
+      "title": "Lyn Armaal",
+      "page_start": 189,
+      "page_end": 201,
+      "id": "lyn_armaal"
+    },
+    {
+      "level": 3,
+      "title": "[Map 9.1: Lyn Armaal, Level 1]",
+      "page_start": 195,
+      "page_end": 195,
+      "id": "map_9_1_lyn_armaal_level_1"
+    },
+    {
+      "level": 3,
+      "title": "[Map 9.2: Lyn Armaal, Levels 2-6]",
+      "page_start": 196,
+      "page_end": 201,
+      "id": "map_9_2_lyn_armaal_levels_2_6"
+    },
+    {
+      "level": 1,
+      "title": "Chapter 10: Hold of the Storm Giants",
+      "page_start": 202,
+      "page_end": 215,
+      "id": "chapter_10_hold_of_the_storm_giants"
+    },
+    {
+      "level": 2,
+      "title": "Maelstrom",
+      "page_start": 203,
+      "page_end": 215,
+      "id": "maelstrom"
+    },
+    {
+      "level": 3,
+      "title": "[Map 10.1: Maelstrom, Levels 1 and 2]",
+      "page_start": 206,
+      "page_end": 213,
+      "id": "map_10_1_maelstrom_levels_1_and_2"
+    },
+    {
+      "level": 3,
+      "title": "[Map 10.2: Maelstrom, Level 3]",
+      "page_start": 214,
+      "page_end": 215,
+      "id": "map_10_2_maelstrom_level_3"
+    },
+    {
+      "level": 1,
+      "title": "Chapter 11: Caught in the Tentacles",
+      "page_start": 216,
+      "page_end": 225,
+      "id": "chapter_11_caught_in_the_tentacles"
+    },
+    {
+      "level": 2,
+      "title": "The Grand Dame",
+      "page_start": 217,
+      "page_end": 219,
+      "id": "the_grand_dame"
+    },
+    {
+      "level": 3,
+      "title": "Map 11.1: The Grand Dame",
+      "page_start": 218,
+      "page_end": 219,
+      "id": "map_11_1_the_grand_dame"
+    },
+    {
+      "level": 2,
+      "title": "The Hunt for Hekaton",
+      "page_start": 220,
+      "page_end": 221,
+      "id": "the_hunt_for_hekaton"
+    },
+    {
+      "level": 2,
+      "title": "The Morkoth",
+      "page_start": 222,
+      "page_end": 223,
+      "id": "the_morkoth"
+    },
+    {
+      "level": 3,
+      "title": "[Map 11.2: The Morkoth]",
+      "page_start": 223,
+      "page_end": 223,
+      "id": "map_11_2_the_morkoth"
+    },
+    {
+      "level": 2,
+      "title": "The Kraken Cometh",
+      "page_start": 224,
+      "page_end": 225,
+      "id": "the_kraken_cometh"
+    },
+    {
+      "level": 1,
+      "title": "Chapter 12: Doom of the Desert",
+      "page_start": 226,
+      "page_end": 231,
+      "id": "chapter_12_doom_of_the_desert"
+    },
+    {
+      "level": 2,
+      "title": "Iyrmith's Lair",
+      "page_start": 227,
+      "page_end": 230,
+      "id": "iyrmith_s_lair"
+    },
+    {
+      "level": 3,
+      "title": "[Map 12.1: Iyrmith's Lair]",
+      "page_start": 229,
+      "page_end": 230,
+      "id": "map_12_1_iyrmith_s_lair"
+    },
+    {
+      "level": 2,
+      "title": "Adventure Conclusion",
+      "page_start": 231,
+      "page_end": 231,
+      "id": "adventure_conclusion"
+    },
+    {
+      "level": 1,
+      "title": "Appendix A: Linked Adventures",
+      "page_start": 232,
+      "page_end": 233,
+      "id": "appendix_a_linked_adventures"
+    },
+    {
+      "level": 1,
+      "title": "Appendix B: Magic Items",
+      "page_start": 234,
+      "page_end": 240,
+      "id": "appendix_b_magic_items"
+    },
+    {
+      "level": 1,
+      "title": "Appendix C: Creatures",
+      "page_start": 241,
+      "page_end": 247,
+      "id": "appendix_c_creatures"
+    },
+    {
+      "level": 1,
+      "title": "Appendix D: Special NPCs",
+      "page_start": 248,
+      "page_end": 248,
+      "id": "appendix_d_special_npcs"
+    },
+    {
+      "level": 1,
+      "title": "Back Cover",
+      "page_start": 1,
+      "page_end": 258,
+      "id": "back_cover"
+    }
+  ]
+}

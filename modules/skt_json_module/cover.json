@@ -1,0 +1,24 @@
+{
+  "schema": "dm_module_chapter.v1",
+  "title": "Cover",
+  "source": "Storm King's Thunder",
+  "pages": [
+    1,
+    2
+  ],
+  "dm_guidance": {
+    "load_with": "python3 dm.py --module this_file.json ...",
+    "note": "This is one top-level section/chapter only to keep token use manageable."
+  },
+  "sections": [
+    {
+      "id": "cover",
+      "title": "Cover",
+      "pages": [
+        1,
+        2
+      ],
+      "content": "STORM KING'S THUNDER."
+    }
+  ]
+}
